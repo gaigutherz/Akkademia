@@ -2,10 +2,8 @@ import json
 
 
 def main():
-    local_path = r"C:\Users\gai\Desktop\Akkadian NLP Project"
-    inner_path = r"\rinap-rinap1\rinap\rinap1\corpusjson"
-    directory = local_path + inner_path
-    chars = parse_json(directory + "\\" + "Q003622.json")
+    directory = r"raw_data\rinap\rinap1\corpusjson"
+    chars = parse_json("..\\" + directory + "\\" + "Q003453.json")
     print(len(chars))
     for c in chars:
         print(c[1])
