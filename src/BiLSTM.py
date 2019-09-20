@@ -83,15 +83,14 @@ class LstmTagger(Model):
 
 def prepare1():
     reader = PosDatasetReader()
-    train_dataset = reader.read("allen_train_texts.txt")
-    validation_dataset = reader.read("allen_dev_texts.txt")
+    train_dataset = reader.read(r"..\BiLSTM_input\allen_train_texts.txt")
+    validation_dataset = reader.read(r"..\BiLSTM_input\allen_dev_texts.txt")
     vocab = Vocabulary.from_instances(train_dataset + validation_dataset)
 
     EMBEDDING_DIM = 200
     HIDDEN_DIM = 200
 
-    token_embedding = Embedding(num_embeddings=vocab.get_vocab_size('tokens'),
-                                embedding_dim=EMBEDDING_DIM)
+    token_embedding = Embedding(num_embeddings=vocab.get_vocab_size('tokens'), embedding_dim=EMBEDDING_DIM)
     word_embeddings = BasicTextFieldEmbedder({"tokens": token_embedding})
     lstm = PytorchSeq2SeqWrapper(torch.nn.LSTM(EMBEDDING_DIM, HIDDEN_DIM, batch_first=True, bidirectional=True))
 
@@ -116,8 +115,8 @@ def prepare2(model, vocab, train_dataset, validation_dataset, cuda_device, reade
                       validation_dataset=validation_dataset,
                       #patience=1,
                       patience=10,
-                      #num_epochs=2,
-                      num_epochs=1000,
+                      num_epochs=1,
+                      #num_epochs=1000,
                       cuda_device=cuda_device)
 
     return trainer, model, reader, vocab
@@ -127,13 +126,13 @@ def train(trainer, model, reader, vocab):
     trainer.train()
     predictor = SentenceTaggerPredictor(model, dataset_reader=reader)
 
-    dump_object_to_file(predictor, "predictor")
-    dump_object_to_file(model, "model")
+    dump_object_to_file(predictor, r"..\output\predictor")
+    dump_object_to_file(model, r"..\output\model")
 
 
 def check_results(train_texts, dev_texts, sign_to_id, id_to_tran):
-    predictor_from_file = load_object_from_file("predictor")
-    model_from_file = load_object_from_file("model")
+    predictor_from_file = load_object_from_file(r"..\output\predictor")
+    model_from_file = load_object_from_file(r"..\output\model")
 
     print(BiLSTM_compute_accuracy(train_texts, model_from_file, predictor_from_file, sign_to_id, id_to_tran))
     print(BiLSTM_compute_accuracy(dev_texts, model_from_file, predictor_from_file, sign_to_id, id_to_tran))
