@@ -34,37 +34,6 @@ def compute_vocab_count(sents):
     return vocab
 
 
-def replace_word(word):
-    """
-        (numbers, dates, etc...)
-    """
-    ### YOUR CODE HERE
-    ### END YOUR CODE
-    return "UNK"
-
-
-def preprocess_sent(vocab, sents):
-    """
-        return a sentence, where every word that is not frequent enough is replaced
-    """
-    res = []
-    total, replaced = 0, 0
-    for sent in sents:
-        new_sent = []
-        for token in sent:
-            if token[0] in vocab and vocab[token[0]] >= MIN_FREQ:
-                new_sent.append(token)
-            else:
-                #print token[0] + " is rare!!!"
-                #new_sent.append((replace_word(token[0]), token[1]))
-                new_sent.append(token)
-                replaced += 1
-            total += 1
-        res.append(new_sent)
-    #print("would have replaced: " + str(float(replaced)/total))
-    return res
-
-
 def reorganize_data(texts):
     data = []
 

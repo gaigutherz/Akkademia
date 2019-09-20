@@ -301,11 +301,8 @@ def hmm_eval(test_data, total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e
 def run_hmm(train_texts, dev_texts):
     vocab = compute_vocab_count(train_texts)
 
-    train_sents = preprocess_sent(vocab, train_texts)
-    dev_sents = preprocess_sent(vocab, dev_texts)
-
-    total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts = hmm_train(train_sents)
-    acc_viterbi, lambda1, lambda2 = hmm_eval(dev_sents, total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts)
+    total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts = hmm_train(train_texts)
+    acc_viterbi, lambda1, lambda2 = hmm_eval(dev_texts, total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts)
     print("HMM DEV accuracy: " + str(acc_viterbi))
 
     return lambda1, lambda2
