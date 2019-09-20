@@ -1,0 +1,639 @@
+{
+  "type": "cdl",
+  "project": "rinap/rinap3",
+  "source": "http://oracc.org/rinap/rinap3",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2019-07-28T09:15:39",
+  "textid": "Q003932",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q003932.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "nonx",
+          "ref": "Q003932.1",
+          "strict": "0",
+          "state": "other"
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q003932.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "tag": ".",
+              "id": "Q003932.U2",
+              "label": "1´ - 4´",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q003932.2",
+                  "n": "1´",
+                  "label": "1´"
+                },
+                {
+                  "node": "l",
+                  "frag": "[...]",
+                  "id": "Q003932.l08010",
+                  "ref": "Q003932.2.1",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "x": "ellipsis",
+                        "id": "Q003932.2.1.0",
+                        "breakStart": "1",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "Q003932.2.1.0"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x",
+                  "id": "Q003932.l08011",
+                  "ref": "Q003932.2.2",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "Q003932.2.2.0"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "[...]",
+                  "id": "Q003932.l08012",
+                  "ref": "Q003932.2.3",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk",
+                    "form": "x",
+                    "gdl": [
+                      {
+                        "x": "ellipsis",
+                        "id": "Q003932.2.3.0",
+                        "breakStart": "1",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "Q003932.2.3.0"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q003932.3",
+                  "n": "2´",
+                  "label": "2´"
+                },
+                {
+                  "node": "l",
+                  "frag": "[ina",
+                  "id": "Q003932.l08013",
+                  "ref": "Q003932.3.1",
+                  "inst": "ina[in]PRP",
+                  "sig": "@rinap/rinap3%akk:ina=ina[in//in]PRP'PRP$ina",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ina",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ina",
+                        "utf8": "𒀸",
+                        "id": "Q003932.3.1.0",
+                        "breakStart": "1",
+                        "o": "[",
+                        "break": "missing"
+                      }
+                    ],
+                    "cf": "ina",
+                    "gw": "in",
+                    "sense": "in",
+                    "norm": "ina",
+                    "pos": "PRP",
+                    "epos": "PRP"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "mah-ri]-⸢ia",
+                  "id": "Q003932.l08014",
+                  "ref": "Q003932.3.2",
+                  "inst": "mahriya[front]N",
+                  "sig": "@rinap/rinap3%akk:mah-ri-ia=mahru[front//front]N'N$mahriya",
+                  "f": {
+                    "lang": "akk",
+                    "form": "mah-ri-ia",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "mah",
+                        "utf8": "𒈤",
+                        "id": "Q003932.3.2.0",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ri",
+                        "utf8": "𒊑",
+                        "id": "Q003932.3.2.1",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "Q003932.3.1.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ia",
+                        "utf8": "𒅀",
+                        "id": "Q003932.3.2.2",
+                        "break": "damaged",
+                        "queried": "1",
+                        "ho": "1"
+                      }
+                    ],
+                    "cf": "mahru",
+                    "gw": "front",
+                    "sense": "front",
+                    "norm": "mahriya",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "u₂⸣-[šap-ṭar]",
+                  "id": "Q003932.l08015",
+                  "ref": "Q003932.3.3",
+                  "inst": "ušapṭar[have incised]V",
+                  "sig": "@rinap/rinap3%akk:u₂-šap-ṭar=paṭāru[untie//have incised]V'V$ušapṭar",
+                  "f": {
+                    "lang": "akk",
+                    "form": "u₂-šap-ṭar",
+                    "gdl": [
+                      {
+                        "v": "u₂",
+                        "utf8": "𒌑",
+                        "id": "Q003932.3.3.0",
+                        "break": "damaged",
+                        "delim": "-",
+                        "hc": "1"
+                      },
+                      {
+                        "v": "šap",
+                        "utf8": "𒉺𒅁",
+                        "id": "Q003932.3.3.1",
+                        "breakStart": "1",
+                        "o": "[",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ṭar",
+                        "utf8": "𒋻",
+                        "id": "Q003932.3.3.2",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "Q003932.3.3.1"
+                      }
+                    ],
+                    "cf": "paṭāru",
+                    "gw": "untie",
+                    "sense": "have incised",
+                    "norm": "ušapṭar",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q003932.4",
+                  "n": "3´",
+                  "label": "3´"
+                },
+                {
+                  "node": "l",
+                  "frag": "[ša₂",
+                  "id": "Q003932.l08016",
+                  "ref": "Q003932.4.1",
+                  "inst": "ša[who]REL",
+                  "sig": "@rinap/rinap3%akk:ša₂=ša[that//who]REL'REL$ša",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ša₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ša₂",
+                        "utf8": "𒃻",
+                        "id": "Q003932.4.1.0",
+                        "breakStart": "1",
+                        "o": "[",
+                        "break": "missing"
+                      }
+                    ],
+                    "cf": "ša",
+                    "gw": "that",
+                    "sense": "who",
+                    "norm": "ša",
+                    "pos": "REL",
+                    "epos": "REL"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "MU",
+                  "id": "Q003932.l08017",
+                  "ref": "Q003932.4.2",
+                  "inst": "šumī[name]N",
+                  "sig": "@rinap/rinap3%akk:MU=šumu[name//name]N'N$šumī",
+                  "f": {
+                    "lang": "akk",
+                    "form": "MU",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "MU",
+                            "utf8": "𒈬",
+                            "id": "Q003932.4.2.0",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "šumu",
+                    "gw": "name",
+                    "sense": "name",
+                    "norm": "šumī",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "šaṭ]-⸢ru⸣",
+                  "id": "Q003932.l08018",
+                  "ref": "Q003932.4.3",
+                  "inst": "šaṭru[written]AJ",
+                  "sig": "@rinap/rinap3%akk:šaṭ-ru=šaṭru[written//written]AJ'AJ$šaṭru",
+                  "f": {
+                    "lang": "akk",
+                    "form": "šaṭ-ru",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "šaṭ",
+                        "utf8": "𒆳",
+                        "id": "Q003932.4.3.0",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "Q003932.4.1.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ru",
+                        "utf8": "𒊒",
+                        "id": "Q003932.4.3.1",
+                        "break": "damaged",
+                        "ho": "1",
+                        "hc": "1"
+                      }
+                    ],
+                    "cf": "šaṭru",
+                    "gw": "written",
+                    "sense": "written",
+                    "norm": "šaṭru",
+                    "pos": "AJ",
+                    "epos": "AJ"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "i-⸢pa-ši⸣-[ṭu]",
+                  "id": "Q003932.l08019",
+                  "ref": "Q003932.4.4",
+                  "inst": "ipaššiṭu[erase]V",
+                  "sig": "@rinap/rinap3%akk:i-pa-ši-ṭu=pašāṭu[efface//erase]V'V$ipaššiṭu",
+                  "f": {
+                    "lang": "akk",
+                    "form": "i-pa-ši-ṭu",
+                    "gdl": [
+                      {
+                        "v": "i",
+                        "utf8": "𒄿",
+                        "id": "Q003932.4.4.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "pa",
+                        "utf8": "𒉺",
+                        "id": "Q003932.4.4.1",
+                        "break": "damaged",
+                        "ho": "1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ši",
+                        "utf8": "𒅆",
+                        "id": "Q003932.4.4.2",
+                        "break": "damaged",
+                        "delim": "-",
+                        "hc": "1"
+                      },
+                      {
+                        "v": "ṭu",
+                        "utf8": "𒂅",
+                        "id": "Q003932.4.4.3",
+                        "breakStart": "1",
+                        "o": "]",
+                        "break": "missing",
+                        "breakEnd": "Q003932.4.4.3"
+                      }
+                    ],
+                    "cf": "pašāṭu",
+                    "gw": "efface",
+                    "sense": "erase",
+                    "norm": "ipaššiṭu",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q003932.5",
+                  "n": "4´",
+                  "label": "4´"
+                },
+                {
+                  "node": "l",
+                  "frag": "[ana",
+                  "id": "Q003932.l0801a",
+                  "ref": "Q003932.5.1",
+                  "inst": "ana[for]PRP",
+                  "sig": "@rinap/rinap3%akk:ana=ana[to//for]PRP'PRP$ana",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ana",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ana",
+                        "utf8": "𒁹",
+                        "id": "Q003932.5.1.0",
+                        "breakStart": "1",
+                        "o": "[",
+                        "break": "missing"
+                      }
+                    ],
+                    "cf": "ana",
+                    "gw": "to",
+                    "sense": "for",
+                    "norm": "ana",
+                    "pos": "PRP",
+                    "epos": "PRP"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "dul-li]",
+                  "id": "Q003932.l0801b",
+                  "ref": "Q003932.5.2",
+                  "inst": "dulli[work]N",
+                  "sig": "@rinap/rinap3%akk:dul-li=dullu[trouble//work]N'N$dulli",
+                  "f": {
+                    "lang": "akk",
+                    "form": "dul-li",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "dul",
+                        "utf8": "𒌋𒌆",
+                        "id": "Q003932.5.2.0",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "li",
+                        "utf8": "𒇷",
+                        "id": "Q003932.5.2.1",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "Q003932.5.1.0"
+                      }
+                    ],
+                    "cf": "dullu",
+                    "gw": "trouble",
+                    "sense": "work",
+                    "norm": "dulli",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "ša₂",
+                  "id": "Q003932.l0801c",
+                  "ref": "Q003932.5.3",
+                  "inst": "ša[of]DET",
+                  "sig": "@rinap/rinap3%akk:ša₂=ša[of//of]DET'DET$ša",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ša₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ša₂",
+                        "utf8": "𒃻",
+                        "id": "Q003932.5.3.0"
+                      }
+                    ],
+                    "cf": "ša",
+                    "gw": "of",
+                    "sense": "of",
+                    "norm": "ša",
+                    "pos": "DET",
+                    "epos": "DET"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "[DINGIR",
+                  "id": "Q003932.l0801d",
+                  "ref": "Q003932.5.4",
+                  "inst": "ili[god]N",
+                  "sig": "@rinap/rinap3%akk:DINGIR=ilu[god//god]N'N$ili",
+                  "f": {
+                    "lang": "akk",
+                    "form": "DINGIR",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "DINGIR",
+                            "utf8": "𒀭",
+                            "id": "Q003932.5.4.0",
+                            "breakStart": "1",
+                            "o": "[",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "ilu",
+                    "gw": "god",
+                    "sense": "god",
+                    "norm": "ili",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "LU₂-ti",
+                  "id": "Q003932.l0801e",
+                  "ref": "Q003932.5.5",
+                  "inst": "amīlūti[person]N",
+                  "sig": "@rinap/rinap3%akk:LU₂-ti=awīlūtu[humanity//person]N'N$amīlūti",
+                  "f": {
+                    "lang": "akk",
+                    "form": "LU₂-ti",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "LU₂",
+                            "utf8": "𒇽",
+                            "id": "Q003932.5.5.0",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "ti",
+                        "utf8": "𒋾",
+                        "id": "Q003932.5.5.1",
+                        "break": "missing"
+                      }
+                    ],
+                    "cf": "awīlūtu",
+                    "gw": "humanity",
+                    "sense": "person",
+                    "norm": "amīlūti",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "DU₃-šu₂]",
+                  "id": "Q003932.l0801f",
+                  "ref": "Q003932.5.6",
+                  "inst": "ippušu[use]V +.",
+                  "sig": "@rinap/rinap3%akk:DU₃-šu₂=epēšu[do//use]V'V$ippušu",
+                  "f": {
+                    "lang": "akk",
+                    "form": "DU₃-šu₂",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "DU₃",
+                            "utf8": "𒆕",
+                            "id": "Q003932.5.6.0",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "šu₂",
+                        "utf8": "𒋙",
+                        "id": "Q003932.5.6.1",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "Q003932.5.4.0"
+                      }
+                    ],
+                    "cf": "epēšu",
+                    "gw": "do",
+                    "sense": "use",
+                    "norm": "ippušu",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                }
+              ]
+            },
+            {
+              "node": "d",
+              "type": "nonx",
+              "ref": "Q003932.6",
+              "strict": "0",
+              "state": "other"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

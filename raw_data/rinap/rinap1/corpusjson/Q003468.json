@@ -1,0 +1,106 @@
+{
+  "type": "cdl",
+  "project": "rinap/rinap1",
+  "source": "http://oracc.org/rinap/rinap1",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2019-07-28T09:13:34",
+  "textid": "Q003468",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q003468.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q003468.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "Q003468.U2",
+              "label": "1",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q003468.1",
+                  "n": "1",
+                  "label": "1"
+                },
+                {
+                  "node": "l",
+                  "frag": "{uru}u₂-⸢pa⸣",
+                  "id": "Q003468.l023f0",
+                  "ref": "Q003468.1.1",
+                  "inst": "Upa[]SN$",
+                  "sig": "@rinap/rinap1%akk:{URU}u₂-pa=Upa[1//1]SN'SN$Upa",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{URU}u₂-pa",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "gg": "logo",
+                            "gdl_type": "logo",
+                            "group": [
+                              {
+                                "s": "URU",
+                                "utf8": "𒌷",
+                                "id": "Q003468.1.1.0",
+                                "role": "logo",
+                                "logolang": "sux"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "v": "u₂",
+                        "utf8": "𒌑",
+                        "id": "Q003468.1.1.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "pa",
+                        "utf8": "𒉺",
+                        "id": "Q003468.1.1.2",
+                        "break": "damaged",
+                        "ho": "1",
+                        "hc": "1"
+                      }
+                    ],
+                    "cf": "Upa",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm": "Upa",
+                    "pos": "SN",
+                    "epos": "SN"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1283 @@
+{
+  "type": "cdl",
+  "project": "rinap/rinap5",
+  "source": "http://oracc.org/rinap/rinap5",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2019-07-28T09:22:19",
+  "textid": "Q003725",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q003725.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q003725.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "Q003725.U2",
+              "label": "1 - 6",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q003725.1",
+                  "n": "1",
+                  "label": "1"
+                },
+                {
+                  "node": "l",
+                  "frag": "{m}te-um-man",
+                  "id": "Q003725.l088a4",
+                  "ref": "Q003725.1.1",
+                  "inst": "Teumman[king of Elam]RN",
+                  "sig": "@rinap/rinap5%akk:{m}te-um-man=Teumman[king of Elam//king of Elam]RN'RN$Teumman",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{m}te-um-man",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "v": "m",
+                            "utf8": "𒁹",
+                            "id": "Q003725.1.1.0"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "te",
+                        "utf8": "𒋼",
+                        "id": "Q003725.1.1.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "um",
+                        "utf8": "𒌝",
+                        "id": "Q003725.1.1.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "man",
+                        "utf8": "𒌋𒌋",
+                        "id": "Q003725.1.1.3"
+                      }
+                    ],
+                    "cf": "Teumman",
+                    "gw": "king of Elam",
+                    "sense": "king of Elam",
+                    "norm": "Teumman",
+                    "pos": "RN",
+                    "epos": "RN"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "MAN",
+                  "id": "Q003725.l088a5",
+                  "ref": "Q003725.1.2",
+                  "inst": "šar[king]N",
+                  "sig": "@rinap/rinap5%akk:MAN=šarru[king//king]N'N$šar",
+                  "f": {
+                    "lang": "akk",
+                    "form": "MAN",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "MAN",
+                            "utf8": "𒌋𒌋",
+                            "id": "Q003725.1.2.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "šarru",
+                    "gw": "king",
+                    "sense": "king",
+                    "norm": "šar",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "{kur}ELAM.MA{ki}",
+                  "id": "Q003725.l088a6",
+                  "ref": "Q003725.1.3",
+                  "inst": "Elamti[Elam]GN",
+                  "sig": "@rinap/rinap5%akk:{KUR}ELAM.MA{KI}=Elamtu[Elam//Elam]GN'GN$Elamti",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{KUR}ELAM.MA{KI}",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "det": "semantic",
+                            "pos": "pre",
+                            "seq": [
+                              {
+                                "gg": "logo",
+                                "gdl_type": "logo",
+                                "group": [
+                                  {
+                                    "s": "KUR",
+                                    "utf8": "𒆳",
+                                    "id": "Q003725.1.3.0",
+                                    "role": "logo",
+                                    "logolang": "sux"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "s": "ELAM",
+                            "utf8": "𒉏",
+                            "id": "Q003725.1.3.1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "MA",
+                            "utf8": "𒈠",
+                            "id": "Q003725.1.3.2",
+                            "role": "logo",
+                            "logolang": "sux"
+                          },
+                          {
+                            "det": "semantic",
+                            "pos": "post",
+                            "seq": [
+                              {
+                                "s": "KI",
+                                "utf8": "𒆠",
+                                "id": "Q003725.1.3.3",
+                                "role": "logo",
+                                "logolang": "sux"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Elamtu",
+                    "gw": "Elam",
+                    "sense": "Elam",
+                    "norm": "Elamti",
+                    "pos": "GN",
+                    "epos": "GN"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "ša₂",
+                  "id": "Q003725.l088a7",
+                  "ref": "Q003725.1.4",
+                  "inst": "ša[who]REL",
+                  "sig": "@rinap/rinap5%akk:ša₂=ša[that//who]REL'REL$ša",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ša₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ša₂",
+                        "utf8": "𒃻",
+                        "id": "Q003725.1.4.0"
+                      }
+                    ],
+                    "cf": "ša",
+                    "gw": "that",
+                    "sense": "who",
+                    "norm": "ša",
+                    "pos": "REL",
+                    "epos": "REL"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "ina",
+                  "id": "Q003725.l088a8",
+                  "ref": "Q003725.1.5",
+                  "inst": "ina[during]PRP",
+                  "sig": "@rinap/rinap5%akk:ina=ina[in//during]PRP'PRP$ina",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ina",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ina",
+                        "utf8": "𒀸",
+                        "id": "Q003725.1.5.0"
+                      }
+                    ],
+                    "cf": "ina",
+                    "gw": "in",
+                    "sense": "during",
+                    "norm": "ina",
+                    "pos": "PRP",
+                    "epos": "PRP"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "ME₃",
+                  "id": "Q003725.l088a9",
+                  "ref": "Q003725.1.6",
+                  "inst": "tāhāzi[battle]N",
+                  "sig": "@rinap/rinap5%akk:ME₃=tāhāzu[battle//battle]N'N$tāhāzi",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ME₃",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "ME₃",
+                            "utf8": "𒀞",
+                            "id": "Q003725.1.6.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "tāhāzu",
+                    "gw": "battle",
+                    "sense": "battle",
+                    "norm": "tāhāzi",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "dan-ni",
+                  "id": "Q003725.l088aa",
+                  "ref": "Q003725.1.7",
+                  "inst": "danni[strong]AJ",
+                  "sig": "@rinap/rinap5%akk:dan-ni=dannu[strong//strong]AJ'AJ$danni",
+                  "f": {
+                    "lang": "akk",
+                    "form": "dan-ni",
+                    "gdl": [
+                      {
+                        "v": "dan",
+                        "utf8": "𒆗",
+                        "id": "Q003725.1.7.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ni",
+                        "utf8": "𒉌",
+                        "id": "Q003725.1.7.1"
+                      }
+                    ],
+                    "cf": "dannu",
+                    "gw": "strong",
+                    "sense": "strong",
+                    "norm": "danni",
+                    "pos": "AJ",
+                    "epos": "AJ"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q003725.2",
+                  "n": "2",
+                  "label": "2"
+                },
+                {
+                  "node": "l",
+                  "frag": "muh-hu-ṣu",
+                  "id": "Q003725.l088ab",
+                  "ref": "Q003725.2.1",
+                  "inst": "muhhuṣu[hurt]AJ",
+                  "sig": "@rinap/rinap5%akk:muh-hu-ṣu=muhhuṣu[hurt//hurt]AJ'AJ$muhhuṣu",
+                  "f": {
+                    "lang": "akk",
+                    "form": "muh-hu-ṣu",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "muh",
+                        "utf8": "𒌋𒅗",
+                        "id": "Q003725.2.1.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "hu",
+                        "utf8": "𒄷",
+                        "id": "Q003725.2.1.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ṣu",
+                        "utf8": "𒍮",
+                        "id": "Q003725.2.1.2"
+                      }
+                    ],
+                    "cf": "muhhuṣu",
+                    "gw": "hurt",
+                    "sense": "hurt",
+                    "norm": "muhhuṣu",
+                    "pos": "AJ",
+                    "epos": "AJ"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "{m}tam-ri-i-tu₂",
+                  "id": "Q003725.l088ac",
+                  "ref": "Q003725.2.2",
+                  "inst": "Tammaritu[son of Teumman]RN$Tamritu",
+                  "sig": "@rinap/rinap5%akk:{m}tam-ri-i-tu₂=Tammaritu[son of Teumman//son of Teumman]RN'RN$Tamritu",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{m}tam-ri-i-tu₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "v": "m",
+                            "utf8": "𒁹",
+                            "id": "Q003725.2.2.0"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "tam",
+                        "utf8": "𒌓",
+                        "id": "Q003725.2.2.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ri",
+                        "utf8": "𒊑",
+                        "id": "Q003725.2.2.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "i",
+                        "utf8": "𒄿",
+                        "id": "Q003725.2.2.3",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "tu₂",
+                        "utf8": "𒌓",
+                        "id": "Q003725.2.2.4"
+                      }
+                    ],
+                    "cf": "Tammaritu",
+                    "gw": "son of Teumman",
+                    "sense": "son of Teumman",
+                    "norm": "Tamritu",
+                    "pos": "RN",
+                    "epos": "RN"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "DUMU-šu₂",
+                  "id": "Q003725.l088ad",
+                  "ref": "Q003725.2.3",
+                  "inst": "mārišu[son]N",
+                  "sig": "@rinap/rinap5%akk:DUMU-šu₂=māru[son//son]N'N$mārišu",
+                  "f": {
+                    "lang": "akk",
+                    "form": "DUMU-šu₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "DUMU",
+                            "utf8": "𒌉",
+                            "id": "Q003725.2.3.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "šu₂",
+                        "utf8": "𒋙",
+                        "id": "Q003725.2.3.1"
+                      }
+                    ],
+                    "cf": "māru",
+                    "gw": "son",
+                    "sense": "son",
+                    "norm": "mārišu",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "⸢GAL⸣-u",
+                  "id": "Q003725.l088ae",
+                  "ref": "Q003725.2.4",
+                  "inst": "rabû[senior]AJ",
+                  "sig": "@rinap/rinap5%akk:GAL-u=rabû[great//senior]AJ'AJ$rabû",
+                  "f": {
+                    "lang": "akk",
+                    "form": "GAL-u",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "GAL",
+                            "utf8": "𒃲",
+                            "id": "Q003725.2.4.0",
+                            "break": "damaged",
+                            "ho": "1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-",
+                            "hc": "1"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "u",
+                        "utf8": "𒌋",
+                        "id": "Q003725.2.4.1"
+                      }
+                    ],
+                    "cf": "rabû",
+                    "gw": "great",
+                    "sense": "senior",
+                    "norm": "rabû",
+                    "pos": "AJ",
+                    "epos": "AJ"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q003725.3",
+                  "n": "3",
+                  "label": "3"
+                },
+                {
+                  "node": "l",
+                  "frag": "ŠU.II-su",
+                  "id": "Q003725.l088af",
+                  "ref": "Q003725.3.1",
+                  "inst": "qātu[hand]N$qāssu",
+                  "sig": "@rinap/rinap5%akk:ŠU.II-su=qātu[hand//hand]N'N$qāssu",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ŠU.II-su",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "ŠU",
+                            "utf8": "𒋗",
+                            "id": "Q003725.3.1.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "II",
+                            "utf8": "𒅀",
+                            "id": "Q003725.3.1.1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "su",
+                        "utf8": "𒋢",
+                        "id": "Q003725.3.1.2"
+                      }
+                    ],
+                    "cf": "qātu",
+                    "gw": "hand",
+                    "sense": "hand",
+                    "norm": "qāssu",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "iṣ-ba-tu-ma",
+                  "id": "Q003725.l088b0",
+                  "ref": "Q003725.3.2",
+                  "inst": "iṣbatuma[seize]V",
+                  "sig": "@rinap/rinap5%akk:iṣ-ba-tu-ma=ṣabātu[seize//seize]V'V$iṣbatuma",
+                  "f": {
+                    "lang": "akk",
+                    "form": "iṣ-ba-tu-ma",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "iṣ",
+                        "utf8": "𒄑",
+                        "id": "Q003725.3.2.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ba",
+                        "utf8": "𒁀",
+                        "id": "Q003725.3.2.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "tu",
+                        "utf8": "𒌅",
+                        "id": "Q003725.3.2.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ma",
+                        "utf8": "𒈠",
+                        "id": "Q003725.3.2.3"
+                      }
+                    ],
+                    "cf": "ṣabātu",
+                    "gw": "seize",
+                    "sense": "seize",
+                    "norm": "iṣbatuma",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "a-na",
+                  "id": "Q003725.l088b1",
+                  "ref": "Q003725.3.3",
+                  "inst": "ana[to]PRP",
+                  "sig": "@rinap/rinap5%akk:a-na=ana[to//to]PRP'PRP$ana",
+                  "f": {
+                    "lang": "akk",
+                    "form": "a-na",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "a",
+                        "utf8": "𒀀",
+                        "id": "Q003725.3.3.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "na",
+                        "utf8": "𒈾",
+                        "id": "Q003725.3.3.1"
+                      }
+                    ],
+                    "cf": "ana",
+                    "gw": "to",
+                    "sense": "to",
+                    "norm": "ana",
+                    "pos": "PRP",
+                    "epos": "PRP"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "šu-zu-ub",
+                  "id": "Q003725.l088b2",
+                  "ref": "Q003725.3.4",
+                  "inst": "ezēbu[leave//saving]V'N$šūzub",
+                  "sig": "@rinap/rinap5%akk:šu-zu-ub=ezēbu[leave//saving]V'N$šūzub",
+                  "f": {
+                    "lang": "akk",
+                    "form": "šu-zu-ub",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "šu",
+                        "utf8": "𒋗",
+                        "id": "Q003725.3.4.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "zu",
+                        "utf8": "𒍪",
+                        "id": "Q003725.3.4.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ub",
+                        "utf8": "𒌒",
+                        "id": "Q003725.3.4.2"
+                      }
+                    ],
+                    "cf": "ezēbu",
+                    "gw": "leave",
+                    "sense": "saving",
+                    "norm": "šūzub",
+                    "pos": "V",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "⸢ZI-ti₃-šu₂⸣",
+                  "id": "Q003725.l088b3",
+                  "ref": "Q003725.3.5",
+                  "inst": "napištu[throat//life]N'N$napištišu",
+                  "sig": "@rinap/rinap5%akk:ZI-ti₃-šu₂=napištu[throat//life]N'N$napištišu",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ZI-ti₃-šu₂",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "ZI",
+                            "utf8": "𒍣",
+                            "id": "Q003725.3.5.0",
+                            "break": "damaged",
+                            "ho": "1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "ti₃",
+                        "utf8": "𒁴",
+                        "id": "Q003725.3.5.1",
+                        "break": "damaged",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "šu₂",
+                        "utf8": "𒋙",
+                        "id": "Q003725.3.5.2",
+                        "break": "damaged",
+                        "hc": "1"
+                      }
+                    ],
+                    "cf": "napištu",
+                    "gw": "throat",
+                    "sense": "life",
+                    "norm": "napištišu",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q003725.4",
+                  "n": "4",
+                  "label": "4"
+                },
+                {
+                  "node": "l",
+                  "frag": "in-nab-tu₂",
+                  "id": "Q003725.l088b4",
+                  "ref": "Q003725.4.1",
+                  "inst": "innabtu[run away]V",
+                  "sig": "@rinap/rinap5%akk:in-nab-tu₂=abātu[run away//run away]V'V$innabtu",
+                  "f": {
+                    "lang": "akk",
+                    "form": "in-nab-tu₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "in",
+                        "utf8": "𒅔",
+                        "id": "Q003725.4.1.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "nab",
+                        "utf8": "𒀮",
+                        "id": "Q003725.4.1.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "tu₂",
+                        "utf8": "𒌓",
+                        "id": "Q003725.4.1.2"
+                      }
+                    ],
+                    "cf": "abātu",
+                    "gw": "run away",
+                    "sense": "run away",
+                    "norm": "innabtu",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "ih-lu-pu",
+                  "id": "Q003725.l088b5",
+                  "ref": "Q003725.4.2",
+                  "inst": "halāpu[slip into]V$ihlupū",
+                  "sig": "@rinap/rinap5%akk:ih-lu-pu=halāpu[slip into//slip into]V'V$ihlupū",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ih-lu-pu",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ih",
+                        "utf8": "𒄴",
+                        "id": "Q003725.4.2.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "lu",
+                        "utf8": "𒇻",
+                        "id": "Q003725.4.2.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "pu",
+                        "utf8": "𒁍",
+                        "id": "Q003725.4.2.2"
+                      }
+                    ],
+                    "cf": "halāpu",
+                    "gw": "slip into",
+                    "sense": "slip into",
+                    "norm": "ihlupū",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "qe₂-reb",
+                  "id": "Q003725.l088b6",
+                  "ref": "Q003725.4.3",
+                  "inst": "qereb[interior]N",
+                  "sig": "@rinap/rinap5%akk:qe₂-reb=qerbu[centre//interior]N'N$qereb",
+                  "f": {
+                    "lang": "akk",
+                    "form": "qe₂-reb",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "qe₂",
+                        "utf8": "𒆠",
+                        "id": "Q003725.4.3.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "reb",
+                        "utf8": "𒆗",
+                        "id": "Q003725.4.3.1"
+                      }
+                    ],
+                    "cf": "qerbu",
+                    "gw": "centre",
+                    "sense": "interior",
+                    "norm": "qereb",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "qiš-ti",
+                  "id": "Q003725.l088b7",
+                  "ref": "Q003725.4.4",
+                  "inst": "qištu[forest]N$qišti",
+                  "sig": "@rinap/rinap5%akk:qiš-ti=qištu[forest//forest]N'N$qišti",
+                  "f": {
+                    "lang": "akk",
+                    "form": "qiš-ti",
+                    "gdl": [
+                      {
+                        "v": "qiš",
+                        "utf8": "𒆧",
+                        "id": "Q003725.4.4.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ti",
+                        "utf8": "𒋾",
+                        "id": "Q003725.4.4.1"
+                      }
+                    ],
+                    "cf": "qištu",
+                    "gw": "forest",
+                    "sense": "forest",
+                    "norm": "qišti",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q003725.5",
+                  "n": "5",
+                  "label": "5"
+                },
+                {
+                  "node": "l",
+                  "frag": "⸢ina",
+                  "id": "Q003725.l088b8",
+                  "ref": "Q003725.5.1",
+                  "inst": "ina[through]PRP",
+                  "sig": "@rinap/rinap5%akk:ina=ina[in//through]PRP'PRP$ina",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ina",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ina",
+                        "utf8": "𒀸",
+                        "id": "Q003725.5.1.0",
+                        "break": "damaged",
+                        "ho": "1"
+                      }
+                    ],
+                    "cf": "ina",
+                    "gw": "in",
+                    "sense": "through",
+                    "norm": "ina",
+                    "pos": "PRP",
+                    "epos": "PRP"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "tukul⸣-ti",
+                  "id": "Q003725.l088b9",
+                  "ref": "Q003725.5.2",
+                  "inst": "tukulti[help]N",
+                  "sig": "@rinap/rinap5%akk:tukul-ti=tukultu[trust//help]N'N$tukulti",
+                  "f": {
+                    "lang": "akk",
+                    "form": "tukul-ti",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "tukul",
+                        "utf8": "𒆪",
+                        "id": "Q003725.5.2.0",
+                        "break": "damaged",
+                        "delim": "-",
+                        "hc": "1"
+                      },
+                      {
+                        "v": "ti",
+                        "utf8": "𒋾",
+                        "id": "Q003725.5.2.1"
+                      }
+                    ],
+                    "cf": "tukultu",
+                    "gw": "trust",
+                    "sense": "help",
+                    "norm": "tukulti",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "AN.ŠAR₂",
+                  "id": "Q003725.l088ba",
+                  "ref": "Q003725.5.3",
+                  "inst": "Aššur[1]DN",
+                  "sig": "@rinap/rinap5%akk:AN.ŠAR₂=Aššur[1//1]DN'DN$Aššur",
+                  "f": {
+                    "lang": "akk",
+                    "form": "AN.ŠAR₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "AN",
+                            "utf8": "𒀭",
+                            "id": "Q003725.5.3.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "ŠAR₂",
+                            "utf8": "𒊹",
+                            "id": "Q003725.5.3.1",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Aššur",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm": "Aššur",
+                    "pos": "DN",
+                    "epos": "DN"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "u",
+                  "id": "Q003725.l088bb",
+                  "ref": "Q003725.5.4",
+                  "inst": "u[and]CNJ",
+                  "sig": "@rinap/rinap5%akk:u=u[and//and]CNJ'CNJ$u",
+                  "f": {
+                    "lang": "akk",
+                    "form": "u",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "u",
+                        "utf8": "𒌋",
+                        "id": "Q003725.5.4.0"
+                      }
+                    ],
+                    "cf": "u",
+                    "gw": "and",
+                    "sense": "and",
+                    "norm": "u",
+                    "pos": "CNJ",
+                    "epos": "CNJ"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "{d}15",
+                  "id": "Q003725.l088bc",
+                  "ref": "Q003725.5.5",
+                  "inst": "Ištar[1]DN",
+                  "sig": "@rinap/rinap5%akk:{d}15=Ištar[1//1]DN'DN$Ištar",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{d}15",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "v": "d",
+                            "utf8": "𒀭",
+                            "id": "Q003725.5.5.0"
+                          }
+                        ]
+                      },
+                      {
+                        "n": "n",
+                        "sexified": "1(u) 5(diš)",
+                        "form": "15",
+                        "utf8": "𒌋𒐊",
+                        "id": "Q003725.5.5.1",
+                        "seq": [
+                          {
+                            "r": "15"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Ištar",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm": "Ištar",
+                    "pos": "DN",
+                    "epos": "DN"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "a-nar-šu₂-nu-ti",
+                  "id": "Q003725.l088bd",
+                  "ref": "Q003725.5.6",
+                  "inst": "anāršunūti[kill]V",
+                  "sig": "@rinap/rinap5%akk:a-nar-šu₂-nu-ti=nêru[strike//kill]V'V$anāršunūti",
+                  "f": {
+                    "lang": "akk",
+                    "form": "a-nar-šu₂-nu-ti",
+                    "gdl": [
+                      {
+                        "v": "a",
+                        "utf8": "𒀀",
+                        "id": "Q003725.5.6.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "nar",
+                        "utf8": "𒈜",
+                        "id": "Q003725.5.6.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "šu₂",
+                        "utf8": "𒋙",
+                        "id": "Q003725.5.6.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "nu",
+                        "utf8": "𒉡",
+                        "id": "Q003725.5.6.3",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ti",
+                        "utf8": "𒋾",
+                        "id": "Q003725.5.6.4"
+                      }
+                    ],
+                    "cf": "nêru",
+                    "gw": "strike",
+                    "sense": "kill",
+                    "norm": "anāršunūti",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q003725.6",
+                  "n": "6",
+                  "label": "6"
+                },
+                {
+                  "node": "l",
+                  "frag": "⸢SAG⸣.DU-šu₂-nu",
+                  "id": "Q003725.l088be",
+                  "ref": "Q003725.6.1",
+                  "inst": "qaqqadu[head]N$qaqqadašunu",
+                  "sig": "@rinap/rinap5%akk:SAG.DU-šu₂-nu=qaqqadu[head//head]N'N$qaqqadašunu",
+                  "f": {
+                    "lang": "akk",
+                    "form": "SAG.DU-šu₂-nu",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "SAG",
+                            "utf8": "𒊕",
+                            "id": "Q003725.6.1.0",
+                            "break": "damaged",
+                            "ho": "1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": ".",
+                            "hc": "1"
+                          },
+                          {
+                            "s": "DU",
+                            "utf8": "𒁺",
+                            "id": "Q003725.6.1.1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "šu₂",
+                        "utf8": "𒋙",
+                        "id": "Q003725.6.1.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "nu",
+                        "utf8": "𒉡",
+                        "id": "Q003725.6.1.3"
+                      }
+                    ],
+                    "cf": "qaqqadu",
+                    "gw": "head",
+                    "sense": "head",
+                    "norm": "qaqqadašunu",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "KUD-is",
+                  "id": "Q003725.l088bf",
+                  "ref": "Q003725.6.2",
+                  "inst": "nakāsu[cut//cut off]V'V$akkis",
+                  "sig": "@rinap/rinap5%akk:KUD-is=nakāsu[cut//cut off]V'V$akkis",
+                  "f": {
+                    "lang": "akk",
+                    "form": "KUD-is",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "KUD",
+                            "utf8": "𒋻",
+                            "id": "Q003725.6.2.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "is",
+                        "utf8": "𒄑",
+                        "id": "Q003725.6.2.1"
+                      }
+                    ],
+                    "cf": "nakāsu",
+                    "gw": "cut",
+                    "sense": "cut off",
+                    "norm": "akkis",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "me₂-eh-ret",
+                  "id": "Q003725.l088c0",
+                  "ref": "Q003725.6.3",
+                  "inst": "mehret[opposite]'PRP",
+                  "sig": "@rinap/rinap5%akk:me₂-eh-ret=mehretu[opposite side//opposite]N'PRP$mehret",
+                  "f": {
+                    "lang": "akk",
+                    "form": "me₂-eh-ret",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "me₂",
+                        "utf8": "𒈪",
+                        "id": "Q003725.6.3.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "eh",
+                        "utf8": "𒄴",
+                        "id": "Q003725.6.3.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ret",
+                        "utf8": "𒈩",
+                        "id": "Q003725.6.3.2"
+                      }
+                    ],
+                    "cf": "mehretu",
+                    "gw": "opposite side",
+                    "sense": "opposite",
+                    "norm": "mehret",
+                    "pos": "N",
+                    "epos": "PRP"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "a-ha-meš",
+                  "id": "Q003725.l088c1",
+                  "ref": "Q003725.6.4",
+                  "inst": "ahāmeš[one another]RP",
+                  "sig": "@rinap/rinap5%akk:a-ha-meš=ahāmiš[one another//one another]RP'RP$ahāmeš",
+                  "f": {
+                    "lang": "akk",
+                    "form": "a-ha-meš",
+                    "gdl": [
+                      {
+                        "v": "a",
+                        "utf8": "𒀀",
+                        "id": "Q003725.6.4.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ha",
+                        "utf8": "𒄩",
+                        "id": "Q003725.6.4.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "meš",
+                        "utf8": "𒈨𒌍",
+                        "id": "Q003725.6.4.2"
+                      }
+                    ],
+                    "cf": "ahāmiš",
+                    "gw": "one another",
+                    "sense": "one another",
+                    "norm": "ahāmeš",
+                    "pos": "RP",
+                    "epos": "RP"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
