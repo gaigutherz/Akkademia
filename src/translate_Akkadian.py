@@ -5,7 +5,7 @@ from allennlp.predictors import SentenceTaggerPredictor
 import pickle
 
 #from build_data import local_path
-from AllenLSTM import prepare1, prepare2, LstmTagger
+from BiLSTM import prepare1, prepare2, LstmTagger
 from build_data import preprocess
 from hmm import run_hmm, hmm_viterbi, hmm_compute_accuracy
 from data import load_object_from_file, logits_to_trans
