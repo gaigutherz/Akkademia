@@ -3,14 +3,11 @@ import random
 from parse_json import parse_json
 from data import reorganize_data, rep_to_ix, invert_dict
 
-corpus_numbers = [1, 3, 4, 5]
-local_path = r"C:\Users\gai\Desktop\Akkadian NLP Project"
 
-def build_signs_and_transcriptions():
+def build_signs_and_transcriptions(corpus_numbers):
     chars = {}
     for n in corpus_numbers:
-        inner_path = r"\rinap-rinap" + str(n) + r"\rinap\rinap" + str(n) + r"\corpusjson"
-        directory = local_path + inner_path
+        directory = r"..\raw_data\rinap\rinap" + str(n) + r"\corpusjson"
         for file in os.listdir(directory):
             id = file[:-len(".json")]
             key = str(id)
@@ -18,6 +15,18 @@ def build_signs_and_transcriptions():
             #print str(id)
             chars[key] = parse_json(directory + "\\" + file)
     return chars
+
+
+def break_into_sentences(chars):
+    sentences = {}
+    for key in chars:
+        for c in chars[key]:
+            line = ".".join(c[0].split(".", 2)[:2])
+            if line not in sentences:
+                sentences[line] = [c]
+            else:
+                sentences[line].append(c)
+    return sentences
 
 
 def write_data_to_file(chars):
@@ -63,8 +72,7 @@ def build_dictionary(chars):
 
 
 def write_dictionary_to_file(d):
-    output_file = open("dictionary.txt", "w", encoding="utf8")
-    #output_file = open("dictionary.txt", "w")
+    output_file = open(r"..\output\dictionary.txt", "w", encoding="utf8")
 
     for sign in d:
         output_file.write(sign + "\n")
@@ -107,6 +115,15 @@ def build_data_for_hmm(sentences, isTrans):
     return texts
 
 
+def build_id_dicts(texts):
+    sign_to_id, tran_to_id = rep_to_ix(reorganize_data(texts))
+    print(sign_to_id)
+    print(tran_to_id)
+    id_to_sign = invert_dict(sign_to_id)
+    id_to_tran = invert_dict(tran_to_id)
+    return sign_to_id, tran_to_id, id_to_sign, id_to_tran
+
+
 def write_data_for_allen_to_file(texts, file, sign_to_id, tran_to_id):
     #output_file = open(file, "w", encoding="utf8")
     output_file = open(file, "w")
@@ -120,29 +137,8 @@ def write_data_for_allen_to_file(texts, file, sign_to_id, tran_to_id):
     output_file.close()
 
 
-def break_into_sentences(chars):
-    sentences = {}
-    for key in chars:
-        for c in chars[key]:
-            line = ".".join(c[0].split(".", 2)[:2])
-            if line not in sentences:
-                sentences[line] = [c]
-            else:
-                sentences[line].append(c)
-    return sentences
-
-
-def build_id_dicts(texts):
-    sign_to_id, tran_to_id = rep_to_ix(reorganize_data(texts))
-    print(sign_to_id)
-    print(tran_to_id)
-    id_to_sign = invert_dict(sign_to_id)
-    id_to_tran = invert_dict(tran_to_id)
-    return sign_to_id, tran_to_id, id_to_sign, id_to_tran
-
-
 def preprocess():
-    chars = build_signs_and_transcriptions()
+    chars = build_signs_and_transcriptions([1, 3, 4, 5])
     sentences = break_into_sentences(chars)
     #write_data_to_file(chars)
     d = build_dictionary(chars)
@@ -154,8 +150,8 @@ def preprocess():
     dev_texts = texts[:len(texts) // 10]
     train_texts = texts[len(texts) // 10:]
 
-    write_data_for_allen_to_file(dev_texts, "allen_dev_texts.txt", sign_to_id, tran_to_id)
-    write_data_for_allen_to_file(train_texts, "allen_train_texts.txt", sign_to_id, tran_to_id)
+    write_data_for_allen_to_file(dev_texts, r"..\BiLSTM_input\allen_dev_texts.txt", sign_to_id, tran_to_id)
+    write_data_for_allen_to_file(train_texts, r"..\BiLSTM_input\allen_train_texts.txt", sign_to_id, tran_to_id)
 
     return train_texts, dev_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran
 
