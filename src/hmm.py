@@ -1,5 +1,5 @@
 import time
-from data import *
+from data import increment_count, compute_vocab_count
 from build_data import preprocess
 
 TEST_DATA_SIZE_FOR_LAMBDAS = 3
