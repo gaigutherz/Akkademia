@@ -5,7 +5,7 @@ from allennlp.predictors import SentenceTaggerPredictor
 import pickle
 
 #from build_data import local_path
-from AllenLSTM import prepare1, prepare2, LstmTagger
+from BiLSTM import prepare1, prepare2, LstmTagger, PosDatasetReader
 from build_data import preprocess
 from hmm import run_hmm, hmm_viterbi, hmm_compute_accuracy
 from data import load_object_from_file, logits_to_trans
@@ -105,10 +105,10 @@ def main():
     #print("finished training")
 
     #dump_object_to_file(predictor, "predictor")
-    predictor_from_file = load_object_from_file(r"..\output\predictor_lr_01_test_96_2")
+    predictor_from_file = load_object_from_file(r"..\output\predictor_lr_03_test_96_8")
 
     #dump_object_to_file(model, "model")
-    model_from_file = load_object_from_file(r"..\output\model_lr_01_test_96_2")
+    model_from_file = load_object_from_file(r"..\output\model_lr_03_test_96_8")
 
     #print(dev_texts)
     #print(hmm_compute_accuracy(train_texts, lambda1, lambda2))

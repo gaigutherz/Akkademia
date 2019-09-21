@@ -115,8 +115,8 @@ def prepare2(model, vocab, train_dataset, validation_dataset, cuda_device, reade
                       validation_dataset=validation_dataset,
                       #patience=1,
                       patience=10,
-                      num_epochs=1,
-                      #num_epochs=1000,
+                      #num_epochs=1,
+                      num_epochs=1000,
                       cuda_device=cuda_device)
 
     return trainer, model, reader, vocab
