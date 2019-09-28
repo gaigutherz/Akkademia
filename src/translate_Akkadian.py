@@ -9,6 +9,7 @@ from BiLSTM import prepare1, prepare2, LstmTagger, PosDatasetReader
 from build_data import preprocess
 from hmm import run_hmm, hmm_viterbi, hmm_compute_accuracy
 from data import load_object_from_file, logits_to_trans
+from memm import memm_greedy, build_extra_decoding_arguments, run_memm
 
 SIGNS_IN_LINE = 10
 
@@ -93,7 +94,10 @@ def main():
     train_texts, dev_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran = preprocess()
 
     # Run the HMM.
-    lambda1, lambda2 = run_hmm(train_texts, dev_texts)
+    run_hmm(train_texts, dev_texts, False)
+    # lambda1, lambda2 = run_hmm(train_texts, dev_texts, True)
+    # dump_object_to_file((lambda1, lambda2, sign_to_id, tran_to_id, id_to_sign, id_to_tran), r"..\output\hmm_model")
+    (lambda1, lambda2, _, _, _, _) = load_object_from_file(r"..\output\hmm_model")
 
     # Restore the BiLSTM model alreay trained.
     #model, predictor = restore_model()
@@ -120,6 +124,14 @@ def main():
 
     #print(build_info_sentence(sign_to_id))
 
+    # logreg, vec, idx_to_tag_dict = run_memm(train_texts, dev_texts)
+    # dump_object_to_file((logreg, vec, idx_to_tag_dict), r"..\output\memm_model")
+
+    memm_from_file = load_object_from_file(r"..\output\memm_model")
+    (logreg, vec, idx_to_tag_dict) = memm_from_file
+
+    extra_decoding_arguments = build_extra_decoding_arguments(train_texts)
+
     '''
     Sennacherib = "𒁹𒀭𒌍𒋀𒈨𒌍𒌷𒁀"
     sentence = ""
@@ -138,6 +150,10 @@ def main():
         print("HMM prediction: ")
         print(HMM_predicted_tags)
 
+        MEMM_predicted_tags = memm_greedy(sentence_to_HMM_format(sentence), logreg, vec, idx_to_tag_dict, extra_decoding_arguments)
+        print("MEMM prediction: ")
+        print(MEMM_predicted_tags)
+
         # BiLSTM prediction
         tag_logits = predictor_from_file.predict(sentence_to_allen_format(sentence, sign_to_id, True))['tag_logits']
         biLSTM_predicted_tags, biLSTM_predicted2_tags, biLSTM_predicted3_tags = logits_to_trans(tag_logits, model_from_file, id_to_tran)
@@ -153,6 +169,10 @@ def main():
         HMM_tran = list_to_tran(HMM_predicted_tags)
         print("HMM transcription: ")
         print(HMM_tran)
+
+        MEMM_tran = list_to_tran(MEMM_predicted_tags)
+        print("MEMM transcription: ")
+        print(MEMM_tran)
 
         biLSTM_tran = list_to_tran(biLSTM_predicted_tags)
         print("biLSTM transcription: ")

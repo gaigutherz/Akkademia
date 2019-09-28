@@ -298,14 +298,18 @@ def hmm_eval(test_data, total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e
     return acc_viterbi, lambda1, lambda2
 
 
-def run_hmm(train_texts, dev_texts):
-    vocab = compute_vocab_count(train_texts)
+def run_hmm(train_sents, dev_sents, learn_mode):
+    """
+    Receives: train and dex texts
+    Returns the lambdas learned by hmm if learn_mode is True, otherwise only compute parameters for hmm
+    """
+    vocab = compute_vocab_count(train_sents)
 
-    total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts = hmm_train(train_texts)
-    acc_viterbi, lambda1, lambda2 = hmm_eval(dev_texts, total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts)
-    print("HMM DEV accuracy: " + str(acc_viterbi))
-
-    return lambda1, lambda2
+    total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts = hmm_train(train_sents)
+    hmm_compute_q_e_S(dev_sents, total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts)
+    if learn_mode:
+        lambda1, lambda2 = hmm_choose_best_lamdas(dev_sents[:25])
+        return lambda1, lambda2
 
 
 def main():
