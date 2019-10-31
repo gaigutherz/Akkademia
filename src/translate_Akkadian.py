@@ -10,6 +10,7 @@ from build_data import preprocess
 from hmm import run_hmm, hmm_viterbi, hmm_compute_accuracy
 from data import load_object_from_file, logits_to_trans
 from memm import memm_greedy, build_extra_decoding_arguments, run_memm
+import platform
 
 SIGNS_IN_LINE = 10
 
@@ -97,7 +98,10 @@ def main():
     run_hmm(train_texts, dev_texts, False)
     # lambda1, lambda2 = run_hmm(train_texts, dev_texts, True)
     # dump_object_to_file((lambda1, lambda2, sign_to_id, tran_to_id, id_to_sign, id_to_tran), r"..\output\hmm_model")
-    (lambda1, lambda2, _, _, _, _) = load_object_from_file(r"..\output\hmm_model")
+    if platform.system() == "Windows":
+        (lambda1, lambda2, _, _, _, _) = load_object_from_file(r"..\output\hmm_model")
+    else:
+        (lambda1, lambda2, _, _, _, _) = load_object_from_file(r"../output/hmm_model")
 
     # Restore the BiLSTM model alreay trained.
     #model, predictor = restore_model()
@@ -109,10 +113,16 @@ def main():
     #print("finished training")
 
     #dump_object_to_file(predictor, "predictor")
-    predictor_from_file = load_object_from_file(r"..\output\predictor_lr_03_test_96_8")
+    if platform.system() == "Windows":
+        predictor_from_file = load_object_from_file(r"..\output\predictor_lr_03_test_96_8")
+    else:
+        predictor_from_file = load_object_from_file(r"../output/predictor_lr_03_test_96_8")
 
     #dump_object_to_file(model, "model")
-    model_from_file = load_object_from_file(r"..\output\model_lr_03_test_96_8")
+    if platform.system() == "Windows":
+        model_from_file = load_object_from_file(r"..\output\model_lr_03_test_96_8")
+    else:
+        model_from_file = load_object_from_file(r"../output/model_lr_03_test_96_8")
 
     #print(dev_texts)
     #print(hmm_compute_accuracy(train_texts, lambda1, lambda2))
@@ -127,7 +137,10 @@ def main():
     # logreg, vec, idx_to_tag_dict = run_memm(train_texts, dev_texts)
     # dump_object_to_file((logreg, vec, idx_to_tag_dict), r"..\output\memm_model")
 
-    memm_from_file = load_object_from_file(r"..\output\memm_model")
+    if platform.system() == "Windows":
+        memm_from_file = load_object_from_file(r"..\output\memm_model")
+    else:
+        memm_from_file = load_object_from_file(r"../output/memm_model")
     (logreg, vec, idx_to_tag_dict) = memm_from_file
 
     extra_decoding_arguments = build_extra_decoding_arguments(train_texts)

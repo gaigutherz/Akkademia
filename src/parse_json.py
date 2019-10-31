@@ -1,9 +1,13 @@
 import json
-
+import platform
 
 def main():
-    directory = r"raw_data\rinap\rinap1\corpusjson"
-    chars = parse_json("..\\" + directory + "\\" + "Q003453.json")
+    if platform.system() == "Windows":
+        directory = r"raw_data\rinap\rinap1\corpusjson"
+        chars = parse_json("..\\" + directory + "\\" + "Q003453.json")
+    else:
+        directory = r"raw_data/rinap/rinap1/corpusjson"
+        chars = parse_json("../" + directory + "/" + "Q003453.json")
     print(len(chars))
     for c in chars:
         print(c[1])
