@@ -2,6 +2,8 @@ import torch
 import numpy as np
 import time
 from allennlp.predictors import SentenceTaggerPredictor
+from pathlib import Path
+
 import pickle
 
 #from build_data import local_path
@@ -99,9 +101,9 @@ def main():
     # lambda1, lambda2 = run_hmm(train_texts, dev_texts, True)
     # dump_object_to_file((lambda1, lambda2, sign_to_id, tran_to_id, id_to_sign, id_to_tran), r"..\output\hmm_model")
     if platform.system() == "Windows":
-        (lambda1, lambda2, _, _, _, _) = load_object_from_file(r"..\output\hmm_model")
+        (lambda1, lambda2, _, _, _, _) = load_object_from_file(Path("..\output\hmm_model.pkl"))
     else:
-        (lambda1, lambda2, _, _, _, _) = load_object_from_file(r"../output/hmm_model")
+        (lambda1, lambda2, _, _, _, _) = load_object_from_file(Path("../output/hmm_model.pkl"))
 
     # Restore the BiLSTM model alreay trained.
     #model, predictor = restore_model()
@@ -114,15 +116,17 @@ def main():
 
     #dump_object_to_file(predictor, "predictor")
     if platform.system() == "Windows":
-        predictor_from_file = load_object_from_file(r"..\output\predictor_lr_03_test_96_8")
+        pred_path = Path("..\output\predictor_lr_03_test_96_8.pkl")
     else:
-        predictor_from_file = load_object_from_file(r"../output/predictor_lr_03_test_96_8")
+        pred_path = Path("../output/predictor_lr_03_test_96_8.pkl")
+    predictor_from_file = load_object_from_file(pred_path)
 
     #dump_object_to_file(model, "model")
     if platform.system() == "Windows":
-        model_from_file = load_object_from_file(r"..\output\model_lr_03_test_96_8")
+        model_path = Path("..\output\model_lr_03_test_96_8.pkl")
     else:
-        model_from_file = load_object_from_file(r"../output/model_lr_03_test_96_8")
+        model_path = Path("../output/model_lr_03_test_96_8.pkl")
+    model_from_file = load_object_from_file(model_path)
 
     #print(dev_texts)
     #print(hmm_compute_accuracy(train_texts, lambda1, lambda2))
@@ -138,9 +142,11 @@ def main():
     # dump_object_to_file((logreg, vec, idx_to_tag_dict), r"..\output\memm_model")
 
     if platform.system() == "Windows":
-        memm_from_file = load_object_from_file(r"..\output\memm_model")
+        memm_path = Path("..\output\memm_model.pkl")
     else:
-        memm_from_file = load_object_from_file(r"../output/memm_model")
+        memm_path = Path("../output/memm_model.pkl")
+    memm_from_file = load_object_from_file(memm_path)
+
     (logreg, vec, idx_to_tag_dict) = memm_from_file
 
     extra_decoding_arguments = build_extra_decoding_arguments(train_texts)

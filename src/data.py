@@ -1,4 +1,5 @@
 import pickle
+from pathlib import Path
 import numpy as np
 MIN_FREQ = 3
 
@@ -67,12 +68,12 @@ def rep_to_ix(data):
 
 
 def dump_object_to_file(object, object_name):
-    with open(object_name + ".pkl", "wb") as output:
+    with open(object_name, "wb") as output:
         pickle.dump(object, output, pickle.HIGHEST_PROTOCOL)
 
 
 def load_object_from_file(object_name):
-    with open(object_name + ".pkl", "rb") as input:
+    with open(object_name, "rb") as input:
         object = pickle.load(input)
 
     return object
