@@ -70,7 +70,7 @@ def build_info_sentence(sign_to_id):
 def sentence_to_HMM_format(sentence):
     list = []
     for sign in sentence:
-        if sign == " " or sign == "\t" or sign == "\n":
+        if sign == " ":
             continue
         list.append((sign, ""))
 
