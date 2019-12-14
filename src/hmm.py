@@ -36,6 +36,7 @@ def hmm_train(sents):
             most_common_tag[word] = (tag, e_word_tag_counts[word, tag])
         elif e_word_tag_counts[word, tag] > most_common_tag[word][1]:
                 most_common_tag[word] = (tag, e_word_tag_counts[word, tag])
+    most_common_tag["default"] = max(e_tag_counts, key=e_tag_counts.get)
 
     # Add *, * to beginning of every sentence and STOP to every end.
     adjusted_sents = []
@@ -222,8 +223,14 @@ def hmm_viterbi(sent, total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_w
 
     # If we enter here both predicted_tags[n-1] and predicted_tags[n-2] have not been assigned.
     if predicted_tags[n-1] == "":
-        predicted_tags[n - 1] = most_common_tag[sent[n - 1][0]][0]
-        predicted_tags[n - 2] = most_common_tag[sent[n - 2][0]][0]
+        try:
+            predicted_tags[n - 1] = most_common_tag[sent[n - 1][0]][0]
+        except:
+            predicted_tags[n - 1] = most_common_tag["default"]
+        try:
+            predicted_tags[n - 2] = most_common_tag[sent[n - 2][0]][0]
+        except:
+            predicted_tags[n - 2] = most_common_tag["default"]
 
     for k in range(n-2, 0, -1):
         try:
