@@ -231,7 +231,6 @@ def hmm_viterbi(sent, total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_w
             predicted_tags[n - 2] = most_common_tag[sent[n - 2][0]][0]
         except:
             predicted_tags[n - 2] = most_common_tag["default"]
-
     for k in range(n-2, 0, -1):
         try:
             predicted_tags[k - 1] = bp[(k+2, predicted_tags[k], predicted_tags[k+1])]
