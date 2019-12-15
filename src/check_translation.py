@@ -47,15 +47,9 @@ def copied_code_from_translate_Akkadian():
     # Run the HMM.
     run_hmm(train_texts, dev_texts, False)
     # lambda1, lambda2 = run_hmm(train_texts, dev_texts, True)
-    if platform.system() == "Windows":
-        (lambda1, lambda2, _, _, _, _) = load_object_from_file(Path("..\output\hmm_model.pkl"))
-    else:
-        (lambda1, lambda2, _, _, _, _) = load_object_from_file(Path("../output/hmm_model.pkl"))
+    (lambda1, lambda2, _, _, _, _) = load_object_from_file(Path("../output/hmm_model.pkl"))
 
-    if platform.system() == "Windows":
-        memm_path = Path("..\output\memm_model.pkl")
-    else:
-        memm_path = Path("../output/memm_model.pkl")
+    memm_path = Path("../output/memm_model.pkl")
     memm_from_file = load_object_from_file(memm_path)
 
     (logreg, vec, idx_to_tag_dict) = memm_from_file
@@ -63,17 +57,12 @@ def copied_code_from_translate_Akkadian():
     extra_decoding_arguments = build_extra_decoding_arguments(train_texts)
 
     #dump_object_to_file(predictor, "predictor")
-    if platform.system() == "Windows":
-        pred_path = Path("..\output\predictor_lr_03_test_96_8.pkl")
-    else:
-        pred_path = Path("../output/predictor_lr_03_test_96_8.pkl")
+    pred_path = Path("../output/predictor_lr_03_test_96_8.pkl")
     predictor_from_file = load_object_from_file(pred_path)
 
     #dump_object_to_file(model, "model")
-    if platform.system() == "Windows":
-        model_path = Path("..\output\model_lr_03_test_96_8.pkl")
-    else:
-        model_path = Path("../output/model_lr_03_test_96_8.pkl")
+
+    model_path = Path("../output/model_lr_03_test_96_8.pkl")
     model_from_file = load_object_from_file(model_path)
 
     return lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id, id_to_tran, \
@@ -100,21 +89,14 @@ def make_prediction(parsed, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extr
 
 
 def main():
-    if platform.system() == "Windows":
-        directory = r"..\raw_data\test_texts"
-    else:
-        directory = r"../raw_data/test_texts"
+    directory = Path(r"../raw_data/test_texts")
 
     lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id, id_to_tran, \
     predictor_from_file, model_from_file = copied_code_from_translate_Akkadian()
 
     for file in os.listdir(directory):
         print(file)
-        if platform.system() == "Windows":
-            f = directory + "\\" + file
-        else:
-            f = directory + "/" + file
-
+        f = directory / file
         parsed = parse_json(f)
         #print(parsed)
         make_prediction(parsed, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id, \
