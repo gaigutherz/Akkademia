@@ -1,3 +1,4 @@
+import os
 from BiLSTM import prepare1, prepare2, LstmTagger, PosDatasetReader
 from build_data import preprocess
 from hmm import run_hmm, hmm_viterbi, hmm_compute_accuracy
@@ -79,39 +80,46 @@ def copied_code_from_translate_Akkadian():
            predictor_from_file, model_from_file
 
 
-def main():
-    lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id, id_to_tran, \
-    predictor_from_file, model_from_file = copied_code_from_translate_Akkadian()
-
-    if platform.system() == "Windows":
-        test_file = r"..\raw_data\test_texts\Q004179.json"
-    else:
-        test_file = r"../raw_data/test_texts/Q004179.json"
-
-    parsed = parse_json(test_file)
-    print(parsed)
-
+def make_prediction(parsed, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id, \
+                        id_to_tran, predictor_from_file, model_from_file):
     HMM_predicted_tags = hmm_viterbi(parsed_json_to_HMM_format(parsed), 0, {}, {}, {}, {}, {}, lambda1, lambda2)
-    print("HMM prediction: ")
-    print(HMM_predicted_tags)
-    print("HMM precentage: ")
-    print(compute_accuracy(parsed, HMM_predicted_tags))
+    #print("HMM prediction: " + str(HMM_predicted_tags))
+    print("HMM precentage: " + str(compute_accuracy(parsed, HMM_predicted_tags)))
 
-    MEMM_predicted_tags = memm_greedy(parsed_json_to_HMM_format(parsed), logreg, vec, idx_to_tag_dict,
-                                      extra_decoding_arguments)
-    print("MEMM prediction: ")
-    print(MEMM_predicted_tags)
-    print("MEMM precentage: ")
-    print(compute_accuracy(parsed, MEMM_predicted_tags))
+    #MEMM_predicted_tags = memm_greedy(parsed_json_to_HMM_format(parsed), logreg, vec, idx_to_tag_dict,
+    #                                  extra_decoding_arguments)
+    #print("MEMM prediction: " + str(MEMM_predicted_tags))
+    #print("MEMM precentage: " + str(compute_accuracy(parsed, MEMM_predicted_tags)))
 
     # BiLSTM prediction
     tag_logits = predictor_from_file.predict(parsed_json_to_allen_format(parsed, sign_to_id))['tag_logits']
     biLSTM_predicted_tags, biLSTM_predicted2_tags, biLSTM_predicted3_tags = logits_to_trans(tag_logits, model_from_file,
                                                                                             id_to_tran)
-    print("BiLSTM prediction: ")
-    print(biLSTM_predicted_tags)
-    print("BiLSTM precentage: ")
-    print(compute_accuracy(parsed, biLSTM_predicted_tags))
+    #print("BiLSTM prediction: " + str(biLSTM_predicted_tags))
+    print("BiLSTM precentage: " + str(compute_accuracy(parsed, biLSTM_predicted_tags)))
+
+
+def main():
+    if platform.system() == "Windows":
+        directory = r"..\raw_data\test_texts"
+    else:
+        directory = r"../raw_data/test_texts"
+
+    lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id, id_to_tran, \
+    predictor_from_file, model_from_file = copied_code_from_translate_Akkadian()
+
+    for file in os.listdir(directory):
+        print(file)
+        if platform.system() == "Windows":
+            f = directory + "\\" + file
+        else:
+            f = directory + "/" + file
+
+        parsed = parse_json(f)
+        #print(parsed)
+        make_prediction(parsed, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id, \
+                        id_to_tran, predictor_from_file, model_from_file)
+
 
 if __name__ == '__main__':
     main()
