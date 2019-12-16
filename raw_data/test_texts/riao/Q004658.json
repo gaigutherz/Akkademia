@@ -1,0 +1,925 @@
+{
+  "type": "cdl",
+  "project": "riao",
+  "source": "http://oracc.org/riao",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2019-09-05T10:09:22",
+  "textid": "Q004658",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q004658.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q004658.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "Q004658.U2",
+              "label": "1 - 8",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q004658.1",
+                  "n": "1",
+                  "label": "1"
+                },
+                {
+                  "node": "l",
+                  "frag": "{⸢m}{d⸣}[sal₂-ma-nu-SAG",
+                  "id": "Q004658.l0deb2",
+                  "ref": "Q004658.1.1",
+                  "inst": "Salmanu-ašared_III[Shalmaneser III, king of Assyria]RN$Salmanu-ašared",
+                  "sig": "@riao%akk:{m}{d}sal₂-ma-nu-SAG=Salmanu-ašared_III[Shalmaneser III, king of Assyria//Shalmaneser III, king of Assyria]RN'RN$Salmanu-ašared",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{m}{d}sal₂-ma-nu-SAG",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "v": "m",
+                            "utf8": "𒁹",
+                            "id": "Q004658.1.1.0",
+                            "break": "damaged",
+                            "queried": "1",
+                            "ho": "1"
+                          }
+                        ]
+                      },
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "v": "d",
+                            "utf8": "𒀭",
+                            "id": "Q004658.1.1.1",
+                            "break": "damaged",
+                            "queried": "1",
+                            "hc": "1"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "sal₂",
+                        "utf8": "𒁲",
+                        "id": "Q004658.1.1.2",
+                        "breakStart": "1",
+                        "o": "[",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ma",
+                        "utf8": "𒈠",
+                        "id": "Q004658.1.1.3",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "nu",
+                        "utf8": "𒉡",
+                        "id": "Q004658.1.1.4",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "SAG",
+                            "utf8": "𒊕",
+                            "id": "Q004658.1.1.5",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Salmanu-ašared_III",
+                    "gw": "Shalmaneser III, king of Assyria",
+                    "sense": "Shalmaneser III, king of Assyria",
+                    "norm": "Salmanu-ašared",
+                    "pos": "RN",
+                    "epos": "RN"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "iš-ša-ak",
+                  "id": "Q004658.l0deb3",
+                  "ref": "Q004658.1.2",
+                  "inst": "iššak[city-ruler]N",
+                  "sig": "@riao%akk:iš-ša-ak=iššiakku[city-ruler//city-ruler]N'N$iššak",
+                  "f": {
+                    "lang": "akk",
+                    "form": "iš-ša-ak",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "iš",
+                        "utf8": "𒅖",
+                        "id": "Q004658.1.2.0",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ša",
+                        "utf8": "𒊭",
+                        "id": "Q004658.1.2.1",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ak",
+                        "utf8": "𒀝",
+                        "id": "Q004658.1.2.2",
+                        "break": "missing"
+                      }
+                    ],
+                    "cf": "iššiakku",
+                    "gw": "city-ruler",
+                    "sense": "city-ruler",
+                    "norm": "iššak",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "aš-šur]",
+                  "id": "Q004658.l0deb4",
+                  "ref": "Q004658.1.3",
+                  "inst": "Aššur[Assyria]GN",
+                  "sig": "@riao%akk:aš-šur=Aššur[Assyria//Assyria]GN'GN$Aššur",
+                  "f": {
+                    "lang": "akk",
+                    "form": "aš-šur",
+                    "gdl": [
+                      {
+                        "v": "aš",
+                        "utf8": "𒀸",
+                        "id": "Q004658.1.3.0",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "šur",
+                        "utf8": "𒋩",
+                        "id": "Q004658.1.3.1",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "Q004658.1.1.2"
+                      }
+                    ],
+                    "cf": "Aššur",
+                    "gw": "Assyria",
+                    "sense": "Assyria",
+                    "norm": "Aššur",
+                    "pos": "GN",
+                    "epos": "GN"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q004658.2",
+                  "n": "2",
+                  "label": "2"
+                },
+                {
+                  "node": "l",
+                  "frag": "A",
+                  "id": "Q004658.l0deb5",
+                  "ref": "Q004658.2.1",
+                  "inst": "mār[son]N",
+                  "sig": "@riao%akk:A=māru[son//son]N'N$mār",
+                  "f": {
+                    "lang": "akk",
+                    "form": "A",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "A",
+                            "utf8": "𒀀",
+                            "id": "Q004658.2.1.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "māru",
+                    "gw": "son",
+                    "sense": "son",
+                    "norm": "mār",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "aš-šur-⸢PAP⸣-[A",
+                  "id": "Q004658.l0deb6",
+                  "ref": "Q004658.2.2",
+                  "inst": "Aššur-naṣir-apli_II[Ashurnasirpal II, king of Assyria]RN$Aššur-naṣir-apli",
+                  "sig": "@riao%akk:aš-šur-PAP-A=Aššur-naṣir-apli_II[Ashurnasirpal II, king of Assyria//Ashurnasirpal II, king of Assyria]RN'RN$Aššur-naṣir-apli",
+                  "f": {
+                    "lang": "akk",
+                    "form": "aš-šur-PAP-A",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "aš",
+                        "utf8": "𒀸",
+                        "id": "Q004658.2.2.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "šur",
+                        "utf8": "𒋩",
+                        "id": "Q004658.2.2.1",
+                        "delim": "-"
+                      },
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "PAP",
+                            "utf8": "𒉽",
+                            "id": "Q004658.2.2.2",
+                            "break": "damaged",
+                            "ho": "1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-",
+                            "hc": "1"
+                          },
+                          {
+                            "s": "A",
+                            "utf8": "𒀀",
+                            "id": "Q004658.2.2.3",
+                            "breakStart": "1",
+                            "o": "[",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Aššur-naṣir-apli_II",
+                    "gw": "Ashurnasirpal II, king of Assyria",
+                    "sense": "Ashurnasirpal II, king of Assyria",
+                    "norm": "Aššur-naṣir-apli",
+                    "pos": "RN",
+                    "epos": "RN"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "iš-ša-ak",
+                  "id": "Q004658.l0deb7",
+                  "ref": "Q004658.2.3",
+                  "inst": "iššak[city-ruler]N",
+                  "sig": "@riao%akk:iš-ša-ak=iššiakku[city-ruler//city-ruler]N'N$iššak",
+                  "f": {
+                    "lang": "akk",
+                    "form": "iš-ša-ak",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "iš",
+                        "utf8": "𒅖",
+                        "id": "Q004658.2.3.0",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ša",
+                        "utf8": "𒊭",
+                        "id": "Q004658.2.3.1",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ak",
+                        "utf8": "𒀝",
+                        "id": "Q004658.2.3.2",
+                        "break": "missing"
+                      }
+                    ],
+                    "cf": "iššiakku",
+                    "gw": "city-ruler",
+                    "sense": "city-ruler",
+                    "norm": "iššak",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "aš-šur]",
+                  "id": "Q004658.l0deb8",
+                  "ref": "Q004658.2.4",
+                  "inst": "Aššur[1]DN",
+                  "sig": "@riao%akk:aš-šur=Aššur[1//1]DN'DN$Aššur",
+                  "f": {
+                    "lang": "akk",
+                    "form": "aš-šur",
+                    "gdl": [
+                      {
+                        "v": "aš",
+                        "utf8": "𒀸",
+                        "id": "Q004658.2.4.0",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "šur",
+                        "utf8": "𒋩",
+                        "id": "Q004658.2.4.1",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "Q004658.2.2.3"
+                      }
+                    ],
+                    "cf": "Aššur",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm": "Aššur",
+                    "pos": "DN",
+                    "epos": "DN"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q004658.3",
+                  "n": "3",
+                  "label": "3"
+                },
+                {
+                  "node": "l",
+                  "frag": "A",
+                  "id": "Q004658.l0deb9",
+                  "ref": "Q004658.3.1",
+                  "inst": "mār[son]N",
+                  "sig": "@riao%akk:A=māru[son//son]N'N$mār",
+                  "f": {
+                    "lang": "akk",
+                    "form": "A",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "A",
+                            "utf8": "𒀀",
+                            "id": "Q004658.3.1.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "māru",
+                    "gw": "son",
+                    "sense": "son",
+                    "norm": "mār",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "TUKUL-MAŠ",
+                  "id": "Q004658.l0deba",
+                  "ref": "Q004658.3.2",
+                  "inst": "Tukulti-Ninurta[Tukulti-Ninurta II, son of Adad-narari II, king of Assyria]RN",
+                  "sig": "@riao%akk:TUKUL-MAŠ=Tukulti-Ninurta_II[Tukulti-Ninurta II, son of Adad-narari II, king of Assyria//Tukulti-Ninurta II, son of Adad-narari II, king of Assyria]RN'RN$Tukulti-Ninurta",
+                  "f": {
+                    "lang": "akk",
+                    "form": "TUKUL-MAŠ",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "TUKUL",
+                            "utf8": "𒆪",
+                            "id": "Q004658.3.2.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          },
+                          {
+                            "s": "MAŠ",
+                            "utf8": "𒈦",
+                            "id": "Q004658.3.2.1",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Tukulti-Ninurta_II",
+                    "gw": "Tukulti-Ninurta II, son of Adad-narari II, king of Assyria",
+                    "sense": "Tukulti-Ninurta II, son of Adad-narari II, king of Assyria",
+                    "norm": "Tukulti-Ninurta",
+                    "pos": "RN",
+                    "epos": "RN"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "⸢ŠID⸣",
+                  "id": "Q004658.l0debb",
+                  "ref": "Q004658.3.3",
+                  "inst": "iššak[city-ruler]N",
+                  "sig": "@riao%akk:ŠID=iššiakku[city-ruler//city-ruler]N'N$iššak",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ŠID",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "ŠID",
+                            "utf8": "𒋃",
+                            "id": "Q004658.3.3.0",
+                            "break": "damaged",
+                            "ho": "1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "hc": "1"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "iššiakku",
+                    "gw": "city-ruler",
+                    "sense": "city-ruler",
+                    "norm": "iššak",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "[aš-šur-ma]",
+                  "id": "Q004658.l0debc",
+                  "ref": "Q004658.3.4",
+                  "inst": "Aššurma[Assyria]GN",
+                  "sig": "@riao%akk:aš-šur-ma=Aššur[Assyria//Assyria]GN'GN$Aššurma",
+                  "f": {
+                    "lang": "akk",
+                    "form": "aš-šur-ma",
+                    "gdl": [
+                      {
+                        "v": "aš",
+                        "utf8": "𒀸",
+                        "id": "Q004658.3.4.0",
+                        "breakStart": "1",
+                        "o": "[",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "šur",
+                        "utf8": "𒋩",
+                        "id": "Q004658.3.4.1",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ma",
+                        "utf8": "𒈠",
+                        "id": "Q004658.3.4.2",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "Q004658.3.4.0"
+                      }
+                    ],
+                    "cf": "Aššur",
+                    "gw": "Assyria",
+                    "sense": "Assyria",
+                    "norm": "Aššurma",
+                    "pos": "GN",
+                    "epos": "GN"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q004658.4",
+                  "n": "4",
+                  "label": "4"
+                },
+                {
+                  "node": "l",
+                  "frag": "mu-ta-⸢lik-ta⸣",
+                  "id": "Q004658.l0debd",
+                  "ref": "Q004658.4.1",
+                  "inst": "muttalliktu[regularly moving//way]N'N$muttallikta",
+                  "sig": "@riao%akk:mu-ta-lik-ta=muttalliktu[regularly moving//way]N'N$muttallikta",
+                  "f": {
+                    "lang": "akk",
+                    "form": "mu-ta-lik-ta",
+                    "gdl": [
+                      {
+                        "v": "mu",
+                        "utf8": "𒈬",
+                        "id": "Q004658.4.1.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ta",
+                        "utf8": "𒋫",
+                        "id": "Q004658.4.1.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "lik",
+                        "utf8": "𒌨",
+                        "id": "Q004658.4.1.2",
+                        "break": "damaged",
+                        "ho": "1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ta",
+                        "utf8": "𒋫",
+                        "id": "Q004658.4.1.3",
+                        "break": "damaged",
+                        "hc": "1"
+                      }
+                    ],
+                    "cf": "muttalliktu",
+                    "gw": "regularly moving",
+                    "sense": "way",
+                    "norm": "muttallikta",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q004658.5",
+                  "n": "5",
+                  "label": "5"
+                },
+                {
+                  "node": "l",
+                  "frag": "ša₂",
+                  "id": "Q004658.l0debe",
+                  "ref": "Q004658.5.1",
+                  "inst": "ša[of]DET",
+                  "sig": "@riao%akk:ša₂=ša[of//of]DET'DET$ša",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ša₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ša₂",
+                        "utf8": "𒃻",
+                        "id": "Q004658.5.1.0"
+                      }
+                    ],
+                    "cf": "ša",
+                    "gw": "of",
+                    "sense": "of",
+                    "norm": "ša",
+                    "pos": "DET",
+                    "epos": "DET"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "ki-sa-⸢al⸣",
+                  "id": "Q004658.l0debf",
+                  "ref": "Q004658.5.2",
+                  "inst": "kisallu[forecourt]N$kisal",
+                  "sig": "@riao%akk:ki-sa-al=kisallu[forecourt//forecourt]N'N$kisal",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ki-sa-al",
+                    "gdl": [
+                      {
+                        "v": "ki",
+                        "utf8": "𒆠",
+                        "id": "Q004658.5.2.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "sa",
+                        "utf8": "𒊓",
+                        "id": "Q004658.5.2.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "al",
+                        "utf8": "𒀠",
+                        "id": "Q004658.5.2.2",
+                        "break": "damaged",
+                        "ho": "1",
+                        "hc": "1"
+                      }
+                    ],
+                    "cf": "kisallu",
+                    "gw": "forecourt",
+                    "sense": "forecourt",
+                    "norm": "kisal",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q004658.6",
+                  "n": "6",
+                  "label": "6"
+                },
+                {
+                  "node": "l",
+                  "frag": "a-ba-[ri]",
+                  "id": "Q004658.l0dec0",
+                  "ref": "Q004658.6.1",
+                  "inst": "Abari[Abaru Forecourt]ON",
+                  "sig": "@riao%akk:a-ba-ri=Kisal-Abaru[Abaru Forecourt//Abaru Forecourt]ON'ON$Abari",
+                  "f": {
+                    "lang": "akk",
+                    "form": "a-ba-ri",
+                    "gdl": [
+                      {
+                        "v": "a",
+                        "utf8": "𒀀",
+                        "id": "Q004658.6.1.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ba",
+                        "utf8": "𒁀",
+                        "id": "Q004658.6.1.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ri",
+                        "utf8": "𒊑",
+                        "id": "Q004658.6.1.2",
+                        "breakStart": "1",
+                        "o": "]",
+                        "break": "missing",
+                        "breakEnd": "Q004658.6.1.2"
+                      }
+                    ],
+                    "cf": "Kisal-Abaru",
+                    "gw": "Abaru Forecourt",
+                    "sense": "Abaru Forecourt",
+                    "norm": "Abari",
+                    "pos": "ON",
+                    "epos": "ON"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q004658.7",
+                  "n": "7",
+                  "label": "7"
+                },
+                {
+                  "node": "l",
+                  "frag": "⸢ša₂⸣",
+                  "id": "Q004658.l0dec1",
+                  "ref": "Q004658.7.1",
+                  "inst": "ša[of]DET",
+                  "sig": "@riao%akk:ša₂=ša[of//of]DET'DET$ša",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ša₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ša₂",
+                        "utf8": "𒃻",
+                        "id": "Q004658.7.1.0",
+                        "break": "damaged",
+                        "ho": "1",
+                        "hc": "1"
+                      }
+                    ],
+                    "cf": "ša",
+                    "gw": "of",
+                    "sense": "of",
+                    "norm": "ša",
+                    "pos": "DET",
+                    "epos": "DET"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "E₂",
+                  "id": "Q004658.l0dec2",
+                  "ref": "Q004658.7.2",
+                  "inst": "bīt[temple]N",
+                  "sig": "@riao%akk:E₂=bītu[house//temple]N'N$bīt",
+                  "f": {
+                    "lang": "akk",
+                    "form": "E₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "E₂",
+                            "utf8": "𒂍",
+                            "id": "Q004658.7.2.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "bītu",
+                    "gw": "house",
+                    "sense": "temple",
+                    "norm": "bīt",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "aš-šur",
+                  "id": "Q004658.l0dec3",
+                  "ref": "Q004658.7.3",
+                  "inst": "Aššur[1]DN",
+                  "sig": "@riao%akk:aš-šur=Aššur[1//1]DN'DN$Aššur",
+                  "f": {
+                    "lang": "akk",
+                    "form": "aš-šur",
+                    "gdl": [
+                      {
+                        "v": "aš",
+                        "utf8": "𒀸",
+                        "id": "Q004658.7.3.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "šur",
+                        "utf8": "𒋩",
+                        "id": "Q004658.7.3.1"
+                      }
+                    ],
+                    "cf": "Aššur",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm": "Aššur",
+                    "pos": "DN",
+                    "epos": "DN"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q004658.8",
+                  "n": "8",
+                  "label": "8"
+                },
+                {
+                  "node": "l",
+                  "frag": "[EN-ia]",
+                  "id": "Q004658.l0dec4",
+                  "ref": "Q004658.8.1",
+                  "inst": "bēliya[lord]N",
+                  "sig": "@riao%akk:EN-ia=bēlu[lord//lord]N'N$bēliya",
+                  "f": {
+                    "lang": "akk",
+                    "form": "EN-ia",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "EN",
+                            "utf8": "𒂗",
+                            "id": "Q004658.8.1.0",
+                            "breakStart": "1",
+                            "o": "[",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "ia",
+                        "utf8": "𒅀",
+                        "id": "Q004658.8.1.1",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "Q004658.8.1.0"
+                      }
+                    ],
+                    "cf": "bēlu",
+                    "gw": "lord",
+                    "sense": "lord",
+                    "norm": "bēliya",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "⸢ak⸣-si-ir",
+                  "id": "Q004658.l0dec5",
+                  "ref": "Q004658.8.2",
+                  "inst": "aksir[pave]V",
+                  "sig": "@riao%akk:ak-si-ir=kasāru[block//pave]V'V$aksir",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ak-si-ir",
+                    "gdl": [
+                      {
+                        "v": "ak",
+                        "utf8": "𒀝",
+                        "id": "Q004658.8.2.0",
+                        "break": "damaged",
+                        "ho": "1",
+                        "delim": "-",
+                        "hc": "1"
+                      },
+                      {
+                        "v": "si",
+                        "utf8": "𒋛",
+                        "id": "Q004658.8.2.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ir",
+                        "utf8": "𒅕",
+                        "id": "Q004658.8.2.2"
+                      }
+                    ],
+                    "cf": "kasāru",
+                    "gw": "block",
+                    "sense": "pave",
+                    "norm": "aksir",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

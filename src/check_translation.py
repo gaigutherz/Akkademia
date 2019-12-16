@@ -88,19 +88,29 @@ def make_prediction(parsed, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extr
     print("BiLSTM precentage: " + str(compute_accuracy(parsed, biLSTM_predicted_tags)))
 
 
+def operate_on_file(directory, file, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments,
+                    sign_to_id, id_to_tran, predictor_from_file, model_from_file):
+    print(file)
+    f = directory / file
+    parsed = parse_json(f)
+    # print(parsed)
+    make_prediction(parsed, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id,
+                    id_to_tran, predictor_from_file, model_from_file)
+
+
 def main():
     directory = Path(r"../raw_data/test_texts")
 
     lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id, id_to_tran, \
     predictor_from_file, model_from_file = copied_code_from_translate_Akkadian()
 
-    for file in os.listdir(directory):
-        print(file)
-        f = directory / file
-        parsed = parse_json(f)
-        #print(parsed)
-        make_prediction(parsed, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id, \
-                        id_to_tran, predictor_from_file, model_from_file)
+    for file in os.listdir(directory / "random"):
+        operate_on_file(directory / "random", file, lambda1, lambda2, logreg, vec, idx_to_tag_dict,
+                        extra_decoding_arguments, sign_to_id, id_to_tran, predictor_from_file, model_from_file)
+
+    #for file in os.listdir(directory / "riao"):
+    #    operate_on_file(directory / "riao", file, lambda1, lambda2, logreg, vec, idx_to_tag_dict,
+    #                    extra_decoding_arguments, sign_to_id, id_to_tran, predictor_from_file, model_from_file)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,234 @@
+{
+  "type": "cdl",
+  "project": "riao",
+  "source": "http://oracc.org/riao",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2019-09-05T10:09:03",
+  "textid": "Q004534",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q004534.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q004534.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "Q004534.U2",
+              "label": "1",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q004534.1",
+                  "n": "1",
+                  "label": "1"
+                },
+                {
+                  "node": "l",
+                  "frag": "šal-lu-tu",
+                  "id": "Q004534.l07a3f",
+                  "ref": "Q004534.1.1",
+                  "inst": "šallutu[booty]N",
+                  "sig": "@riao%akk:šal-lu-tu=šallatu[plundered thing(s)//booty]N'N$šallutu",
+                  "f": {
+                    "lang": "akk",
+                    "form": "šal-lu-tu",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "šal",
+                        "utf8": "𒊩",
+                        "id": "Q004534.1.1.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "lu",
+                        "utf8": "𒇻",
+                        "id": "Q004534.1.1.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "tu",
+                        "utf8": "𒌅",
+                        "id": "Q004534.1.1.2"
+                      }
+                    ],
+                    "cf": "šallatu",
+                    "gw": "plundered thing(s)",
+                    "sense": "booty",
+                    "norm": "šallutu",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "ša₂",
+                  "id": "Q004534.l07a40",
+                  "ref": "Q004534.1.2",
+                  "inst": "ša[of]DET",
+                  "sig": "@riao%akk:ša₂=ša[of//of]DET'DET$ša",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ša₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ša₂",
+                        "utf8": "𒃻",
+                        "id": "Q004534.1.2.0"
+                      }
+                    ],
+                    "cf": "ša",
+                    "gw": "of",
+                    "sense": "of",
+                    "norm": "ša",
+                    "pos": "DET",
+                    "epos": "DET"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "{m}sa-an-ga-ra",
+                  "id": "Q004534.l07a41",
+                  "ref": "Q004534.1.3",
+                  "inst": "Sangara[king of Hatti]RN",
+                  "sig": "@riao%akk:{m}sa-an-ga-ra=Sangara[king of Hatti//king of Hatti]RN'RN$Sangara",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{m}sa-an-ga-ra",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "v": "m",
+                            "utf8": "𒁹",
+                            "id": "Q004534.1.3.0"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "sa",
+                        "utf8": "𒊓",
+                        "id": "Q004534.1.3.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "an",
+                        "utf8": "𒀭",
+                        "id": "Q004534.1.3.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ga",
+                        "utf8": "𒂵",
+                        "id": "Q004534.1.3.3",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ra",
+                        "utf8": "𒊏",
+                        "id": "Q004534.1.3.4"
+                      }
+                    ],
+                    "cf": "Sangara",
+                    "gw": "king of Hatti",
+                    "sense": "king of Hatti",
+                    "norm": "Sangara",
+                    "pos": "RN",
+                    "epos": "RN"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "{kur}hat-ta-a-a",
+                  "id": "Q004534.l07a42",
+                  "ref": "Q004534.1.4",
+                  "inst": "Hattaya[Hittite]EN",
+                  "sig": "@riao%akk:{KUR}hat-ta-a-a=Hattu[Hittite//Hittite]EN'EN$Hattaya",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{KUR}hat-ta-a-a",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "gg": "logo",
+                            "gdl_type": "logo",
+                            "group": [
+                              {
+                                "s": "KUR",
+                                "utf8": "𒆳",
+                                "id": "Q004534.1.4.0",
+                                "role": "logo",
+                                "logolang": "sux"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "v": "hat",
+                        "utf8": "𒉺",
+                        "id": "Q004534.1.4.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ta",
+                        "utf8": "𒋫",
+                        "id": "Q004534.1.4.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "a",
+                        "utf8": "𒀀",
+                        "id": "Q004534.1.4.3",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "a",
+                        "utf8": "𒀀",
+                        "id": "Q004534.1.4.4"
+                      }
+                    ],
+                    "cf": "Hattu",
+                    "gw": "Hittite",
+                    "sense": "Hittite",
+                    "norm": "Hattaya",
+                    "pos": "EN",
+                    "epos": "EN"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

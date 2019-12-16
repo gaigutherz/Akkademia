@@ -1,0 +1,418 @@
+{
+  "type": "cdl",
+  "project": "riao",
+  "source": "http://oracc.org/riao",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2019-09-05T10:09:41",
+  "textid": "Q005663",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q005663.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q005663.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "Q005663.U2",
+              "label": "1 - 5",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q005663.1",
+                  "n": "1",
+                  "label": "1"
+                },
+                {
+                  "node": "l",
+                  "frag": "{d}UTU-ši-{d}[IŠKUR]",
+                  "id": "Q005663.l09077",
+                  "ref": "Q005663.1.1",
+                  "inst": "Šamši-Adad[vice-regent of Aššur, son of Ila-kabkabu]RN",
+                  "sig": "@riao%akk:{d}UTU-ši-{d}IŠKUR=Šamši-Adad_I[son of Ila-kabkabu, vice-regent of Aššur//son of Ila-kabkabu, vice-regent of Aššur]RN'RN$Šamši-Adad",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{d}UTU-ši-{d}IŠKUR",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "det": "semantic",
+                            "pos": "pre",
+                            "seq": [
+                              {
+                                "v": "d",
+                                "utf8": "𒀭",
+                                "id": "Q005663.1.1.0"
+                              }
+                            ]
+                          },
+                          {
+                            "s": "UTU",
+                            "utf8": "𒌓",
+                            "id": "Q005663.1.1.1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "ši",
+                        "utf8": "𒅆",
+                        "id": "Q005663.1.1.2",
+                        "delim": "-"
+                      },
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "det": "semantic",
+                            "pos": "pre",
+                            "seq": [
+                              {
+                                "v": "d",
+                                "utf8": "𒀭",
+                                "id": "Q005663.1.1.3"
+                              }
+                            ]
+                          },
+                          {
+                            "s": "IŠKUR",
+                            "utf8": "𒅎",
+                            "id": "Q005663.1.1.4",
+                            "breakStart": "1",
+                            "o": "]",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "breakEnd": "Q005663.1.1.4"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Šamši-Adad_I",
+                    "gw": "son of Ila-kabkabu, vice-regent of Aššur",
+                    "sense": "son of Ila-kabkabu, vice-regent of Aššur",
+                    "norm": "Šamši-Adad",
+                    "pos": "RN",
+                    "epos": "RN"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q005663.2",
+                  "n": "2",
+                  "label": "2"
+                },
+                {
+                  "node": "l",
+                  "frag": "LUGAL",
+                  "id": "Q005663.l09078",
+                  "ref": "Q005663.2.1",
+                  "inst": "šarru[king]N",
+                  "sig": "@riao%akk:LUGAL=šarru[king//king]N'N$šarru",
+                  "f": {
+                    "lang": "akk",
+                    "form": "LUGAL",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "LUGAL",
+                            "utf8": "𒈗",
+                            "id": "Q005663.2.1.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "šarru",
+                    "gw": "king",
+                    "sense": "king",
+                    "norm": "šarru",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "KALA.[GA]",
+                  "id": "Q005663.l09079",
+                  "ref": "Q005663.2.2",
+                  "inst": "dannu[strong]AJ",
+                  "sig": "@riao%akk:KALA.GA=dannu[strong//strong]AJ'AJ$dannu",
+                  "f": {
+                    "lang": "akk",
+                    "form": "KALA.GA",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "KALA",
+                            "utf8": "𒆗",
+                            "id": "Q005663.2.2.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "GA",
+                            "utf8": "𒂵",
+                            "id": "Q005663.2.2.1",
+                            "breakStart": "1",
+                            "o": "]",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "breakEnd": "Q005663.2.2.1"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "dannu",
+                    "gw": "strong",
+                    "sense": "strong",
+                    "norm": "dannu",
+                    "pos": "AJ",
+                    "epos": "AJ"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q005663.3",
+                  "n": "3",
+                  "label": "3"
+                },
+                {
+                  "node": "l",
+                  "frag": "{d}a-mi-i-lu-na",
+                  "id": "Q005663.l0907a",
+                  "ref": "Q005663.3.1",
+                  "inst": "Ammi-iluna[servant of Šamši-Adad I]PN$",
+                  "sig": "@riao%akk:{d}a-mi-i-lu-na=Ammi-iluna[servant of Šamši-Adad I//servant of Šamši-Adad I]PN'PN$Ammi-iluna",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{d}a-mi-i-lu-na",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "v": "d",
+                            "utf8": "𒀭",
+                            "id": "Q005663.3.1.0"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "a",
+                        "utf8": "𒀀",
+                        "id": "Q005663.3.1.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "mi",
+                        "utf8": "𒈪",
+                        "id": "Q005663.3.1.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "i",
+                        "utf8": "𒄿",
+                        "id": "Q005663.3.1.3",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "lu",
+                        "utf8": "𒇻",
+                        "id": "Q005663.3.1.4",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "na",
+                        "utf8": "𒈾",
+                        "id": "Q005663.3.1.5"
+                      }
+                    ],
+                    "cf": "Ammi-iluna",
+                    "gw": "servant of Šamši-Adad I",
+                    "sense": "servant of Šamši-Adad I",
+                    "norm": "Ammi-iluna",
+                    "pos": "PN",
+                    "epos": "PN"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q005663.4",
+                  "n": "4",
+                  "label": "4"
+                },
+                {
+                  "node": "l",
+                  "frag": "DUMU",
+                  "id": "Q005663.l0907b",
+                  "ref": "Q005663.4.1",
+                  "inst": "mār[son]N",
+                  "sig": "@riao%akk:DUMU=māru[son//son]N'N$mār",
+                  "f": {
+                    "lang": "akk",
+                    "form": "DUMU",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "DUMU",
+                            "utf8": "𒌉",
+                            "id": "Q005663.4.1.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "māru",
+                    "gw": "son",
+                    "sense": "son",
+                    "norm": "mār",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "ir₃-ra-i-[...]",
+                  "id": "Q005663.l0907c",
+                  "ref": "Q005663.4.2",
+                  "inst": "Irra-i-x[father of Ammi-iluna, servant of Šamši-Adad I]PN$",
+                  "sig": "@riao%akk:ir₃-ra-i-x=Irra-i-x[father of Ammi-iluna, servant of Šamši-Adad I//father of Ammi-iluna, servant of Šamši-Adad I]PN'PN$Irra-i-x",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ir₃-ra-i-x",
+                    "gdl": [
+                      {
+                        "v": "ir₃",
+                        "utf8": "𒀴",
+                        "id": "Q005663.4.2.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ra",
+                        "utf8": "𒊏",
+                        "id": "Q005663.4.2.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "i",
+                        "utf8": "𒄿",
+                        "id": "Q005663.4.2.2",
+                        "delim": "-"
+                      },
+                      {
+                        "x": "ellipsis",
+                        "id": "Q005663.4.2.3",
+                        "breakStart": "1",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "Q005663.4.2.3"
+                      }
+                    ],
+                    "cf": "Irra-i-x",
+                    "gw": "father of Ammi-iluna, servant of Šamši-Adad I",
+                    "sense": "father of Ammi-iluna, servant of Šamši-Adad I",
+                    "norm": "Irra-i-x",
+                    "pos": "PN",
+                    "epos": "PN"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q005663.5",
+                  "n": "5",
+                  "label": "5"
+                },
+                {
+                  "node": "l",
+                  "frag": "ARAD-su₂",
+                  "id": "Q005663.l0907d",
+                  "ref": "Q005663.5.1",
+                  "inst": "warassu[servant]N",
+                  "sig": "@riao%akk:ARAD-su₂=wardu[slave//servant]N'N$warassu",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ARAD-su₂",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "ARAD",
+                            "utf8": "𒀴",
+                            "id": "Q005663.5.1.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "su₂",
+                        "utf8": "𒍪",
+                        "id": "Q005663.5.1.1"
+                      }
+                    ],
+                    "cf": "wardu",
+                    "gw": "slave",
+                    "sense": "servant",
+                    "norm": "warassu",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

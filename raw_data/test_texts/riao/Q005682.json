@@ -1,0 +1,312 @@
+{
+  "type": "cdl",
+  "project": "riao",
+  "source": "http://oracc.org/riao",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2019-09-05T10:09:42",
+  "textid": "Q005682",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q005682.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q005682.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "Q005682.U2",
+              "label": "1",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q005682.1",
+                  "n": "1",
+                  "label": "1"
+                },
+                {
+                  "node": "l",
+                  "frag": "[E₂.GAL",
+                  "id": "Q005682.l0918d",
+                  "ref": "Q005682.1.1",
+                  "inst": "ēkal[palace]N",
+                  "sig": "@riao%akk:E₂.GAL=ēkallu[palace//palace]N'N$ēkal",
+                  "f": {
+                    "lang": "akk",
+                    "form": "E₂.GAL",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "E₂",
+                            "utf8": "𒂍",
+                            "id": "Q005682.1.1.0",
+                            "breakStart": "1",
+                            "o": "[",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "GAL",
+                            "utf8": "𒃲",
+                            "id": "Q005682.1.1.1",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "ēkallu",
+                    "gw": "palace",
+                    "sense": "palace",
+                    "norm": "ēkal",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "{m}{d}UTU-ši-{d]}IŠKUR",
+                  "id": "Q005682.l0918e",
+                  "ref": "Q005682.1.2",
+                  "inst": "Šamši-Adad_III[son of Išme-Dagan II, vice-regent of Aššur]RN$Šamši-Adad",
+                  "sig": "@riao%akk:{m}{d}UTU-ši-{d}IŠKUR=Šamši-Adad_III[son of Išme-Dagan II, vice-regent of Aššur//son of Išme-Dagan II, vice-regent of Aššur]RN'RN$Šamši-Adad",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{m}{d}UTU-ši-{d}IŠKUR",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "det": "semantic",
+                            "pos": "pre",
+                            "seq": [
+                              {
+                                "v": "m",
+                                "utf8": "𒁹",
+                                "id": "Q005682.1.2.0",
+                                "break": "missing"
+                              }
+                            ]
+                          },
+                          {
+                            "det": "semantic",
+                            "pos": "pre",
+                            "seq": [
+                              {
+                                "v": "d",
+                                "utf8": "𒀭",
+                                "id": "Q005682.1.2.1",
+                                "break": "missing"
+                              }
+                            ]
+                          },
+                          {
+                            "s": "UTU",
+                            "utf8": "𒌓",
+                            "id": "Q005682.1.2.2",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "ši",
+                        "utf8": "𒅆",
+                        "id": "Q005682.1.2.3",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "det": "semantic",
+                            "pos": "pre",
+                            "seq": [
+                              {
+                                "v": "d",
+                                "utf8": "𒀭",
+                                "id": "Q005682.1.2.4",
+                                "break": "missing",
+                                "o": "]",
+                                "breakEnd": "Q005682.1.1.0"
+                              }
+                            ]
+                          },
+                          {
+                            "s": "IŠKUR",
+                            "utf8": "𒅎",
+                            "id": "Q005682.1.2.5",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Šamši-Adad_III",
+                    "gw": "son of Išme-Dagan II, vice-regent of Aššur",
+                    "sense": "son of Išme-Dagan II, vice-regent of Aššur",
+                    "norm": "Šamši-Adad",
+                    "pos": "RN",
+                    "epos": "RN"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "DUMU",
+                  "id": "Q005682.l0918f",
+                  "ref": "Q005682.1.3",
+                  "inst": "mār[son]N",
+                  "sig": "@riao%akk:DUMU=māru[son//son]N'N$mār",
+                  "f": {
+                    "lang": "akk",
+                    "form": "DUMU",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "DUMU",
+                            "utf8": "𒌉",
+                            "id": "Q005682.1.3.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "māru",
+                    "gw": "son",
+                    "sense": "son",
+                    "norm": "mār",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "⸢iš⸣-[me-{d}da-gan",
+                  "id": "Q005682.l09190",
+                  "ref": "Q005682.1.4",
+                  "inst": "Išme-Dagan_II[vice regent of god Aššur, successor of Šamši-Adad II]RN$Išme-Dagan",
+                  "sig": "@riao%akk:iš-me-{d}da-gan=Išme-Dagan_II[vice regent of god Aššur, successor of Šamši-Adad II//vice regent of god Aššur, successor of Šamši-Adad II]RN'RN$Išme-Dagan",
+                  "f": {
+                    "lang": "akk",
+                    "form": "iš-me-{d}da-gan",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "iš",
+                        "utf8": "𒅖",
+                        "id": "Q005682.1.4.0",
+                        "break": "damaged",
+                        "ho": "1",
+                        "delim": "-",
+                        "hc": "1"
+                      },
+                      {
+                        "v": "me",
+                        "utf8": "𒈨",
+                        "id": "Q005682.1.4.1",
+                        "breakStart": "1",
+                        "o": "[",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "v": "d",
+                            "utf8": "𒀭",
+                            "id": "Q005682.1.4.2",
+                            "break": "missing"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "da",
+                        "utf8": "𒁕",
+                        "id": "Q005682.1.4.3",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "gan",
+                        "utf8": "𒃶",
+                        "id": "Q005682.1.4.4",
+                        "break": "missing"
+                      }
+                    ],
+                    "cf": "Išme-Dagan_II",
+                    "gw": "vice regent of god Aššur, successor of Šamši-Adad II",
+                    "sense": "vice regent of god Aššur, successor of Šamši-Adad II",
+                    "norm": "Išme-Dagan",
+                    "pos": "RN",
+                    "epos": "RN"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "...]",
+                  "id": "Q005682.l09191",
+                  "ref": "Q005682.1.5",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk",
+                    "form": "x",
+                    "gdl": [
+                      {
+                        "x": "ellipsis",
+                        "id": "Q005682.1.5.0",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "Q005682.1.4.1"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
