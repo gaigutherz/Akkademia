@@ -1,6 +1,6 @@
 import os
 from BiLSTM import prepare1, prepare2, LstmTagger, PosDatasetReader
-from build_data import preprocess
+from build_data import preprocess, break_into_sentences
 from hmm import run_hmm, hmm_viterbi, hmm_compute_accuracy
 from data import load_object_from_file, logits_to_trans
 from memm import memm_greedy, build_extra_decoding_arguments, run_memm
@@ -9,36 +9,50 @@ from pathlib import Path
 import platform
 
 
-def parsed_json_to_HMM_format(parsed):
-    list = []
-    for _, _, _, sign in parsed:
-        list.append((sign, ""))
+def parsed_json_to_HMM_format(sentences, sign_to_id):
+    HMM_sentences = {}
 
-    return list
+    for key in sentences:
+        list = []
+        for _, _, _, sign in sentences[key]:
+            list.append((sign, ""))
 
+        HMM_sentences[key] = list
 
-def parsed_json_to_allen_format(parsed, sign_to_id):
-    signs = ""
-
-    for _, _, _, sign in parsed:
-        try:
-            signs += str(sign_to_id[sign]) + " "
-        except:
-            signs += "0 " # default index
-
-    return signs
+    return HMM_sentences
 
 
-def compute_accuracy(parsed, output):
+def parsed_json_to_allen_format(sentences, sign_to_id):
+    allen_sentences = {}
+
+    for key in sentences:
+        signs = ""
+        for _, _, _, sign in sentences[key]:
+            try:
+                signs += str(sign_to_id[sign]) + " "
+            except:
+                signs += "0 " # default index
+
+        allen_sentences[key] = signs
+
+    return allen_sentences
+
+
+def compute_accuracy(sentences, predicted_tags):
     correct = 0
     total = 0
-    for i in range(len(parsed)):
-        total += 1
-        c = parsed[i][1] + parsed[i][2] if not parsed[i][2] is None else parsed[i][1]
-        if c == output[i]:
-            correct += 1
 
-    return correct / float(total)
+    for key in sentences:
+        for i in range(len(sentences[key])):
+            total += 1
+            c = sentences[key][i][1] + sentences[key][i][2] if not sentences[key][i][2] is None else sentences[key][i][1]
+            if c == predicted_tags[key][i]:
+                correct += 1
+
+    if total != 0:
+        return correct / float(total)
+    else:
+        return "None"
 
 
 def copied_code_from_translate_Akkadian():
@@ -69,23 +83,34 @@ def copied_code_from_translate_Akkadian():
            predictor_from_file, model_from_file
 
 
-def make_prediction(parsed, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id, \
-                        id_to_tran, predictor_from_file, model_from_file):
-    HMM_predicted_tags = hmm_viterbi(parsed_json_to_HMM_format(parsed), 0, {}, {}, {}, {}, {}, lambda1, lambda2)
-    #print("HMM prediction: " + str(HMM_predicted_tags))
-    print("HMM precentage: " + str(compute_accuracy(parsed, HMM_predicted_tags)))
+def make_algorithm_prediction(algorithm, sentences, format_function, sign_to_id, prediction_function, *args):
+    formated_sentences = format_function(sentences, sign_to_id)
+    predicted_tags = {}
+    for key in formated_sentences:
+        line_predicted_tags = prediction_function(formated_sentences[key], *args)
+        predicted_tags[key] = line_predicted_tags
 
-    #MEMM_predicted_tags = memm_greedy(parsed_json_to_HMM_format(parsed), logreg, vec, idx_to_tag_dict,
-    #                                  extra_decoding_arguments)
-    #print("MEMM prediction: " + str(MEMM_predicted_tags))
-    #print("MEMM precentage: " + str(compute_accuracy(parsed, MEMM_predicted_tags)))
+    print(algorithm + "predictions: " + str(predicted_tags))
+    print(algorithm + " precentage: " + str(compute_accuracy(sentences, predicted_tags)))
 
-    # BiLSTM prediction
-    tag_logits = predictor_from_file.predict(parsed_json_to_allen_format(parsed, sign_to_id))['tag_logits']
+
+def biLSTM_predict(line, id_to_tran, predictor_from_file, model_from_file):
+    tag_logits = predictor_from_file.predict(line)['tag_logits']
     biLSTM_predicted_tags, biLSTM_predicted2_tags, biLSTM_predicted3_tags = logits_to_trans(tag_logits, model_from_file,
                                                                                             id_to_tran)
-    #print("BiLSTM prediction: " + str(biLSTM_predicted_tags))
-    print("BiLSTM precentage: " + str(compute_accuracy(parsed, biLSTM_predicted_tags)))
+    return biLSTM_predicted_tags
+
+
+def make_predictions(sentences, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id,
+                        id_to_tran, predictor_from_file, model_from_file):
+    make_algorithm_prediction("HMM", sentences, parsed_json_to_HMM_format, sign_to_id, hmm_viterbi, 0, {}, {}, {}, {},
+                              {}, lambda1, lambda2)
+
+    make_algorithm_prediction("MEMM", sentences, parsed_json_to_HMM_format, sign_to_id, memm_greedy, logreg, vec,
+                              idx_to_tag_dict, extra_decoding_arguments)
+
+    make_algorithm_prediction("biLSTM", sentences, parsed_json_to_allen_format, sign_to_id, biLSTM_predict, id_to_tran,
+                              predictor_from_file, model_from_file)
 
 
 def operate_on_file(directory, file, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments,
@@ -93,8 +118,12 @@ def operate_on_file(directory, file, lambda1, lambda2, logreg, vec, idx_to_tag_d
     print(file)
     f = directory / file
     parsed = parse_json(f)
-    # print(parsed)
-    make_prediction(parsed, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id,
+
+    dict = {}
+    dict[file] = parsed
+    sentences = break_into_sentences(dict)
+    print(sentences)
+    make_predictions(sentences, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id,
                     id_to_tran, predictor_from_file, model_from_file)
 
 
