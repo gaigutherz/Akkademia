@@ -90,8 +90,8 @@ def make_algorithm_prediction(algorithm, sentences, format_function, sign_to_id,
         line_predicted_tags = prediction_function(formated_sentences[key], *args)
         predicted_tags[key] = line_predicted_tags
 
-    print(algorithm + "predictions: " + str(predicted_tags))
-    print(algorithm + " precentage: " + str(compute_accuracy(sentences, predicted_tags)))
+    #print(algorithm + "predictions: " + str(predicted_tags))
+    print(algorithm + " percentage: " + str(compute_accuracy(sentences, predicted_tags)))
 
 
 def biLSTM_predict(line, id_to_tran, predictor_from_file, model_from_file):
@@ -122,7 +122,7 @@ def operate_on_file(directory, file, lambda1, lambda2, logreg, vec, idx_to_tag_d
     dict = {}
     dict[file] = parsed
     sentences = break_into_sentences(dict)
-    print(sentences)
+    #print(sentences)
     make_predictions(sentences, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id,
                     id_to_tran, predictor_from_file, model_from_file)
 
@@ -137,9 +137,9 @@ def main():
         operate_on_file(directory / "random", file, lambda1, lambda2, logreg, vec, idx_to_tag_dict,
                         extra_decoding_arguments, sign_to_id, id_to_tran, predictor_from_file, model_from_file)
 
-    #for file in os.listdir(directory / "riao"):
-    #    operate_on_file(directory / "riao", file, lambda1, lambda2, logreg, vec, idx_to_tag_dict,
-    #                    extra_decoding_arguments, sign_to_id, id_to_tran, predictor_from_file, model_from_file)
+    for file in os.listdir(directory / "riao"):
+        operate_on_file(directory / "riao", file, lambda1, lambda2, logreg, vec, idx_to_tag_dict,
+                        extra_decoding_arguments, sign_to_id, id_to_tran, predictor_from_file, model_from_file)
 
 
 if __name__ == '__main__':
