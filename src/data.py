@@ -80,15 +80,24 @@ def load_object_from_file(object_name):
 
 
 def logits_to_trans(tag_logits, model, id_to_tran):
+    #print(len(tag_logits[0]))
     tag_ids = np.argmax(tag_logits, axis=-1)
+    scores = []
 
     for i in range(len(tag_logits)):
+        scores.append(tag_logits[i][tag_ids[i]])
         tag_logits[i][tag_ids[i]] = -1000000
     tag2_ids = np.argmax(tag_logits, axis=-1)
+    scores2 = []
 
     for i in range(len(tag_logits)):
+        scores2.append(tag_logits[i][tag2_ids[i]])
         tag_logits[i][tag2_ids[i]] = -1000000
     tag3_ids = np.argmax(tag_logits, axis=-1)
+    scores3 = []
+
+    for i in range(len(tag_logits)):
+        scores3.append(tag_logits[i][tag3_ids[i]])
 
     prediction = []
     for id in [model.vocab.get_token_from_index(i, 'labels') for i in tag_ids]:
@@ -105,7 +114,7 @@ def logits_to_trans(tag_logits, model, id_to_tran):
         tran = id_to_tran[int(id)]
         prediction3.append(tran)
 
-    return prediction, prediction2, prediction3
+    return prediction, prediction2, prediction3, scores, scores2, scores3
 
 
 def BiLSTM_compute_accuracy(texts, model, predictor, sign_to_id, id_to_tran):
