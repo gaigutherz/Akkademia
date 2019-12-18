@@ -46,18 +46,25 @@ def parse_tran(c, chars):
         chars.append([c["id"], c["form"], get_delim(c), c["utf8"]])
 
     elif "v" in c:
-            chars.append([c["id"], c["v"], get_delim(c), c["utf8"]])
+        chars.append([c["id"], c["v"], get_delim(c), c["utf8"]])
 
     elif "s" in c:
-            chars.append([c["id"], c["s"], get_delim(c), c["utf8"]])
+        chars.append([c["id"], c["s"], get_delim(c), c["utf8"]])
 
     # Very rare!
     elif "q" in c:
+        try:
             chars.append([c["id"], c["q"], get_delim(c), c["utf8"]])
+        except:
+            chars.append([c["id"], c["q"], get_delim(c), c["qualified"][1]["utf8"]])
 
     # Very rare!
     elif "c" in c:
-            chars.append([c["id"], c["c"], get_delim(c), c["utf8"]])
+        chars.append([c["id"], c["c"], get_delim(c), c["utf8"]])
+
+    # Very rare! Doesn't appear in rinap, only riao (the letter "n").
+    elif "n" in c:
+        chars.append([c["id"], c["n"], get_delim(c), c["utf8"]])
 
     # Broken sign, doesn't interest us
     elif "x" in c:

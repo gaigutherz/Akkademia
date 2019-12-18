@@ -40,7 +40,10 @@ def sentence_to_allen_format(sentence, sign_to_id, usingRealSigns):
         for sign in sentence:
             if sign == " " or sign == "\t" or sign == "\n":
                 continue
-            signs += str(sign_to_id[sign]) + " "
+            try:
+                signs += str(sign_to_id[sign]) + " "
+            except:
+                signs += "0 " # default index
 
     else:
         for sign in sentence.split(","):
@@ -67,7 +70,7 @@ def build_info_sentence(sign_to_id):
 def sentence_to_HMM_format(sentence):
     list = []
     for sign in sentence:
-        if sign == " " or sign == "\t" or sign == "\n":
+        if sign == " ":
             continue
         list.append((sign, ""))
 

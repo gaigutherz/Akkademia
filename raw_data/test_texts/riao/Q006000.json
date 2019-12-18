@@ -1,0 +1,238 @@
+{
+  "type": "cdl",
+  "project": "riao",
+  "source": "http://oracc.org/riao",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2019-09-05T10:10:19",
+  "textid": "Q006000",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q006000.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q006000.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "Q006000.U2",
+              "label": "1 - 3",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q006000.1",
+                  "n": "1",
+                  "label": "1"
+                },
+                {
+                  "node": "l",
+                  "frag": "ṣa-lam",
+                  "id": "Q006000.l087ea",
+                  "ref": "Q006000.1.1",
+                  "inst": "ṣalam[image]N",
+                  "sig": "@riao%akk:ṣa-lam=ṣalmu[effigy//image]N'N$ṣalam",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ṣa-lam",
+                    "gdl": [
+                      {
+                        "v": "ṣa",
+                        "utf8": "𒍝",
+                        "id": "Q006000.1.1.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "lam",
+                        "utf8": "𒇴",
+                        "id": "Q006000.1.1.1"
+                      }
+                    ],
+                    "cf": "ṣalmu",
+                    "gw": "effigy",
+                    "sense": "image",
+                    "norm": "ṣalam",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q006000.2",
+                  "n": "2",
+                  "label": "2"
+                },
+                {
+                  "node": "l",
+                  "frag": "{m}SU-{[d]}IŠKUR",
+                  "id": "Q006000.l087eb",
+                  "ref": "Q006000.2.1",
+                  "inst": "Eriba-Adad_II[king of Assyria]RN$Eriba-Adad",
+                  "sig": "@riao%akk:{m}SU-{d}IŠKUR=Eriba-Adad_II[king of Assyria//king of Assyria]RN'RN$Eriba-Adad",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{m}SU-{d}IŠKUR",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "det": "semantic",
+                            "pos": "pre",
+                            "seq": [
+                              {
+                                "v": "m",
+                                "utf8": "𒁹",
+                                "id": "Q006000.2.1.0"
+                              }
+                            ]
+                          },
+                          {
+                            "s": "SU",
+                            "utf8": "𒋢",
+                            "id": "Q006000.2.1.1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "det": "semantic",
+                            "pos": "pre",
+                            "seq": [
+                              {
+                                "v": "d",
+                                "utf8": "𒀭",
+                                "id": "Q006000.2.1.2",
+                                "breakStart": "1",
+                                "o": "]",
+                                "break": "missing",
+                                "breakEnd": "Q006000.2.1.2"
+                              }
+                            ]
+                          },
+                          {
+                            "s": "IŠKUR",
+                            "utf8": "𒅎",
+                            "id": "Q006000.2.1.3",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Eriba-Adad_II",
+                    "gw": "king of Assyria",
+                    "sense": "king of Assyria",
+                    "norm": "Eriba-Adad",
+                    "pos": "RN",
+                    "epos": "RN"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q006000.3",
+                  "n": "3",
+                  "label": "3"
+                },
+                {
+                  "node": "l",
+                  "frag": "MAN",
+                  "id": "Q006000.l087ec",
+                  "ref": "Q006000.3.1",
+                  "inst": "šar[king]N",
+                  "sig": "@riao%akk:MAN=šarru[king//king]N'N$šar",
+                  "f": {
+                    "lang": "akk",
+                    "form": "MAN",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "MAN",
+                            "utf8": "𒌋𒌋",
+                            "id": "Q006000.3.1.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "šarru",
+                    "gw": "king",
+                    "sense": "king",
+                    "norm": "šar",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "KIŠ",
+                  "id": "Q006000.l087ed",
+                  "ref": "Q006000.3.2",
+                  "inst": "kiššati[totality]N",
+                  "sig": "@riao%akk:KIŠ=kiššatu[totality//totality]N'N$kiššati",
+                  "f": {
+                    "lang": "akk",
+                    "form": "KIŠ",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "KIŠ",
+                            "utf8": "𒆧",
+                            "id": "Q006000.3.2.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "kiššatu",
+                    "gw": "totality",
+                    "sense": "totality",
+                    "norm": "kiššati",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
