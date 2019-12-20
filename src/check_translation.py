@@ -96,8 +96,8 @@ def make_algorithm_prediction(algorithm, sentences, format_function, sign_to_id,
 
 def biLSTM_predict(line, id_to_tran, predictor_from_file, model_from_file):
     tag_logits = predictor_from_file.predict(line)['tag_logits']
-    biLSTM_predicted_tags, biLSTM_predicted2_tags, biLSTM_predicted3_tags = logits_to_trans(tag_logits, model_from_file,
-                                                                                            id_to_tran)
+    biLSTM_predicted_tags, biLSTM_predicted2_tags, biLSTM_predicted3_tags, _, _, _ = logits_to_trans(tag_logits,
+                model_from_file, id_to_tran)
     return biLSTM_predicted_tags
 
 
