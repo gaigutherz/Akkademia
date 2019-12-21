@@ -6,6 +6,8 @@ from data import load_object_from_file, logits_to_trans
 from memm import memm_greedy, build_extra_decoding_arguments, run_memm
 from parse_json import parse_json
 from pathlib import Path
+from get_texts_details import get_dialect
+import statistics
 import platform
 
 
@@ -91,7 +93,9 @@ def make_algorithm_prediction(algorithm, sentences, format_function, sign_to_id,
         predicted_tags[key] = line_predicted_tags
 
     #print(algorithm + "predictions: " + str(predicted_tags))
-    print(algorithm + " percentage: " + str(compute_accuracy(sentences, predicted_tags)))
+    accuracy = compute_accuracy(sentences, predicted_tags)
+    print(algorithm + " percentage: " + str(accuracy))
+    return accuracy
 
 
 def biLSTM_predict(line, id_to_tran, predictor_from_file, model_from_file):
@@ -103,43 +107,83 @@ def biLSTM_predict(line, id_to_tran, predictor_from_file, model_from_file):
 
 def make_predictions(sentences, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id,
                         id_to_tran, predictor_from_file, model_from_file):
-    make_algorithm_prediction("HMM", sentences, parsed_json_to_HMM_format, sign_to_id, hmm_viterbi, 0, {}, {}, {}, {},
+    HMM_accuracy = make_algorithm_prediction("HMM", sentences, parsed_json_to_HMM_format, sign_to_id, hmm_viterbi, 0, {}, {}, {}, {},
                               {}, lambda1, lambda2)
 
-    make_algorithm_prediction("MEMM", sentences, parsed_json_to_HMM_format, sign_to_id, memm_greedy, logreg, vec,
+    MEMM_accuracy = make_algorithm_prediction("MEMM", sentences, parsed_json_to_HMM_format, sign_to_id, memm_greedy, logreg, vec,
                               idx_to_tag_dict, extra_decoding_arguments)
 
-    make_algorithm_prediction("biLSTM", sentences, parsed_json_to_allen_format, sign_to_id, biLSTM_predict, id_to_tran,
+    biLSTM_accuracy = make_algorithm_prediction("biLSTM", sentences, parsed_json_to_allen_format, sign_to_id, biLSTM_predict, id_to_tran,
                               predictor_from_file, model_from_file)
 
+    return HMM_accuracy, MEMM_accuracy, biLSTM_accuracy
 
-def operate_on_file(directory, file, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments,
+
+def operate_on_file(directory, corpus, file, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments,
                     sign_to_id, id_to_tran, predictor_from_file, model_from_file):
     print(file)
-    f = directory / file
+    f = directory / corpus / file
     parsed = parse_json(f)
 
     dict = {}
     dict[file] = parsed
     sentences = break_into_sentences(dict)
     #print(sentences)
-    make_predictions(sentences, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id,
-                    id_to_tran, predictor_from_file, model_from_file)
+    HMM_accuracy, MEMM_accuracy, biLSTM_accuracy = make_predictions(sentences, lambda1, lambda2, logreg, vec,
+            idx_to_tag_dict, extra_decoding_arguments, sign_to_id, id_to_tran, predictor_from_file, model_from_file)
+
+    dialect = get_dialect(corpus, file)
+    print(dialect)
+
+    if biLSTM_accuracy == 'None':
+        return
+
+    global dialects_HMM
+    global dialects_MEMM
+    global dialects_biLSTM
+    if dialect not in dialects_HMM:
+        dialects_HMM[dialect] = [HMM_accuracy]
+        dialects_MEMM[dialect] = [MEMM_accuracy]
+        dialects_biLSTM[dialect] = [biLSTM_accuracy]
+    else:
+        dialects_HMM[dialect].append(HMM_accuracy)
+        dialects_MEMM[dialect].append(MEMM_accuracy)
+        dialects_biLSTM[dialect].append(biLSTM_accuracy)
+
+    #print(dialects_HMM)
+    #print(dialects_MEMM)
+    print(dialects_biLSTM)
+
+
+def compute_averages():
+    for dialect in dialects_HMM:
+        print(dialect + " HMM average: " + str(statistics.mean(dialects_HMM[dialect])))
+        print(dialect + " MEMM average: " + str(statistics.mean(dialects_MEMM[dialect])))
+        print(dialect + " biLSTM average: " + str(statistics.mean(dialects_biLSTM[dialect])))
 
 
 def main():
     directory = Path(r"../raw_data/test_texts")
+    global dialects_HMM
+    dialects_HMM = {}
+    global dialects_MEMM
+    dialects_MEMM = {}
+    global dialects_biLSTM
+    dialects_biLSTM = {}
 
     lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id, id_to_tran, \
     predictor_from_file, model_from_file = copied_code_from_translate_Akkadian()
 
-    for file in os.listdir(directory / "random"):
-        operate_on_file(directory / "random", file, lambda1, lambda2, logreg, vec, idx_to_tag_dict,
+    #for file in os.listdir(directory / "random"):
+    #    operate_on_file(directory / "random", file, lambda1, lambda2, logreg, vec, idx_to_tag_dict,
+    #                    extra_decoding_arguments, sign_to_id, id_to_tran, predictor_from_file, model_from_file)
+
+    corpus = "riao"
+    for file in os.listdir(directory / corpus):
+        operate_on_file(directory, corpus, file, lambda1, lambda2, logreg, vec, idx_to_tag_dict,
                         extra_decoding_arguments, sign_to_id, id_to_tran, predictor_from_file, model_from_file)
 
-    for file in os.listdir(directory / "riao"):
-        operate_on_file(directory / "riao", file, lambda1, lambda2, logreg, vec, idx_to_tag_dict,
-                        extra_decoding_arguments, sign_to_id, id_to_tran, predictor_from_file, model_from_file)
+    compute_averages()
 
 
 if __name__ == '__main__':
