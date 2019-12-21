@@ -8,6 +8,7 @@ from parse_json import parse_json
 from pathlib import Path
 from get_texts_details import get_dialect
 import statistics
+from combine_algorithms import combine_tags
 import platform
 
 
@@ -88,35 +89,63 @@ def copied_code_from_translate_Akkadian():
 def make_algorithm_prediction(algorithm, sentences, format_function, sign_to_id, prediction_function, *args):
     formated_sentences = format_function(sentences, sign_to_id)
     predicted_tags = {}
+    all_predicted_tags = {}
     for key in formated_sentences:
         line_predicted_tags = prediction_function(formated_sentences[key], *args)
         predicted_tags[key] = line_predicted_tags
+        if algorithm == "biLSTM":
+            predicted_tags[key] = line_predicted_tags[0]
+            all_predicted_tags[key] = line_predicted_tags
 
     #print(algorithm + "predictions: " + str(predicted_tags))
     accuracy = compute_accuracy(sentences, predicted_tags)
     print(algorithm + " percentage: " + str(accuracy))
-    return accuracy
+    if algorithm == "biLSTM":
+        return accuracy, all_predicted_tags
+    return accuracy, predicted_tags
 
 
 def biLSTM_predict(line, id_to_tran, predictor_from_file, model_from_file):
     tag_logits = predictor_from_file.predict(line)['tag_logits']
-    biLSTM_predicted_tags, biLSTM_predicted2_tags, biLSTM_predicted3_tags, _, _, _ = logits_to_trans(tag_logits,
-                model_from_file, id_to_tran)
-    return biLSTM_predicted_tags
+    return logits_to_trans(tag_logits, model_from_file, id_to_tran)
+
+
+def make_combined_prediction(sentences, HMM_predicted_tags, MEMM_predicted_tags, biLSTM_predicted_tags_and_scores):
+    # values decided to be best by check on rinap corpus
+    #gamma1 = 0.4
+    #gamma2 = 0.2
+
+    gamma1 = 1.5
+    gamma2 = 1.5
+
+    combined_tags = {}
+    for key in HMM_predicted_tags:
+        algorithms_tag = biLSTM_predicted_tags_and_scores[key] + (HMM_predicted_tags[key], MEMM_predicted_tags[key])
+        line_predicted_tags = combine_tags(algorithms_tag, gamma1, gamma2)
+        #line_predicted_tags = prediction_function(formated_sentences[key], *args)
+        combined_tags[key] = line_predicted_tags
+
+    accuracy = compute_accuracy(sentences, combined_tags)
+    print("combined percentage: " + str(accuracy))
+
+    return accuracy
 
 
 def make_predictions(sentences, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id,
                         id_to_tran, predictor_from_file, model_from_file):
-    HMM_accuracy = make_algorithm_prediction("HMM", sentences, parsed_json_to_HMM_format, sign_to_id, hmm_viterbi, 0, {}, {}, {}, {},
-                              {}, lambda1, lambda2)
+    HMM_accuracy, HMM_predicted_tags = make_algorithm_prediction("HMM", sentences, parsed_json_to_HMM_format,
+        sign_to_id, hmm_viterbi, 0, {}, {}, {}, {}, {}, lambda1, lambda2)
 
-    MEMM_accuracy = make_algorithm_prediction("MEMM", sentences, parsed_json_to_HMM_format, sign_to_id, memm_greedy, logreg, vec,
-                              idx_to_tag_dict, extra_decoding_arguments)
+    MEMM_accuracy, MEMM_predicted_tags = make_algorithm_prediction("MEMM", sentences, parsed_json_to_HMM_format,
+        sign_to_id, memm_greedy, logreg, vec, idx_to_tag_dict, extra_decoding_arguments)
 
-    biLSTM_accuracy = make_algorithm_prediction("biLSTM", sentences, parsed_json_to_allen_format, sign_to_id, biLSTM_predict, id_to_tran,
-                              predictor_from_file, model_from_file)
+    biLSTM_accuracy, biLSTM_predicted_tags_and_scores = make_algorithm_prediction("biLSTM", sentences,
+        parsed_json_to_allen_format, sign_to_id,  biLSTM_predict, id_to_tran, predictor_from_file, model_from_file)
 
-    return HMM_accuracy, MEMM_accuracy, biLSTM_accuracy
+    combined_accuracy = make_combined_prediction(sentences, HMM_predicted_tags, MEMM_predicted_tags,
+        biLSTM_predicted_tags_and_scores)
+
+    return HMM_accuracy, MEMM_accuracy, biLSTM_accuracy, combined_accuracy
 
 
 def operate_on_file(directory, corpus, file, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments,
@@ -129,8 +158,9 @@ def operate_on_file(directory, corpus, file, lambda1, lambda2, logreg, vec, idx_
     dict[file] = parsed
     sentences = break_into_sentences(dict)
     #print(sentences)
-    HMM_accuracy, MEMM_accuracy, biLSTM_accuracy = make_predictions(sentences, lambda1, lambda2, logreg, vec,
-            idx_to_tag_dict, extra_decoding_arguments, sign_to_id, id_to_tran, predictor_from_file, model_from_file)
+    HMM_accuracy, MEMM_accuracy, biLSTM_accuracy, combined_accuracy = make_predictions(sentences, lambda1, lambda2,
+        logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id, id_to_tran,
+        predictor_from_file, model_from_file)
 
     dialect = get_dialect(corpus, file)
     print(dialect)
@@ -141,18 +171,22 @@ def operate_on_file(directory, corpus, file, lambda1, lambda2, logreg, vec, idx_
     global dialects_HMM
     global dialects_MEMM
     global dialects_biLSTM
+    global dialects_combined
     if dialect not in dialects_HMM:
         dialects_HMM[dialect] = [HMM_accuracy]
         dialects_MEMM[dialect] = [MEMM_accuracy]
         dialects_biLSTM[dialect] = [biLSTM_accuracy]
+        dialects_combined[dialect] = [combined_accuracy]
     else:
         dialects_HMM[dialect].append(HMM_accuracy)
         dialects_MEMM[dialect].append(MEMM_accuracy)
         dialects_biLSTM[dialect].append(biLSTM_accuracy)
+        dialects_combined[dialect].append(combined_accuracy)
 
     #print(dialects_HMM)
     #print(dialects_MEMM)
     print(dialects_biLSTM)
+    print(dialects_combined)
 
 
 def compute_averages():
@@ -160,6 +194,7 @@ def compute_averages():
         print(dialect + " HMM average: " + str(statistics.mean(dialects_HMM[dialect])))
         print(dialect + " MEMM average: " + str(statistics.mean(dialects_MEMM[dialect])))
         print(dialect + " biLSTM average: " + str(statistics.mean(dialects_biLSTM[dialect])))
+        print(dialect + " combined average: " + str(statistics.mean(dialects_combined[dialect])))
 
 
 def main():
@@ -170,12 +205,15 @@ def main():
     dialects_MEMM = {}
     global dialects_biLSTM
     dialects_biLSTM = {}
+    global dialects_combined
+    dialects_combined = {}
 
     lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id, id_to_tran, \
     predictor_from_file, model_from_file = copied_code_from_translate_Akkadian()
 
-    #for file in os.listdir(directory / "random"):
-    #    operate_on_file(directory / "random", file, lambda1, lambda2, logreg, vec, idx_to_tag_dict,
+    #corpus = "random"
+    #for file in os.listdir(directory / corpus):
+    #    operate_on_file(directory, corpus, file, lambda1, lambda2, logreg, vec, idx_to_tag_dict,
     #                    extra_decoding_arguments, sign_to_id, id_to_tran, predictor_from_file, model_from_file)
 
     corpus = "riao"
