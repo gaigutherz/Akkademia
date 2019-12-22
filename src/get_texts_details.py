@@ -5,7 +5,8 @@ import xml.etree.ElementTree as ET
 
 
 def get_dialect(corpus, file):
-    d = requests.get('http://oracc.museum.upenn.edu/' + corpus + '/' + file[:-5] + '/')
+    #d = requests.get('http://oracc.museum.upenn.edu/' + corpus + '/' + file[:-5] + '/')
+    d = requests.get('http://oracc.museum.upenn.edu/ribo/' + file[:-5] + '/')
     try:
         root = ET.fromstring(d.content)
     except:

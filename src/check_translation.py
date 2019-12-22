@@ -216,10 +216,18 @@ def main():
     #    operate_on_file(directory, corpus, file, lambda1, lambda2, logreg, vec, idx_to_tag_dict,
     #                    extra_decoding_arguments, sign_to_id, id_to_tran, predictor_from_file, model_from_file)
 
-    corpus = "riao"
-    for file in os.listdir(directory / corpus):
-        operate_on_file(directory, corpus, file, lambda1, lambda2, logreg, vec, idx_to_tag_dict,
-                        extra_decoding_arguments, sign_to_id, id_to_tran, predictor_from_file, model_from_file)
+    #corpus = "riao"
+    #for file in os.listdir(directory / corpus):
+    #    operate_on_file(directory, corpus, file, lambda1, lambda2, logreg, vec, idx_to_tag_dict,
+    #                    extra_decoding_arguments, sign_to_id, id_to_tran, predictor_from_file, model_from_file)
+
+    inner_directory = directory / "ribo"
+    corpus_base = "babylon"
+    for i in [2, 3, 4, 5, 6, 7, 8, 10]:
+        corpus = corpus_base + str(i)
+        for file in os.listdir(inner_directory / corpus):
+            operate_on_file(inner_directory, corpus, file, lambda1, lambda2, logreg, vec, idx_to_tag_dict,
+                            extra_decoding_arguments, sign_to_id, id_to_tran, predictor_from_file, model_from_file)
 
     compute_averages()
 
