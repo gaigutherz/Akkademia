@@ -1,14 +1,19 @@
 # Translating-Akkadian-using-NLP
 Translating Akkadian signs to transcriptions using NLP techniques such as HMM, MEMM and BiLSTM neural networks.
 
-Getting Started
+## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-Prerequisites
-What things you need to install the software and how to install them
+### Prerequisites
+Install Python 3.7.1 - https://www.python.org/downloads/release/python-371/
 
-Give examples
-Installing
+Install Pycharm - https://www.jetbrains.com/pycharm/download/#section=windows
+
+Install git - https://git-scm.com/downloads (Choose your Operating system)
+
+Create a GitHub user - https://github.com/join?source=header-home
+
+### Installing
 A step by step series of examples that tell you how to get a development env running
 
 Say what the step will be
