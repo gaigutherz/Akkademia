@@ -33,12 +33,15 @@ pip install allennlp
 ```
 
 Open pycharm and choose "Check out from version control"
+
 Insert the GitHub project path  - https://github.com/gaigutherz/Translating-Akkadian-using-NLP.git
+
 Insert your GitHub credentials
+
 Clone
 
 Now you can run the project and insert the Akkadian signs!
 
-Authors
+### Authors
 Gai Gutherz
 Ariel Elazary
