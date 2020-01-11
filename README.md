@@ -44,4 +44,5 @@ Now you can run the project and insert the Akkadian signs!
 
 ### Authors
 Gai Gutherz
+
 Ariel Elazary
