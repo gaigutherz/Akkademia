@@ -10,7 +10,7 @@ def get_dialect(corpus, file):
     try:
         root = ET.fromstring(d.content)
     except:
-        return None
+        return "no_parsed_dialect"
 
     i = 0
     for child in root.iter('{http://www.w3.org/1999/xhtml}li'):
