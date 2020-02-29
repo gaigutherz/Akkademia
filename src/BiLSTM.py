@@ -19,7 +19,7 @@ from allennlp.data.iterators import BucketIterator
 from allennlp.training.trainer import Trainer
 from allennlp.predictors import SentenceTaggerPredictor
 from build_data import preprocess
-from data import dump_object_to_file, load_object_from_file, BiLSTM_compute_accuracy
+from data import dump_object_to_file, load_object_from_file, logits_to_trans
 import platform
 
 torch.manual_seed(1)
@@ -81,6 +81,17 @@ class LstmTagger(Model):
         return {"accuracy": self.accuracy.get_metric(reset)}
 
 
+def BiLSTM_predict(text, model, predictor, sign_to_id, id_to_tran):
+    allen_format = ""
+    for sign, tran in text:
+        allen_format += str(sign_to_id[sign]) + " "
+    allen_format = allen_format[:-1]
+
+    tag_logits = predictor.predict(allen_format)['tag_logits']
+    prediction, _, _, _, _, _ = logits_to_trans(tag_logits, model, id_to_tran)
+    return prediction
+
+
 def prepare1():
     reader = PosDatasetReader()
     if platform.system() == "Windows":
@@ -120,7 +131,7 @@ def prepare2(model, vocab, train_dataset, validation_dataset, cuda_device, reade
                       validation_dataset=validation_dataset,
                       #patience=1,
                       patience=10,
-                      #num_epochs=1,
+                      #num_epochs=5,
                       num_epochs=1000,
                       cuda_device=cuda_device)
 

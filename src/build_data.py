@@ -126,8 +126,8 @@ def build_data_for_hmm(sentences, isTrans):
 
 def build_id_dicts(texts):
     sign_to_id, tran_to_id = rep_to_ix(reorganize_data(texts))
-    print(sign_to_id)
-    print(tran_to_id)
+    #print(sign_to_id)
+    #print(tran_to_id)
     id_to_sign = invert_dict(sign_to_id)
     id_to_tran = invert_dict(tran_to_id)
     return sign_to_id, tran_to_id, id_to_sign, id_to_tran

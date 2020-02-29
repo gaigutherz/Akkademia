@@ -1,5 +1,5 @@
 import time
-from data import increment_count, compute_vocab_count
+from data import increment_count, compute_vocab_count, compute_accuracy
 from build_data import preprocess
 
 TEST_DATA_SIZE_FOR_LAMBDAS = 3
@@ -243,7 +243,7 @@ def hmm_viterbi(sent, total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_w
     ### END YOUR CODE
     return predicted_tags
 
-
+'''
 def hmm_compute_accuracy(test_data, lambda1, lambda2):
     correct = 0
     seps = 0
@@ -262,7 +262,7 @@ def hmm_compute_accuracy(test_data, lambda1, lambda2):
 
     #print("precentage of seps errors: " + str(float(seps) / correct))
     return float(correct) / total
-
+'''
 
 def hmm_choose_best_lamdas(test_data):
     best_lambda1 = -1
@@ -272,7 +272,7 @@ def hmm_choose_best_lamdas(test_data):
         for j in range(0, 10 - i, 1):
             lambda1 = i / 10.0
             lambda2 = j / 10.0
-            accuracy = hmm_compute_accuracy(test_data, lambda1, lambda2)
+            accuracy, _, _ = compute_accuracy(test_data, hmm_viterbi, 0, {}, {}, {}, {}, {}, lambda1, lambda2)
             print("For lambda1 = " + str(lambda1), ", lambda2 = " + str(lambda2), \
                 ", lambda3 = " + str(1 - lambda1 - lambda2) + " got accuracy = " + str(accuracy))
             if accuracy > best_accuracy:
@@ -314,29 +314,21 @@ def run_hmm(train_sents, dev_sents, learn_mode):
     total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts = hmm_train(train_sents)
     hmm_compute_q_e_S(dev_sents, total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts)
     if learn_mode:
-        lambda1, lambda2 = hmm_choose_best_lamdas(dev_sents[:25])
+        lambda1, lambda2 = hmm_choose_best_lamdas(dev_sents)
         return lambda1, lambda2
 
 
 def main():
-    start_time = time.time()
-
-    train_texts, dev_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran = preprocess()
-    run_hmm(train_texts, dev_texts)
-
-    train_dev_end_time = time.time()
-    print("Train and dev evaluation elapsed: " + str(train_dev_end_time - start_time) + " seconds")
-
-    '''
-    if os.path.exists("Penn_Treebank/test.gold.conll"):
-        test_sents = read_conll_pos_file("Penn_Treebank/test.gold.conll")
-        test_sents = preprocess_sent(vocab, test_sents)
-        acc_viterbi = hmm_eval(test_sents, total_tokens, q_tri_counts, q_bi_counts, q_uni_counts,
-                                           e_word_tag_counts, e_tag_counts)
-        print "HMM TEST accuracy: " + str(acc_viterbi)
-        full_flow_end_time = time.time()
-        print "Full flow elapsed: " + str(full_flow_end_time - start_time) + " seconds"
-    '''
+    train_texts, test_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran = preprocess()
+    train1_texts = train_texts[len(train_texts) // 400:]
+    print(len(train1_texts))
+    train2_texts = train_texts[:len(train_texts) // 400]
+    print(len(train2_texts))
+    lambda1, lambda2 = run_hmm(train1_texts, train2_texts, True)
+    print("Done learning, now computing accuracy!")
+    print(compute_accuracy(train1_texts, hmm_viterbi, 0, {}, {}, {}, {}, {}, lambda1, lambda2))
+    print(compute_accuracy(train2_texts, hmm_viterbi, 0, {}, {}, {}, {}, {}, lambda1, lambda2))
+    print(compute_accuracy(test_texts, hmm_viterbi, 0, {}, {}, {}, {}, {}, lambda1, lambda2))
 
 
 if __name__ == "__main__":

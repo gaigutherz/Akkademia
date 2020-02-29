@@ -7,10 +7,10 @@ from pathlib import Path
 import pickle
 
 #from build_data import local_path
-from BiLSTM import prepare1, prepare2, LstmTagger, PosDatasetReader
+from BiLSTM import prepare1, prepare2, LstmTagger, PosDatasetReader, BiLSTM_predict
 from build_data import preprocess
-from hmm import run_hmm, hmm_viterbi, hmm_compute_accuracy
-from data import load_object_from_file, logits_to_trans
+from hmm import run_hmm, hmm_viterbi
+from data import load_object_from_file, logits_to_trans, compute_accuracy
 from memm import memm_greedy, build_extra_decoding_arguments, run_memm
 from combine_algorithms import overall_classifier, overall_choose_best_gammas, list_to_tran
 import platform
@@ -83,12 +83,11 @@ def load_learned_data():
     model_from_file = load_object_from_file(model_path)
 
     # print(dev_texts)
-    # print(hmm_compute_accuracy(train_texts, lambda1, lambda2))
-    # print(hmm_compute_accuracy(dev_texts, lambda1, lambda2))
+    # print(compute_accuracy(train_texts, hmm_viterbi, 0, {}, {}, {}, {}, {}, lambda1, lambda2))
+    # print(compute_accuracy(dev_texts, hmm_viterbi, 0, {}, {}, {}, {}, {}, lambda1, lambda2))
 
-    # print(BiLSTM_compute_accuracy(train_texts, model_from_file, predictor_from_file, sign_to_id, id_to_tran))
-    # print(BiLSTM_compute_accuracy(dev_texts, model_from_file, predictor_from_file, sign_to_id, id_to_tran))
-    # exit()
+    # print(compute_accuracy(train_texts, BiLSTM_predict, model_from_file, predictor_from_file, sign_to_id, id_to_tran))
+    # print(compute_accuracy(dev_texts, BiLSTM_predict, model_from_file, predictor_from_file, sign_to_id, id_to_tran))
 
     # print(build_info_sentence(sign_to_id))
 

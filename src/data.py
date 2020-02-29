@@ -117,9 +117,19 @@ def logits_to_trans(tag_logits, model, id_to_tran):
     return prediction, prediction2, prediction3, scores, scores2, scores3
 
 
+def is_word_end(s):
+    if s[-1] in "-.":
+        return False
+    return True
+
+'''
 def BiLSTM_compute_accuracy(texts, model, predictor, sign_to_id, id_to_tran):
     correct = 0
+    correct_without_segmentation = 0
     total = 0
+    true_positives = 0
+    false_positives = 0
+    false_negatives = 0
 
     for text in texts:
         allen_format = ""
@@ -128,14 +138,68 @@ def BiLSTM_compute_accuracy(texts, model, predictor, sign_to_id, id_to_tran):
         allen_format = allen_format[:-1]
 
         tag_logits = predictor.predict(allen_format)['tag_logits']
-        prediction, prediction2, prediction3 = logits_to_trans(tag_logits, model, id_to_tran)
+        prediction, prediction2, prediction3, _, _, _ = logits_to_trans(tag_logits, model, id_to_tran)
         for i in range(len(prediction)):
             total += 1
             if text[i][1] == prediction[i]:
                 correct += 1
-            else:
-                #print(text[i][0] + " " + text[i][1])
-                #print(prediction[i] + " " + prediction2[i] + " " + prediction3[i])
-                pass
+            elif text[i][1][-1] in "-." and text[i][1][:-1] == prediction[i]:
+                correct_without_segmentation += 1
+            elif prediction[i][-1] in "-." and text[i][1] == prediction[i][-1]:
+                correct_without_segmentation += 1
 
-    return float(correct) / total
+            if is_word_end(prediction[i]) and is_word_end(text[i][1]):
+                true_positives += 1
+            if is_word_end(prediction[i]) and not is_word_end(text[i][1]):
+                false_positives += 1
+            if not is_word_end(prediction[i]) and is_word_end(text[i][1]):
+                false_negatives += 1
+
+    precision = float(true_positives) / (true_positives + false_positives)
+    recall = float(true_positives) / (true_positives + false_negatives)
+
+    F1 = (2 * precision * recall) / (precision + recall)
+
+    accuracy = float(correct) / total
+    accuracy_without_segmentation = float(correct + correct_without_segmentation) / total
+
+    return accuracy, accuracy_without_segmentation, F1
+'''
+
+
+def compute_accuracy(texts, prediction_function, *args):
+    correct = 0
+    correct_without_segmentation = 0
+    total = 0
+    true_positives = 0
+    false_positives = 0
+    false_negatives = 0
+
+    for text in texts:
+        prediction = prediction_function(text, *args)
+        for i in range(len(prediction)):
+            total += 1
+            if text[i][1] == prediction[i]:
+                correct += 1
+            elif text[i][1][-1] in "-." and text[i][1][:-1] == prediction[i]:
+                correct_without_segmentation += 1
+            elif prediction[i][-1] in "-." and text[i][1] == prediction[i][-1]:
+                correct_without_segmentation += 1
+
+            if is_word_end(prediction[i]) and is_word_end(text[i][1]):
+                true_positives += 1
+            if is_word_end(prediction[i]) and not is_word_end(text[i][1]):
+                false_positives += 1
+            if not is_word_end(prediction[i]) and is_word_end(text[i][1]):
+                false_negatives += 1
+
+    precision = float(true_positives) / (true_positives + false_positives)
+    recall = float(true_positives) / (true_positives + false_negatives)
+
+    F1 = (2 * precision * recall) / (precision + recall)
+
+    accuracy = float(correct) / total
+    accuracy_without_segmentation = float(correct + correct_without_segmentation) / total
+
+    return accuracy, accuracy_without_segmentation, F1
+
