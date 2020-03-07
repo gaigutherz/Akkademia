@@ -319,15 +319,11 @@ def run_hmm(train_sents, dev_sents, learn_mode):
 
 
 def main():
-    train_texts, test_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran = preprocess()
-    train1_texts = train_texts[len(train_texts) // 400:]
-    print(len(train1_texts))
-    train2_texts = train_texts[:len(train_texts) // 400]
-    print(len(train2_texts))
-    lambda1, lambda2 = run_hmm(train1_texts, train2_texts, True)
+    train_texts, dev_texts, test_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran = preprocess()
+    lambda1, lambda2 = run_hmm(train_texts, dev_texts, True)
     print("Done learning, now computing accuracy!")
-    print(compute_accuracy(train1_texts, hmm_viterbi, 0, {}, {}, {}, {}, {}, lambda1, lambda2))
-    print(compute_accuracy(train2_texts, hmm_viterbi, 0, {}, {}, {}, {}, {}, lambda1, lambda2))
+    print(compute_accuracy(train_texts, hmm_viterbi, 0, {}, {}, {}, {}, {}, lambda1, lambda2))
+    print(compute_accuracy(dev_texts, hmm_viterbi, 0, {}, {}, {}, {}, {}, lambda1, lambda2))
     print(compute_accuracy(test_texts, hmm_viterbi, 0, {}, {}, {}, {}, {}, lambda1, lambda2))
 
 

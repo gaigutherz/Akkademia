@@ -181,9 +181,9 @@ def compute_accuracy(texts, prediction_function, *args):
             total += 1
             if text[i][1] == prediction[i]:
                 correct += 1
-            elif text[i][1][-1] in "-." and text[i][1][:-1] == prediction[i]:
+            elif not is_word_end(text[i][1]) and text[i][1][:-1] == prediction[i]:
                 correct_without_segmentation += 1
-            elif prediction[i][-1] in "-." and text[i][1] == prediction[i][-1]:
+            elif not is_word_end(prediction[i]) and text[i][1] == prediction[i][:-1]:
                 correct_without_segmentation += 1
 
             if is_word_end(prediction[i]) and is_word_end(text[i][1]):
@@ -202,4 +202,3 @@ def compute_accuracy(texts, prediction_function, *args):
     accuracy_without_segmentation = float(correct + correct_without_segmentation) / total
 
     return accuracy, accuracy_without_segmentation, F1
-

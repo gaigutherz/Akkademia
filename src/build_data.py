@@ -156,8 +156,10 @@ def preprocess():
     sign_to_id, tran_to_id, id_to_sign, id_to_tran = build_id_dicts(texts)
 
     random.shuffle(texts)
-    dev_texts = texts[:len(texts) // 10]
-    train_texts = texts[len(texts) // 10:]
+    TEN_PERCENT = len(texts) // 10
+    test_texts = texts[:TEN_PERCENT]
+    dev_texts = texts[TEN_PERCENT : 2*TEN_PERCENT]
+    train_texts = texts[2*TEN_PERCENT:]
 
     if platform.system() == "Windows":
         write_data_for_allen_to_file(dev_texts, r"..\BiLSTM_input\allen_dev_texts.txt", sign_to_id, tran_to_id)
@@ -166,7 +168,7 @@ def preprocess():
         write_data_for_allen_to_file(dev_texts, r"../BiLSTM_input/allen_dev_texts.txt", sign_to_id, tran_to_id)
         write_data_for_allen_to_file(train_texts, r"../BiLSTM_input/allen_train_texts.txt", sign_to_id, tran_to_id)
 
-    return train_texts, dev_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran
+    return train_texts, dev_texts, test_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran
 
 
 def main():
