@@ -243,27 +243,6 @@ def hmm_viterbi(sent, total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_w
     ### END YOUR CODE
     return predicted_tags
 
-'''
-def hmm_compute_accuracy(test_data, lambda1, lambda2):
-    correct = 0
-    seps = 0
-    total = 0
-    for sentence in test_data:
-        predicted_tags = hmm_viterbi(sentence, 0, {}, {}, {}, {}, {}, lambda1, lambda2)
-        for i in range(len(sentence)):
-            total += 1
-            if sentence[i][1] == predicted_tags[i]:
-                correct += 1
-            else:
-                if len(sentence[i]) > 0 and sentence[i][-1] == "-" or \
-                        len(predicted_tags[i]) > 0 and predicted_tags[i][-1] == "-":
-                    seps += 1
-                #print(sentence[i][1], predicted_tags[i])
-
-    #print("precentage of seps errors: " + str(float(seps) / correct))
-    return float(correct) / total
-'''
-
 def hmm_choose_best_lamdas(test_data):
     best_lambda1 = -1
     best_lambda2 = -1

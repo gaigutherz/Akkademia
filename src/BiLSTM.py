@@ -19,7 +19,7 @@ from allennlp.data.iterators import BucketIterator
 from allennlp.training.trainer import Trainer
 from allennlp.predictors import SentenceTaggerPredictor
 from build_data import preprocess
-from data import dump_object_to_file, load_object_from_file, logits_to_trans
+from data import dump_object_to_file, load_object_from_file, logits_to_trans, compute_accuracy
 import platform
 
 torch.manual_seed(1)
@@ -131,7 +131,7 @@ def prepare2(model, vocab, train_dataset, validation_dataset, cuda_device, reade
                       validation_dataset=validation_dataset,
                       #patience=1,
                       patience=10,
-                      #num_epochs=5,
+                      #num_epochs=1,
                       num_epochs=1000,
                       cuda_device=cuda_device)
 
@@ -150,7 +150,7 @@ def train(trainer, model, reader, vocab):
         dump_object_to_file(model, r"../output/model")
 
 
-def check_results(train_texts, dev_texts, sign_to_id, id_to_tran):
+def check_results(train_texts, dev_texts, test_texts, sign_to_id, id_to_tran):
     if platform.system() == "Windows":
         predictor_from_file = load_object_from_file(r"..\output\predictor")
         model_from_file = load_object_from_file(r"..\output\model")
@@ -158,8 +158,9 @@ def check_results(train_texts, dev_texts, sign_to_id, id_to_tran):
         predictor_from_file = load_object_from_file(r"../output/predictor")
         model_from_file = load_object_from_file(r"../output/model")
 
-    print(BiLSTM_compute_accuracy(train_texts, model_from_file, predictor_from_file, sign_to_id, id_to_tran))
-    print(BiLSTM_compute_accuracy(dev_texts, model_from_file, predictor_from_file, sign_to_id, id_to_tran))
+    print(compute_accuracy(train_texts, BiLSTM_predict, model_from_file, predictor_from_file, sign_to_id, id_to_tran))
+    print(compute_accuracy(dev_texts, BiLSTM_predict, model_from_file, predictor_from_file, sign_to_id, id_to_tran))
+    print(compute_accuracy(test_texts, BiLSTM_predict, model_from_file, predictor_from_file, sign_to_id, id_to_tran))
 
 
 def main():
@@ -167,7 +168,7 @@ def main():
     model, vocab, train_dataset, validation_dataset, cuda_device, reader = prepare1()
     trainer, model, reader, vocab = prepare2(model, vocab, train_dataset, validation_dataset, cuda_device, reader)
     train(trainer, model, reader, vocab)
-    check_results(train_texts, dev_texts, sign_to_id, id_to_tran)
+    check_results(train_texts, dev_texts, test_texts, sign_to_id, id_to_tran)
 
 
 if __name__ == '__main__':
