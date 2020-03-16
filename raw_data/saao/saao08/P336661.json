@@ -1,0 +1,190 @@
+{
+  "type": "cdl",
+  "project": "saao/saa08",
+  "source": "http://oracc.org/saao/saa08",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2019-08-27T09:44:48",
+  "textid": "P336661",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "P336661.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "subtype": "obverse",
+          "type": "obverse",
+          "ref": "P336661.o.1",
+          "label": "o"
+        },
+        {
+          "node": "d",
+          "type": "nonx",
+          "ref": "P336661.2",
+          "strict": "0",
+          "state": "other"
+        },
+        {
+          "node": "d",
+          "subtype": "reverse",
+          "type": "reverse",
+          "ref": "P336661.r.3",
+          "label": "r"
+        },
+        {
+          "node": "d",
+          "type": "nonx",
+          "ref": "P336661.4",
+          "strict": "0",
+          "state": "blank"
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "P336661.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "P336661.U2",
+              "label": "r 1",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "P336661.5",
+                  "n": "1",
+                  "label": "r 1"
+                },
+                {
+                  "node": "l",
+                  "frag": "ša",
+                  "id": "P336661.l0245c",
+                  "ref": "P336661.5.1",
+                  "inst": "ša[from]'PRP",
+                  "sig": "@saao%akk-x-neoass:ša=ša[of//from]DET'PRP$ša",
+                  "f": {
+                    "lang": "akk-x-neoass",
+                    "form": "ša",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ša",
+                        "utf8": "𒊭",
+                        "id": "P336661.5.1.0"
+                      }
+                    ],
+                    "cf": "ša",
+                    "gw": "of",
+                    "sense": "from",
+                    "norm": "ša",
+                    "pos": "DET",
+                    "epos": "PRP"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "{1}{d}PA—mu-še-ṣi",
+                  "id": "P336661.l0245d",
+                  "ref": "P336661.5.2",
+                  "inst": "Nabu-mušeṣi[1]PN",
+                  "sig": "@saao/saa08%akk-x-neoass:{1}{d}PA-mu-še-ṣi=Nabu-mušeṣi[1//1]PN'PN$Nabu-mušeṣi",
+                  "f": {
+                    "lang": "akk-x-neoass",
+                    "form": "{1}{d}PA-mu-še-ṣi",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "det": "semantic",
+                            "pos": "pre",
+                            "seq": [
+                              {
+                                "n": "n",
+                                "sexified": "1(diš)",
+                                "form": "1",
+                                "utf8": "𒁹",
+                                "id": "P336661.5.2.0",
+                                "seq": [
+                                  {
+                                    "r": "1"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "det": "semantic",
+                            "pos": "pre",
+                            "seq": [
+                              {
+                                "v": "d",
+                                "utf8": "𒀭",
+                                "id": "P336661.5.2.1"
+                              }
+                            ]
+                          },
+                          {
+                            "s": "PA",
+                            "utf8": "𒉺",
+                            "id": "P336661.5.2.2",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "—",
+                            "gdl_em": "1"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "mu",
+                        "utf8": "𒈬",
+                        "id": "P336661.5.2.3",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "še",
+                        "utf8": "𒊺",
+                        "id": "P336661.5.2.4",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ṣi",
+                        "utf8": "𒍢",
+                        "id": "P336661.5.2.5"
+                      }
+                    ],
+                    "cf": "Nabu-mušeṣi",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm": "Nabu-mušeṣi",
+                    "pos": "PN",
+                    "epos": "PN"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "nonx",
+                  "ref": "P336661.6",
+                  "strict": "0",
+                  "state": "blank"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

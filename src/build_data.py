@@ -16,7 +16,9 @@ def build_signs_and_transcriptions(corpora):
             for file in f:
                 key = str(file[:-len(".json")])
                 if key not in chars.keys():
-                    chars[key], translation[key] = parse_json(os.path.join(r, file))
+                    c, t = parse_json(os.path.join(r, file))
+                    if c is not None and t is not None:
+                        chars[key], translation[key] = parse_json(os.path.join(r, file))
 
     return chars, translation
 

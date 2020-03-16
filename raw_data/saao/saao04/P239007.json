@@ -1,0 +1,809 @@
+{
+  "type": "cdl",
+  "project": "saao/saa04",
+  "source": "http://oracc.org/saao/saa04",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2019-08-27T09:39:03",
+  "textid": "P239007",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "P239007.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "subtype": "obverse",
+          "type": "obverse",
+          "ref": "P239007.o.1",
+          "label": "o"
+        },
+        {
+          "node": "d",
+          "type": "nonx",
+          "ref": "P239007.2",
+          "strict": "0",
+          "extent": "beginning",
+          "state": "missing"
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "P239007.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "P239007.U2",
+              "label": "o 1' - o 3'",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "P239007.3",
+                  "n": "1'",
+                  "label": "o 1'"
+                },
+                {
+                  "node": "l",
+                  "frag": "[x",
+                  "id": "P239007.l07784",
+                  "ref": "P239007.3.1",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.3.1.0",
+                        "breakStart": "1",
+                        "o": "[",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x",
+                  "id": "P239007.l07785",
+                  "ref": "P239007.3.2",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.3.2.0",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x]",
+                  "id": "P239007.l07786",
+                  "ref": "P239007.3.3",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.3.3.0",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "P239007.3.1.0"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "{⸢lu₂}pi⸣-qi-⸢tu₂⸣-[te",
+                  "id": "P239007.l07787",
+                  "ref": "P239007.3.4",
+                  "inst": "+piqittūtu[post of responsibility//position (of authority)]N'N$piqittūte",
+                  "sig": "@saao/saa04%akk-x-neobab:{LU₂}pi-qi-tu₂-te=piqittūtu[post of responsibility//position (of authority)]N'N$piqittūte",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "{LU₂}pi-qi-tu₂-te",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "gg": "logo",
+                            "gdl_type": "logo",
+                            "group": [
+                              {
+                                "s": "LU₂",
+                                "utf8": "𒇽",
+                                "id": "P239007.3.4.0",
+                                "break": "damaged",
+                                "ho": "1",
+                                "role": "logo",
+                                "logolang": "sux"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "v": "pi",
+                        "utf8": "𒉿",
+                        "id": "P239007.3.4.1",
+                        "break": "damaged",
+                        "queried": "1",
+                        "delim": "-",
+                        "hc": "1"
+                      },
+                      {
+                        "v": "qi",
+                        "utf8": "𒆥",
+                        "id": "P239007.3.4.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "tu₂",
+                        "utf8": "𒌓",
+                        "id": "P239007.3.4.3",
+                        "break": "damaged",
+                        "ho": "1",
+                        "delim": "-",
+                        "hc": "1"
+                      },
+                      {
+                        "v": "te",
+                        "utf8": "𒋼",
+                        "id": "P239007.3.4.4",
+                        "breakStart": "1",
+                        "o": "[",
+                        "break": "missing"
+                      }
+                    ],
+                    "cf": "piqittūtu",
+                    "gw": "post of responsibility",
+                    "sense": "position (of authority)",
+                    "norm": "piqittūte",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x",
+                  "id": "P239007.l07788",
+                  "ref": "P239007.3.5",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.3.5.0",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x",
+                  "id": "P239007.l07789",
+                  "ref": "P239007.3.6",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.3.6.0",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x",
+                  "id": "P239007.l0778a",
+                  "ref": "P239007.3.7",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.3.7.0",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x]",
+                  "id": "P239007.l0778b",
+                  "ref": "P239007.3.8",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.3.8.0",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "P239007.3.4.4"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "P239007.4",
+                  "n": "2'",
+                  "label": "o 2'"
+                },
+                {
+                  "node": "l",
+                  "frag": "[x",
+                  "id": "P239007.l0778c",
+                  "ref": "P239007.4.1",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.4.1.0",
+                        "breakStart": "1",
+                        "o": "[",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x",
+                  "id": "P239007.l0778d",
+                  "ref": "P239007.4.2",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.4.2.0",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x",
+                  "id": "P239007.l0778e",
+                  "ref": "P239007.4.3",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.4.3.0",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x]+⸢x⸣-da-ni",
+                  "id": "P239007.l0778f",
+                  "ref": "P239007.4.4",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x+x-da-ni",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "ligature",
+                        "gdl_type": "ligature",
+                        "group": [
+                          {
+                            "v": "x",
+                            "utf8": "x",
+                            "id": "P239007.4.4.0",
+                            "break": "missing",
+                            "o": "]",
+                            "breakEnd": "P239007.4.1.0",
+                            "delim": "+"
+                          },
+                          {
+                            "v": "x",
+                            "utf8": "x",
+                            "id": "P239007.4.4.1",
+                            "break": "damaged",
+                            "ho": "1",
+                            "delim": "-",
+                            "hc": "1"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "da",
+                        "utf8": "𒁕",
+                        "id": "P239007.4.4.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ni",
+                        "utf8": "𒉌",
+                        "id": "P239007.4.4.3"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "⸢x⸣+[x",
+                  "id": "P239007.l07790",
+                  "ref": "P239007.4.5",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x+x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "ligature",
+                        "gdl_type": "ligature",
+                        "group": [
+                          {
+                            "v": "x",
+                            "utf8": "x",
+                            "id": "P239007.4.5.0",
+                            "break": "damaged",
+                            "ho": "1",
+                            "delim": "+",
+                            "hc": "1"
+                          },
+                          {
+                            "v": "x",
+                            "utf8": "x",
+                            "id": "P239007.4.5.1",
+                            "breakStart": "1",
+                            "o": "[",
+                            "break": "missing"
+                          }
+                        ]
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x",
+                  "id": "P239007.l07791",
+                  "ref": "P239007.4.6",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.4.6.0",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x",
+                  "id": "P239007.l07792",
+                  "ref": "P239007.4.7",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.4.7.0",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x",
+                  "id": "P239007.l07793",
+                  "ref": "P239007.4.8",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.4.8.0",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x]",
+                  "id": "P239007.l07794",
+                  "ref": "P239007.4.9",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.4.9.0",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "P239007.4.5.1"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "P239007.5",
+                  "n": "3'",
+                  "label": "o 3'"
+                },
+                {
+                  "node": "l",
+                  "frag": "[x",
+                  "id": "P239007.l07795",
+                  "ref": "P239007.5.1",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.5.1.0",
+                        "breakStart": "1",
+                        "o": "[",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x",
+                  "id": "P239007.l07796",
+                  "ref": "P239007.5.2",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.5.2.0",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x",
+                  "id": "P239007.l07797",
+                  "ref": "P239007.5.3",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.5.3.0",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x",
+                  "id": "P239007.l07798",
+                  "ref": "P239007.5.4",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.5.4.0",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x]+⸢x⸣",
+                  "id": "P239007.l07799",
+                  "ref": "P239007.5.5",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x+x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "ligature",
+                        "gdl_type": "ligature",
+                        "group": [
+                          {
+                            "v": "x",
+                            "utf8": "x",
+                            "id": "P239007.5.5.0",
+                            "break": "missing",
+                            "o": "]",
+                            "breakEnd": "P239007.5.1.0",
+                            "delim": "+"
+                          },
+                          {
+                            "v": "x",
+                            "utf8": "x",
+                            "id": "P239007.5.5.1",
+                            "break": "damaged",
+                            "ho": "1",
+                            "hc": "1"
+                          }
+                        ]
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "[x",
+                  "id": "P239007.l0779a",
+                  "ref": "P239007.5.6",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.5.6.0",
+                        "breakStart": "1",
+                        "o": "[",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x",
+                  "id": "P239007.l0779b",
+                  "ref": "P239007.5.7",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.5.7.0",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x",
+                  "id": "P239007.l0779c",
+                  "ref": "P239007.5.8",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.5.8.0",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x",
+                  "id": "P239007.l0779d",
+                  "ref": "P239007.5.9",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.5.9.0",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x",
+                  "id": "P239007.l0779e",
+                  "ref": "P239007.5.10",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.5.10.0",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x]",
+                  "id": "P239007.l0779f",
+                  "ref": "P239007.5.11",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neobab",
+                    "form": "x",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P239007.5.11.0",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "P239007.5.6.0"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "nonx",
+                  "ref": "P239007.6",
+                  "strict": "0",
+                  "extent": "rest",
+                  "state": "missing"
+                },
+                {
+                  "node": "d",
+                  "type": "nonx",
+                  "ref": "P239007.7",
+                  "strict": "0",
+                  "state": "other"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

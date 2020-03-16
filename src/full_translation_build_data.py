@@ -1,8 +1,8 @@
-from build_data import build_signs_and_transcriptions, break_into_sentences, write_data_to_file
+from build_data import build_signs_and_transcriptions, break_into_sentences
 from pathlib import Path
 
 
-def write_data_to_file(chars_sentences, translation_sentences):
+def write_sentences_to_file(chars_sentences, translation_sentences):
     signs_file = open(Path(r"../NMT_input/signs_per_line.txt"), "w", encoding="utf8")
     transcription_file = open(Path(r"../NMT_input/transcriptions_per_line.txt"), "w", encoding="utf8")
     translation_file = open(Path(r"../NMT_input/translation_per_line.txt"), "w", encoding="utf8")
@@ -26,10 +26,11 @@ def write_data_to_file(chars_sentences, translation_sentences):
 
 
 def preprocess():
-    chars, translation = build_signs_and_transcriptions(["rinap", "riao", "ribo"])
+    chars, translation = build_signs_and_transcriptions(["rinap", "riao", "ribo", "saao"])
     chars_sentences = break_into_sentences(chars)
     translation_sentences = break_into_sentences(translation)
-    write_data_to_file(chars_sentences, translation_sentences)
+    print("number of sentences is: " + str(len(translation_sentences)))
+    write_sentences_to_file(chars_sentences, translation_sentences)
 
 
 def main():

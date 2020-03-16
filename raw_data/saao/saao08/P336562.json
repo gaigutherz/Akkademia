@@ -1,0 +1,1857 @@
+{
+  "type": "cdl",
+  "project": "saao/saa08",
+  "source": "http://oracc.org/saao/saa08",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2019-08-27T09:44:43",
+  "textid": "P336562",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "P336562.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "subtype": "obverse",
+          "type": "obverse",
+          "ref": "P336562.o.1",
+          "label": "o"
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "P336562.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "P336562.U2",
+              "label": "o 1 - r 1",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "P336562.2",
+                  "n": "1",
+                  "label": "o 1"
+                },
+                {
+                  "node": "l",
+                  "frag": "1",
+                  "id": "P336562.l030ce",
+                  "ref": "P336562.2.1",
+                  "inst": "n",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "1",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "n": "n",
+                        "sexified": "1(diš)",
+                        "form": "1",
+                        "utf8": "𒁹",
+                        "id": "P336562.2.1.0",
+                        "seq": [
+                          {
+                            "r": "1"
+                          }
+                        ]
+                      }
+                    ],
+                    "pos": "n"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "ina",
+                  "id": "P336562.l030cf",
+                  "ref": "P336562.2.2",
+                  "inst": "ina[on]PRP",
+                  "sig": "@saao/saa08%akk-x-stdbab:ina=ina[in//on]PRP'PRP$ina",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "ina",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ina",
+                        "utf8": "𒀸",
+                        "id": "P336562.2.2.0"
+                      }
+                    ],
+                    "cf": "ina",
+                    "gw": "in",
+                    "sense": "on",
+                    "norm": "ina",
+                    "pos": "PRP",
+                    "epos": "PRP"
+                  }
+                },
+                {
+                  "node": "c",
+                  "type": "phrase",
+                  "tag": "phr",
+                  "id": "P336562.U4",
+                  "ref": "P336562.ls00000",
+                  "cdl": [
+                    {
+                      "node": "l",
+                      "frag": "UD.NA₂.AM₃",
+                      "id": "P336562.l030d0",
+                      "ref": "P336562.2.3",
+                      "cof-tails": "P336562.l030d1",
+                      "inst": "ūm[day]N&bubbuli[(day of the) new moon]N",
+                      "sig": "@saao/saa08%akk-x-stdbab:UD.NA₂.AM₃=ūmu[day//day]N'N$ūm&&@saao/saa08%akk-x-stdbab:=bibbulu[(day of the) new moon//(day of the) new moon]N'N$bubbuli",
+                      "f": {
+                        "lang": "akk-x-stdbab",
+                        "form": "UD.NA₂.AM₃",
+                        "delim": "",
+                        "gdl": [
+                          {
+                            "gg": "logo",
+                            "gdl_type": "logo",
+                            "group": [
+                              {
+                                "s": "UD",
+                                "utf8": "𒌓",
+                                "id": "P336562.2.3.0",
+                                "role": "logo",
+                                "logolang": "sux",
+                                "delim": "."
+                              },
+                              {
+                                "s": "NA₂",
+                                "utf8": "𒈿",
+                                "id": "P336562.2.3.1",
+                                "role": "logo",
+                                "logolang": "sux",
+                                "delim": "."
+                              },
+                              {
+                                "s": "AM₃",
+                                "utf8": "𒀀𒀭",
+                                "id": "P336562.2.3.2",
+                                "role": "logo",
+                                "logolang": "sux"
+                              }
+                            ]
+                          }
+                        ],
+                        "cf": "ūmu",
+                        "gw": "day",
+                        "sense": "day",
+                        "norm": "ūm",
+                        "pos": "N",
+                        "epos": "N"
+                      }
+                    },
+                    {
+                      "node": "l",
+                      "frag": "UD.NA₂.AM₃",
+                      "id": "P336562.l030d1",
+                      "ref": "P336562.2.3",
+                      "cof-head": "P336562.l030d0",
+                      "inst": "ūm[day]N&bubbuli[(day of the) new moon]N",
+                      "tail-sig": "@saao/saa08%akk-x-stdbab:=bibbulu[(day of the) new moon//(day of the) new moon]N'N$bubbuli",
+                      "f": {
+                        "lang": "akk-x-stdbab",
+                        "form": "UD.NA₂.AM₃",
+                        "delim": "",
+                        "gdl": [
+                          {
+                            "gg": "logo",
+                            "gdl_type": "logo",
+                            "group": [
+                              {
+                                "s": "UD",
+                                "utf8": "𒌓",
+                                "id": "P336562.2.3.0",
+                                "role": "logo",
+                                "logolang": "sux",
+                                "delim": "."
+                              },
+                              {
+                                "s": "NA₂",
+                                "utf8": "𒈿",
+                                "id": "P336562.2.3.1",
+                                "role": "logo",
+                                "logolang": "sux",
+                                "delim": "."
+                              },
+                              {
+                                "s": "AM₃",
+                                "utf8": "𒀀𒀭",
+                                "id": "P336562.2.3.2",
+                                "role": "logo",
+                                "logolang": "sux"
+                              }
+                            ]
+                          }
+                        ],
+                        "cf": "bibbulu",
+                        "gw": "(day of the) new moon",
+                        "sense": "(day of the) new moon",
+                        "norm": "bubbuli",
+                        "pos": "N",
+                        "epos": "N"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "{d}IM",
+                  "id": "P336562.l030d2",
+                  "ref": "P336562.2.4",
+                  "inst": "Adad[1]DN",
+                  "sig": "@saao/saa08%akk-x-stdbab:{d}IM=Adad[1//1]DN'DN$Adad",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "{d}IM",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "det": "semantic",
+                            "pos": "pre",
+                            "seq": [
+                              {
+                                "v": "d",
+                                "utf8": "𒀭",
+                                "id": "P336562.2.4.0"
+                              }
+                            ]
+                          },
+                          {
+                            "s": "IM",
+                            "utf8": "𒅎",
+                            "id": "P336562.2.4.1",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Adad",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm": "Adad",
+                    "pos": "DN",
+                    "epos": "DN"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "GU₃-⸢šu₂⸣",
+                  "id": "P336562.l030d3",
+                  "ref": "P336562.2.5",
+                  "inst": "rigimšu[thunder]N",
+                  "sig": "@saao/saa08%akk-x-stdbab:GU₃-šu₂=rigmu[voice//thunder]N'N$rigimšu",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "GU₃-šu₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "GU₃",
+                            "utf8": "𒅗",
+                            "id": "P336562.2.5.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "šu₂",
+                        "utf8": "𒋙",
+                        "id": "P336562.2.5.1",
+                        "break": "damaged",
+                        "ho": "1",
+                        "hc": "1"
+                      }
+                    ],
+                    "cf": "rigmu",
+                    "gw": "voice",
+                    "sense": "thunder",
+                    "norm": "rigimšu",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "[ŠUB-di]",
+                  "id": "P336562.l030d4",
+                  "ref": "P336562.2.6",
+                  "inst": "iddi[throw (down)]V",
+                  "sig": "@saao/saa08%akk-x-stdbab:ŠUB-di=nadû[throw (down)//throw (down)]V'V$iddi",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "ŠUB-di",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "ŠUB",
+                            "utf8": "𒊒",
+                            "id": "P336562.2.6.0",
+                            "breakStart": "1",
+                            "o": "[",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "di",
+                        "utf8": "𒁲",
+                        "id": "P336562.2.6.1",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "P336562.2.6.0"
+                      }
+                    ],
+                    "cf": "nadû",
+                    "gw": "throw (down)",
+                    "sense": "throw (down)",
+                    "norm": "iddi",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "P336562.3",
+                  "n": "2",
+                  "label": "o 2"
+                },
+                {
+                  "node": "l",
+                  "frag": "BURU₁₄",
+                  "id": "P336562.l030d5",
+                  "ref": "P336562.3.1",
+                  "inst": "ebūru[harvest]N",
+                  "exosig": "@saao/saa08%akk-x-stdbab:BURU₁₄=ebūru[harvest//harvest]N'N$ebūr",
+                  "exoprj": "saao/saa10",
+                  "exolng": "akk-x-stdbab",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "BURU₁₄",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "BURU₁₄",
+                            "utf8": "𒂙",
+                            "id": "P336562.3.1.0",
+                            "gdl_collated": "1",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "ebūru",
+                    "gw": "harvest",
+                    "sense": "harvest",
+                    "norm": "ebūr",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "SI.SA₂",
+                  "id": "P336562.l030d6",
+                  "ref": "P336562.3.2",
+                  "inst": "iššer[prosper]V",
+                  "sig": "@saao/saa08%akk-x-stdbab:SI.SA₂=ešēru[be(come) straight//prosper]V'V$iššer",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "SI.SA₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "SI",
+                            "utf8": "𒋛",
+                            "id": "P336562.3.2.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "SA₂",
+                            "utf8": "𒁲",
+                            "id": "P336562.3.2.1",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "ešēru",
+                    "gw": "be(come) straight",
+                    "sense": "prosper",
+                    "norm": "iššer",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "KI.LAM",
+                  "id": "P336562.l030d7",
+                  "ref": "P336562.3.3",
+                  "inst": "mahīru[market price]N",
+                  "sig": "@saao/saa08%akk-x-stdbab:KI.LAM=mahīru[market price//market price]N'N$mahīru",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "KI.LAM",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "KI",
+                            "utf8": "𒆠",
+                            "id": "P336562.3.3.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "LAM",
+                            "utf8": "𒇴",
+                            "id": "P336562.3.3.1",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "mahīru",
+                    "gw": "market price",
+                    "sense": "market price",
+                    "norm": "mahīru",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "[GI.NA]",
+                  "id": "P336562.l030d8",
+                  "ref": "P336562.3.4",
+                  "inst": "+kânu[be(come) permanent//be(come) steady]V'V$ikân",
+                  "sig": "@saao/saa08%akk-x-stdbab:GI.NA=kânu[be(come) permanent//be(come) steady]V'V$ikân",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "GI.NA",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "GI",
+                            "utf8": "𒄀",
+                            "id": "P336562.3.4.0",
+                            "breakStart": "1",
+                            "o": "[",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "NA",
+                            "utf8": "𒈾",
+                            "id": "P336562.3.4.1",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "o": "]",
+                            "breakEnd": "P336562.3.4.0"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "kânu",
+                    "gw": "be(come) permanent",
+                    "sense": "be(come) steady",
+                    "norm": "ikân",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "P336562.4",
+                  "n": "3",
+                  "label": "o 3"
+                },
+                {
+                  "node": "l",
+                  "frag": "1",
+                  "id": "P336562.l030d9",
+                  "ref": "P336562.4.1",
+                  "inst": "n",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "1",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "n": "n",
+                        "sexified": "1(diš)",
+                        "form": "1",
+                        "utf8": "𒁹",
+                        "id": "P336562.4.1.0",
+                        "seq": [
+                          {
+                            "r": "1"
+                          }
+                        ]
+                      }
+                    ],
+                    "pos": "n"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "ina",
+                  "id": "P336562.l030da",
+                  "ref": "P336562.4.2",
+                  "inst": "ina[on]PRP",
+                  "sig": "@saao/saa08%akk-x-stdbab:ina=ina[in//on]PRP'PRP$ina",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "ina",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ina",
+                        "utf8": "𒀸",
+                        "id": "P336562.4.2.0"
+                      }
+                    ],
+                    "cf": "ina",
+                    "gw": "in",
+                    "sense": "on",
+                    "norm": "ina",
+                    "pos": "PRP",
+                    "epos": "PRP"
+                  }
+                },
+                {
+                  "node": "c",
+                  "type": "phrase",
+                  "tag": "phr",
+                  "id": "P336562.U5",
+                  "ref": "P336562.ls00001",
+                  "cdl": [
+                    {
+                      "node": "l",
+                      "frag": "UD.NA₂.AM₃",
+                      "id": "P336562.l030db",
+                      "ref": "P336562.4.3",
+                      "cof-tails": "P336562.l030dc",
+                      "inst": "ūm[day]N&bubbuli[(day of the) new moon]N",
+                      "sig": "@saao/saa08%akk-x-stdbab:UD.NA₂.AM₃=ūmu[day//day]N'N$ūm&&@saao/saa08%akk-x-stdbab:=bibbulu[(day of the) new moon//(day of the) new moon]N'N$bubbuli",
+                      "f": {
+                        "lang": "akk-x-stdbab",
+                        "form": "UD.NA₂.AM₃",
+                        "delim": "",
+                        "gdl": [
+                          {
+                            "gg": "logo",
+                            "gdl_type": "logo",
+                            "group": [
+                              {
+                                "s": "UD",
+                                "utf8": "𒌓",
+                                "id": "P336562.4.3.0",
+                                "role": "logo",
+                                "logolang": "sux",
+                                "delim": "."
+                              },
+                              {
+                                "s": "NA₂",
+                                "utf8": "𒈿",
+                                "id": "P336562.4.3.1",
+                                "role": "logo",
+                                "logolang": "sux",
+                                "delim": "."
+                              },
+                              {
+                                "s": "AM₃",
+                                "utf8": "𒀀𒀭",
+                                "id": "P336562.4.3.2",
+                                "role": "logo",
+                                "logolang": "sux"
+                              }
+                            ]
+                          }
+                        ],
+                        "cf": "ūmu",
+                        "gw": "day",
+                        "sense": "day",
+                        "norm": "ūm",
+                        "pos": "N",
+                        "epos": "N"
+                      }
+                    },
+                    {
+                      "node": "l",
+                      "frag": "UD.NA₂.AM₃",
+                      "id": "P336562.l030dc",
+                      "ref": "P336562.4.3",
+                      "cof-head": "P336562.l030db",
+                      "inst": "ūm[day]N&bubbuli[(day of the) new moon]N",
+                      "tail-sig": "@saao/saa08%akk-x-stdbab:=bibbulu[(day of the) new moon//(day of the) new moon]N'N$bubbuli",
+                      "f": {
+                        "lang": "akk-x-stdbab",
+                        "form": "UD.NA₂.AM₃",
+                        "delim": "",
+                        "gdl": [
+                          {
+                            "gg": "logo",
+                            "gdl_type": "logo",
+                            "group": [
+                              {
+                                "s": "UD",
+                                "utf8": "𒌓",
+                                "id": "P336562.4.3.0",
+                                "role": "logo",
+                                "logolang": "sux",
+                                "delim": "."
+                              },
+                              {
+                                "s": "NA₂",
+                                "utf8": "𒈿",
+                                "id": "P336562.4.3.1",
+                                "role": "logo",
+                                "logolang": "sux",
+                                "delim": "."
+                              },
+                              {
+                                "s": "AM₃",
+                                "utf8": "𒀀𒀭",
+                                "id": "P336562.4.3.2",
+                                "role": "logo",
+                                "logolang": "sux"
+                              }
+                            ]
+                          }
+                        ],
+                        "cf": "bibbulu",
+                        "gw": "(day of the) new moon",
+                        "sense": "(day of the) new moon",
+                        "norm": "bubbuli",
+                        "pos": "N",
+                        "epos": "N"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "{d}IM",
+                  "id": "P336562.l030dd",
+                  "ref": "P336562.4.4",
+                  "inst": "Adad[1]DN",
+                  "sig": "@saao/saa08%akk-x-stdbab:{d}IM=Adad[1//1]DN'DN$Adad",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "{d}IM",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "det": "semantic",
+                            "pos": "pre",
+                            "seq": [
+                              {
+                                "v": "d",
+                                "utf8": "𒀭",
+                                "id": "P336562.4.4.0"
+                              }
+                            ]
+                          },
+                          {
+                            "s": "IM",
+                            "utf8": "𒅎",
+                            "id": "P336562.4.4.1",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Adad",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm": "Adad",
+                    "pos": "DN",
+                    "epos": "DN"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "GU₃-šu₂",
+                  "id": "P336562.l030de",
+                  "ref": "P336562.4.5",
+                  "inst": "rigimšu[thunder]N",
+                  "sig": "@saao/saa08%akk-x-stdbab:GU₃-šu₂=rigmu[voice//thunder]N'N$rigimšu",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "GU₃-šu₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "GU₃",
+                            "utf8": "𒅗",
+                            "id": "P336562.4.5.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "šu₂",
+                        "utf8": "𒋙",
+                        "id": "P336562.4.5.1"
+                      }
+                    ],
+                    "cf": "rigmu",
+                    "gw": "voice",
+                    "sense": "thunder",
+                    "norm": "rigimšu",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "ŠUB-[di]",
+                  "id": "P336562.l030df",
+                  "ref": "P336562.4.6",
+                  "inst": "iddi[throw (down)]V",
+                  "sig": "@saao/saa08%akk-x-stdbab:ŠUB-di=nadû[throw (down)//throw (down)]V'V$iddi",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "ŠUB-di",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "ŠUB",
+                            "utf8": "𒊒",
+                            "id": "P336562.4.6.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "di",
+                        "utf8": "𒁲",
+                        "id": "P336562.4.6.1",
+                        "breakStart": "1",
+                        "o": "]",
+                        "break": "missing",
+                        "breakEnd": "P336562.4.6.1"
+                      }
+                    ],
+                    "cf": "nadû",
+                    "gw": "throw (down)",
+                    "sense": "throw (down)",
+                    "norm": "iddi",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "P336562.5",
+                  "n": "4",
+                  "label": "o 4"
+                },
+                {
+                  "node": "l",
+                  "frag": "SIG₅",
+                  "id": "P336562.l030e0",
+                  "ref": "P336562.5.1",
+                  "inst": "dumuq[good sign]N",
+                  "sig": "@saao/saa08%akk-x-stdbab:SIG₅=dumqu[goodness//good sign]N'N$dumuq",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "SIG₅",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "SIG₅",
+                            "utf8": "𒅆𒂟",
+                            "id": "P336562.5.1.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "dumqu",
+                    "gw": "goodness",
+                    "sense": "good sign",
+                    "norm": "dumuq",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "BURU₁₄",
+                  "id": "P336562.l030e1",
+                  "ref": "P336562.5.2",
+                  "inst": "ebūri[harvest]N",
+                  "sig": "@saao/saa08%akk-x-stdbab:BURU₁₄=ebūru[harvest//harvest]N'N$ebūri",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "BURU₁₄",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "BURU₁₄",
+                            "utf8": "𒂙",
+                            "id": "P336562.5.2.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "ebūru",
+                    "gw": "harvest",
+                    "sense": "harvest",
+                    "norm": "ebūri",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "P336562.6",
+                  "n": "5",
+                  "label": "o 5"
+                },
+                {
+                  "node": "l",
+                  "frag": "1",
+                  "id": "P336562.l030e2",
+                  "ref": "P336562.6.1",
+                  "inst": "n",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "1",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "n": "n",
+                        "sexified": "1(diš)",
+                        "form": "1",
+                        "utf8": "𒁹",
+                        "id": "P336562.6.1.0",
+                        "seq": [
+                          {
+                            "r": "1"
+                          }
+                        ]
+                      }
+                    ],
+                    "pos": "n"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "ina",
+                  "id": "P336562.l030e3",
+                  "ref": "P336562.6.2",
+                  "inst": "ina[in]PRP",
+                  "sig": "@saao/saa08%akk-x-stdbab:ina=ina[in//in]PRP'PRP$ina",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "ina",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ina",
+                        "utf8": "𒀸",
+                        "id": "P336562.6.2.0"
+                      }
+                    ],
+                    "cf": "ina",
+                    "gw": "in",
+                    "sense": "in",
+                    "norm": "ina",
+                    "pos": "PRP",
+                    "epos": "PRP"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "{iti}ŠE",
+                  "id": "P336562.l030e4",
+                  "ref": "P336562.6.3",
+                  "inst": "Addari[Adar]MN",
+                  "sig": "@saao/saa08%akk-x-stdbab:{ITI}ŠE=Addaru[Adar//Adar]MN'MN$Addari",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "{ITI}ŠE",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "det": "semantic",
+                            "pos": "pre",
+                            "seq": [
+                              {
+                                "gg": "logo",
+                                "gdl_type": "logo",
+                                "group": [
+                                  {
+                                    "s": "ITI",
+                                    "utf8": "𒌗",
+                                    "id": "P336562.6.3.0",
+                                    "role": "logo",
+                                    "logolang": "sux"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "s": "ŠE",
+                            "utf8": "𒊺",
+                            "id": "P336562.6.3.1",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Addaru",
+                    "gw": "Adar",
+                    "sense": "Adar",
+                    "norm": "Addari",
+                    "pos": "MN",
+                    "epos": "MN"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "{d}IM",
+                  "id": "P336562.l030e5",
+                  "ref": "P336562.6.4",
+                  "inst": "Adad[1]DN",
+                  "sig": "@saao/saa08%akk-x-stdbab:{d}IM=Adad[1//1]DN'DN$Adad",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "{d}IM",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "det": "semantic",
+                            "pos": "pre",
+                            "seq": [
+                              {
+                                "v": "d",
+                                "utf8": "𒀭",
+                                "id": "P336562.6.4.0"
+                              }
+                            ]
+                          },
+                          {
+                            "s": "IM",
+                            "utf8": "𒅎",
+                            "id": "P336562.6.4.1",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Adad",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm": "Adad",
+                    "pos": "DN",
+                    "epos": "DN"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "GU₃-šu₂",
+                  "id": "P336562.l030e6",
+                  "ref": "P336562.6.5",
+                  "inst": "rigimšu[thunder]N",
+                  "sig": "@saao/saa08%akk-x-stdbab:GU₃-šu₂=rigmu[voice//thunder]N'N$rigimšu",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "GU₃-šu₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "GU₃",
+                            "utf8": "𒅗",
+                            "id": "P336562.6.5.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "šu₂",
+                        "utf8": "𒋙",
+                        "id": "P336562.6.5.1"
+                      }
+                    ],
+                    "cf": "rigmu",
+                    "gw": "voice",
+                    "sense": "thunder",
+                    "norm": "rigimšu",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "ŠUB-di",
+                  "id": "P336562.l030e7",
+                  "ref": "P336562.6.6",
+                  "inst": "iddi[throw (down)]V",
+                  "sig": "@saao/saa08%akk-x-stdbab:ŠUB-di=nadû[throw (down)//throw (down)]V'V$iddi",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "ŠUB-di",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "ŠUB",
+                            "utf8": "𒊒",
+                            "id": "P336562.6.6.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "di",
+                        "utf8": "𒁲",
+                        "id": "P336562.6.6.1"
+                      }
+                    ],
+                    "cf": "nadû",
+                    "gw": "throw (down)",
+                    "sense": "throw (down)",
+                    "norm": "iddi",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "P336562.7",
+                  "n": "6",
+                  "label": "o 6"
+                },
+                {
+                  "node": "l",
+                  "frag": "UD",
+                  "id": "P336562.l030e8",
+                  "ref": "P336562.7.1",
+                  "inst": "ūmu[day]N",
+                  "sig": "@saao/saa08%akk-x-stdbab:UD=ūmu[day//day]N'N$ūmu",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "UD",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "UD",
+                            "utf8": "𒌓",
+                            "id": "P336562.7.1.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "ūmu",
+                    "gw": "day",
+                    "sense": "day",
+                    "norm": "ūmu",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "ŠU₂",
+                  "id": "P336562.l030e9",
+                  "ref": "P336562.7.2",
+                  "inst": "+erēpu[cloud over]V$īrup",
+                  "sig": "@saao/saa08%akk-x-stdbab:ŠU₂=erēpu[cloud over//cloud over]V'V$īrup",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "ŠU₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "ŠU₂",
+                            "utf8": "𒋙",
+                            "id": "P336562.7.2.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "erēpu",
+                    "gw": "cloud over",
+                    "sense": "cloud over",
+                    "norm": "īrup",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "AN",
+                  "id": "P336562.l030ea",
+                  "ref": "P336562.7.3",
+                  "inst": "šamû[sky]N",
+                  "sig": "@saao/saa08%akk-x-stdbab:AN=šamû[sky//sky]N'N$šamû",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "AN",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "AN",
+                            "utf8": "𒀭",
+                            "id": "P336562.7.3.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "šamû",
+                    "gw": "sky",
+                    "sense": "sky",
+                    "norm": "šamû",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "ŠUR",
+                  "id": "P336562.l030eb",
+                  "ref": "P336562.7.4",
+                  "inst": "iznun[rain]V",
+                  "sig": "@saao/saa08%akk-x-stdbab:ŠUR=zanānu[rain//rain]V'V$iznun",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "ŠUR",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "ŠUR",
+                            "utf8": "𒋩",
+                            "id": "P336562.7.4.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "zanānu",
+                    "gw": "rain",
+                    "sense": "rain",
+                    "norm": "iznun",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "NIM.GIR₂",
+                  "id": "P336562.l030ec",
+                  "ref": "P336562.7.5",
+                  "inst": "birqu[lightning (flash)]N",
+                  "sig": "@saao/saa08%akk-x-stdbab:NIM.GIR₂=berqu[lightning (flash)//lightning (flash)]N'N$birqu",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "NIM.GIR₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "NIM",
+                            "utf8": "𒉏",
+                            "id": "P336562.7.5.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "GIR₂",
+                            "utf8": "𒄈",
+                            "id": "P336562.7.5.1",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "berqu",
+                    "gw": "lightning (flash)",
+                    "sense": "lightning (flash)",
+                    "norm": "birqu",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "ib-[riq]",
+                  "id": "P336562.l030ed",
+                  "ref": "P336562.7.6",
+                  "inst": "+barāqu[lighten//strike]V'V$ibriq",
+                  "sig": "@saao/saa08%akk-x-stdbab:ib-riq=barāqu[lighten//strike]V'V$ibriq",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "ib-riq",
+                    "gdl": [
+                      {
+                        "v": "ib",
+                        "utf8": "𒅁",
+                        "id": "P336562.7.6.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "riq",
+                        "utf8": "𒋆",
+                        "id": "P336562.7.6.1",
+                        "breakStart": "1",
+                        "o": "]",
+                        "break": "missing",
+                        "breakEnd": "P336562.7.6.1"
+                      }
+                    ],
+                    "cf": "barāqu",
+                    "gw": "lighten",
+                    "sense": "strike",
+                    "norm": "ibriq",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "P336562.8",
+                  "n": "7",
+                  "label": "o 7"
+                },
+                {
+                  "node": "l",
+                  "frag": "A.KAL",
+                  "id": "P336562.l030ee",
+                  "ref": "P336562.8.1",
+                  "inst": "mīlu[flood]N",
+                  "sig": "@saao/saa08%akk-x-stdbab:A.KAL=mīlu[high water//flood]N'N$mīlu",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "A.KAL",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "A",
+                            "utf8": "𒀀",
+                            "id": "P336562.8.1.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "KAL",
+                            "utf8": "𒆗",
+                            "id": "P336562.8.1.1",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "mīlu",
+                    "gw": "high water",
+                    "sense": "flood",
+                    "norm": "mīlu",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "ma-aʾ-⸢du⸣",
+                  "id": "P336562.l030ef",
+                  "ref": "P336562.8.2",
+                  "inst": "+mādu[many//much]AJ'AV$maʾdu",
+                  "sig": "@saao/saa08%akk-x-stdbab:ma-aʾ-du=mādu[many//much]AJ'AV$maʾdu",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "ma-aʾ-du",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ma",
+                        "utf8": "𒈠",
+                        "id": "P336562.8.2.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "aʾ",
+                        "utf8": "𒀪",
+                        "id": "P336562.8.2.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "du",
+                        "utf8": "𒁺",
+                        "id": "P336562.8.2.2",
+                        "break": "damaged",
+                        "ho": "1",
+                        "hc": "1"
+                      }
+                    ],
+                    "cf": "mādu",
+                    "gw": "many",
+                    "sense": "much",
+                    "norm": "maʾdu",
+                    "pos": "AJ",
+                    "epos": "AV"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "[DU]-⸢kam⸣-[ma]",
+                  "id": "P336562.l030f0",
+                  "ref": "P336562.8.3",
+                  "inst": "illikamma[come]V",
+                  "sig": "@saao/saa08%akk-x-stdbab:DU-kam-ma=alāku[go//come]V'V$illikamma",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "DU-kam-ma",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "DU",
+                            "utf8": "𒁺",
+                            "id": "P336562.8.3.0",
+                            "breakStart": "1",
+                            "o": "]",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "breakEnd": "P336562.8.3.0",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "kam",
+                        "utf8": "𒄰",
+                        "id": "P336562.8.3.1",
+                        "break": "damaged",
+                        "ho": "1",
+                        "delim": "-",
+                        "hc": "1"
+                      },
+                      {
+                        "v": "ma",
+                        "utf8": "𒈠",
+                        "id": "P336562.8.3.2",
+                        "breakStart": "1",
+                        "o": "]",
+                        "break": "missing",
+                        "breakEnd": "P336562.8.3.2"
+                      }
+                    ],
+                    "cf": "alāku",
+                    "gw": "go",
+                    "sense": "come",
+                    "norm": "illikamma",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "P336562.9",
+                  "n": "8",
+                  "label": "o 8"
+                },
+                {
+                  "node": "l",
+                  "frag": "BURU₁₄",
+                  "id": "P336562.l030f1",
+                  "ref": "P336562.9.1",
+                  "inst": "ebūr[harvest]N",
+                  "sig": "@saao/saa08%akk-x-stdbab:BURU₁₄=ebūru[harvest//harvest]N'N$ebūr",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "BURU₁₄",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "BURU₁₄",
+                            "utf8": "𒂙",
+                            "id": "P336562.9.1.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "ebūru",
+                    "gw": "harvest",
+                    "sense": "harvest",
+                    "norm": "ebūr",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "[KUR",
+                  "id": "P336562.l030f2",
+                  "ref": "P336562.9.2",
+                  "inst": "māti[land]N",
+                  "sig": "@saao/saa08%akk-x-stdbab:KUR=mātu[land//land]N'N$māti",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "KUR",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "KUR",
+                            "utf8": "𒆳",
+                            "id": "P336562.9.2.0",
+                            "breakStart": "1",
+                            "o": "[",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "mātu",
+                    "gw": "land",
+                    "sense": "land",
+                    "norm": "māti",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "SI.SA₂]",
+                  "id": "P336562.l030f3",
+                  "ref": "P336562.9.3",
+                  "inst": "iššer[prosper]V",
+                  "sig": "@saao/saa08%akk-x-stdbab:SI.SA₂=ešēru[be(come) straight//prosper]V'V$iššer",
+                  "f": {
+                    "lang": "akk-x-stdbab",
+                    "form": "SI.SA₂",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "SI",
+                            "utf8": "𒋛",
+                            "id": "P336562.9.3.0",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "SA₂",
+                            "utf8": "𒁲",
+                            "id": "P336562.9.3.1",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "o": "]",
+                            "breakEnd": "P336562.9.2.0"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "ešēru",
+                    "gw": "be(come) straight",
+                    "sense": "prosper",
+                    "norm": "iššer",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "nonx",
+                  "ref": "P336562.10",
+                  "strict": "1",
+                  "extent": "n",
+                  "scope": "line",
+                  "state": "ruling"
+                },
+                {
+                  "node": "d",
+                  "subtype": "reverse",
+                  "type": "reverse",
+                  "ref": "P336562.r.11",
+                  "label": "r"
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "P336562.12",
+                  "n": "1",
+                  "label": "r 1"
+                },
+                {
+                  "node": "l",
+                  "frag": "⸢ša⸣",
+                  "id": "P336562.l030f4",
+                  "ref": "P336562.12.1",
+                  "inst": "ša[from]'PRP",
+                  "sig": "@saao%akk-x-neoass:ša=ša[of//from]DET'PRP$ša",
+                  "f": {
+                    "lang": "akk-x-neoass",
+                    "form": "ša",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ša",
+                        "utf8": "𒊭",
+                        "id": "P336562.12.1.0",
+                        "break": "damaged",
+                        "ho": "1",
+                        "hc": "1"
+                      }
+                    ],
+                    "cf": "ša",
+                    "gw": "of",
+                    "sense": "from",
+                    "norm": "ša",
+                    "pos": "DET",
+                    "epos": "PRP"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "{1}x",
+                  "id": "P336562.l030f5",
+                  "ref": "P336562.12.2",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neoass",
+                    "form": "{1}x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "n": "n",
+                            "sexified": "1(diš)",
+                            "form": "1",
+                            "utf8": "𒁹",
+                            "id": "P336562.12.2.0",
+                            "breakStart": "1",
+                            "o": "[",
+                            "break": "missing",
+                            "seq": [
+                              {
+                                "r": "1"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P336562.12.2.1",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x",
+                  "id": "P336562.l030f6",
+                  "ref": "P336562.12.3",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neoass",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P336562.12.3.0",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x",
+                  "id": "P336562.l030f7",
+                  "ref": "P336562.12.4",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neoass",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P336562.12.4.0",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x",
+                  "id": "P336562.l030f8",
+                  "ref": "P336562.12.5",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neoass",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P336562.12.5.0",
+                        "break": "missing"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x]",
+                  "id": "P336562.l030f9",
+                  "ref": "P336562.12.6",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk-x-neoass",
+                    "form": "x",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "P336562.12.6.0",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "P336562.12.2.0"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkbase": [
+        {
+          "type": "linkset",
+          "xlink_title": "ūm bubbuli[day of the new moon//day of the new moon]N'N",
+          "id": "P336562.ls00000",
+          "xlink_type": "extended",
+          "xlink_role": "psu",
+          "sig": "{UD.NA₂.AM₃  = ūmu[day]N bibbulu[(day of the) new moon]N += ūm bubbuli[day of the new moon//day of the new moon]N'N}::@saao/saa08%akk-x-stdbab:UD.NA₂.AM₃=ūmu[day//day]N'N$ūm++@saao/saa08%akk-x-stdbab:=bibbulu[(day of the) new moon//(day of the) new moon]N'N$bubbuli",
+          "links": [
+            {
+              "type": "link",
+              "xlink_title": "ūm",
+              "xlink_type": "locator",
+              "xlink_href": "#P336562.l030d0",
+              "xlink_role": "elt"
+            },
+            {
+              "type": "link",
+              "xlink_title": "bubbuli",
+              "xlink_type": "locator",
+              "xlink_href": "#P336562.l030d1",
+              "xlink_role": "elt"
+            }
+          ]
+        },
+        {
+          "type": "linkset",
+          "xlink_title": "ūm bubbuli[day of the new moon//day of the new moon]N'N",
+          "id": "P336562.ls00001",
+          "xlink_type": "extended",
+          "xlink_role": "psu",
+          "sig": "{UD.NA₂.AM₃  = ūmu[day]N bibbulu[(day of the) new moon]N += ūm bubbuli[day of the new moon//day of the new moon]N'N}::@saao/saa08%akk-x-stdbab:UD.NA₂.AM₃=ūmu[day//day]N'N$ūm++@saao/saa08%akk-x-stdbab:=bibbulu[(day of the) new moon//(day of the) new moon]N'N$bubbuli",
+          "links": [
+            {
+              "type": "link",
+              "xlink_title": "ūm",
+              "xlink_type": "locator",
+              "xlink_href": "#P336562.l030db",
+              "xlink_role": "elt"
+            },
+            {
+              "type": "link",
+              "xlink_title": "bubbuli",
+              "xlink_type": "locator",
+              "xlink_href": "#P336562.l030dc",
+              "xlink_role": "elt"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
