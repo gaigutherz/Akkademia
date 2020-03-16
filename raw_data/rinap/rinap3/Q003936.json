@@ -1,0 +1,260 @@
+{
+  "type": "cdl",
+  "project": "rinap/rinap3",
+  "source": "http://oracc.org/rinap/rinap3",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2019-07-28T09:15:39",
+  "textid": "Q003936",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q003936.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "nonx",
+          "ref": "Q003936.1",
+          "strict": "0",
+          "state": "other"
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q003936.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "tag": ".",
+              "id": "Q003936.U2",
+              "label": "1´ - 3´",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q003936.2",
+                  "n": "1´",
+                  "label": "1´"
+                },
+                {
+                  "node": "l",
+                  "frag": "[...",
+                  "id": "Q003936.l0804e",
+                  "ref": "Q003936.2.1",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "x": "ellipsis",
+                        "id": "Q003936.2.1.0",
+                        "breakStart": "1",
+                        "break": "missing",
+                        "o": "["
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "DU₃]-šu₂",
+                  "id": "Q003936.l0804f",
+                  "ref": "Q003936.2.2",
+                  "inst": "ippušu[use]V",
+                  "sig": "@rinap/rinap3%akk:DU₃-šu₂=epēšu[do//use]V'V$ippušu",
+                  "f": {
+                    "lang": "akk",
+                    "form": "DU₃-šu₂",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "DU₃",
+                            "utf8": "𒆕",
+                            "id": "Q003936.2.2.0",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "o": "]",
+                            "breakEnd": "Q003936.2.1.0",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "šu₂",
+                        "utf8": "𒋙",
+                        "id": "Q003936.2.2.1"
+                      }
+                    ],
+                    "cf": "epēšu",
+                    "gw": "do",
+                    "sense": "use",
+                    "norm": "ippušu",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q003936.3",
+                  "n": "2´",
+                  "label": "2´"
+                },
+                {
+                  "node": "l",
+                  "frag": "[...",
+                  "id": "Q003936.l08050",
+                  "ref": "Q003936.3.1",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "x": "ellipsis",
+                        "id": "Q003936.3.1.0",
+                        "breakStart": "1",
+                        "break": "missing",
+                        "o": "["
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "{d]}⸢IŠKUR⸣",
+                  "id": "Q003936.l08051",
+                  "ref": "Q003936.3.2",
+                  "inst": "Adad[1]DN",
+                  "sig": "@rinap/rinap3%akk:{d}IŠKUR=Adad[1//1]DN'DN$Adad",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{d}IŠKUR",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "det": "semantic",
+                            "pos": "pre",
+                            "seq": [
+                              {
+                                "v": "d",
+                                "utf8": "𒀭",
+                                "id": "Q003936.3.2.0",
+                                "break": "missing",
+                                "o": "]",
+                                "breakEnd": "Q003936.3.1.0"
+                              }
+                            ]
+                          },
+                          {
+                            "s": "IŠKUR",
+                            "utf8": "𒅎",
+                            "id": "Q003936.3.2.1",
+                            "break": "damaged",
+                            "ho": "1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "hc": "1"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Adad",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm": "Adad",
+                    "pos": "DN",
+                    "epos": "DN"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q003936.4",
+                  "n": "3´",
+                  "label": "3´"
+                },
+                {
+                  "node": "l",
+                  "frag": "[...]",
+                  "id": "Q003936.l08052",
+                  "ref": "Q003936.4.1",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "x": "ellipsis",
+                        "id": "Q003936.4.1.0",
+                        "breakStart": "1",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "Q003936.4.1.0"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "x",
+                  "id": "Q003936.l08053",
+                  "ref": "Q003936.4.2",
+                  "inst": "u +.",
+                  "f": {
+                    "lang": "akk",
+                    "form": "x",
+                    "gdl": [
+                      {
+                        "v": "x",
+                        "utf8": "x",
+                        "id": "Q003936.4.2.0"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                }
+              ]
+            },
+            {
+              "node": "d",
+              "type": "nonx",
+              "ref": "Q003936.5",
+              "strict": "0",
+              "state": "other"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

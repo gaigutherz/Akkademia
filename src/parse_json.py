@@ -1,16 +1,5 @@
 import json
-import platform
-
-def main():
-    if platform.system() == "Windows":
-        directory = r"raw_data\rinap\rinap1\corpusjson"
-        chars = parse_json("..\\" + directory + "\\" + "Q003453.json")
-    else:
-        directory = r"raw_data/rinap/rinap1/corpusjson"
-        chars = parse_json("../" + directory + "/" + "Q003453.json")
-    print(len(chars))
-    for c in chars:
-        print(c[1])
+from pathlib import Path
 
 
 def get_delim(c):
@@ -74,36 +63,67 @@ def parse_tran(c, chars):
         raise Exception("c doesn't contain group / det / sexified / v / s / q / x! We don't know how to parse it!")
 
 
-def parse_l_node(l_node, chars):
+def parse_translation(l_node, translation):
+    if "sense" not in l_node["f"]:
+        return
+
+    t = l_node["f"]["sense"]
+    if t == "1":
+        if "norm" in l_node["f"]:
+            t = l_node["f"]["norm"]
+        else:
+            t = l_node["f"]["norm0"]
+
+    translation.append([l_node["ref"], t])
+
+
+def parse_l_node(l_node, chars, translation):
     if l_node["f"]["lang"] == "arc" or l_node["f"]["lang"] == "qcu-949" or l_node["f"]["lang"] == "akk-949":
         return
+
+    parse_translation(l_node, translation)
     gdl = l_node["f"]["gdl"]
     for g in gdl:
         parse_tran(g, chars)
 
 
-def parse_c_node(c_node, chars):
+def parse_c_node(c_node, chars, translation):
     for node in c_node["cdl"]:
         # This means it is metadata, and not a fragment.
         if node["node"] == "d":
             continue
         elif node["node"] == "c":
-            parse_c_node(node, chars)
+            parse_c_node(node, chars, translation)
         elif node["node"] == "l":
-            parse_l_node(node, chars)
+            parse_l_node(node, chars, translation)
         else:
             raise Exception("We reached a node other than d / c / l. We don't know how to parse it!")
 
 
 def parse_json(file):
     chars = []
+    translation = []
+
     f = open(file, "r", encoding="utf8")
     data = f.read()
 
     json_object = json.loads(data)
     j = json_object["cdl"][0]
-    parse_c_node(j, chars)
-    return chars
+    parse_c_node(j, chars, translation)
+    return chars, translation
+
+
+def main():
+    directory = Path(r"../raw_data/rinap/rinap4/")
+    chars, translation = parse_json(directory / "Q003355.json")
+
+    print(len(chars))
+    for c in chars:
+        print(c[1])
+
+    print(len(translation))
+    for t in translation:
+        print(t[1])
 
 
 if __name__ == '__main__':

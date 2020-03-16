@@ -1,0 +1,181 @@
+{
+  "type": "cdl",
+  "project": "rinap/rinap4",
+  "source": "http://oracc.org/rinap/rinap4",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2019-07-28T09:19:27",
+  "textid": "Q003396",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q003396.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q003396.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "Q003396.U2",
+              "label": "1",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q003396.1",
+                  "n": "1",
+                  "label": "1"
+                },
+                {
+                  "node": "l",
+                  "frag": "[...",
+                  "id": "Q003396.l06e29",
+                  "ref": "Q003396.1.1",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "x": "ellipsis",
+                        "id": "Q003396.1.1.0",
+                        "breakStart": "1",
+                        "break": "missing",
+                        "o": "["
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "{m]}{⸢d⸣}aš-šur-PAP-[AŠ",
+                  "id": "Q003396.l06e2a",
+                  "ref": "Q003396.1.2",
+                  "inst": "Aššur-ahu-iddina[Esarhaddon, king of Assyria]RN",
+                  "sig": "@rinap/rinap4%akk:{m}{d}aš-šur-PAP-AŠ=Aššur-ahu-iddina[Esarhaddon, king of Assyria//Esarhaddon, king of Assyria]RN'RN$Aššur-ahu-iddina",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{m}{d}aš-šur-PAP-AŠ",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "v": "m",
+                            "utf8": "𒁹",
+                            "id": "Q003396.1.2.0",
+                            "break": "missing",
+                            "o": "]",
+                            "breakEnd": "Q003396.1.1.0"
+                          }
+                        ]
+                      },
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "v": "d",
+                            "utf8": "𒀭",
+                            "id": "Q003396.1.2.1",
+                            "break": "damaged",
+                            "ho": "1",
+                            "hc": "1"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "aš",
+                        "utf8": "𒀸",
+                        "id": "Q003396.1.2.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "šur",
+                        "utf8": "𒋩",
+                        "id": "Q003396.1.2.3",
+                        "delim": "-"
+                      },
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "PAP",
+                            "utf8": "𒉽",
+                            "id": "Q003396.1.2.4",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          },
+                          {
+                            "s": "AŠ",
+                            "utf8": "𒀸",
+                            "id": "Q003396.1.2.5",
+                            "breakStart": "1",
+                            "o": "[",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Aššur-ahu-iddina",
+                    "gw": "Esarhaddon, king of Assyria",
+                    "sense": "Esarhaddon, king of Assyria",
+                    "norm": "Aššur-ahu-iddina",
+                    "pos": "RN",
+                    "epos": "RN"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "...]",
+                  "id": "Q003396.l06e2b",
+                  "ref": "Q003396.1.3",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk",
+                    "form": "x",
+                    "gdl": [
+                      {
+                        "x": "ellipsis",
+                        "id": "Q003396.1.3.0",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "Q003396.1.2.5"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

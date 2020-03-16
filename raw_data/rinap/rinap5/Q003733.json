@@ -1,0 +1,109 @@
+{
+  "type": "cdl",
+  "project": "rinap/rinap5",
+  "source": "http://oracc.org/rinap/rinap5",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2019-07-28T09:22:20",
+  "textid": "Q003733",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q003733.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q003733.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "Q003733.U2",
+              "label": "1",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q003733.1",
+                  "n": "1",
+                  "label": "1"
+                },
+                {
+                  "node": "l",
+                  "frag": "{kur}ma-dak-tu₂",
+                  "id": "Q003733.l08946",
+                  "ref": "Q003733.1.1",
+                  "inst": "Madaktu[]GN$",
+                  "sig": "@rinap/rinap5%akk:{KUR}ma-dak-tu₂=Madaktu[1//1]SN'GN$Madaktu",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{KUR}ma-dak-tu₂",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "gg": "logo",
+                            "gdl_type": "logo",
+                            "group": [
+                              {
+                                "s": "KUR",
+                                "utf8": "𒆳",
+                                "id": "Q003733.1.1.0",
+                                "role": "logo",
+                                "logolang": "sux"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "v": "ma",
+                        "utf8": "𒈠",
+                        "id": "Q003733.1.1.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "dak",
+                        "utf8": "𒁖",
+                        "id": "Q003733.1.1.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "tu₂",
+                        "utf8": "𒌓",
+                        "id": "Q003733.1.1.3"
+                      }
+                    ],
+                    "cf": "Madaktu",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm": "Madaktu",
+                    "pos": "SN",
+                    "epos": "GN"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

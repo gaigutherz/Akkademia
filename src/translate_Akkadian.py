@@ -48,7 +48,7 @@ def build_info_sentence(sign_to_id):
     return sent
 
 def load_learned_data():
-    train_texts, dev_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran = preprocess()
+    train_texts, dev_texts, test_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran = preprocess()
 
     # Run the HMM.
     run_hmm(train_texts, dev_texts, False)

@@ -1,0 +1,463 @@
+{
+  "type": "cdl",
+  "project": "riao",
+  "source": "http://oracc.org/riao",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2019-09-05T10:09:45",
+  "textid": "Q005714",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q005714.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "nonx",
+          "ref": "Q005714.1",
+          "strict": "0",
+          "state": "other"
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q005714.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "Q005714.U2",
+              "label": "1' - 3'",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q005714.2",
+                  "n": "1'",
+                  "label": "1'"
+                },
+                {
+                  "node": "l",
+                  "frag": "[...",
+                  "id": "Q005714.l0809e",
+                  "ref": "Q005714.2.1",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "x": "ellipsis",
+                        "id": "Q005714.2.1.0",
+                        "breakStart": "1",
+                        "break": "missing",
+                        "o": "["
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "u₂]-la-⸢ab⸣-bi-[is-su",
+                  "id": "Q005714.l0809f",
+                  "ref": "Q005714.2.2",
+                  "inst": "ulabbissu[overlay]V",
+                  "sig": "@riao%akk:u₂-la-ab-bi-is-su=labāšu[clothe oneself//overlay]V'V$ulabbissu",
+                  "f": {
+                    "lang": "akk",
+                    "form": "u₂-la-ab-bi-is-su",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "u₂",
+                        "utf8": "𒌑",
+                        "id": "Q005714.2.2.0",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "Q005714.2.1.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "la",
+                        "utf8": "𒆷",
+                        "id": "Q005714.2.2.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ab",
+                        "utf8": "𒀊",
+                        "id": "Q005714.2.2.2",
+                        "break": "damaged",
+                        "ho": "1",
+                        "delim": "-",
+                        "hc": "1"
+                      },
+                      {
+                        "v": "bi",
+                        "utf8": "𒁉",
+                        "id": "Q005714.2.2.3",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "is",
+                        "utf8": "𒄑",
+                        "id": "Q005714.2.2.4",
+                        "breakStart": "1",
+                        "o": "[",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "su",
+                        "utf8": "𒋢",
+                        "id": "Q005714.2.2.5",
+                        "break": "missing"
+                      }
+                    ],
+                    "cf": "labāšu",
+                    "gw": "clothe oneself",
+                    "sense": "overlay",
+                    "norm": "ulabbissu",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "...]",
+                  "id": "Q005714.l080a0",
+                  "ref": "Q005714.2.3",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk",
+                    "form": "x",
+                    "gdl": [
+                      {
+                        "x": "ellipsis",
+                        "id": "Q005714.2.3.0",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "Q005714.2.2.4"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q005714.3",
+                  "n": "2'",
+                  "label": "2'"
+                },
+                {
+                  "node": "l",
+                  "frag": "{[d}a-šur₃]",
+                  "id": "Q005714.l080a1",
+                  "ref": "Q005714.3.1",
+                  "inst": "Aššur[1]DN",
+                  "sig": "@riao%akk:{d}a-šur₃=Aššur[1//1]DN'DN$Aššur",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{d}a-šur₃",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "v": "d",
+                            "utf8": "𒀭",
+                            "id": "Q005714.3.1.0",
+                            "breakStart": "1",
+                            "o": "[",
+                            "break": "missing"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "a",
+                        "utf8": "𒀀",
+                        "id": "Q005714.3.1.1",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "šur₃",
+                        "utf8": "𒋓",
+                        "id": "Q005714.3.1.2",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "Q005714.3.1.0"
+                      }
+                    ],
+                    "cf": "Aššur",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm": "Aššur",
+                    "pos": "DN",
+                    "epos": "DN"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "u₃",
+                  "id": "Q005714.l080a2",
+                  "ref": "Q005714.3.2",
+                  "inst": "u[and]CNJ",
+                  "sig": "@riao%akk:u₃=u[and//and]CNJ'CNJ$u",
+                  "f": {
+                    "lang": "akk",
+                    "form": "u₃",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "u₃",
+                        "utf8": "𒅇",
+                        "id": "Q005714.3.2.0"
+                      }
+                    ],
+                    "cf": "u",
+                    "gw": "and",
+                    "sense": "and",
+                    "norm": "u",
+                    "pos": "CNJ",
+                    "epos": "CNJ"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "{d}IŠKUR",
+                  "id": "Q005714.l080a3",
+                  "ref": "Q005714.3.3",
+                  "inst": "Adad[1]DN",
+                  "sig": "@riao%akk:{d}IŠKUR=Adad[1//1]DN'DN$Adad",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{d}IŠKUR",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "det": "semantic",
+                            "pos": "pre",
+                            "seq": [
+                              {
+                                "v": "d",
+                                "utf8": "𒀭",
+                                "id": "Q005714.3.3.0"
+                              }
+                            ]
+                          },
+                          {
+                            "s": "IŠKUR",
+                            "utf8": "𒅎",
+                            "id": "Q005714.3.3.1",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Adad",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm": "Adad",
+                    "pos": "DN",
+                    "epos": "DN"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "⸢ik⸣-[ri-bi-šu]",
+                  "id": "Q005714.l080a4",
+                  "ref": "Q005714.3.4",
+                  "inst": "ikribīšu[prayer]N",
+                  "sig": "@riao%akk:ik-ri-bi-šu=ikribu[prayer//prayer]N'N$ikribīšu",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ik-ri-bi-šu",
+                    "gdl": [
+                      {
+                        "v": "ik",
+                        "utf8": "𒅅",
+                        "id": "Q005714.3.4.0",
+                        "break": "damaged",
+                        "queried": "1",
+                        "ho": "1",
+                        "delim": "-",
+                        "hc": "1"
+                      },
+                      {
+                        "v": "ri",
+                        "utf8": "𒊑",
+                        "id": "Q005714.3.4.1",
+                        "breakStart": "1",
+                        "o": "[",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "bi",
+                        "utf8": "𒁉",
+                        "id": "Q005714.3.4.2",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "šu",
+                        "utf8": "𒋗",
+                        "id": "Q005714.3.4.3",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "Q005714.3.4.1"
+                      }
+                    ],
+                    "cf": "ikribu",
+                    "gw": "prayer",
+                    "sense": "prayer",
+                    "norm": "ikribīšu",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q005714.4",
+                  "n": "3'",
+                  "label": "3'"
+                },
+                {
+                  "node": "l",
+                  "frag": "[(...)]",
+                  "id": "Q005714.l080a5",
+                  "ref": "Q005714.4.1",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "x": "ellipsis",
+                        "id": "Q005714.4.1.0",
+                        "breakStart": "1",
+                        "statusStart": "Q005714.4.1.0",
+                        "break": "missing",
+                        "o": ")]",
+                        "breakEnd": "Q005714.4.1.0"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "⸢i-ša-am⸣-[me-u₂",
+                  "id": "Q005714.l080a6",
+                  "ref": "Q005714.4.2",
+                  "inst": "išammeʾū[hear]V",
+                  "sig": "@riao%akk:i-ša-am-me-u₂=šemû[hear//hear]V'V$išammeʾū",
+                  "f": {
+                    "lang": "akk",
+                    "form": "i-ša-am-me-u₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "i",
+                        "utf8": "𒄿",
+                        "id": "Q005714.4.2.0",
+                        "break": "damaged",
+                        "ho": "1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ša",
+                        "utf8": "𒊭",
+                        "id": "Q005714.4.2.1",
+                        "break": "damaged",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "am",
+                        "utf8": "𒄠",
+                        "id": "Q005714.4.2.2",
+                        "break": "damaged",
+                        "queried": "1",
+                        "delim": "-",
+                        "hc": "1"
+                      },
+                      {
+                        "v": "me",
+                        "utf8": "𒈨",
+                        "id": "Q005714.4.2.3",
+                        "breakStart": "1",
+                        "o": "[",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "u₂",
+                        "utf8": "𒌑",
+                        "id": "Q005714.4.2.4",
+                        "break": "missing"
+                      }
+                    ],
+                    "cf": "šemû",
+                    "gw": "hear",
+                    "sense": "hear",
+                    "norm": "išammeʾū",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "...]",
+                  "id": "Q005714.l080a7",
+                  "ref": "Q005714.4.3",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk",
+                    "form": "x",
+                    "gdl": [
+                      {
+                        "x": "ellipsis",
+                        "id": "Q005714.4.3.0",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "Q005714.4.2.3"
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

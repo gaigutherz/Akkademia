@@ -3,24 +3,22 @@ import random
 from parse_json import parse_json
 from data import reorganize_data, rep_to_ix, invert_dict
 import platform
+from pathlib import Path
 
-def build_signs_and_transcriptions(corpus_numbers):
+def build_signs_and_transcriptions(corpora):
+    base_directory = Path(r"../raw_data/")
     chars = {}
-    for n in corpus_numbers:
-        if platform.system() == "Windows":
-            directory = r"..\raw_data\rinap\rinap" + str(n) + r"\corpusjson"
-        else:
-            directory = r"../raw_data/rinap/rinap" + str(n) + r"/corpusjson"
-        for file in os.listdir(directory):
-            id = file[:-len(".json")]
-            key = str(id)
-            #print "rinap" + str(n)
-            #print str(id)
-            if platform.system() == "Windows":
-                chars[key] = parse_json(directory + "\\" + file)
-            else:
-                chars[key] = parse_json(directory + "/" + file)
-    return chars
+    translation = {}
+
+    for corpus in corpora:
+        directory = base_directory / corpus
+        for r, d, f in os.walk(directory):
+            for file in f:
+                key = str(file[:-len(".json")])
+                if key not in chars.keys():
+                    chars[key], translation[key] = parse_json(os.path.join(r, file))
+
+    return chars, translation
 
 
 def break_into_sentences(chars):
@@ -147,7 +145,7 @@ def write_data_for_allen_to_file(texts, file, sign_to_id, tran_to_id):
 
 
 def preprocess():
-    chars = build_signs_and_transcriptions([1, 3, 4, 5])
+    chars, translation = build_signs_and_transcriptions(["rinap"])
     sentences = break_into_sentences(chars)
     #write_data_to_file(chars)
     d = build_dictionary(chars)
@@ -161,12 +159,8 @@ def preprocess():
     dev_texts = texts[TEN_PERCENT : 2*TEN_PERCENT]
     train_texts = texts[2*TEN_PERCENT:]
 
-    if platform.system() == "Windows":
-        write_data_for_allen_to_file(dev_texts, r"..\BiLSTM_input\allen_dev_texts.txt", sign_to_id, tran_to_id)
-        write_data_for_allen_to_file(train_texts, r"..\BiLSTM_input\allen_train_texts.txt", sign_to_id, tran_to_id)
-    else:
-        write_data_for_allen_to_file(dev_texts, r"../BiLSTM_input/allen_dev_texts.txt", sign_to_id, tran_to_id)
-        write_data_for_allen_to_file(train_texts, r"../BiLSTM_input/allen_train_texts.txt", sign_to_id, tran_to_id)
+    write_data_for_allen_to_file(dev_texts, Path(r"../BiLSTM_input/allen_dev_texts.txt"), sign_to_id, tran_to_id)
+    write_data_for_allen_to_file(train_texts, Path(r"../BiLSTM_input/allen_train_texts.txt"), sign_to_id, tran_to_id)
 
     return train_texts, dev_texts, test_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran
 

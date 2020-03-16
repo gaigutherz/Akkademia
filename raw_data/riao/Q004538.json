@@ -1,0 +1,185 @@
+{
+  "type": "cdl",
+  "project": "riao",
+  "source": "http://oracc.org/riao",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2019-09-05T10:09:03",
+  "textid": "Q004538",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q004538.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q004538.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "Q004538.U2",
+              "label": "1",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q004538.1",
+                  "n": "1",
+                  "label": "1"
+                },
+                {
+                  "node": "l",
+                  "frag": "ma-da-tu₂",
+                  "id": "Q004538.l07a62",
+                  "ref": "Q004538.1.1",
+                  "inst": "maddattu[payment]N",
+                  "sig": "@riao%akk:ma-da-tu₂=maddattu[payment//payment]N'N$maddattu",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ma-da-tu₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ma",
+                        "utf8": "𒈠",
+                        "id": "Q004538.1.1.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "da",
+                        "utf8": "𒁕",
+                        "id": "Q004538.1.1.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "tu₂",
+                        "utf8": "𒌓",
+                        "id": "Q004538.1.1.2"
+                      }
+                    ],
+                    "cf": "maddattu",
+                    "gw": "payment",
+                    "sense": "payment",
+                    "norm": "maddattu",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "ša₂",
+                  "id": "Q004538.l07a63",
+                  "ref": "Q004538.1.2",
+                  "inst": "ša[of]DET",
+                  "sig": "@riao%akk:ša₂=ša[of//of]DET'DET$ša",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ša₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ša₂",
+                        "utf8": "𒃻",
+                        "id": "Q004538.1.2.0"
+                      }
+                    ],
+                    "cf": "ša",
+                    "gw": "of",
+                    "sense": "of",
+                    "norm": "ša",
+                    "pos": "DET",
+                    "epos": "DET"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "{uru}sa-ru-ga-a-a",
+                  "id": "Q004538.l07a64",
+                  "ref": "Q004538.1.3",
+                  "inst": "Sarugayu[]EN$Sarugaya",
+                  "sig": "@riao%akk:{URU}sa-ru-ga-a-a=Sarugayu[1//1]EN'EN$Sarugaya",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{URU}sa-ru-ga-a-a",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "gg": "logo",
+                            "gdl_type": "logo",
+                            "group": [
+                              {
+                                "s": "URU",
+                                "utf8": "𒌷",
+                                "id": "Q004538.1.3.0",
+                                "role": "logo",
+                                "logolang": "sux"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "v": "sa",
+                        "utf8": "𒊓",
+                        "id": "Q004538.1.3.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ru",
+                        "utf8": "𒊒",
+                        "id": "Q004538.1.3.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ga",
+                        "utf8": "𒂵",
+                        "id": "Q004538.1.3.3",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "a",
+                        "utf8": "𒀀",
+                        "id": "Q004538.1.3.4",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "a",
+                        "utf8": "𒀀",
+                        "id": "Q004538.1.3.5"
+                      }
+                    ],
+                    "cf": "Sarugayu",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm": "Sarugaya",
+                    "pos": "EN",
+                    "epos": "EN"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

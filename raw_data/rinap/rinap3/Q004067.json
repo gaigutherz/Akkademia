@@ -1,0 +1,135 @@
+{
+  "type": "cdl",
+  "project": "rinap/rinap3",
+  "source": "http://oracc.org/rinap/rinap3",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2019-07-28T09:16:04",
+  "textid": "Q004067",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q004067.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "nonx",
+          "ref": "Q004067.1",
+          "strict": "0",
+          "state": "other"
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q004067.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "Q004067.U2",
+              "label": "1'",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q004067.2",
+                  "n": "1'",
+                  "label": "1'"
+                },
+                {
+                  "node": "l",
+                  "frag": "[...",
+                  "id": "Q004067.l0af14",
+                  "ref": "Q004067.2.1",
+                  "inst": "u",
+                  "f": {
+                    "lang": "akk",
+                    "form": "x",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "x": "ellipsis",
+                        "id": "Q004067.2.1.0",
+                        "breakStart": "1",
+                        "break": "missing",
+                        "o": "["
+                      }
+                    ],
+                    "pos": "u"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "lu]-hal-⸢li⸣-[qu]",
+                  "id": "Q004067.l0af15",
+                  "ref": "Q004067.2.2",
+                  "inst": "luhalliqū[destroy]V",
+                  "sig": "@rinap/rinap3%akk:lu-hal-li-qu=halāqu[be(come) lost//destroy]V'V$luhalliqū",
+                  "f": {
+                    "lang": "akk",
+                    "form": "lu-hal-li-qu",
+                    "gdl": [
+                      {
+                        "v": "lu",
+                        "utf8": "𒇻",
+                        "id": "Q004067.2.2.0",
+                        "break": "missing",
+                        "o": "]",
+                        "breakEnd": "Q004067.2.1.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "hal",
+                        "utf8": "𒄬",
+                        "id": "Q004067.2.2.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "li",
+                        "utf8": "𒇷",
+                        "id": "Q004067.2.2.2",
+                        "break": "damaged",
+                        "ho": "1",
+                        "delim": "-",
+                        "hc": "1"
+                      },
+                      {
+                        "v": "qu",
+                        "utf8": "𒄣",
+                        "id": "Q004067.2.2.3",
+                        "breakStart": "1",
+                        "o": "]",
+                        "break": "missing",
+                        "breakEnd": "Q004067.2.2.3"
+                      }
+                    ],
+                    "cf": "halāqu",
+                    "gw": "be(come) lost",
+                    "sense": "destroy",
+                    "norm": "luhalliqū",
+                    "pos": "V",
+                    "epos": "V"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

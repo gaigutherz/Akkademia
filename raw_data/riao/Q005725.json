@@ -1,0 +1,273 @@
+{
+  "type": "cdl",
+  "project": "riao",
+  "source": "http://oracc.org/riao",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2019-09-05T10:09:46",
+  "textid": "Q005725",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q005725.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q005725.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "Q005725.U2",
+              "label": "1",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q005725.1",
+                  "n": "1",
+                  "label": "1"
+                },
+                {
+                  "node": "c",
+                  "type": "phrase",
+                  "tag": "phr",
+                  "id": "Q005725.U4",
+                  "ref": "Q005725.ls00000",
+                  "cdl": [
+                    {
+                      "node": "l",
+                      "frag": "ša",
+                      "id": "Q005725.l08679",
+                      "ref": "Q005725.1.1",
+                      "inst": "ša[of]DET",
+                      "sig": "@riao%akk:ša=ša[of//of]DET'DET$ša",
+                      "f": {
+                        "lang": "akk",
+                        "form": "ša",
+                        "delim": "",
+                        "gdl": [
+                          {
+                            "v": "ša",
+                            "utf8": "𒊭",
+                            "id": "Q005725.1.1.0"
+                          }
+                        ],
+                        "cf": "ša",
+                        "gw": "of",
+                        "sense": "of",
+                        "norm": "ša",
+                        "pos": "DET",
+                        "epos": "DET"
+                      }
+                    },
+                    {
+                      "node": "l",
+                      "frag": "E₂.GAL",
+                      "id": "Q005725.l0867a",
+                      "ref": "Q005725.1.2",
+                      "inst": "ēkal[palace]N",
+                      "sig": "@riao%akk:E₂.GAL=ēkallu[palace//palace]N'N$ēkal",
+                      "f": {
+                        "lang": "akk",
+                        "form": "E₂.GAL",
+                        "delim": "",
+                        "gdl": [
+                          {
+                            "gg": "logo",
+                            "gdl_type": "logo",
+                            "group": [
+                              {
+                                "s": "E₂",
+                                "utf8": "𒂍",
+                                "id": "Q005725.1.2.0",
+                                "role": "logo",
+                                "logolang": "sux",
+                                "delim": "."
+                              },
+                              {
+                                "s": "GAL",
+                                "utf8": "𒃲",
+                                "id": "Q005725.1.2.1",
+                                "role": "logo",
+                                "logolang": "sux"
+                              }
+                            ]
+                          }
+                        ],
+                        "cf": "ēkallu",
+                        "gw": "palace",
+                        "sense": "palace",
+                        "norm": "ēkal",
+                        "pos": "N",
+                        "epos": "N"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "{m}{d}a-šur-TI.LA",
+                  "id": "Q005725.l0867b",
+                  "ref": "Q005725.1.3",
+                  "inst": "Aššur-uballiṭ_I[vice-regent of Aššur, son of Eriba-Adad I]RN$Aššur-uballiṭ",
+                  "sig": "@riao%akk:{m}{d}a-šur-TI.LA=Aššur-uballiṭ_I[vice-regent of Aššur, son of Eriba-Adad I//vice-regent of Aššur, son of Eriba-Adad I]RN'RN$Aššur-uballiṭ",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{m}{d}a-šur-TI.LA",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "v": "m",
+                            "utf8": "𒁹",
+                            "id": "Q005725.1.3.0"
+                          }
+                        ]
+                      },
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "v": "d",
+                            "utf8": "𒀭",
+                            "id": "Q005725.1.3.1"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "a",
+                        "utf8": "𒀀",
+                        "id": "Q005725.1.3.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "šur",
+                        "utf8": "𒋩",
+                        "id": "Q005725.1.3.3",
+                        "delim": "-"
+                      },
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "TI",
+                            "utf8": "𒋾",
+                            "id": "Q005725.1.3.4",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "LA",
+                            "utf8": "𒆷",
+                            "id": "Q005725.1.3.5",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Aššur-uballiṭ_I",
+                    "gw": "vice-regent of Aššur, son of Eriba-Adad I",
+                    "sense": "vice-regent of Aššur, son of Eriba-Adad I",
+                    "norm": "Aššur-uballiṭ",
+                    "pos": "RN",
+                    "epos": "RN"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "UGULA-lim",
+                  "id": "Q005725.l0867c",
+                  "ref": "Q005725.1.4",
+                  "inst": "aklim[overseer]N",
+                  "sig": "@riao%akk:UGULA-lim=waklu[overseer//overseer]N'N$aklim",
+                  "f": {
+                    "lang": "akk",
+                    "form": "UGULA-lim",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "UGULA",
+                            "utf8": "𒉺",
+                            "id": "Q005725.1.4.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "lim",
+                        "utf8": "𒅆",
+                        "id": "Q005725.1.4.1"
+                      }
+                    ],
+                    "cf": "waklu",
+                    "gw": "overseer",
+                    "sense": "overseer",
+                    "norm": "aklim",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkbase": [
+        {
+          "type": "linkset",
+          "xlink_title": "ša ēkalli[queen//queen]N'N",
+          "id": "Q005725.ls00000",
+          "xlink_type": "extended",
+          "xlink_role": "psu",
+          "sig": "{ša E₂.GAL = ša[of]DET ēkallu[palace]N += ša ēkalli[queen//queen]N'N}::@riao%akk:ša=ša[of//of]DET'DET$ša++@riao%akk:E₂.GAL=ēkallu[palace//palace]N'N$ēkal",
+          "links": [
+            {
+              "type": "link",
+              "xlink_title": "ša",
+              "xlink_type": "locator",
+              "xlink_href": "#Q005725.l08679",
+              "xlink_role": "elt"
+            },
+            {
+              "type": "link",
+              "xlink_title": "ēkal",
+              "xlink_type": "locator",
+              "xlink_href": "#Q005725.l0867a",
+              "xlink_role": "elt"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
