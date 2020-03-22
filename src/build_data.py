@@ -18,7 +18,8 @@ def build_signs_and_transcriptions(corpora):
                 if key not in chars.keys():
                     c, t = parse_json(os.path.join(r, file))
                     if c is not None and t is not None:
-                        chars[key], translation[key] = parse_json(os.path.join(r, file))
+                        chars[key] = c
+                        translation[key] = t
 
     return chars, translation
 
