@@ -53,8 +53,8 @@ def build_translations(corpora):
     return all_translations
 
 
-def build_full_line_translation_process():
-    chars, translation = build_signs_and_transcriptions(["rinap", "riao", "ribo", "saao"])
+def build_full_line_translation_process(corpora):
+    chars, translation = build_signs_and_transcriptions(corpora)
     chars_sentences = break_into_sentences(chars)
     translation_sentences = break_into_sentences(translation)
     write_sentences_to_file(chars_sentences, translation_sentences)
@@ -79,6 +79,10 @@ def from_key_to_line_number(k):
     # Sometimes line number contains a redundant "l" at the end ("Q005624.1l" for example), so we ignore it.
     if n[-1] == "l":
         n = n[:-1]
+
+    if not n.isdigit():
+        return -1
+
     line_number = int(n)
 
     return line_number
@@ -95,6 +99,9 @@ def write_translations_to_file(chars_sentences, translations):
         # Calculation of start_line and end_line for signs and transcriptions
         text = key[0].split(".", 2)[0]
         start_line = from_key_to_line_number(key[0])
+
+        if start_line == -1:
+            continue
 
         # Sometimes the end line is not specified when it's one line ("n057" for example), so we use the start line.
         if "." in key[1]:
@@ -144,14 +151,15 @@ def write_translations_to_file(chars_sentences, translations):
     translation_file.close()
 
 
-def preprocess():
-    chars_sentences = build_full_line_translation_process()
-    translations = build_translations(["rinap", "riao", "ribo", "saao"])
+def preprocess(corpora):
+    chars_sentences = build_full_line_translation_process(corpora)
+    translations = build_translations(corpora)
     write_translations_to_file(chars_sentences, translations)
 
 
 def main():
-    preprocess()
+    corpora = ["rinap", "riao", "ribo", "saao", "suhu"]
+    preprocess(corpora)
 
 
 if __name__ == '__main__':
