@@ -5,7 +5,7 @@
   "license": "This data is released under the CC0 license",
   "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
   "more-info": "http://oracc.org/doc/opendata/",
-  "UTC-timestamp": "2019-09-05T10:09:39",
+  "UTC-timestamp": "2020-02-11T16:33:24",
   "textid": "Q005650",
   "cdl": [
     {
@@ -46,7 +46,7 @@
                 {
                   "node": "l",
                   "frag": "a-na",
-                  "id": "Q005650.l0912e",
+                  "id": "Q005650.l09366",
                   "ref": "Q005650.1.1",
                   "inst": "ana[for]PRP",
                   "sig": "@riao%akk:a-na=ana[to//for]PRP'PRP$ana",
@@ -73,12 +73,27 @@
                     "norm": "ana",
                     "pos": "PRP",
                     "epos": "PRP"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.1.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.1.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "{d}INANNA.LUGAL",
-                  "id": "Q005650.l0912f",
+                  "id": "Q005650.l09367",
                   "ref": "Q005650.1.2",
                   "inst": "Ištar-šarrum[]DN$",
                   "sig": "@riao%akk:{d}INANNA.LUGAL=Ištar-šarrum[1//1]DN'DN$Ištar-šarrum",
@@ -125,7 +140,22 @@
                     "norm": "Ištar-šarrum",
                     "pos": "DN",
                     "epos": "DN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.1.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.1.2"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -137,7 +167,7 @@
                 {
                   "node": "l",
                   "frag": "ša-pi₂-ra-at",
-                  "id": "Q005650.l09130",
+                  "id": "Q005650.l09368",
                   "ref": "Q005650.2.1",
                   "inst": "šāpiru[giver of instructions//leader]N'N$šāpirat",
                   "sig": "@riao%akk:ša-pi₂-ra-at=šāpiru[giver of instructions//leader]N'N$šāpirat",
@@ -176,12 +206,27 @@
                     "norm": "šāpirat",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.2.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.2.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "ki-ša-at",
-                  "id": "Q005650.l09131",
+                  "id": "Q005650.l09369",
                   "ref": "Q005650.2.2",
                   "inst": "kiššatu[totality]N$kiššat",
                   "sig": "@riao%akk:ki-ša-at=kiššatu[totality//totality]N'N$kiššat",
@@ -213,7 +258,22 @@
                     "norm": "kiššat",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.2.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.2.2"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -225,7 +285,7 @@
                 {
                   "node": "l",
                   "frag": "ša-me-e",
-                  "id": "Q005650.l09132",
+                  "id": "Q005650.l0936a",
                   "ref": "Q005650.3.1",
                   "inst": "šamê[heaven]N",
                   "sig": "@riao%akk:ša-me-e=šamû[heaven//heaven]N'N$šamê",
@@ -258,12 +318,27 @@
                     "norm": "šamê",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.3.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.3.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "u₃",
-                  "id": "Q005650.l09133",
+                  "id": "Q005650.l0936b",
                   "ref": "Q005650.3.2",
                   "inst": "u[and]CNJ",
                   "sig": "@riao%akk:u₃=u[and//and]CNJ'CNJ$u",
@@ -284,12 +359,27 @@
                     "norm": "u",
                     "pos": "CNJ",
                     "epos": "CNJ"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.3.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.3.2"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "er-ṣe₂-tim",
-                  "id": "Q005650.l09134",
+                  "id": "Q005650.l0936c",
                   "ref": "Q005650.3.3",
                   "inst": "erṣetu[earth//netherworld]N'N$erṣetim",
                   "sig": "@riao%akk:er-ṣe₂-tim=erṣetu[earth//netherworld]N'N$erṣetim",
@@ -321,7 +411,22 @@
                     "norm": "erṣetim",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.3.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.3.3"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -333,7 +438,7 @@
                 {
                   "node": "l",
                   "frag": "ma-gi-ra-at",
-                  "id": "Q005650.l09135",
+                  "id": "Q005650.l0936d",
                   "ref": "Q005650.4.1",
                   "inst": "māgiru[submissive one//one who accepts]N'N$māgirat",
                   "sig": "@riao%akk:ma-gi-ra-at=māgiru[submissive one//one who accepts]N'N$māgirat",
@@ -372,12 +477,27 @@
                     "norm": "māgirat",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.4.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.4.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "ni-iš",
-                  "id": "Q005650.l09136",
+                  "id": "Q005650.l0936e",
                   "ref": "Q005650.4.2",
                   "inst": "nīš[lifting]N",
                   "sig": "@riao%akk:ni-iš=nīšu[lifting//lifting]N'N$nīš",
@@ -404,12 +524,27 @@
                     "norm": "nīš",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.4.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.4.2"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "qa-ti-šu",
-                  "id": "Q005650.l09137",
+                  "id": "Q005650.l0936f",
                   "ref": "Q005650.4.3",
                   "inst": "qātu[hand]N$qātīšu",
                   "sig": "@riao%akk:qa-ti-šu=qātu[hand//hand]N'N$qātīšu",
@@ -441,7 +576,22 @@
                     "norm": "qātīšu",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.4.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.4.3"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -453,7 +603,7 @@
                 {
                   "node": "l",
                   "frag": "a-li-ka-at",
-                  "id": "Q005650.l09138",
+                  "id": "Q005650.l09370",
                   "ref": "Q005650.5.1",
                   "inst": "āliku[goer]N$ālikat",
                   "sig": "@riao%akk:a-li-ka-at=āliku[goer//goer]N'N$ālikat",
@@ -492,12 +642,27 @@
                     "norm": "ālikat",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.5.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.5.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "im-ni-šu",
-                  "id": "Q005650.l09139",
+                  "id": "Q005650.l09371",
                   "ref": "Q005650.5.2",
                   "inst": "imnu[right (side)]N$imnišu",
                   "sig": "@riao%akk:im-ni-šu=imnu[right (side)//right (side)]N'N$imnišu",
@@ -529,7 +694,22 @@
                     "norm": "imnišu",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.5.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.5.2"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -541,7 +721,7 @@
                 {
                   "node": "l",
                   "frag": "{d}UTU-ši-{d}IŠKUR",
-                  "id": "Q005650.l0913a",
+                  "id": "Q005650.l09372",
                   "ref": "Q005650.6.1",
                   "inst": "Šamši-Adad_I[son of Ila-kabkabu, vice-regent of Aššur]RN$Šamši-Adad",
                   "sig": "@riao%akk:{d}UTU-ši-{d}IŠKUR=Šamši-Adad_I[son of Ila-kabkabu, vice-regent of Aššur//son of Ila-kabkabu, vice-regent of Aššur]RN'RN$Šamši-Adad",
@@ -612,12 +792,27 @@
                     "norm": "Šamši-Adad",
                     "pos": "RN",
                     "epos": "RN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.6.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.6.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "LUGAL",
-                  "id": "Q005650.l0913b",
+                  "id": "Q005650.l09373",
                   "ref": "Q005650.6.2",
                   "inst": "šarru[king]N$šarrum",
                   "sig": "@riao%akk:LUGAL=šarru[king//king]N'N$šarrum",
@@ -646,12 +841,27 @@
                     "norm": "šarrum",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.6.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.6.2"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "KALA.GA",
-                  "id": "Q005650.l0913c",
+                  "id": "Q005650.l09374",
                   "ref": "Q005650.6.3",
                   "inst": "dannu[strong]AJ$dannum",
                   "sig": "@riao%akk:KALA.GA=dannu[strong//strong]AJ'AJ$dannum",
@@ -687,7 +897,22 @@
                     "norm": "dannum",
                     "pos": "AJ",
                     "epos": "AJ"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.6.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.6.3"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -699,7 +924,7 @@
                 {
                   "node": "l",
                   "frag": "LUGAL",
-                  "id": "Q005650.l0913d",
+                  "id": "Q005650.l09375",
                   "ref": "Q005650.7.1",
                   "inst": "šar[king]N",
                   "sig": "@riao%akk:LUGAL=šarru[king//king]N'N$šar",
@@ -728,12 +953,27 @@
                     "norm": "šar",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.7.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.7.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "a-ka₃-de₃{ki}",
-                  "id": "Q005650.l0913e",
+                  "id": "Q005650.l09376",
                   "ref": "Q005650.7.2",
                   "inst": "Akkad[]SN$Akkade",
                   "sig": "@riao%akk:a-ka₃-de₃{KI}=Akkad[1//1]SN'SN$Akkade",
@@ -784,7 +1024,22 @@
                     "norm": "Akkade",
                     "pos": "SN",
                     "epos": "SN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.7.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.7.2"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -796,7 +1051,7 @@
                 {
                   "node": "l",
                   "frag": "ka-ši-id",
-                  "id": "Q005650.l0913f",
+                  "id": "Q005650.l09377",
                   "ref": "Q005650.8.1",
                   "inst": "kāšid[conqueror]N",
                   "sig": "@riao%akk:ka-ši-id=kāšidu[conqueror//conqueror]N'N$kāšid",
@@ -829,12 +1084,27 @@
                     "norm": "kāšid",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.8.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.8.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "ki-ša-at",
-                  "id": "Q005650.l09140",
+                  "id": "Q005650.l09378",
                   "ref": "Q005650.8.2",
                   "inst": "kiššatu[totality]N$kiššat",
                   "sig": "@riao%akk:ki-ša-at=kiššatu[totality//totality]N'N$kiššat",
@@ -866,7 +1136,22 @@
                     "norm": "kiššat",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.8.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.8.2"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -878,7 +1163,7 @@
                 {
                   "node": "l",
                   "frag": "a-ia-bi-šu",
-                  "id": "Q005650.l09141",
+                  "id": "Q005650.l09379",
                   "ref": "Q005650.9.1",
                   "inst": "ayyābu[enemy]N$ayyābīšu",
                   "sig": "@riao%akk:a-ia-bi-šu=ayyābu[enemy//enemy]N'N$ayyābīšu",
@@ -916,7 +1201,22 @@
                     "norm": "ayyābīšu",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.9.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.9.1"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -928,7 +1228,7 @@
                 {
                   "node": "l",
                   "frag": "LI.LI.IZ₃",
-                  "id": "Q005650.l09142",
+                  "id": "Q005650.l0937a",
                   "ref": "Q005650.10.1",
                   "inst": "lilis[kettledrum]N",
                   "sig": "@riao%akk:LI.LI.IZ₃=lilissu[kettledrum//kettledrum]N'N$lilis",
@@ -973,12 +1273,27 @@
                     "norm": "lilis",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.10.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.10.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "ZABAR",
-                  "id": "Q005650.l09143",
+                  "id": "Q005650.l0937b",
                   "ref": "Q005650.10.2",
                   "inst": "siparru[bronze]N$siparrim",
                   "sig": "@riao%akk:ZABAR=siparru[bronze//bronze]N'N$siparrim",
@@ -1006,7 +1321,22 @@
                     "norm": "siparrim",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.10.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.10.2"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -1018,7 +1348,7 @@
                 {
                   "node": "l",
                   "frag": "ša",
-                  "id": "Q005650.l09144",
+                  "id": "Q005650.l0937c",
                   "ref": "Q005650.11.1",
                   "inst": "ša[that]REL",
                   "sig": "@riao%akk:ša=ša[that//that]REL'REL$ša",
@@ -1039,12 +1369,27 @@
                     "norm": "ša",
                     "pos": "REL",
                     "epos": "REL"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.11.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.11.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "ri-gi-im-šu",
-                  "id": "Q005650.l09145",
+                  "id": "Q005650.l0937d",
                   "ref": "Q005650.11.2",
                   "inst": "rigmu[voice//sound]N'N$rigimšu",
                   "sig": "@riao%akk:ri-gi-im-šu=rigmu[voice//sound]N'N$rigimšu",
@@ -1083,12 +1428,27 @@
                     "norm": "rigimšu",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.11.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.11.2"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "ṭa-bu",
-                  "id": "Q005650.l09146",
+                  "id": "Q005650.l0937e",
                   "ref": "Q005650.11.3",
                   "inst": "ṭābu[good]AJ",
                   "sig": "@riao%akk:ṭa-bu=ṭābu[good//good]AJ'AJ$ṭābu",
@@ -1114,7 +1474,22 @@
                     "norm": "ṭābu",
                     "pos": "AJ",
                     "epos": "AJ"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.11.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.11.3"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -1126,7 +1501,7 @@
                 {
                   "node": "l",
                   "frag": "a-na",
-                  "id": "Q005650.l09147",
+                  "id": "Q005650.l0937f",
                   "ref": "Q005650.12.1",
                   "inst": "ana[for]PRP",
                   "sig": "@riao%akk:a-na=ana[to//for]PRP'PRP$ana",
@@ -1153,12 +1528,27 @@
                     "norm": "ana",
                     "pos": "PRP",
                     "epos": "PRP"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.12.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.12.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "si₂-ma-at",
-                  "id": "Q005650.l09148",
+                  "id": "Q005650.l09380",
                   "ref": "Q005650.12.2",
                   "inst": "simtu[appropriate symbol]N$simat",
                   "sig": "@riao%akk:si₂-ma-at=simtu[appropriate symbol//appropriate symbol]N'N$simat",
@@ -1191,12 +1581,27 @@
                     "norm": "simat",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.12.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.12.2"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "qar-ra-du-ti-šu",
-                  "id": "Q005650.l09149",
+                  "id": "Q005650.l09381",
                   "ref": "Q005650.12.3",
                   "inst": "qarrādūtu[heroism]N$qarrādūtišu",
                   "sig": "@riao%akk:qar-ra-du-ti-šu=qarrādūtu[heroism//heroism]N'N$qarrādūtišu",
@@ -1240,7 +1645,22 @@
                     "norm": "qarrādūtišu",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.12.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.12.3"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -1252,7 +1672,7 @@
                 {
                   "node": "l",
                   "frag": "šu-lu-ku",
-                  "id": "Q005650.l0914a",
+                  "id": "Q005650.l09382",
                   "ref": "Q005650.13.1",
                   "inst": "šūluku[befitting]AJ",
                   "sig": "@riao%akk:šu-lu-ku=šūluku[brought to readiness//befitting]AJ'AJ$šūlukū",
@@ -1284,7 +1704,22 @@
                     "norm": "šūlukū",
                     "pos": "AJ",
                     "epos": "AJ"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.13.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.13.1"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -1296,7 +1731,7 @@
                 {
                   "node": "l",
                   "frag": "u₂-še-li",
-                  "id": "Q005650.l0914b",
+                  "id": "Q005650.l09383",
                   "ref": "Q005650.14.1",
                   "inst": "ušēli[dedicate]V",
                   "sig": "@riao%akk:u₂-še-li=elû[go up//dedicate]V'V$ušēli",
@@ -1328,7 +1763,22 @@
                     "norm": "ušēli",
                     "pos": "V",
                     "epos": "V"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005650.14.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005650.14.1"
+                    }
+                  ]
                 }
               ]
             }

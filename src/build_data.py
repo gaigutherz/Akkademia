@@ -9,6 +9,7 @@ def build_signs_and_transcriptions(corpora):
     base_directory = Path(r"../raw_data/")
     chars = {}
     translation = {}
+    mapping = {}
 
     for corpus in corpora:
         directory = base_directory / corpus
@@ -16,12 +17,13 @@ def build_signs_and_transcriptions(corpora):
             for file in f:
                 key = str(file[:-len(".json")])
                 if key not in chars.keys():
-                    c, t = parse_json(os.path.join(r, file))
-                    if c is not None and t is not None:
+                    c, t, m = parse_json(os.path.join(r, file))
+                    if c is not None and t is not None and m is not None:
                         chars[key] = c
                         translation[key] = t
+                        mapping[(corpus, key)] = m
 
-    return chars, translation
+    return chars, translation, mapping
 
 
 def break_into_sentences(chars):
@@ -148,7 +150,7 @@ def write_data_for_allen_to_file(texts, file, sign_to_id, tran_to_id):
 
 
 def preprocess():
-    chars, translation = build_signs_and_transcriptions(["rinap"])
+    chars, translation, mapping = build_signs_and_transcriptions(["rinap"])
     sentences = break_into_sentences(chars)
     #write_data_to_file(chars)
     d = build_dictionary(chars)

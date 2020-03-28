@@ -5,7 +5,7 @@
   "license": "This data is released under the CC0 license",
   "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
   "more-info": "http://oracc.org/doc/opendata/",
-  "UTC-timestamp": "2019-09-05T10:09:40",
+  "UTC-timestamp": "2020-02-11T16:33:25",
   "textid": "Q005662",
   "cdl": [
     {
@@ -46,10 +46,10 @@
                 {
                   "node": "l",
                   "frag": "{[d]}UTU-ši-{d}[IŠKUR]",
-                  "id": "Q005662.l0906e",
+                  "id": "Q005662.l092a6",
                   "ref": "Q005662.1.1",
                   "inst": "Šamši-Adad[vice-regent of Aššur, son of Ila-kabkabu]RN",
-                  "sig": "@riao%akk:{d}UTU-ši-{d}IŠKUR=Šamši-Adad_I[son of Ila-kabkabu, vice-regent of Aššur//son of Ila-kabkabu, vice-regent of Aššur]RN'RN$Šamši-Adad",
+                  "bad": "yes",
                   "f": {
                     "lang": "akk",
                     "form": "{d}UTU-ši-{d}IŠKUR",
@@ -118,13 +118,25 @@
                         ]
                       }
                     ],
-                    "cf": "Šamši-Adad_I",
-                    "gw": "son of Ila-kabkabu, vice-regent of Aššur",
-                    "sense": "son of Ila-kabkabu, vice-regent of Aššur",
-                    "norm": "Šamši-Adad",
-                    "pos": "RN",
-                    "epos": "RN"
-                  }
+                    "cf": "Šamši-Adad",
+                    "gw": "vice-regent of Aššur, son of Ila-kabkabu",
+                    "pos": "RN"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005662.1.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005662.1.1"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -136,7 +148,7 @@
                 {
                   "node": "l",
                   "frag": "[ša]-ki-in",
-                  "id": "Q005662.l0906f",
+                  "id": "Q005662.l092a7",
                   "ref": "Q005662.2.1",
                   "inst": "šakin[governor]N",
                   "sig": "@riao%akk:ša-ki-in=šaknu[appointee//governor]N'N$šakin",
@@ -173,12 +185,27 @@
                     "norm": "šakin",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005662.2.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005662.2.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "{d}[EN.LIL₂]",
-                  "id": "Q005662.l09070",
+                  "id": "Q005662.l092a8",
                   "ref": "Q005662.2.2",
                   "inst": "Enlil[1]DN",
                   "sig": "@riao%akk:{d}EN.LIL₂=Enlil[1//1]DN'DN$Enlil",
@@ -231,7 +258,22 @@
                     "norm": "Enlil",
                     "pos": "DN",
                     "epos": "DN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005662.2.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005662.2.2"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -243,7 +285,7 @@
                 {
                   "node": "l",
                   "frag": "⸢ENSI₂⸣",
-                  "id": "Q005662.l09071",
+                  "id": "Q005662.l092a9",
                   "ref": "Q005662.3.1",
                   "inst": "iššiʾak[city-ruler]N",
                   "sig": "@riao%akk:ENSI₂=iššiakku[city-ruler//city-ruler]N'N$iššiʾak",
@@ -275,12 +317,27 @@
                     "norm": "iššiʾak",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005662.3.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005662.3.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "{d}a-[šur₄]",
-                  "id": "Q005662.l09072",
+                  "id": "Q005662.l092aa",
                   "ref": "Q005662.3.2",
                   "inst": "Aššur[1]DN",
                   "sig": "@riao%akk:{d}a-šur₄=Aššur[1//1]DN'DN$Aššur",
@@ -321,7 +378,22 @@
                     "norm": "Aššur",
                     "pos": "DN",
                     "epos": "DN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005662.3.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005662.3.2"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -333,7 +405,7 @@
                 {
                   "node": "l",
                   "frag": "ia-hu-za-nu-um",
-                  "id": "Q005662.l09073",
+                  "id": "Q005662.l092ab",
                   "ref": "Q005662.4.1",
                   "inst": "Iahuzanum[servant of Šamši-Adad I]PN$",
                   "sig": "@riao%akk:ia-hu-za-nu-um=Iahuzanum[servant of Šamši-Adad I//servant of Šamši-Adad I]PN'PN$Iahuzanum",
@@ -377,7 +449,22 @@
                     "norm": "Iahuzanum",
                     "pos": "PN",
                     "epos": "PN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005662.4.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005662.4.1"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -389,7 +476,7 @@
                 {
                   "node": "l",
                   "frag": "DUMU",
-                  "id": "Q005662.l09074",
+                  "id": "Q005662.l092ac",
                   "ref": "Q005662.5.1",
                   "inst": "mār[son]N",
                   "sig": "@riao%akk:DUMU=māru[son//son]N'N$mār",
@@ -418,12 +505,27 @@
                     "norm": "mār",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005662.5.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005662.5.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "za-ma-a-mu",
-                  "id": "Q005662.l09075",
+                  "id": "Q005662.l092ad",
                   "ref": "Q005662.5.2",
                   "inst": "Zamamu[father of Iahuzanum, servant of Šamši-Adad I]PN",
                   "sig": "@riao%akk:za-ma-a-mu=Zamamu[father of Iahuzanum, servant of Šamši-Adad I//father of Iahuzanum, servant of Šamši-Adad I]PN'PN$Zamamu",
@@ -462,12 +564,27 @@
                     "norm": "Zamamu",
                     "pos": "PN",
                     "epos": "PN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005662.5.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005662.5.2"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "⸢ARAD⸣-[su₂]",
-                  "id": "Q005662.l09076",
+                  "id": "Q005662.l092ae",
                   "ref": "Q005662.5.3",
                   "inst": "warassu[servant]N",
                   "sig": "@riao%akk:ARAD-su₂=wardu[slave//servant]N'N$warassu",
@@ -508,7 +625,22 @@
                     "norm": "warassu",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005662.5.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005662.5.3"
+                    }
+                  ]
                 }
               ]
             }

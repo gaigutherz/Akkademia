@@ -5,7 +5,7 @@
   "license": "This data is released under the CC0 license",
   "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
   "more-info": "http://oracc.org/doc/opendata/",
-  "UTC-timestamp": "2019-09-05T10:09:25",
+  "UTC-timestamp": "2020-02-11T16:33:08",
   "textid": "Q004691",
   "cdl": [
     {
@@ -46,7 +46,7 @@
                 {
                   "node": "l",
                   "frag": "ti-du-ku",
-                  "id": "Q004691.l0e0b1",
+                  "id": "Q004691.l0e2e9",
                   "ref": "Q004691.1.1",
                   "inst": "tidūku[battle]N",
                   "sig": "@riao%akk:ti-du-ku=tidūku[battle//battle]N'N$tidūku",
@@ -79,12 +79,27 @@
                     "norm": "tidūku",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004691.1.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004691.1.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "ša₂",
-                  "id": "Q004691.l0e0b2",
+                  "id": "Q004691.l0e2ea",
                   "ref": "Q004691.1.2",
                   "inst": "ša[of]DET",
                   "sig": "@riao%akk:ša₂=ša[of//of]DET'DET$ša",
@@ -105,12 +120,27 @@
                     "norm": "ša",
                     "pos": "DET",
                     "epos": "DET"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004691.1.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004691.1.2"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "{kur}ha-⸢ma-ta⸣-a-a",
-                  "id": "Q004691.l0e0b3",
+                  "id": "Q004691.l0e2eb",
                   "ref": "Q004691.1.3",
                   "inst": "Hamatayu[of Hamath]EN$Hamataya",
                   "sig": "@riao%akk:{KUR}ha-ma-ta-a-a=Hamatayu[of Hamath//of Hamath]EN'EN$Hamataya",
@@ -178,7 +208,22 @@
                     "norm": "Hamataya",
                     "pos": "EN",
                     "epos": "EN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004691.1.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004691.1.3"
+                    }
+                  ]
                 }
               ]
             }

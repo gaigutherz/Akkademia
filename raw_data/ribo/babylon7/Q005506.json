@@ -1,0 +1,552 @@
+{
+  "type": "cdl",
+  "project": "ribo/babylon7",
+  "source": "http://oracc.org/ribo/babylon7",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2020-03-23T06:27:04",
+  "textid": "Q005506",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q005506.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q005506.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "Q005506.U2",
+              "label": "1 - 2",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q005506.1",
+                  "n": "1",
+                  "label": "1"
+                },
+                {
+                  "node": "l",
+                  "frag": "E₂.GAL",
+                  "id": "Q005506.l06827",
+                  "ref": "Q005506.1.1",
+                  "inst": "ēkal[palace]N",
+                  "sig": "@ribo/babylon7%akk:E₂.GAL=ēkallu[palace//palace]N'N$ēkal",
+                  "f": {
+                    "lang": "akk",
+                    "form": "E₂.GAL",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "E₂",
+                            "utf8": "𒂍",
+                            "id": "Q005506.1.1.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "GAL",
+                            "utf8": "𒃲",
+                            "id": "Q005506.1.1.1",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "ēkallu",
+                    "gw": "palace",
+                    "sense": "palace",
+                    "norm": "ēkal",
+                    "pos": "N",
+                    "epos": "N"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005506.1.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005506.1.1"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "{d}⸢AG⸣-ku-du-ur₂-ri-URU₃",
+                  "id": "Q005506.l06828",
+                  "ref": "Q005506.1.2",
+                  "inst": "Nabu-kudurri-uṣur[Nebuchadnezzar II, king of Babylon]RN$Nabium-kudurri-uṣur",
+                  "sig": "@ribo/babylon7%akk:{d}AG-ku-du-ur₂-ri-URU₃=Nabu-kudurri-uṣur[Nebuchadnezzar II, king of Babylon//Nebuchadnezzar II, king of Babylon]RN'RN$Nabium-kudurri-uṣur",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{d}AG-ku-du-ur₂-ri-URU₃",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "det": "semantic",
+                            "pos": "pre",
+                            "seq": [
+                              {
+                                "v": "d",
+                                "utf8": "𒀭",
+                                "id": "Q005506.1.2.0"
+                              }
+                            ]
+                          },
+                          {
+                            "s": "AG",
+                            "utf8": "𒀝",
+                            "id": "Q005506.1.2.1",
+                            "break": "damaged",
+                            "ho": "1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-",
+                            "hc": "1"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "ku",
+                        "utf8": "𒆪",
+                        "id": "Q005506.1.2.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "du",
+                        "utf8": "𒁺",
+                        "id": "Q005506.1.2.3",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ur₂",
+                        "utf8": "𒌫",
+                        "id": "Q005506.1.2.4",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ri",
+                        "utf8": "𒊑",
+                        "id": "Q005506.1.2.5",
+                        "delim": "-"
+                      },
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "URU₃",
+                            "utf8": "𒌶",
+                            "id": "Q005506.1.2.6",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Nabu-kudurri-uṣur",
+                    "gw": "Nebuchadnezzar II, king of Babylon",
+                    "sense": "Nebuchadnezzar II, king of Babylon",
+                    "norm": "Nabium-kudurri-uṣur",
+                    "pos": "RN",
+                    "epos": "RN"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005506.1.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005506.1.2"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "LUGAL",
+                  "id": "Q005506.l06829",
+                  "ref": "Q005506.1.3",
+                  "inst": "šar[king]N",
+                  "sig": "@ribo/babylon7%akk:LUGAL=šarru[king//king]N'N$šar",
+                  "f": {
+                    "lang": "akk",
+                    "form": "LUGAL",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "LUGAL",
+                            "utf8": "𒈗",
+                            "id": "Q005506.1.3.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "šarru",
+                    "gw": "king",
+                    "sense": "king",
+                    "norm": "šar",
+                    "pos": "N",
+                    "epos": "N"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005506.1.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005506.1.3"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "ba-⸢bi⸣-[lu]",
+                  "id": "Q005506.l0682a",
+                  "ref": "Q005506.1.4",
+                  "inst": "Babili[Babylon]SN$Babilu",
+                  "sig": "@ribo/babylon7%akk:ba-bi-lu=Babili[Babylon//Babylon]SN'SN$Babilu",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ba-bi-lu",
+                    "gdl": [
+                      {
+                        "v": "ba",
+                        "utf8": "𒁀",
+                        "id": "Q005506.1.4.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "bi",
+                        "utf8": "𒁉",
+                        "id": "Q005506.1.4.1",
+                        "break": "damaged",
+                        "ho": "1",
+                        "delim": "-",
+                        "hc": "1"
+                      },
+                      {
+                        "v": "lu",
+                        "utf8": "𒇻",
+                        "id": "Q005506.1.4.2",
+                        "breakStart": "1",
+                        "o": "]",
+                        "break": "missing",
+                        "breakEnd": "Q005506.1.4.2"
+                      }
+                    ],
+                    "cf": "Babili",
+                    "gw": "Babylon",
+                    "sense": "Babylon",
+                    "norm": "Babilu",
+                    "pos": "SN",
+                    "epos": "SN"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005506.1.4"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005506.1.4"
+                    }
+                  ]
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q005506.2",
+                  "n": "2",
+                  "label": "2"
+                },
+                {
+                  "node": "l",
+                  "frag": "DUMU",
+                  "id": "Q005506.l0682b",
+                  "ref": "Q005506.2.1",
+                  "inst": "mār[son]N",
+                  "sig": "@ribo/babylon7%akk:DUMU=māru[son//son]N'N$mār",
+                  "f": {
+                    "lang": "akk",
+                    "form": "DUMU",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "DUMU",
+                            "utf8": "𒌉",
+                            "id": "Q005506.2.1.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "māru",
+                    "gw": "son",
+                    "sense": "son",
+                    "norm": "mār",
+                    "pos": "N",
+                    "epos": "N"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005506.2.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005506.2.1"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "{d}AG-IBILA-URU₃",
+                  "id": "Q005506.l0682c",
+                  "ref": "Q005506.2.2",
+                  "inst": "Nabium-apla-uṣur[Nabopolassar, king of Babylon]RN",
+                  "sig": "@ribo/babylon7%akk:{d}AG-IBILA-URU₃=Nabu-apla-uṣur[Nabopolassar, king of Babylon//Nabopolassar, king of Babylon]RN'RN$Nabium-apla-uṣur",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{d}AG-IBILA-URU₃",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "det": "semantic",
+                            "pos": "pre",
+                            "seq": [
+                              {
+                                "v": "d",
+                                "utf8": "𒀭",
+                                "id": "Q005506.2.2.0"
+                              }
+                            ]
+                          },
+                          {
+                            "s": "AG",
+                            "utf8": "𒀝",
+                            "id": "Q005506.2.2.1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          },
+                          {
+                            "s": "IBILA",
+                            "utf8": "𒌉𒍑",
+                            "id": "Q005506.2.2.2",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          },
+                          {
+                            "s": "URU₃",
+                            "utf8": "𒌶",
+                            "id": "Q005506.2.2.3",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Nabu-apla-uṣur",
+                    "gw": "Nabopolassar, king of Babylon",
+                    "sense": "Nabopolassar, king of Babylon",
+                    "norm": "Nabium-apla-uṣur",
+                    "pos": "RN",
+                    "epos": "RN"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005506.2.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005506.2.2"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "LUGAL",
+                  "id": "Q005506.l0682d",
+                  "ref": "Q005506.2.3",
+                  "inst": "šar[king]N",
+                  "sig": "@ribo/babylon7%akk:LUGAL=šarru[king//king]N'N$šar",
+                  "f": {
+                    "lang": "akk",
+                    "form": "LUGAL",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "LUGAL",
+                            "utf8": "𒈗",
+                            "id": "Q005506.2.3.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "šarru",
+                    "gw": "king",
+                    "sense": "king",
+                    "norm": "šar",
+                    "pos": "N",
+                    "epos": "N"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005506.2.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005506.2.3"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "ba-bi-lu",
+                  "id": "Q005506.l0682e",
+                  "ref": "Q005506.2.4",
+                  "inst": "Babili[Babylon]SN$Babilu",
+                  "sig": "@ribo/babylon7%akk:ba-bi-lu=Babili[Babylon//Babylon]SN'SN$Babilu",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ba-bi-lu",
+                    "gdl": [
+                      {
+                        "v": "ba",
+                        "utf8": "𒁀",
+                        "id": "Q005506.2.4.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "bi",
+                        "utf8": "𒁉",
+                        "id": "Q005506.2.4.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "lu",
+                        "utf8": "𒇻",
+                        "id": "Q005506.2.4.2"
+                      }
+                    ],
+                    "cf": "Babili",
+                    "gw": "Babylon",
+                    "sense": "Babylon",
+                    "norm": "Babilu",
+                    "pos": "SN",
+                    "epos": "SN"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005506.2.4"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005506.2.4"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -5,7 +5,7 @@
   "license": "This data is released under the CC0 license",
   "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
   "more-info": "http://oracc.org/doc/opendata/",
-  "UTC-timestamp": "2019-09-05T10:10:35",
+  "UTC-timestamp": "2020-02-11T16:34:29",
   "textid": "Q007285",
   "cdl": [
     {
@@ -46,7 +46,7 @@
                 {
                   "node": "l",
                   "frag": "⸢E₂.GAL",
-                  "id": "Q007285.l08c01",
+                  "id": "Q007285.l08e39",
                   "ref": "Q007285.1.1",
                   "inst": "ēkal[palace]N",
                   "sig": "@riao%akk:E₂.GAL=ēkallu[palace//palace]N'N$ēkal",
@@ -86,12 +86,27 @@
                     "norm": "ēkal",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q007285.1.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q007285.1.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "DINGIR-šu-ma⸣",
-                  "id": "Q007285.l08c02",
+                  "id": "Q007285.l08e3a",
                   "ref": "Q007285.1.2",
                   "inst": "Ilu-šuma[vice-regent of Aššur]RN",
                   "sig": "@riao%akk:DINGIR-šu-ma=Ilu-šuma[vice-regent of Aššur//vice-regent of Aššur]RN'RN$Ilu-šuma",
@@ -135,7 +150,22 @@
                     "norm": "Ilu-šuma",
                     "pos": "RN",
                     "epos": "RN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q007285.1.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q007285.1.2"
+                    }
+                  ]
                 }
               ]
             }

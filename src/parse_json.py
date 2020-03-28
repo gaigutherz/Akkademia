@@ -113,18 +113,47 @@ def parse_l_node(l_node, chars, translation):
         parse_tran(g, chars)
 
 
-def parse_c_node(c_node, chars, translation):
+def parse_d_node(node, mapping):
+    # If we're not at a line start, we don't have the mapping we are interested in.
+    if node["type"] != "line-start":
+        return
+
+    # Probably a duplicate d node, and next one will contain the mapping.
+    if "label" not in node:
+        return
+
+    if "ref" not in node:
+        print(node)
+        raise Exception("We reached a line-start node with no ref")
+
+    # Sometimes ref appear with a redundant l at the end, such as "Q005624.9l".
+    ref = node["ref"]
+    if ref[-1] == "l":
+        ref = ref[:-1]
+
+    mapping[node["label"]] = ref
+
+
+def parse_c_node(c_node, chars, translation, mapping):
+    # This text doesn't have data in it.
+    if "cdl" not in c_node:
+        return
+
     for node in c_node["cdl"]:
         # This means it is metadata, and not a fragment.
         if node["node"] == "d":
-            continue
+            parse_d_node(node, mapping)
+
         elif node["node"] == "c":
-            parse_c_node(node, chars, translation)
+            parse_c_node(node, chars, translation, mapping)
+
         elif node["node"] == "l":
             parse_l_node(node, chars, translation)
+
         # Very rare! Appears only in saao (choice between two options).
         elif node["node"] == "ll":
             parse_l_node(node["choices"][0], chars, translation)
+
         else:
             print(node)
             raise Exception("We reached a node other than d / c / l / ll. We don't know how to parse it!")
@@ -133,22 +162,27 @@ def parse_c_node(c_node, chars, translation):
 def parse_json(file):
     chars = []
     translation = []
+    mapping = {}
 
     f = open(file, "r", encoding="utf8")
     data = f.read()
 
     if not data:
-        return None, None
+        return None, None, None
 
     json_object = json.loads(data)
     j = json_object["cdl"][0]
-    parse_c_node(j, chars, translation)
-    return chars, translation
+    parse_c_node(j, chars, translation, mapping)
+
+    if chars == [] and translation == [] and mapping == {}:
+        return None, None, None
+
+    return chars, translation, mapping
 
 
 def main():
-    directory = Path(r"../raw_data/rinap/rinap4/")
-    chars, translation = parse_json(directory / "Q003355.json")
+    directory = Path(r"../raw_data/rinap/rinap5/")
+    chars, translation, mapping = parse_json(directory / "Q003705.json")
 
     print(len(chars))
     for c in chars:
@@ -157,6 +191,8 @@ def main():
     print(len(translation))
     for t in translation:
         print(t[1])
+
+    print(mapping)
 
 
 if __name__ == '__main__':

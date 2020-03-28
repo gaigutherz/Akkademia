@@ -5,7 +5,7 @@
   "license": "This data is released under the CC0 license",
   "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
   "more-info": "http://oracc.org/doc/opendata/",
-  "UTC-timestamp": "2019-07-28T09:22:16",
+  "UTC-timestamp": "2020-02-11T14:49:59",
   "textid": "Q003718",
   "cdl": [
     {
@@ -2025,7 +2025,7 @@
                   "id": "Q003718.l07d38",
                   "ref": "Q003718.13.3",
                   "inst": "Ummanigaš[Humban-nikas II, king of Elam]RN",
-                  "sig": "@rinap/rinap5%akk:{m}um-man-i-gaš=Ummanigaš[Humban-nikas II, king of Elam//Humban-nikas II, king of Elam]RN'RN$Ummanigaš",
+                  "bad": "yes",
                   "f": {
                     "lang": "akk",
                     "form": "{m}um-man-i-gaš",
@@ -2070,10 +2070,7 @@
                     ],
                     "cf": "Ummanigaš",
                     "gw": "Humban-nikas II, king of Elam",
-                    "sense": "Humban-nikas II, king of Elam",
-                    "norm": "Ummanigaš",
-                    "pos": "RN",
-                    "epos": "RN"
+                    "pos": "RN"
                   }
                 },
                 {
@@ -2084,104 +2081,95 @@
                   "label": "i' 12'"
                 },
                 {
-                  "node": "c",
-                  "type": "phrase",
-                  "tag": "phr",
-                  "id": "Q003718.U4",
-                  "ref": "Q003718.ls00000",
-                  "cdl": [
-                    {
-                      "node": "l",
-                      "frag": "{lu₂}šu-ut",
-                      "id": "Q003718.l07d39",
-                      "ref": "Q003718.14.1",
-                      "inst": "šūt[who(m)]DET",
-                      "sig": "@rinap/rinap5%akk:{LU₂}šu-ut=šūt[who(m)//who(m)]DET'DET$šūt",
-                      "f": {
-                        "lang": "akk",
-                        "form": "{LU₂}šu-ut",
-                        "delim": "",
-                        "gdl": [
-                          {
-                            "det": "semantic",
-                            "pos": "pre",
-                            "seq": [
-                              {
-                                "gg": "logo",
-                                "gdl_type": "logo",
-                                "group": [
-                                  {
-                                    "s": "LU₂",
-                                    "utf8": "𒇽",
-                                    "id": "Q003718.14.1.0",
-                                    "role": "logo",
-                                    "logolang": "sux"
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "v": "šu",
-                            "utf8": "𒋗",
-                            "id": "Q003718.14.1.1",
-                            "delim": "-"
-                          },
-                          {
-                            "v": "ut",
-                            "utf8": "𒌓",
-                            "id": "Q003718.14.1.2"
-                          }
-                        ],
-                        "cf": "šūt",
-                        "gw": "who(m)",
-                        "sense": "who(m)",
-                        "norm": "šūt",
-                        "pos": "DET",
-                        "epos": "DET"
-                      }
-                    },
-                    {
-                      "node": "l",
-                      "frag": "SAG-ia",
-                      "id": "Q003718.l07d3a",
-                      "ref": "Q003718.14.2",
-                      "inst": "rēšiya[head]N",
-                      "sig": "@rinap/rinap5%akk:SAG-ia=rēšu[head//head]N'N$rēšiya",
-                      "f": {
-                        "lang": "akk",
-                        "form": "SAG-ia",
-                        "delim": "",
-                        "gdl": [
+                  "node": "l",
+                  "frag": "{lu₂}šu-ut",
+                  "id": "Q003718.l07d39",
+                  "ref": "Q003718.14.1",
+                  "inst": "šūt[who(m)]DET",
+                  "sig": "@rinap/rinap5%akk:{LU₂}šu-ut=šūt[who(m)//who(m)]DET'DET$šūt",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{LU₂}šu-ut",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
                           {
                             "gg": "logo",
                             "gdl_type": "logo",
                             "group": [
                               {
-                                "s": "SAG",
-                                "utf8": "𒊕",
-                                "id": "Q003718.14.2.0",
+                                "s": "LU₂",
+                                "utf8": "𒇽",
+                                "id": "Q003718.14.1.0",
                                 "role": "logo",
-                                "logolang": "sux",
-                                "delim": "-"
+                                "logolang": "sux"
                               }
                             ]
-                          },
-                          {
-                            "v": "ia",
-                            "utf8": "𒅀",
-                            "id": "Q003718.14.2.1"
                           }
-                        ],
-                        "cf": "rēšu",
-                        "gw": "head",
-                        "sense": "head",
-                        "norm": "rēšiya",
-                        "pos": "N",
-                        "epos": "N"
+                        ]
+                      },
+                      {
+                        "v": "šu",
+                        "utf8": "𒋗",
+                        "id": "Q003718.14.1.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ut",
+                        "utf8": "𒌓",
+                        "id": "Q003718.14.1.2"
                       }
-                    }
-                  ]
+                    ],
+                    "cf": "šūt",
+                    "gw": "who(m)",
+                    "sense": "who(m)",
+                    "norm": "šūt",
+                    "pos": "DET",
+                    "epos": "DET"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "SAG-ia",
+                  "id": "Q003718.l07d3a",
+                  "ref": "Q003718.14.2",
+                  "inst": "rēšiya[head]N",
+                  "sig": "@rinap/rinap5%akk:SAG-ia=rēšu[head//head]N'N$rēšiya",
+                  "f": {
+                    "lang": "akk",
+                    "form": "SAG-ia",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "SAG",
+                            "utf8": "𒊕",
+                            "id": "Q003718.14.2.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "ia",
+                        "utf8": "𒅀",
+                        "id": "Q003718.14.2.1"
+                      }
+                    ],
+                    "cf": "rēšu",
+                    "gw": "head",
+                    "sense": "head",
+                    "norm": "rēšiya",
+                    "pos": "N",
+                    "epos": "N"
+                  }
                 },
                 {
                   "node": "l",
@@ -3123,7 +3111,7 @@
                   "id": "Q003718.l07d54",
                   "ref": "Q003718.19.2",
                   "inst": "Ummanigaš[Humban-nikas II, king of Elam]RN",
-                  "sig": "@rinap/rinap5%akk:{m}um-man-i-gaš=Ummanigaš[Humban-nikas II, king of Elam//Humban-nikas II, king of Elam]RN'RN$Ummanigaš",
+                  "bad": "yes",
                   "f": {
                     "lang": "akk",
                     "form": "{m}um-man-i-gaš",
@@ -3172,10 +3160,7 @@
                     ],
                     "cf": "Ummanigaš",
                     "gw": "Humban-nikas II, king of Elam",
-                    "sense": "Humban-nikas II, king of Elam",
-                    "norm": "Ummanigaš",
-                    "pos": "RN",
-                    "epos": "RN"
+                    "pos": "RN"
                   }
                 },
                 {
@@ -3272,13 +3257,13 @@
                   "node": "d",
                   "frag": "($traces$)",
                   "type": "dollar",
-                  "ref": "Q003718.20.2"
+                  "ref": "Q003718.20.1.a"
                 },
                 {
                   "node": "l",
                   "frag": "[...]",
                   "id": "Q003718.l07d57",
-                  "ref": "Q003718.20.3",
+                  "ref": "Q003718.20.2",
                   "inst": "u",
                   "f": {
                     "lang": "akk",
@@ -3286,11 +3271,11 @@
                     "gdl": [
                       {
                         "x": "ellipsis",
-                        "id": "Q003718.20.3.0",
+                        "id": "Q003718.20.2.0",
                         "breakStart": "1",
                         "break": "missing",
                         "o": "]",
-                        "breakEnd": "Q003718.20.3.0"
+                        "breakEnd": "Q003718.20.2.0"
                       }
                     ],
                     "pos": "u"
@@ -3330,13 +3315,13 @@
                   "node": "d",
                   "frag": "($traces$)",
                   "type": "dollar",
-                  "ref": "Q003718.21.2"
+                  "ref": "Q003718.21.1.a"
                 },
                 {
                   "node": "l",
                   "frag": "[...]",
                   "id": "Q003718.l07d59",
-                  "ref": "Q003718.21.3",
+                  "ref": "Q003718.21.2",
                   "inst": "u",
                   "f": {
                     "lang": "akk",
@@ -3344,11 +3329,11 @@
                     "gdl": [
                       {
                         "x": "ellipsis",
-                        "id": "Q003718.21.3.0",
+                        "id": "Q003718.21.2.0",
                         "breakStart": "1",
                         "break": "missing",
                         "o": "]",
-                        "breakEnd": "Q003718.21.3.0"
+                        "breakEnd": "Q003718.21.2.0"
                       }
                     ],
                     "pos": "u"
@@ -3362,34 +3347,6 @@
                   "state": "other"
                 }
               ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "linkbase": [
-        {
-          "type": "linkset",
-          "xlink_title": "šūt rēši[attendant//eunuch]N'N",
-          "id": "Q003718.ls00000",
-          "xlink_type": "extended",
-          "xlink_role": "psu",
-          "sig": "{{LU₂}šu-ut SAG-ia = šūt[who(m)//who(m)]DET rēšu[head//head]N += šūt rēši[attendant//eunuch]N'N}::@rinap/rinap5%akk:{LU₂}šu-ut=šūt[who(m)//who(m)]DET'DET$šūt++@rinap/rinap5%akk:SAG-ia=rēšu[head//head]N'N$rēšiya",
-          "links": [
-            {
-              "type": "link",
-              "xlink_title": "šūt",
-              "xlink_type": "locator",
-              "xlink_href": "#Q003718.l07d39",
-              "xlink_role": "elt"
-            },
-            {
-              "type": "link",
-              "xlink_title": "rēšiya",
-              "xlink_type": "locator",
-              "xlink_href": "#Q003718.l07d3a",
-              "xlink_role": "elt"
             }
           ]
         }

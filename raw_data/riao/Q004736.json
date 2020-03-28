@@ -5,7 +5,7 @@
   "license": "This data is released under the CC0 license",
   "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
   "more-info": "http://oracc.org/doc/opendata/",
-  "UTC-timestamp": "2019-09-05T10:09:29",
+  "UTC-timestamp": "2020-02-11T16:33:12",
   "textid": "Q004736",
   "cdl": [
     {
@@ -46,7 +46,7 @@
                 {
                   "node": "l",
                   "frag": "ṣa-lam",
-                  "id": "Q004736.l0e433",
+                  "id": "Q004736.l0e66b",
                   "ref": "Q004736.1.1",
                   "inst": "ṣalam[image]N",
                   "sig": "@riao%akk:ṣa-lam=ṣalmu[effigy//image]N'N$ṣalam",
@@ -73,15 +73,30 @@
                     "norm": "ṣalam",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004736.1.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004736.1.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "{m}EN-lu-TI.LA",
-                  "id": "Q004736.l0e434",
+                  "id": "Q004736.l0e66c",
                   "ref": "Q004736.1.2",
-                  "inst": "Bel-luballit[]PN$",
-                  "sig": "@riao%akk:{m}EN-lu-TI.LA=Bel-luballit[1//1]PN'PN$Bel-luballit",
+                  "inst": "Belu-lu-balaṭ[1]PN",
+                  "sig": "@riao%akk:{m}EN-lu-TI.LA=Belu-lu-balaṭ[feld marshal, great herald, governor, and eponym of the year 814//1]PN'PN$Belu-lu-balaṭ",
                   "f": {
                     "lang": "akk",
                     "form": "{m}EN-lu-TI.LA",
@@ -139,13 +154,28 @@
                         ]
                       }
                     ],
-                    "cf": "Bel-luballit",
-                    "gw": "1",
+                    "cf": "Belu-lu-balaṭ",
+                    "gw": "feld marshal, great herald, governor, and eponym of the year 814",
                     "sense": "1",
-                    "norm": "Bel-luballit",
+                    "norm": "Belu-lu-balaṭ",
                     "pos": "PN",
                     "epos": "PN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004736.1.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004736.1.2"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -157,7 +187,7 @@
                 {
                   "node": "l",
                   "frag": "{lu₂}tur-ta-a-ni",
-                  "id": "Q004736.l0e435",
+                  "id": "Q004736.l0e66d",
                   "ref": "Q004736.2.1",
                   "inst": "tartānu[(a high military official)]N$tartāni",
                   "sig": "@riao%akk:{LU₂}tur-ta-a-ni=tartānu[(a high military official)//(a high military official)]N'N$tartāni",
@@ -214,7 +244,22 @@
                     "norm": "tartāni",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004736.2.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004736.2.1"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -226,7 +271,7 @@
                 {
                   "node": "l",
                   "frag": "{lu₂}NIMGIR",
-                  "id": "Q004736.l0e436",
+                  "id": "Q004736.l0e66e",
                   "ref": "Q004736.3.1",
                   "inst": "nāgiru[(town) crier//herald]N'N$",
                   "sig": "@riao%akk:{LU₂}NIMGIR=nāgiru[(town) crier//herald]N'N$nāgiru",
@@ -274,12 +319,27 @@
                     "norm": "nāgiru",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004736.3.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004736.3.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "GAL-u₂",
-                  "id": "Q004736.l0e437",
+                  "id": "Q004736.l0e66f",
                   "ref": "Q004736.3.2",
                   "inst": "rabû[great]AJ",
                   "sig": "@riao%akk:GAL-u₂=rabû[great//great]AJ'AJ$rabû",
@@ -313,7 +373,22 @@
                     "norm": "rabû",
                     "pos": "AJ",
                     "epos": "AJ"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004736.3.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004736.3.2"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -325,7 +400,7 @@
                 {
                   "node": "l",
                   "frag": "{lu₂}ŠA₃.TAM",
-                  "id": "Q004736.l0e438",
+                  "id": "Q004736.l0e670",
                   "ref": "Q004736.4.1",
                   "inst": "šatammu[administrator]N$šatam",
                   "sig": "@riao%akk:{LU₂}ŠA₃.TAM=šatammu[administrator//administrator]N'N$šatam",
@@ -381,12 +456,27 @@
                     "norm": "šatam",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004736.4.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004736.4.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "E₂.KUR.MEŠ",
-                  "id": "Q004736.l0e439",
+                  "id": "Q004736.l0e671",
                   "ref": "Q004736.4.2",
                   "inst": "ēkurrāti[temple]N",
                   "sig": "@riao%akk:E₂.KUR.MEŠ=ēkurru[temple//temple]N'N$ēkurrāti",
@@ -430,7 +520,22 @@
                     "norm": "ēkurrāti",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004736.4.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004736.4.2"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -442,7 +547,7 @@
                 {
                   "node": "l",
                   "frag": "{lu}GAL",
-                  "id": "Q004736.l0e43a",
+                  "id": "Q004736.l0e672",
                   "ref": "Q004736.5.1",
                   "inst": "rabû[great one//chief]N'N$rab",
                   "sig": "@riao%akk:{LU}GAL=rabû[great one//chief]N'N$rab",
@@ -490,12 +595,27 @@
                     "norm": "rab",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004736.5.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004736.5.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "ERIM.HI",
-                  "id": "Q004736.l0e43b",
+                  "id": "Q004736.l0e673",
                   "ref": "Q004736.5.2",
                   "inst": "ummāni[military force]N",
                   "sig": "@riao%akk:ERIM.HI=ummānu[military force//military force]N'N$ummāni",
@@ -532,12 +652,27 @@
                     "norm": "ummāni",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004736.5.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004736.5.2"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "DAGAL-šu",
-                  "id": "Q004736.l0e43c",
+                  "id": "Q004736.l0e674",
                   "ref": "Q004736.5.3",
                   "inst": "rapšu[wide//extensive]AJ'AJ$",
                   "sig": "@riao%akk:DAGAL-šu=rapšu[wide//extensive]AJ'AJ$rapšu",
@@ -571,7 +706,22 @@
                     "norm": "rapšu",
                     "pos": "AJ",
                     "epos": "AJ"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004736.5.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004736.5.3"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -590,9 +740,9 @@
                     {
                       "node": "l",
                       "frag": "{lu₂}GAR.KUR",
-                      "id": "Q004736.l0e43d",
+                      "id": "Q004736.l0e675",
                       "ref": "Q004736.6.1",
-                      "cof-tails": "Q004736.l0e43e",
+                      "cof-tails": "Q004736.l0e676",
                       "inst": "šakin[governor]N&māti[land]N",
                       "sig": "@riao%akk:{LU₂}GAR.KUR=šaknu[appointee//governor]N'N$šakin&&@riao%akk:=mātu[land//land]N'N$māti",
                       "f": {
@@ -647,14 +797,29 @@
                         "norm": "šakin",
                         "pos": "N",
                         "epos": "N"
-                      }
+                      },
+                      "props": [
+                        {
+                          "name": "field",
+                          "group": "env",
+                          "ngram": "-1",
+                          "ref": "Q004736.6.1"
+                        },
+                        {
+                          "name": "discourse",
+                          "group": "env",
+                          "value": "body",
+                          "ngram": "-1",
+                          "ref": "Q004736.6.1"
+                        }
+                      ]
                     },
                     {
                       "node": "l",
                       "frag": "{lu₂}GAR.KUR",
-                      "id": "Q004736.l0e43e",
+                      "id": "Q004736.l0e676",
                       "ref": "Q004736.6.1",
-                      "cof-head": "Q004736.l0e43d",
+                      "cof-head": "Q004736.l0e675",
                       "inst": "šakin[governor]N&māti[land]N",
                       "tail-sig": "@riao%akk:=mātu[land//land]N'N$māti",
                       "f": {
@@ -709,14 +874,29 @@
                         "norm": "māti",
                         "pos": "N",
                         "epos": "N"
-                      }
+                      },
+                      "props": [
+                        {
+                          "name": "field",
+                          "group": "env",
+                          "ngram": "-1",
+                          "ref": "Q004736.6.1"
+                        },
+                        {
+                          "name": "discourse",
+                          "group": "env",
+                          "value": "body",
+                          "ngram": "-1",
+                          "ref": "Q004736.6.1"
+                        }
+                      ]
                     }
                   ]
                 },
                 {
                   "node": "l",
                   "frag": "{uru}ta-bi-ti",
-                  "id": "Q004736.l0e43f",
+                  "id": "Q004736.l0e677",
                   "ref": "Q004736.6.2",
                   "inst": "Tabitu[]SN$Tabiti",
                   "sig": "@riao%akk:{URU}ta-bi-ti=Tabitu[1//1]SN'SN$Tabiti",
@@ -767,7 +947,22 @@
                     "norm": "Tabiti",
                     "pos": "SN",
                     "epos": "SN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004736.6.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004736.6.2"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -779,7 +974,7 @@
                 {
                   "node": "l",
                   "frag": "{uru}KASKAL-ni",
-                  "id": "Q004736.l0e440",
+                  "id": "Q004736.l0e678",
                   "ref": "Q004736.7.1",
                   "inst": "Harran[]SN$Harrani",
                   "sig": "@riao%akk:{URU}KASKAL-ni=Harran[1//1]SN'SN$Harrani",
@@ -832,7 +1027,22 @@
                     "norm": "Harrani",
                     "pos": "SN",
                     "epos": "SN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004736.7.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004736.7.1"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -844,7 +1054,7 @@
                 {
                   "node": "l",
                   "frag": "{uru}hu-zi-ri-na",
-                  "id": "Q004736.l0e441",
+                  "id": "Q004736.l0e679",
                   "ref": "Q004736.8.1",
                   "inst": "Huzirina[1]SN",
                   "sig": "@riao%akk:{URU}hu-zi-ri-na=Huzirina[1//1]SN'SN$Huzirina",
@@ -901,7 +1111,22 @@
                     "norm": "Huzirina",
                     "pos": "SN",
                     "epos": "SN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004736.8.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004736.8.1"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -913,7 +1138,7 @@
                 {
                   "node": "l",
                   "frag": "{uru}BAD₃",
-                  "id": "Q004736.l0e442",
+                  "id": "Q004736.l0e67a",
                   "ref": "Q004736.9.1",
                   "inst": "Duru[]SN",
                   "sig": "@riao%akk:{URU}BAD₃=Durayu[1//1]SN'SN$Duru",
@@ -961,12 +1186,27 @@
                     "norm": "Duru",
                     "pos": "SN",
                     "epos": "SN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004736.9.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004736.9.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "{kur}qi-ba-ni",
-                  "id": "Q004736.l0e443",
+                  "id": "Q004736.l0e67b",
                   "ref": "Q004736.9.2",
                   "inst": "Qibanu[]SN$Qibani",
                   "sig": "@riao%akk:{KUR}qi-ba-ni=Qibanu[1//1]SN'SN$Qibani",
@@ -1017,7 +1257,22 @@
                     "norm": "Qibani",
                     "pos": "SN",
                     "epos": "SN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004736.9.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004736.9.2"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -1029,7 +1284,7 @@
                 {
                   "node": "l",
                   "frag": "{kur}za-al-lu",
-                  "id": "Q004736.l0e444",
+                  "id": "Q004736.l0e67c",
                   "ref": "Q004736.10.1",
                   "inst": "Zallu[]SN$",
                   "sig": "@riao%akk:{KUR}za-al-lu=Zallu[1//1]SN'SN$Zallu",
@@ -1081,12 +1336,27 @@
                     "norm": "Zallu",
                     "pos": "SN",
                     "epos": "SN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004736.10.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004736.10.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "{uru}ba-li-hu",
-                  "id": "Q004736.l0e445",
+                  "id": "Q004736.l0e67d",
                   "ref": "Q004736.10.2",
                   "inst": "Balihu[]SN$",
                   "sig": "@riao%akk:{URU}ba-li-hu=Balihu[1//1]SN'SN$Balihu",
@@ -1137,7 +1407,22 @@
                     "norm": "Balihu",
                     "pos": "SN",
                     "epos": "SN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004736.10.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004736.10.2"
+                    }
+                  ]
                 }
               ]
             }
@@ -1159,14 +1444,14 @@
               "type": "link",
               "xlink_title": "šakin",
               "xlink_type": "locator",
-              "xlink_href": "#Q004736.l0e43d",
+              "xlink_href": "#Q004736.l0e675",
               "xlink_role": "elt"
             },
             {
               "type": "link",
               "xlink_title": "māti",
               "xlink_type": "locator",
-              "xlink_href": "#Q004736.l0e43e",
+              "xlink_href": "#Q004736.l0e676",
               "xlink_role": "elt"
             }
           ]

@@ -5,7 +5,7 @@
   "license": "This data is released under the CC0 license",
   "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
   "more-info": "http://oracc.org/doc/opendata/",
-  "UTC-timestamp": "2019-12-19T07:06:25",
+  "UTC-timestamp": "2020-03-23T06:26:51",
   "textid": "Q005436",
   "cdl": [
     {
@@ -45,14 +45,14 @@
                 },
                 {
                   "node": "l",
-                  "frag": "{d}AG-I",
-                  "id": "Q005436.l02a7f",
+                  "frag": "{d}AG-na-ʾi-id",
+                  "id": "Q005436.l05297",
                   "ref": "Q005436.1.1",
-                  "inst": "Nabium-naʾid[Nabonidus, king of Babylon]RN",
-                  "sig": "@ribo/babylon7%akk:{d}AG-I=Nabu-naʾid[Nabonidus, king of Babylon//Nabonidus, king of Babylon]RN'RN$Nabium-naʾid",
+                  "inst": "Nabu-naʾid[Nabonidus, king of Babylon]RN$Nabium-naʾid",
+                  "sig": "@ribo/babylon7%akk:{d}AG-na-ʾi-id=Nabu-naʾid[Nabonidus, king of Babylon//Nabonidus, king of Babylon]RN'RN$Nabium-naʾid",
                   "f": {
                     "lang": "akk",
-                    "form": "{d}AG-I",
+                    "form": "{d}AG-na-ʾi-id",
                     "delim": "",
                     "gdl": [
                       {
@@ -77,15 +77,25 @@
                             "role": "logo",
                             "logolang": "sux",
                             "delim": "-"
-                          },
-                          {
-                            "s": "I",
-                            "utf8": "𒄿",
-                            "id": "Q005436.1.1.2",
-                            "role": "logo",
-                            "logolang": "sux"
                           }
                         ]
+                      },
+                      {
+                        "v": "na",
+                        "utf8": "𒈾",
+                        "id": "Q005436.1.1.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ʾi",
+                        "utf8": "𒀪",
+                        "id": "Q005436.1.1.3",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "id",
+                        "utf8": "𒀉",
+                        "id": "Q005436.1.1.4"
                       }
                     ],
                     "cf": "Nabu-naʾid",
@@ -94,12 +104,27 @@
                     "norm": "Nabium-naʾid",
                     "pos": "RN",
                     "epos": "RN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005436.1.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005436.1.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "LUGAL",
-                  "id": "Q005436.l02a80",
+                  "id": "Q005436.l05298",
                   "ref": "Q005436.1.2",
                   "inst": "šar[king]N",
                   "sig": "@ribo/babylon7%akk:LUGAL=šarru[king//king]N'N$šar",
@@ -128,27 +153,58 @@
                     "norm": "šar",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005436.1.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005436.1.2"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
-                  "frag": "E{ki}",
-                  "id": "Q005436.l02a81",
+                  "frag": "KA₂.DINGIR.RA{ki}",
+                  "id": "Q005436.l05299",
                   "ref": "Q005436.1.3",
                   "inst": "Babili[Babylon]SN",
-                  "sig": "@ribo/babylon7%akk:E{KI}=Babili[Babylon//Babylon]SN'SN$Babili",
+                  "sig": "@ribo/babylon7%akk:KA₂.DINGIR.RA{KI}=Babili[Babylon//Babylon]SN'SN$Babili",
                   "f": {
                     "lang": "akk",
-                    "form": "E{KI}",
+                    "form": "KA₂.DINGIR.RA{KI}",
                     "gdl": [
                       {
                         "gg": "logo",
                         "gdl_type": "logo",
                         "group": [
                           {
-                            "s": "E",
-                            "utf8": "𒂊",
+                            "s": "KA₂",
+                            "utf8": "𒆍",
                             "id": "Q005436.1.3.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "DINGIR",
+                            "utf8": "𒀭",
+                            "id": "Q005436.1.3.1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "RA",
+                            "utf8": "𒊏",
+                            "id": "Q005436.1.3.2",
                             "role": "logo",
                             "logolang": "sux"
                           },
@@ -159,7 +215,7 @@
                               {
                                 "s": "KI",
                                 "utf8": "𒆠",
-                                "id": "Q005436.1.3.1",
+                                "id": "Q005436.1.3.3",
                                 "role": "logo",
                                 "logolang": "sux"
                               }
@@ -174,7 +230,22 @@
                     "norm": "Babili",
                     "pos": "SN",
                     "epos": "SN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005436.1.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005436.1.3"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -186,7 +257,7 @@
                 {
                   "node": "l",
                   "frag": "za-nin",
-                  "id": "Q005436.l02a82",
+                  "id": "Q005436.l0529a",
                   "ref": "Q005436.2.1",
                   "inst": "zānin[provisioner]N",
                   "sig": "@ribo/babylon7%akk:za-nin=zāninu[provisioner//provisioner]N'N$zānin",
@@ -213,14 +284,449 @@
                     "norm": "zānin",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005436.2.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005436.2.1"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "e₂-sag-il₂",
+                  "id": "Q005436.l0529b",
+                  "ref": "Q005436.2.2",
+                  "inst": "Esagil[temple of Marduk at Babylon]TN",
+                  "sig": "@ribo/babylon7%akk:e₂-sag-il₂=Esagil['House whose Top is High'//temple of Marduk at Babylon]TN'TN$Esagil",
+                  "f": {
+                    "lang": "akk",
+                    "form": "e₂-sag-il₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "e₂",
+                        "utf8": "𒂍",
+                        "id": "Q005436.2.2.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "sag",
+                        "utf8": "𒊕",
+                        "id": "Q005436.2.2.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "il₂",
+                        "utf8": "𒅍",
+                        "id": "Q005436.2.2.2"
+                      }
+                    ],
+                    "cf": "Esagil",
+                    "gw": "'House whose Top is High'",
+                    "sense": "temple of Marduk at Babylon",
+                    "norm": "Esagil",
+                    "pos": "TN",
+                    "epos": "TN"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005436.2.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005436.2.2"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "u₃",
+                  "id": "Q005436.l0529c",
+                  "ref": "Q005436.2.3",
+                  "inst": "u[and]CNJ",
+                  "sig": "@ribo/babylon7%akk:u₃=u[and//and]CNJ'CNJ$u",
+                  "f": {
+                    "lang": "akk",
+                    "form": "u₃",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "u₃",
+                        "utf8": "𒅇",
+                        "id": "Q005436.2.3.0"
+                      }
+                    ],
+                    "cf": "u",
+                    "gw": "and",
+                    "sense": "and",
+                    "norm": "u",
+                    "pos": "CNJ",
+                    "epos": "CNJ"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005436.2.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005436.2.3"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "e₂-zi-da",
+                  "id": "Q005436.l0529d",
+                  "ref": "Q005436.2.4",
+                  "inst": "Ezida[temple of Nabû at Borsippa]TN",
+                  "sig": "@ribo/babylon7%akk:e₂-zi-da=Ezida['True House'//temple of Nabû at Borsippa]TN'TN$Ezida",
+                  "f": {
+                    "lang": "akk",
+                    "form": "e₂-zi-da",
+                    "gdl": [
+                      {
+                        "v": "e₂",
+                        "utf8": "𒂍",
+                        "id": "Q005436.2.4.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "zi",
+                        "utf8": "𒍣",
+                        "id": "Q005436.2.4.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "da",
+                        "utf8": "𒁕",
+                        "id": "Q005436.2.4.2"
+                      }
+                    ],
+                    "cf": "Ezida",
+                    "gw": "'True House'",
+                    "sense": "temple of Nabû at Borsippa",
+                    "norm": "Ezida",
+                    "pos": "TN",
+                    "epos": "TN"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005436.2.4"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005436.2.4"
+                    }
+                  ]
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q005436.3",
+                  "n": "3",
+                  "label": "3"
+                },
+                {
+                  "node": "l",
+                  "frag": "e₂-gi₆-par₃",
+                  "id": "Q005436.l0529e",
+                  "ref": "Q005436.3.1",
+                  "inst": "Egipar[temple of the high-priestess of Nanna-Suen at Ur]TN$",
+                  "sig": "@ribo/babylon7%akk:e₂-gi₆-par₃=Egipar['Giparu-House'//temple of the high-priestess of Nanna-Suen at Ur]TN'TN$Egipar",
+                  "f": {
+                    "lang": "akk",
+                    "form": "e₂-gi₆-par₃",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "e₂",
+                        "utf8": "𒂍",
+                        "id": "Q005436.3.1.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "gi₆",
+                        "utf8": "𒈪",
+                        "id": "Q005436.3.1.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "par₃",
+                        "utf8": "𒁖",
+                        "id": "Q005436.3.1.2"
+                      }
+                    ],
+                    "cf": "Egipar",
+                    "gw": "'Giparu-House'",
+                    "sense": "temple of the high-priestess of Nanna-Suen at Ur",
+                    "norm": "Egipar",
+                    "pos": "TN",
+                    "epos": "TN"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005436.3.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005436.3.1"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "E₂",
+                  "id": "Q005436.l0529f",
+                  "ref": "Q005436.3.2",
+                  "inst": "bīt[house]N",
+                  "sig": "@ribo/babylon7%akk:E₂=bītu[house//house]N'N$bīt",
+                  "f": {
+                    "lang": "akk",
+                    "form": "E₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "E₂",
+                            "utf8": "𒂍",
+                            "id": "Q005436.3.2.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "bītu",
+                    "gw": "house",
+                    "sense": "house",
+                    "norm": "bīt",
+                    "pos": "N",
+                    "epos": "N"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005436.3.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005436.3.2"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "NIN.DINGIR.RA",
+                  "id": "Q005436.l052a0",
+                  "ref": "Q005436.3.3",
+                  "inst": "entu[high priestess]N$enti",
+                  "sig": "@ribo/babylon7%akk:NIN.DINGIR.RA=entu[high priestess//high priestess]N'N$enti",
+                  "f": {
+                    "lang": "akk",
+                    "form": "NIN.DINGIR.RA",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "NIN",
+                            "utf8": "𒊩𒌆",
+                            "id": "Q005436.3.3.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "DINGIR",
+                            "utf8": "𒀭",
+                            "id": "Q005436.3.3.1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "RA",
+                            "utf8": "𒊏",
+                            "id": "Q005436.3.3.2",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "entu",
+                    "gw": "high priestess",
+                    "sense": "high priestess",
+                    "norm": "enti",
+                    "pos": "N",
+                    "epos": "N"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005436.3.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005436.3.3"
+                    }
+                  ]
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q005436.4",
+                  "n": "4",
+                  "label": "4"
+                },
+                {
+                  "node": "l",
+                  "frag": "ša",
+                  "id": "Q005436.l052a1",
+                  "ref": "Q005436.4.1",
+                  "inst": "ša[that]REL",
+                  "sig": "@ribo/babylon7%akk:ša=ša[that//that]REL'REL$ša",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ša",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ša",
+                        "utf8": "𒊭",
+                        "id": "Q005436.4.1.0"
+                      }
+                    ],
+                    "cf": "ša",
+                    "gw": "that",
+                    "sense": "that",
+                    "norm": "ša",
+                    "pos": "REL",
+                    "epos": "REL"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005436.4.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005436.4.1"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "qe₂-re-eb",
+                  "id": "Q005436.l052a2",
+                  "ref": "Q005436.4.2",
+                  "inst": "qerbu[centre//inside]N'PRP$qereb",
+                  "sig": "@ribo/babylon7%akk:qe₂-re-eb=qerbu[centre//inside]N'PRP$qereb",
+                  "f": {
+                    "lang": "akk",
+                    "form": "qe₂-re-eb",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "qe₂",
+                        "utf8": "𒆠",
+                        "id": "Q005436.4.2.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "re",
+                        "utf8": "𒊑",
+                        "id": "Q005436.4.2.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "eb",
+                        "utf8": "𒅁",
+                        "id": "Q005436.4.2.2"
+                      }
+                    ],
+                    "cf": "qerbu",
+                    "gw": "centre",
+                    "sense": "inside",
+                    "norm": "qereb",
+                    "pos": "N",
+                    "epos": "PRP"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005436.4.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005436.4.2"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "uri₂{ki}",
-                  "id": "Q005436.l02a83",
-                  "ref": "Q005436.2.2",
-                  "inst": "Uri[Ur]SN",
+                  "id": "Q005436.l052a3",
+                  "ref": "Q005436.4.3",
+                  "inst": "Uri[Ur]SN$Uri",
                   "sig": "@ribo/babylon7%akk:uri₂{KI}=Uri[Ur//Ur]SN'SN$Uri",
                   "f": {
                     "lang": "akk",
@@ -229,7 +735,7 @@
                       {
                         "v": "uri₂",
                         "utf8": "𒋀𒀕",
-                        "id": "Q005436.2.2.0"
+                        "id": "Q005436.4.3.0"
                       },
                       {
                         "det": "semantic",
@@ -242,7 +748,7 @@
                               {
                                 "s": "KI",
                                 "utf8": "𒆠",
-                                "id": "Q005436.2.2.1",
+                                "id": "Q005436.4.3.1",
                                 "role": "logo",
                                 "logolang": "sux"
                               }
@@ -257,151 +763,22 @@
                     "norm": "Uri",
                     "pos": "SN",
                     "epos": "SN"
-                  }
-                },
-                {
-                  "node": "d",
-                  "type": "line-start",
-                  "ref": "Q005436.3",
-                  "n": "3",
-                  "label": "3"
-                },
-                {
-                  "node": "l",
-                  "frag": "e₂-lugal-galga-si-sa₂",
-                  "id": "Q005436.l02a84",
-                  "ref": "Q005436.3.1",
-                  "inst": "Elugalgalgasisa[ziggurat of Sîn at Ur]TN$",
-                  "sig": "@ribo/babylon7%akk:e₂-lugal-galga-si-sa₂=Elugalgalgasisa['House of the King who Lets Counsel Flourish'//ziggurat of Sîn at Ur]TN'TN$Elugalgalgasisa",
-                  "f": {
-                    "lang": "akk",
-                    "form": "e₂-lugal-galga-si-sa₂",
-                    "gdl": [
-                      {
-                        "v": "e₂",
-                        "utf8": "𒂍",
-                        "id": "Q005436.3.1.0",
-                        "delim": "-"
-                      },
-                      {
-                        "v": "lugal",
-                        "utf8": "𒈗",
-                        "id": "Q005436.3.1.1",
-                        "delim": "-"
-                      },
-                      {
-                        "v": "galga",
-                        "utf8": "𒃌",
-                        "id": "Q005436.3.1.2",
-                        "delim": "-"
-                      },
-                      {
-                        "v": "si",
-                        "utf8": "𒋛",
-                        "id": "Q005436.3.1.3",
-                        "delim": "-"
-                      },
-                      {
-                        "v": "sa₂",
-                        "utf8": "𒁲",
-                        "id": "Q005436.3.1.4"
-                      }
-                    ],
-                    "cf": "Elugalgalgasisa",
-                    "gw": "'House of the King who Lets Counsel Flourish'",
-                    "sense": "ziggurat of Sîn at Ur",
-                    "norm": "Elugalgalgasisa",
-                    "pos": "TN",
-                    "epos": "TN"
-                  }
-                },
-                {
-                  "node": "d",
-                  "type": "line-start",
-                  "ref": "Q005436.4",
-                  "n": "4",
-                  "label": "4"
-                },
-                {
-                  "node": "l",
-                  "frag": "ziq-qur-rat",
-                  "id": "Q005436.l02a85",
-                  "ref": "Q005436.4.1",
-                  "inst": "ziqqurrat[ziggurrat]N",
-                  "sig": "@ribo/babylon7%akk:ziq-qur-rat=ziqqurratu[ziggurrat//ziggurrat]N'N$ziqqurrat",
-                  "f": {
-                    "lang": "akk",
-                    "form": "ziq-qur-rat",
-                    "delim": "",
-                    "gdl": [
-                      {
-                        "v": "ziq",
-                        "utf8": "𒍨",
-                        "id": "Q005436.4.1.0",
-                        "delim": "-"
-                      },
-                      {
-                        "v": "qur",
-                        "utf8": "𒄥",
-                        "id": "Q005436.4.1.1",
-                        "delim": "-"
-                      },
-                      {
-                        "v": "rat",
-                        "utf8": "𒋥",
-                        "id": "Q005436.4.1.2"
-                      }
-                    ],
-                    "cf": "ziqqurratu",
-                    "gw": "ziggurrat",
-                    "sense": "ziggurrat",
-                    "norm": "ziqqurrat",
-                    "pos": "N",
-                    "epos": "N"
-                  }
-                },
-                {
-                  "node": "l",
-                  "frag": "e₂-giš-nu-gal₂",
-                  "id": "Q005436.l02a86",
-                  "ref": "Q005436.4.2",
-                  "inst": "Egišnugal[temple of Nanna-Suen at Ur]TN",
-                  "sig": "@ribo/babylon7%akk:e₂-giš-nu-gal₂=Ekišnugal[(meaning unknown)//temple of Nanna-Suen at Ur]TN'TN$Egišnugal",
-                  "f": {
-                    "lang": "akk",
-                    "form": "e₂-giš-nu-gal₂",
-                    "gdl": [
-                      {
-                        "v": "e₂",
-                        "utf8": "𒂍",
-                        "id": "Q005436.4.2.0",
-                        "delim": "-"
-                      },
-                      {
-                        "v": "giš",
-                        "utf8": "𒄑",
-                        "id": "Q005436.4.2.1",
-                        "delim": "-"
-                      },
-                      {
-                        "v": "nu",
-                        "utf8": "𒉡",
-                        "id": "Q005436.4.2.2",
-                        "delim": "-"
-                      },
-                      {
-                        "v": "gal₂",
-                        "utf8": "𒅅",
-                        "id": "Q005436.4.2.3"
-                      }
-                    ],
-                    "cf": "Ekišnugal",
-                    "gw": "(meaning unknown)",
-                    "sense": "temple of Nanna-Suen at Ur",
-                    "norm": "Egišnugal",
-                    "pos": "TN",
-                    "epos": "TN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005436.4.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005436.4.3"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -412,78 +789,61 @@
                 },
                 {
                   "node": "l",
-                  "frag": "ud-diš-ma",
-                  "id": "Q005436.l02a87",
+                  "frag": "a-na",
+                  "id": "Q005436.l052a4",
                   "ref": "Q005436.5.1",
-                  "inst": "uddišma[renovate]V",
-                  "sig": "@ribo/babylon7%akk:ud-diš-ma=edēšu[be(come) new//renovate]V'V$uddišma",
+                  "inst": "ana[for]PRP",
+                  "sig": "@ribo/babylon7%akk:a-na=ana[to//for]PRP'PRP$ana",
                   "f": {
                     "lang": "akk",
-                    "form": "ud-diš-ma",
+                    "form": "a-na",
                     "delim": "",
                     "gdl": [
                       {
-                        "v": "ud",
-                        "utf8": "𒌓",
+                        "v": "a",
+                        "utf8": "𒀀",
                         "id": "Q005436.5.1.0",
                         "delim": "-"
                       },
                       {
-                        "v": "diš",
-                        "utf8": "𒁹",
-                        "id": "Q005436.5.1.1",
-                        "delim": "-"
-                      },
-                      {
-                        "v": "ma",
-                        "utf8": "𒈠",
-                        "id": "Q005436.5.1.2"
-                      }
-                    ],
-                    "cf": "edēšu",
-                    "gw": "be(come) new",
-                    "sense": "renovate",
-                    "norm": "uddišma",
-                    "pos": "V",
-                    "epos": "V"
-                  }
-                },
-                {
-                  "node": "l",
-                  "frag": "ana",
-                  "id": "Q005436.l02a88",
-                  "ref": "Q005436.5.2",
-                  "inst": "ana[to]PRP",
-                  "sig": "@ribo/babylon7%akk:ana=ana[to//to]PRP'PRP$ana",
-                  "f": {
-                    "lang": "akk",
-                    "form": "ana",
-                    "delim": "",
-                    "gdl": [
-                      {
-                        "v": "ana",
-                        "utf8": "𒁹",
-                        "id": "Q005436.5.2.0"
+                        "v": "na",
+                        "utf8": "𒈾",
+                        "id": "Q005436.5.1.1"
                       }
                     ],
                     "cf": "ana",
                     "gw": "to",
-                    "sense": "to",
+                    "sense": "for",
                     "norm": "ana",
                     "pos": "PRP",
                     "epos": "PRP"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005436.5.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005436.5.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
-                  "frag": "KI-šu₂",
-                  "id": "Q005436.l02a89",
-                  "ref": "Q005436.5.3",
-                  "inst": "ašru[place]N$ašrišu",
-                  "sig": "@ribo/babylon7%akk:KI-šu₂=ašru[place//place]N'N$ašrišu",
+                  "frag": "{d}EN.ZU",
+                  "id": "Q005436.l052a5",
+                  "ref": "Q005436.5.2",
+                  "inst": "Sin[1]DN",
+                  "sig": "@ribo/babylon7%akk:{d}EN.ZU=Sin[1//1]DN'DN$Sin",
                   "f": {
                     "lang": "akk",
-                    "form": "KI-šu₂",
+                    "form": "{d}EN.ZU",
                     "delim": "",
                     "gdl": [
                       {
@@ -491,8 +851,76 @@
                         "gdl_type": "logo",
                         "group": [
                           {
-                            "s": "KI",
-                            "utf8": "𒆠",
+                            "det": "semantic",
+                            "pos": "pre",
+                            "seq": [
+                              {
+                                "v": "d",
+                                "utf8": "𒀭",
+                                "id": "Q005436.5.2.0"
+                              }
+                            ]
+                          },
+                          {
+                            "s": "EN",
+                            "utf8": "𒂗",
+                            "id": "Q005436.5.2.1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "ZU",
+                            "utf8": "𒍪",
+                            "id": "Q005436.5.2.2",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Sin",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm": "Sin",
+                    "pos": "DN",
+                    "epos": "DN"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005436.5.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005436.5.2"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "EN-ia",
+                  "id": "Q005436.l052a6",
+                  "ref": "Q005436.5.3",
+                  "inst": "bēliya[lord]N",
+                  "sig": "@ribo/babylon7%akk:EN-ia=bēlu[lord//lord]N'N$bēliya",
+                  "f": {
+                    "lang": "akk",
+                    "form": "EN-ia",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "EN",
+                            "utf8": "𒂗",
                             "id": "Q005436.5.3.0",
                             "role": "logo",
                             "logolang": "sux",
@@ -501,51 +929,85 @@
                         ]
                       },
                       {
-                        "v": "šu₂",
-                        "utf8": "𒋙",
+                        "v": "ia",
+                        "utf8": "𒅀",
                         "id": "Q005436.5.3.1"
                       }
                     ],
-                    "cf": "ašru",
-                    "gw": "place",
-                    "sense": "place",
-                    "norm": "ašrišu",
+                    "cf": "bēlu",
+                    "gw": "lord",
+                    "sense": "lord",
+                    "norm": "bēliya",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005436.5.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005436.5.3"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
-                  "frag": "GUR",
-                  "id": "Q005436.l02a8a",
+                  "frag": "e-pu₂-uš",
+                  "id": "Q005436.l052a7",
                   "ref": "Q005436.5.4",
-                  "inst": "utēr[return]V",
-                  "sig": "@ribo/babylon7%akk:GUR=târu[turn//return]V'V$utēr",
+                  "inst": "ēpuš[build]V",
+                  "sig": "@ribo/babylon7%akk:e-pu₂-uš=epēšu[do//build]V'V$ēpuš",
                   "f": {
                     "lang": "akk",
-                    "form": "GUR",
+                    "form": "e-pu₂-uš",
                     "gdl": [
                       {
-                        "gg": "logo",
-                        "gdl_type": "logo",
-                        "group": [
-                          {
-                            "s": "GUR",
-                            "utf8": "𒄥",
-                            "id": "Q005436.5.4.0",
-                            "role": "logo",
-                            "logolang": "sux"
-                          }
-                        ]
+                        "v": "e",
+                        "utf8": "𒂊",
+                        "id": "Q005436.5.4.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "pu₂",
+                        "utf8": "𒇥",
+                        "id": "Q005436.5.4.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "uš",
+                        "utf8": "𒍑",
+                        "id": "Q005436.5.4.2"
                       }
                     ],
-                    "cf": "târu",
-                    "gw": "turn",
-                    "sense": "return",
-                    "norm": "utēr",
+                    "cf": "epēšu",
+                    "gw": "do",
+                    "sense": "build",
+                    "norm": "ēpuš",
                     "pos": "V",
                     "epos": "V"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005436.5.4"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005436.5.4"
+                    }
+                  ]
                 }
               ]
             }

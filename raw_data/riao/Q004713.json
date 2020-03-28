@@ -5,7 +5,7 @@
   "license": "This data is released under the CC0 license",
   "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
   "more-info": "http://oracc.org/doc/opendata/",
-  "UTC-timestamp": "2019-09-05T10:09:27",
+  "UTC-timestamp": "2020-02-11T16:33:10",
   "textid": "Q004713",
   "cdl": [
     {
@@ -46,7 +46,7 @@
                 {
                   "node": "l",
                   "frag": "{m}{d}sal₂-ma-nu-MAŠ",
-                  "id": "Q004713.l0e366",
+                  "id": "Q004713.l0e59e",
                   "ref": "Q004713.1.1",
                   "inst": "Salmanu-ašared_III[Shalmaneser III, king of Assyria]RN$Salmanu-ašared",
                   "sig": "@riao%akk:{m}{d}sal₂-ma-nu-MAŠ=Salmanu-ašared_III[Shalmaneser III, king of Assyria//Shalmaneser III, king of Assyria]RN'RN$Salmanu-ašared",
@@ -114,7 +114,22 @@
                     "norm": "Salmanu-ašared",
                     "pos": "RN",
                     "epos": "RN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004713.1.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004713.1.1"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -126,7 +141,7 @@
                 {
                   "node": "l",
                   "frag": "GAR",
-                  "id": "Q004713.l0e367",
+                  "id": "Q004713.l0e59f",
                   "ref": "Q004713.2.1",
                   "inst": "šakin[governor]N",
                   "sig": "@riao%akk:GAR=šaknu[appointee//governor]N'N$šakin",
@@ -155,12 +170,27 @@
                     "norm": "šakin",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004713.2.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004713.2.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "BAD",
-                  "id": "Q004713.l0e368",
+                  "id": "Q004713.l0e5a0",
                   "ref": "Q004713.2.2",
                   "inst": "Enlil[]DN$",
                   "sig": "@riao%akk:BAD=Enlil[1//1]DN'DN$Enlil",
@@ -189,12 +219,27 @@
                     "norm": "Enlil",
                     "pos": "DN",
                     "epos": "DN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004713.2.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004713.2.2"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "ŠID",
-                  "id": "Q004713.l0e369",
+                  "id": "Q004713.l0e5a1",
                   "ref": "Q004713.2.3",
                   "inst": "iššak[city-ruler]N",
                   "sig": "@riao%akk:ŠID=iššiakku[city-ruler//city-ruler]N'N$iššak",
@@ -223,12 +268,27 @@
                     "norm": "iššak",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004713.2.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004713.2.3"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "aš-šur",
-                  "id": "Q004713.l0e36a",
+                  "id": "Q004713.l0e5a2",
                   "ref": "Q004713.2.4",
                   "inst": "Aššur[1]DN",
                   "sig": "@riao%akk:aš-šur=Aššur[1//1]DN'DN$Aššur",
@@ -254,7 +314,22 @@
                     "norm": "Aššur",
                     "pos": "DN",
                     "epos": "DN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004713.2.4"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004713.2.4"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -266,7 +341,7 @@
                 {
                   "node": "l",
                   "frag": "A",
-                  "id": "Q004713.l0e36b",
+                  "id": "Q004713.l0e5a3",
                   "ref": "Q004713.3.1",
                   "inst": "mār[son]N",
                   "sig": "@riao%akk:A=māru[son//son]N'N$mār",
@@ -295,12 +370,27 @@
                     "norm": "mār",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004713.3.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004713.3.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "aš-šur-PAP-A",
-                  "id": "Q004713.l0e36c",
+                  "id": "Q004713.l0e5a4",
                   "ref": "Q004713.3.2",
                   "inst": "Aššur-naṣir-apli_II[Ashurnasirpal II, king of Assyria]RN$Aššur-naṣir-apli",
                   "sig": "@riao%akk:aš-šur-PAP-A=Aššur-naṣir-apli_II[Ashurnasirpal II, king of Assyria//Ashurnasirpal II, king of Assyria]RN'RN$Aššur-naṣir-apli",
@@ -349,12 +439,27 @@
                     "norm": "Aššur-naṣir-apli",
                     "pos": "RN",
                     "epos": "RN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004713.3.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004713.3.2"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "ŠID",
-                  "id": "Q004713.l0e36d",
+                  "id": "Q004713.l0e5a5",
                   "ref": "Q004713.3.3",
                   "inst": "iššak[city-ruler]N",
                   "sig": "@riao%akk:ŠID=iššiakku[city-ruler//city-ruler]N'N$iššak",
@@ -383,12 +488,27 @@
                     "norm": "iššak",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004713.3.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004713.3.3"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "aš-šur",
-                  "id": "Q004713.l0e36e",
+                  "id": "Q004713.l0e5a6",
                   "ref": "Q004713.3.4",
                   "inst": "Aššur[1]DN",
                   "sig": "@riao%akk:aš-šur=Aššur[1//1]DN'DN$Aššur",
@@ -414,7 +534,22 @@
                     "norm": "Aššur",
                     "pos": "DN",
                     "epos": "DN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004713.3.4"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004713.3.4"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -426,7 +561,7 @@
                 {
                   "node": "l",
                   "frag": "A",
-                  "id": "Q004713.l0e36f",
+                  "id": "Q004713.l0e5a7",
                   "ref": "Q004713.4.1",
                   "inst": "mār[son]N",
                   "sig": "@riao%akk:A=māru[son//son]N'N$mār",
@@ -455,12 +590,27 @@
                     "norm": "mār",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004713.4.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004713.4.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "TUKUL-MAŠ",
-                  "id": "Q004713.l0e370",
+                  "id": "Q004713.l0e5a8",
                   "ref": "Q004713.4.2",
                   "inst": "Tukulti-Ninurta[Tukulti-Ninurta II, son of Adad-narari II, king of Assyria]RN",
                   "sig": "@riao%akk:TUKUL-MAŠ=Tukulti-Ninurta_II[Tukulti-Ninurta II, son of Adad-narari II, king of Assyria//Tukulti-Ninurta II, son of Adad-narari II, king of Assyria]RN'RN$Tukulti-Ninurta",
@@ -497,12 +647,27 @@
                     "norm": "Tukulti-Ninurta",
                     "pos": "RN",
                     "epos": "RN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004713.4.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004713.4.2"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "ŠID",
-                  "id": "Q004713.l0e371",
+                  "id": "Q004713.l0e5a9",
                   "ref": "Q004713.4.3",
                   "inst": "iššak[city-ruler]N",
                   "sig": "@riao%akk:ŠID=iššiakku[city-ruler//city-ruler]N'N$iššak",
@@ -531,12 +696,27 @@
                     "norm": "iššak",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004713.4.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004713.4.3"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "aš-šur-ma",
-                  "id": "Q004713.l0e372",
+                  "id": "Q004713.l0e5aa",
                   "ref": "Q004713.4.4",
                   "inst": "Aššurma[1]DN",
                   "sig": "@riao%akk:aš-šur-ma=Aššur[1//1]DN'DN$Aššurma",
@@ -568,7 +748,22 @@
                     "norm": "Aššurma",
                     "pos": "DN",
                     "epos": "DN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004713.4.4"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004713.4.4"
+                    }
+                  ]
                 }
               ]
             }

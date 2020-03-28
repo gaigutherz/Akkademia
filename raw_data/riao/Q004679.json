@@ -5,7 +5,7 @@
   "license": "This data is released under the CC0 license",
   "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
   "more-info": "http://oracc.org/doc/opendata/",
-  "UTC-timestamp": "2019-09-05T10:09:24",
+  "UTC-timestamp": "2020-02-11T16:33:07",
   "textid": "Q004679",
   "cdl": [
     {
@@ -46,7 +46,7 @@
                 {
                   "node": "l",
                   "frag": "{uru}pa-ar-ga-a",
-                  "id": "Q004679.l0e063",
+                  "id": "Q004679.l0e29b",
                   "ref": "Q004679.1.1",
                   "inst": "Parga[]SN$",
                   "sig": "@riao%akk:{URU}pa-ar-ga-a=Parga[1//1]SN'SN$Parga",
@@ -104,12 +104,27 @@
                     "norm": "Parga",
                     "pos": "SN",
                     "epos": "SN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004679.1.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004679.1.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "KUR-ud",
-                  "id": "Q004679.l0e064",
+                  "id": "Q004679.l0e29c",
                   "ref": "Q004679.1.2",
                   "inst": "akšud[conquer]V",
                   "sig": "@riao%akk:KUR-ud=kašādu[reach//conquer]V'V$akšud",
@@ -143,7 +158,22 @@
                     "norm": "akšud",
                     "pos": "V",
                     "epos": "V"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q004679.1.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q004679.1.2"
+                    }
+                  ]
                 }
               ]
             }

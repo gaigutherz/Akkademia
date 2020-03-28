@@ -5,7 +5,7 @@
   "license": "This data is released under the CC0 license",
   "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
   "more-info": "http://oracc.org/doc/opendata/",
-  "UTC-timestamp": "2019-09-05T10:09:40",
+  "UTC-timestamp": "2020-02-11T16:33:25",
   "textid": "Q005655",
   "cdl": [
     {
@@ -46,7 +46,7 @@
                 {
                   "node": "l",
                   "frag": "{d}UTU-ši-{d}IŠKUR",
-                  "id": "Q005655.l08f5f",
+                  "id": "Q005655.l09197",
                   "ref": "Q005655.1.1",
                   "inst": "Šamši-Adad_I[son of Ila-kabkabu, vice-regent of Aššur]RN$Šamši-Adad",
                   "sig": "@riao%akk:{d}UTU-ši-{d}IŠKUR=Šamši-Adad_I[son of Ila-kabkabu, vice-regent of Aššur//son of Ila-kabkabu, vice-regent of Aššur]RN'RN$Šamši-Adad",
@@ -116,7 +116,22 @@
                     "norm": "Šamši-Adad",
                     "pos": "RN",
                     "epos": "RN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005655.1.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005655.1.1"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -128,7 +143,7 @@
                 {
                   "node": "l",
                   "frag": "ba-ni",
-                  "id": "Q005655.l08f60",
+                  "id": "Q005655.l09198",
                   "ref": "Q005655.2.1",
                   "inst": "bāni[builder]N",
                   "sig": "@riao%akk:ba-ni=bānû[creator//builder]N'N$bāni",
@@ -155,12 +170,27 @@
                     "norm": "bāni",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005655.2.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005655.2.1"
+                    }
+                  ]
                 },
                 {
                   "node": "l",
                   "frag": "E₂",
-                  "id": "Q005655.l08f61",
+                  "id": "Q005655.l09199",
                   "ref": "Q005655.2.2",
                   "inst": "bīt[house]N",
                   "sig": "@riao%akk:E₂=bītu[house//house]N'N$bīt",
@@ -188,7 +218,22 @@
                     "norm": "bīt",
                     "pos": "N",
                     "epos": "N"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005655.2.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005655.2.2"
+                    }
+                  ]
                 },
                 {
                   "node": "d",
@@ -200,7 +245,7 @@
                 {
                   "node": "l",
                   "frag": "{d}a-šur₄",
-                  "id": "Q005655.l08f62",
+                  "id": "Q005655.l0919a",
                   "ref": "Q005655.3.1",
                   "inst": "Aššur[1]DN",
                   "sig": "@riao%akk:{d}a-šur₄=Aššur[1//1]DN'DN$Aššur",
@@ -237,7 +282,22 @@
                     "norm": "Aššur",
                     "pos": "DN",
                     "epos": "DN"
-                  }
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q005655.3.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q005655.3.1"
+                    }
+                  ]
                 }
               ]
             }

@@ -193,7 +193,7 @@ def operate_on_file(directory, corpus, file, lambda1, lambda2, logreg, vec, idx_
                     sign_to_id, id_to_tran, predictor_from_file, model_from_file):
     print(file)
     f = directory / corpus / file
-    parsed = parse_json(f)
+    parsed, _, _ = parse_json(f)
 
     dict = {}
     dict[file] = parsed

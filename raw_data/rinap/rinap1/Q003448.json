@@ -5,7 +5,7 @@
   "license": "This data is released under the CC0 license",
   "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
   "more-info": "http://oracc.org/doc/opendata/",
-  "UTC-timestamp": "2019-07-28T09:13:27",
+  "UTC-timestamp": "2020-02-11T14:43:02",
   "textid": "Q003448",
   "cdl": [
     {
@@ -56,7 +56,7 @@
                   "node": "d",
                   "frag": "($erased signs$)",
                   "type": "dollar",
-                  "ref": "Q003448.2.1"
+                  "ref": "Q003448.2.0.a"
                 },
                 {
                   "node": "d",
@@ -12437,121 +12437,112 @@
                   }
                 },
                 {
-                  "node": "c",
-                  "type": "phrase",
-                  "tag": "phr",
-                  "id": "Q003448.U49",
-                  "ref": "Q003448.ls00004",
-                  "cdl": [
-                    {
-                      "node": "l",
-                      "frag": "EN.URU.⸢MEŠ⸣",
-                      "id": "Q003448.l00d61",
-                      "ref": "Q003448.57.6",
-                      "cof-tails": "Q003448.l00d62",
-                      "inst": "bēlu[lord]N$bēl&ālu[city]N$ālāni",
-                      "sig": "@rinap/rinap1%akk:EN.URU.MEŠ=bēlu[lord//lord]N'N$bēl&&@rinap/rinap1%akk:=ālu[city//city]N'N$ālāni",
-                      "f": {
-                        "lang": "akk",
-                        "form": "EN.URU.MEŠ",
-                        "delim": "",
-                        "gdl": [
+                  "node": "l",
+                  "frag": "EN.URU.⸢MEŠ⸣",
+                  "id": "Q003448.l00d61",
+                  "ref": "Q003448.57.6",
+                  "cof-tails": "Q003448.l00d62",
+                  "inst": "bēlu[lord]N$bēl&ālu[city]N$ālāni",
+                  "sig": "@rinap/rinap1%akk:EN.URU.MEŠ=bēlu[lord//lord]N'N$bēl&&@rinap/rinap1%akk:=ālu[city//city]N'N$ālāni",
+                  "f": {
+                    "lang": "akk",
+                    "form": "EN.URU.MEŠ",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
                           {
-                            "gg": "logo",
-                            "gdl_type": "logo",
-                            "group": [
-                              {
-                                "s": "EN",
-                                "utf8": "𒂗",
-                                "id": "Q003448.57.6.0",
-                                "role": "logo",
-                                "logolang": "sux",
-                                "delim": "."
-                              },
-                              {
-                                "s": "URU",
-                                "utf8": "𒌷",
-                                "id": "Q003448.57.6.1",
-                                "role": "logo",
-                                "logolang": "sux",
-                                "delim": "."
-                              },
-                              {
-                                "s": "MEŠ",
-                                "utf8": "𒈨𒌍",
-                                "id": "Q003448.57.6.2",
-                                "break": "damaged",
-                                "ho": "1",
-                                "role": "logo",
-                                "logolang": "sux",
-                                "hc": "1"
-                              }
-                            ]
-                          }
-                        ],
-                        "cf": "bēlu",
-                        "gw": "lord",
-                        "sense": "lord",
-                        "norm": "bēl",
-                        "pos": "N",
-                        "epos": "N"
-                      }
-                    },
-                    {
-                      "node": "l",
-                      "frag": "EN.URU.⸢MEŠ⸣",
-                      "id": "Q003448.l00d62",
-                      "ref": "Q003448.57.6",
-                      "cof-head": "Q003448.l00d61",
-                      "inst": "bēlu[lord]N$bēl&ālu[city]N$ālāni",
-                      "tail-sig": "@rinap/rinap1%akk:=ālu[city//city]N'N$ālāni",
-                      "f": {
-                        "lang": "akk",
-                        "form": "EN.URU.MEŠ",
-                        "delim": "",
-                        "gdl": [
+                            "s": "EN",
+                            "utf8": "𒂗",
+                            "id": "Q003448.57.6.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
                           {
-                            "gg": "logo",
-                            "gdl_type": "logo",
-                            "group": [
-                              {
-                                "s": "EN",
-                                "utf8": "𒂗",
-                                "id": "Q003448.57.6.0",
-                                "role": "logo",
-                                "logolang": "sux",
-                                "delim": "."
-                              },
-                              {
-                                "s": "URU",
-                                "utf8": "𒌷",
-                                "id": "Q003448.57.6.1",
-                                "role": "logo",
-                                "logolang": "sux",
-                                "delim": "."
-                              },
-                              {
-                                "s": "MEŠ",
-                                "utf8": "𒈨𒌍",
-                                "id": "Q003448.57.6.2",
-                                "break": "damaged",
-                                "ho": "1",
-                                "role": "logo",
-                                "logolang": "sux",
-                                "hc": "1"
-                              }
-                            ]
+                            "s": "URU",
+                            "utf8": "𒌷",
+                            "id": "Q003448.57.6.1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "MEŠ",
+                            "utf8": "𒈨𒌍",
+                            "id": "Q003448.57.6.2",
+                            "break": "damaged",
+                            "ho": "1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "hc": "1"
                           }
-                        ],
-                        "cf": "ālu",
-                        "gw": "city",
-                        "sense": "city",
-                        "norm": "ālāni",
-                        "pos": "N",
-                        "epos": "N"
+                        ]
                       }
-                    }
-                  ]
+                    ],
+                    "cf": "bēlu",
+                    "gw": "lord",
+                    "sense": "lord",
+                    "norm": "bēl",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "EN.URU.⸢MEŠ⸣",
+                  "id": "Q003448.l00d62",
+                  "ref": "Q003448.57.6",
+                  "cof-head": "Q003448.l00d61",
+                  "inst": "bēlu[lord]N$bēl&ālu[city]N$ālāni",
+                  "tail-sig": "@rinap/rinap1%akk:=ālu[city//city]N'N$ālāni",
+                  "f": {
+                    "lang": "akk",
+                    "form": "EN.URU.MEŠ",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "EN",
+                            "utf8": "𒂗",
+                            "id": "Q003448.57.6.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "URU",
+                            "utf8": "𒌷",
+                            "id": "Q003448.57.6.1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "MEŠ",
+                            "utf8": "𒈨𒌍",
+                            "id": "Q003448.57.6.2",
+                            "break": "damaged",
+                            "ho": "1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "hc": "1"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "ālu",
+                    "gw": "city",
+                    "sense": "city",
+                    "norm": "ālāni",
+                    "pos": "N",
+                    "epos": "N"
+                  }
                 },
                 {
                   "node": "l",
@@ -26618,97 +26609,88 @@
                   }
                 },
                 {
-                  "node": "c",
-                  "type": "phrase",
-                  "tag": "phr",
-                  "id": "Q003448.U50",
-                  "ref": "Q003448.ls00005",
-                  "cdl": [
-                    {
-                      "node": "l",
-                      "frag": "EN.MEŠ",
-                      "id": "Q003448.l00eb2",
-                      "ref": "Q003448.113.2",
-                      "inst": "bēlī[lord]N",
-                      "sig": "@rinap/rinap1%akk:EN.MEŠ=bēlu[lord//lord]N'N$bēlī",
-                      "f": {
-                        "lang": "akk",
-                        "form": "EN.MEŠ",
-                        "delim": "",
-                        "gdl": [
+                  "node": "l",
+                  "frag": "EN.MEŠ",
+                  "id": "Q003448.l00eb2",
+                  "ref": "Q003448.113.2",
+                  "inst": "bēlī[lord]N",
+                  "sig": "@rinap/rinap1%akk:EN.MEŠ=bēlu[lord//lord]N'N$bēlī",
+                  "f": {
+                    "lang": "akk",
+                    "form": "EN.MEŠ",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
                           {
-                            "gg": "logo",
-                            "gdl_type": "logo",
-                            "group": [
-                              {
-                                "s": "EN",
-                                "utf8": "𒂗",
-                                "id": "Q003448.113.2.0",
-                                "role": "logo",
-                                "logolang": "sux",
-                                "delim": "."
-                              },
-                              {
-                                "s": "MEŠ",
-                                "utf8": "𒈨𒌍",
-                                "id": "Q003448.113.2.1",
-                                "role": "logo",
-                                "logolang": "sux"
-                              }
-                            ]
-                          }
-                        ],
-                        "cf": "bēlu",
-                        "gw": "lord",
-                        "sense": "lord",
-                        "norm": "bēlī",
-                        "pos": "N",
-                        "epos": "N"
-                      }
-                    },
-                    {
-                      "node": "l",
-                      "frag": "URU.MEŠ",
-                      "id": "Q003448.l00eb3",
-                      "ref": "Q003448.113.3",
-                      "inst": "ālāni[city]N",
-                      "sig": "@rinap/rinap1%akk:URU.MEŠ=ālu[city//city]N'N$ālāni",
-                      "f": {
-                        "lang": "akk",
-                        "form": "URU.MEŠ",
-                        "delim": "",
-                        "gdl": [
+                            "s": "EN",
+                            "utf8": "𒂗",
+                            "id": "Q003448.113.2.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
                           {
-                            "gg": "logo",
-                            "gdl_type": "logo",
-                            "group": [
-                              {
-                                "s": "URU",
-                                "utf8": "𒌷",
-                                "id": "Q003448.113.3.0",
-                                "role": "logo",
-                                "logolang": "sux",
-                                "delim": "."
-                              },
-                              {
-                                "s": "MEŠ",
-                                "utf8": "𒈨𒌍",
-                                "id": "Q003448.113.3.1",
-                                "role": "logo",
-                                "logolang": "sux"
-                              }
-                            ]
+                            "s": "MEŠ",
+                            "utf8": "𒈨𒌍",
+                            "id": "Q003448.113.2.1",
+                            "role": "logo",
+                            "logolang": "sux"
                           }
-                        ],
-                        "cf": "ālu",
-                        "gw": "city",
-                        "sense": "city",
-                        "norm": "ālāni",
-                        "pos": "N",
-                        "epos": "N"
+                        ]
                       }
-                    }
-                  ]
+                    ],
+                    "cf": "bēlu",
+                    "gw": "lord",
+                    "sense": "lord",
+                    "norm": "bēlī",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "URU.MEŠ",
+                  "id": "Q003448.l00eb3",
+                  "ref": "Q003448.113.3",
+                  "inst": "ālāni[city]N",
+                  "sig": "@rinap/rinap1%akk:URU.MEŠ=ālu[city//city]N'N$ālāni",
+                  "f": {
+                    "lang": "akk",
+                    "form": "URU.MEŠ",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "URU",
+                            "utf8": "𒌷",
+                            "id": "Q003448.113.3.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "MEŠ",
+                            "utf8": "𒈨𒌍",
+                            "id": "Q003448.113.3.1",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "ālu",
+                    "gw": "city",
+                    "sense": "city",
+                    "norm": "ālāni",
+                    "pos": "N",
+                    "epos": "N"
+                  }
                 },
                 {
                   "node": "l",
@@ -34454,8 +34436,8 @@
                   "node": "c",
                   "type": "phrase",
                   "tag": "phr",
-                  "id": "Q003448.U51",
-                  "ref": "Q003448.ls00006",
+                  "id": "Q003448.U49",
+                  "ref": "Q003448.ls00004",
                   "cdl": [
                     {
                       "node": "l",
@@ -35270,115 +35252,106 @@
                   "label": "iii 26"
                 },
                 {
-                  "node": "c",
-                  "type": "phrase",
-                  "tag": "phr",
-                  "id": "Q003448.U52",
-                  "ref": "Q003448.ls00007",
-                  "cdl": [
-                    {
-                      "node": "l",
-                      "frag": "EN.URU.MEŠ",
-                      "id": "Q003448.l00f68",
-                      "ref": "Q003448.159.1",
-                      "cof-tails": "Q003448.l00f69",
-                      "inst": "bēlu[lord]N$bēl&ālu[city]N$ālāni",
-                      "sig": "@rinap/rinap1%akk:EN.URU.MEŠ=bēlu[lord//lord]N'N$bēl&&@rinap/rinap1%akk:=ālu[city//city]N'N$ālāni",
-                      "f": {
-                        "lang": "akk",
-                        "form": "EN.URU.MEŠ",
-                        "delim": "",
-                        "gdl": [
+                  "node": "l",
+                  "frag": "EN.URU.MEŠ",
+                  "id": "Q003448.l00f68",
+                  "ref": "Q003448.159.1",
+                  "cof-tails": "Q003448.l00f69",
+                  "inst": "bēlu[lord]N$bēl&ālu[city]N$ālāni",
+                  "sig": "@rinap/rinap1%akk:EN.URU.MEŠ=bēlu[lord//lord]N'N$bēl&&@rinap/rinap1%akk:=ālu[city//city]N'N$ālāni",
+                  "f": {
+                    "lang": "akk",
+                    "form": "EN.URU.MEŠ",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
                           {
-                            "gg": "logo",
-                            "gdl_type": "logo",
-                            "group": [
-                              {
-                                "s": "EN",
-                                "utf8": "𒂗",
-                                "id": "Q003448.159.1.0",
-                                "role": "logo",
-                                "logolang": "sux",
-                                "delim": "."
-                              },
-                              {
-                                "s": "URU",
-                                "utf8": "𒌷",
-                                "id": "Q003448.159.1.1",
-                                "role": "logo",
-                                "logolang": "sux",
-                                "delim": "."
-                              },
-                              {
-                                "s": "MEŠ",
-                                "utf8": "𒈨𒌍",
-                                "id": "Q003448.159.1.2",
-                                "role": "logo",
-                                "logolang": "sux"
-                              }
-                            ]
-                          }
-                        ],
-                        "cf": "bēlu",
-                        "gw": "lord",
-                        "sense": "lord",
-                        "norm": "bēl",
-                        "pos": "N",
-                        "epos": "N"
-                      }
-                    },
-                    {
-                      "node": "l",
-                      "frag": "EN.URU.MEŠ",
-                      "id": "Q003448.l00f69",
-                      "ref": "Q003448.159.1",
-                      "cof-head": "Q003448.l00f68",
-                      "inst": "bēlu[lord]N$bēl&ālu[city]N$ālāni",
-                      "tail-sig": "@rinap/rinap1%akk:=ālu[city//city]N'N$ālāni",
-                      "f": {
-                        "lang": "akk",
-                        "form": "EN.URU.MEŠ",
-                        "delim": "",
-                        "gdl": [
+                            "s": "EN",
+                            "utf8": "𒂗",
+                            "id": "Q003448.159.1.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
                           {
-                            "gg": "logo",
-                            "gdl_type": "logo",
-                            "group": [
-                              {
-                                "s": "EN",
-                                "utf8": "𒂗",
-                                "id": "Q003448.159.1.0",
-                                "role": "logo",
-                                "logolang": "sux",
-                                "delim": "."
-                              },
-                              {
-                                "s": "URU",
-                                "utf8": "𒌷",
-                                "id": "Q003448.159.1.1",
-                                "role": "logo",
-                                "logolang": "sux",
-                                "delim": "."
-                              },
-                              {
-                                "s": "MEŠ",
-                                "utf8": "𒈨𒌍",
-                                "id": "Q003448.159.1.2",
-                                "role": "logo",
-                                "logolang": "sux"
-                              }
-                            ]
+                            "s": "URU",
+                            "utf8": "𒌷",
+                            "id": "Q003448.159.1.1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "MEŠ",
+                            "utf8": "𒈨𒌍",
+                            "id": "Q003448.159.1.2",
+                            "role": "logo",
+                            "logolang": "sux"
                           }
-                        ],
-                        "cf": "ālu",
-                        "gw": "city",
-                        "sense": "city",
-                        "norm": "ālāni",
-                        "pos": "N",
-                        "epos": "N"
+                        ]
                       }
-                    }
-                  ]
+                    ],
+                    "cf": "bēlu",
+                    "gw": "lord",
+                    "sense": "lord",
+                    "norm": "bēl",
+                    "pos": "N",
+                    "epos": "N"
+                  }
+                },
+                {
+                  "node": "l",
+                  "frag": "EN.URU.MEŠ",
+                  "id": "Q003448.l00f69",
+                  "ref": "Q003448.159.1",
+                  "cof-head": "Q003448.l00f68",
+                  "inst": "bēlu[lord]N$bēl&ālu[city]N$ālāni",
+                  "tail-sig": "@rinap/rinap1%akk:=ālu[city//city]N'N$ālāni",
+                  "f": {
+                    "lang": "akk",
+                    "form": "EN.URU.MEŠ",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "EN",
+                            "utf8": "𒂗",
+                            "id": "Q003448.159.1.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "URU",
+                            "utf8": "𒌷",
+                            "id": "Q003448.159.1.1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "MEŠ",
+                            "utf8": "𒈨𒌍",
+                            "id": "Q003448.159.1.2",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "ālu",
+                    "gw": "city",
+                    "sense": "city",
+                    "norm": "ālāni",
+                    "pos": "N",
+                    "epos": "N"
+                  }
                 },
                 {
                   "node": "l",
@@ -39543,56 +39516,8 @@
         },
         {
           "type": "linkset",
-          "xlink_title": "bēl āli[city ruler//city ruler]N'N",
-          "id": "Q003448.ls00004",
-          "xlink_type": "extended",
-          "xlink_role": "psu",
-          "sig": "{EN.URU.MEŠ  = bēlu[lord]N ālu[city]N += bēl āli[city ruler//city ruler]N'N}::@rinap/rinap1%akk:EN.URU.MEŠ=bēlu[lord//lord]N'N$bēl++@rinap/rinap1%akk:=ālu[city//city]N'N$ālāni",
-          "links": [
-            {
-              "type": "link",
-              "xlink_title": "bēlu",
-              "xlink_type": "locator",
-              "xlink_href": "#Q003448.l00d61",
-              "xlink_role": "elt"
-            },
-            {
-              "type": "link",
-              "xlink_title": "ālu",
-              "xlink_type": "locator",
-              "xlink_href": "#Q003448.l00d62",
-              "xlink_role": "elt"
-            }
-          ]
-        },
-        {
-          "type": "linkset",
-          "xlink_title": "bēl āli[city ruler//city ruler]N'N",
-          "id": "Q003448.ls00005",
-          "xlink_type": "extended",
-          "xlink_role": "psu",
-          "sig": "{EN.MEŠ URU.MEŠ = bēlu[lord]N ālu[city]N += bēl āli[city ruler//city ruler]N'N}::@rinap/rinap1%akk:EN.MEŠ=bēlu[lord//lord]N'N$bēlī++@rinap/rinap1%akk:URU.MEŠ=ālu[city//city]N'N$ālāni",
-          "links": [
-            {
-              "type": "link",
-              "xlink_title": "bēlī",
-              "xlink_type": "locator",
-              "xlink_href": "#Q003448.l00eb2",
-              "xlink_role": "elt"
-            },
-            {
-              "type": "link",
-              "xlink_title": "ālāni",
-              "xlink_type": "locator",
-              "xlink_href": "#Q003448.l00eb3",
-              "xlink_role": "elt"
-            }
-          ]
-        },
-        {
-          "type": "linkset",
           "xlink_title": "šinni pīri[ivory//ivory]N'N",
-          "id": "Q003448.ls00006",
+          "id": "Q003448.ls00004",
           "xlink_type": "extended",
           "xlink_role": "psu",
           "sig": "{ZU₂ AM.SI = šinnu[tooth]N pīru[elephant]N += šinni pīri[ivory//ivory]N'N}::@rinap/rinap1%akk:ZU₂=šinnu[tooth//tooth]N'N$šinni++@rinap/rinap1%akk:AM.SI=pīru[elephant//elephant]N'N$pīri",
@@ -39609,30 +39534,6 @@
               "xlink_title": "pīri",
               "xlink_type": "locator",
               "xlink_href": "#Q003448.l00f58",
-              "xlink_role": "elt"
-            }
-          ]
-        },
-        {
-          "type": "linkset",
-          "xlink_title": "bēl āli[city ruler//city ruler]N'N",
-          "id": "Q003448.ls00007",
-          "xlink_type": "extended",
-          "xlink_role": "psu",
-          "sig": "{EN.URU.MEŠ  = bēlu[lord]N ālu[city]N += bēl āli[city ruler//city ruler]N'N}::@rinap/rinap1%akk:EN.URU.MEŠ=bēlu[lord//lord]N'N$bēl++@rinap/rinap1%akk:=ālu[city//city]N'N$ālāni",
-          "links": [
-            {
-              "type": "link",
-              "xlink_title": "bēlu",
-              "xlink_type": "locator",
-              "xlink_href": "#Q003448.l00f68",
-              "xlink_role": "elt"
-            },
-            {
-              "type": "link",
-              "xlink_title": "ālu",
-              "xlink_type": "locator",
-              "xlink_href": "#Q003448.l00f69",
               "xlink_role": "elt"
             }
           ]
