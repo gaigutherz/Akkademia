@@ -123,9 +123,9 @@ def write_translations_to_file(chars_sentences, translations):
             continue
 
         # Write to files
-        signs_file.write(str(key) + ": ")
-        transcription_file.write(str(key) + ": ")
-        translation_file.write(str(key) + ": ")
+        #signs_file.write(str(key) + ": ")
+        #transcription_file.write(str(key) + ": ")
+        #translation_file.write(str(key) + ": ")
 
         signs_file.write(signs + "\n")
         transcription_file.write(transcription + "\n")
@@ -185,6 +185,7 @@ def preprocess(corpora):
 def main():
     corpora = ["rinap", "riao", "ribo", "saao", "suhu"]
     preprocess(corpora)
+
 
 if __name__ == '__main__':
     main()
