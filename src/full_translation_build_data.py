@@ -4,6 +4,7 @@ import os
 from parse_xml import parse_xml, from_key_to_text_and_line_numbers
 from statistics import mean
 import matplotlib.pyplot as plt
+from data import increment_count
 
 
 def write_sentences_to_file(chars_sentences, translation_sentences):
@@ -73,6 +74,19 @@ def build_graph(translation_lengths, name):
     plt.savefig(Path(r"../output/" + name))
 
 
+def get_dict_sorted(d):
+    return str({k: v for k, v in sorted(d.items(), key=lambda item: item[1], reverse=True)})
+
+
+def get_rare_elements_number(d, n):
+    i = 0
+    for k, v in d.items():
+        if v < n:
+            i += 1
+
+    return str(i)
+
+
 def write_translations_to_file(chars_sentences, translations):
     signs_file = open(Path(r"../NMT_input/signs.txt"), "w", encoding="utf8")
     transcription_file = open(Path(r"../NMT_input/transcriptions.txt"), "w", encoding="utf8")
@@ -81,6 +95,10 @@ def write_translations_to_file(chars_sentences, translations):
     translation_lengths = []
     long_trs = 0
     very_long_trs = 0
+    signs_vocab = {}
+    transcription_vocab = {}
+    translation_vocab = {}
+
     for key in translations.keys():
         text, start_line, end_line = from_key_to_text_and_line_numbers(key)
 
@@ -96,8 +114,10 @@ def write_translations_to_file(chars_sentences, translations):
 
             for c in chars_sentences[k]:
                 signs += c[3]
+                increment_count(signs_vocab, c[3])
                 delim = c[2] if not c[2] is None else " "
                 transcription += c[1] + delim
+                increment_count(transcription_vocab, c[1])
 
         if signs == "" and transcription == "":
             continue
@@ -120,12 +140,35 @@ def write_translations_to_file(chars_sentences, translations):
         if len(tr.split()) > 200:
             very_long_trs += 1
 
+        for word in tr.split():
+            word = word.replace(",", "").replace("!", "").replace("?", "").replace(":", "").replace(";", "")
+            if word.replace(".", "") == "":
+                word = "..."
+            else:
+                word = word.replace(".", "")
+            increment_count(translation_vocab, word)
+
         translation_file.write(tr + "\n")
 
     print("Number of real translations is: " + str(len(translation_lengths)))
     print("Mean real translations length is: " + str(mean(translation_lengths)))
     print("Number of real translations longer than 50 is: " + str(long_trs))
     print("Number of real translations longer than 200 is: " + str(very_long_trs))
+
+    print("Size of signs vocabulary is: " + str(len(signs_vocab)))
+    print("Number of signs with less than 5 occurrences is: " + get_rare_elements_number(signs_vocab, 5))
+    print("The signs vocabulary is: " + get_dict_sorted(signs_vocab))
+
+    print("Size of transliteration vocabulary is: " + str(len(transcription_vocab)))
+    print("Number of transliterations with less than 5 occurrences is: " +
+          get_rare_elements_number(transcription_vocab, 5))
+    print("The transliteration vocabulary is: " + get_dict_sorted(transcription_vocab))
+
+    print("Size of translation (English) vocabulary is: " + str(len(translation_vocab)))
+    print("Number of translations (English) with less than 5 occurrences is: " +
+          get_rare_elements_number(translation_vocab, 5))
+    print("The translation (English) vocabulary is: " + get_dict_sorted(translation_vocab))
+
     build_graph(translation_lengths, "real translations")
 
     signs_file.close()
