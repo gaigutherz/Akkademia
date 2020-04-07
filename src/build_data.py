@@ -5,11 +5,14 @@ from data import reorganize_data, rep_to_ix, invert_dict
 import platform
 from pathlib import Path
 
+
 def build_signs_and_transcriptions(corpora):
     base_directory = Path(r"../raw_data/")
     chars = {}
     translation = {}
     mapping = {}
+    sentences = {}
+    lines_cut_by_translation = []
 
     for corpus in corpora:
         directory = base_directory / corpus
@@ -17,24 +20,50 @@ def build_signs_and_transcriptions(corpora):
             for file in f:
                 key = str(file[:-len(".json")])
                 if key not in chars.keys():
-                    c, t, m = parse_json(os.path.join(r, file))
-                    if c is not None and t is not None and m is not None:
+                    c, t, m, s, l = parse_json(os.path.join(r, file))
+                    if c is not None and t is not None and m is not None and s is not None and l is not None:
                         chars[key] = c
                         translation[key] = t
                         mapping[(corpus, key)] = m
+                        sentences[key] = s
+                        for line in l:
+                            lines_cut_by_translation.append(line)
 
-    return chars, translation, mapping
+    return chars, translation, mapping, sentences, lines_cut_by_translation
 
 
-def break_into_sentences(chars):
+def add_to_dictionary(dictionary, key, value):
+    if key not in dictionary:
+        dictionary[key] = [value]
+    else:
+        dictionary[key].append(value)
+
+
+def break_into_sentences(chars, lines_cut_by_translation):
     sentences = {}
     for key in chars:
         for c in chars[key]:
-            line = ".".join(c[0].split(".", 2)[:2])
-            if line not in sentences:
-                sentences[line] = [c]
+            values = c[0].split(".")
+            line = values[0] + "." + values[1]
+            word = int(values[2])
+
+            if lines_cut_by_translation is not None:
+                detected_line = False
+
+                for cut_line, threshold in lines_cut_by_translation:
+                    if line == cut_line:
+                        detected_line = True
+                        if word < threshold:
+                            add_to_dictionary(sentences, line + "(part 1)", c)
+                        else:
+                            add_to_dictionary(sentences, line + "(part 2)", c)
+
+                if not detected_line:
+                    add_to_dictionary(sentences, line, c)
+
             else:
-                sentences[line].append(c)
+                add_to_dictionary(sentences, line, c)
+
     return sentences
 
 
@@ -150,8 +179,8 @@ def write_data_for_allen_to_file(texts, file, sign_to_id, tran_to_id):
 
 
 def preprocess():
-    chars, translation, mapping = build_signs_and_transcriptions(["rinap"])
-    sentences = break_into_sentences(chars)
+    chars, _, _, _, _= build_signs_and_transcriptions(["rinap"])
+    sentences = break_into_sentences(chars, None)
     #write_data_to_file(chars)
     d = build_dictionary(chars)
     write_dictionary_to_file(d)

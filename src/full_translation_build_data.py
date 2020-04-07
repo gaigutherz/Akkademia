@@ -55,9 +55,9 @@ def build_translations(corpora, mapping):
 
 
 def build_full_line_translation_process(corpora):
-    chars, translation, mapping = build_signs_and_transcriptions(corpora)
-    chars_sentences = break_into_sentences(chars)
-    translation_sentences = break_into_sentences(translation)
+    chars, translation, mapping, sentences, lines_cut_by_translation = build_signs_and_transcriptions(corpora)
+    chars_sentences = break_into_sentences(chars, lines_cut_by_translation)
+    translation_sentences = break_into_sentences(translation, lines_cut_by_translation)
     write_sentences_to_file(chars_sentences, translation_sentences)
     return chars_sentences, mapping
 
@@ -87,69 +87,7 @@ def get_rare_elements_number(d, n):
     return str(i)
 
 
-def write_translations_to_file(chars_sentences, translations):
-    signs_file = open(Path(r"../NMT_input/signs.txt"), "w", encoding="utf8")
-    transcription_file = open(Path(r"../NMT_input/transcriptions.txt"), "w", encoding="utf8")
-    translation_file = open(Path(r"../NMT_input/translation.txt"), "w", encoding="utf8")
-
-    translation_lengths = []
-    long_trs = 0
-    very_long_trs = 0
-    signs_vocab = {}
-    transcription_vocab = {}
-    translation_vocab = {}
-
-    for key in translations.keys():
-        text, start_line, end_line = from_key_to_text_and_line_numbers(key)
-
-        if start_line == -1:
-            continue
-
-        signs = ""
-        transcription = ""
-        for n in range(start_line, end_line + 1):
-            k = text + "." + str(n)
-            if k not in chars_sentences.keys():
-                continue
-
-            for c in chars_sentences[k]:
-                signs += c[3]
-                increment_count(signs_vocab, c[3])
-                delim = c[2] if not c[2] is None else " "
-                transcription += c[1] + delim
-                increment_count(transcription_vocab, c[1])
-
-        if signs == "" and transcription == "":
-            continue
-
-        # Write to files
-        #signs_file.write(str(key) + ": ")
-        #transcription_file.write(str(key) + ": ")
-        #translation_file.write(str(key) + ": ")
-
-        signs_file.write(signs + "\n")
-        transcription_file.write(transcription + "\n")
-
-        tr = translations[key]
-
-        # Statistics of translation lengths
-        translation_lengths.append(len(tr.split()))
-        if len(tr.split()) > 50:
-            long_trs += 1
-
-        if len(tr.split()) > 200:
-            very_long_trs += 1
-
-        for word in tr.split():
-            word = word.replace(",", "").replace("!", "").replace("?", "").replace(":", "").replace(";", "")
-            if word.replace(".", "") == "":
-                word = "..."
-            else:
-                word = word.replace(".", "")
-            increment_count(translation_vocab, word)
-
-        translation_file.write(tr + "\n")
-
+def print_statistics(translation_lengths, long_trs, very_long_trs, signs_vocab, transcription_vocab, translation_vocab):
     print("Number of real translations is: " + str(len(translation_lengths)))
     print("Mean real translations length is: " + str(mean(translation_lengths)))
     print("Number of real translations longer than 50 is: " + str(long_trs))
@@ -170,6 +108,158 @@ def write_translations_to_file(chars_sentences, translations):
     print("The translation (English) vocabulary is: " + get_dict_sorted(translation_vocab))
 
     build_graph(translation_lengths, "real translations")
+
+
+def compute_translation_statistics(tr, translation_lengths, long_trs, very_long_trs, translation_vocab):
+    # Statistics of translation lengths
+    translation_lengths.append(len(tr.split()))
+
+    if len(tr.split()) > 50:
+        long_trs += 1
+
+    if len(tr.split()) > 200:
+        very_long_trs += 1
+
+    for word in tr.split():
+        word = word.replace(",", "").replace("!", "").replace("?", "").replace(":", "").replace(";", "")
+        if word.replace(".", "") == "":
+            word = "..."
+        else:
+            word = word.replace(".", "")
+        increment_count(translation_vocab, word)
+
+    return translation_lengths, long_trs, very_long_trs, translation_vocab
+
+
+def add_translation_to_file(prev_signs, signs_vocab, prev_transcription, transcription_vocab, prev_tr,
+                            translation_lengths, long_trs, very_long_trs, translation_vocab, prev_text,
+                            prev_start_line, prev_end_line, signs_file, transcription_file, translation_file):
+    signs = ""
+    transcription = ""
+
+    for sign in prev_signs:
+        signs += sign
+        increment_count(signs_vocab, sign)
+
+    for t, delim in prev_transcription:
+        transcription += t + delim
+        increment_count(transcription_vocab, t)
+
+    translation_lengths, long_trs, very_long_trs, translation_vocab = \
+        compute_translation_statistics(prev_tr, translation_lengths, long_trs, very_long_trs, translation_vocab)
+
+    # Write to files
+    real_key = [prev_text + "." + str(prev_start_line), prev_text + "." + str(prev_end_line)]
+    signs_file.write(str(real_key) + ": " + signs + "\n")
+    transcription_file.write(str(real_key) + ": " + transcription + "\n")
+    translation_file.write(str(real_key) + ": " + prev_tr + "\n")
+
+    return signs_vocab, transcription_vocab, translation_lengths, long_trs, very_long_trs, translation_vocab
+
+
+def write_translations_to_file(chars_sentences, translations):
+    signs_file = open(Path(r"../NMT_input/signs.txt"), "w", encoding="utf8")
+    transcription_file = open(Path(r"../NMT_input/transcriptions.txt"), "w", encoding="utf8")
+    translation_file = open(Path(r"../NMT_input/translation.txt"), "w", encoding="utf8")
+
+    translation_lengths = []
+    long_trs = 0
+    very_long_trs = 0
+    signs_vocab = {}
+    transcription_vocab = {}
+    translation_vocab = {}
+
+    prev_text = ""
+    prev_start_line = ""
+    prev_end_line = ""
+    prev_key = ""
+    prev_signs = []
+    prev_transcription = []
+    prev_tr = ""
+    prev_should_add = False
+    for key in translations.keys():
+        text, start_line, end_line = from_key_to_text_and_line_numbers(key)
+
+        if start_line == -1:
+            if prev_should_add == True and len(prev_signs) != 0:
+                signs_vocab, transcription_vocab, translation_lengths, long_trs, very_long_trs, translation_vocab = \
+                    add_translation_to_file(prev_signs, signs_vocab, prev_transcription, transcription_vocab, prev_tr,
+                                    translation_lengths, long_trs, very_long_trs, translation_vocab, prev_text,
+                                    prev_start_line, prev_end_line, signs_file, transcription_file,
+                                    translation_file)
+            prev_should_add = False
+            continue
+
+        cur_signs = []
+        cur_transcription = []
+        for n in range(start_line, end_line + 1):
+            k = text + "." + str(n)
+            if k not in chars_sentences.keys():
+                # Handle lines divided between sentences.
+                if start_line == end_line:
+                    if prev_key[1] == key[0]:
+                        if k + "(part 2)" in chars_sentences.keys():
+                            k = k + "(part 2)"
+                            start_line = str(start_line) + "(part 2)"
+                            end_line = start_line
+                        else:
+                            continue
+                    else:
+                        if k + "(part 1)" in chars_sentences.keys():
+                            k = k + "(part 1)"
+                            start_line = str(start_line) + "(part 1)"
+                            end_line = start_line
+                        else:
+                            continue
+
+                elif n == start_line and k + "(part 2)" in chars_sentences.keys():
+                    k = k + "(part 2)"
+                    start_line = str(start_line) + "(part 2)"
+
+                elif n == end_line and k + "(part 1)" in chars_sentences.keys():
+                    k = k + "(part 1)"
+                    end_line = str(end_line) + "(part 1)"
+
+                else:
+                    continue
+
+            for c in chars_sentences[k]:
+                cur_signs.append(c[3])
+                delim = c[2] if not c[2] is None else " "
+                cur_transcription.append((c[1], delim))
+
+        cur_tr = translations[key]
+
+        if text == prev_text and start_line == prev_end_line:
+            # The translation is not accurate, because it didn't give exact division point, so we don't use it.
+            prev_should_add = False
+        else:
+            if prev_should_add == True and len(prev_signs) != 0:
+                signs_vocab, transcription_vocab, translation_lengths, long_trs, very_long_trs, translation_vocab = \
+                    add_translation_to_file(prev_signs, signs_vocab, prev_transcription, transcription_vocab, prev_tr,
+                                        translation_lengths, long_trs, very_long_trs, translation_vocab, prev_text,
+                                        prev_start_line, prev_end_line, signs_file, transcription_file,
+                                        translation_file)
+
+            prev_should_add = True
+
+        prev_text = text
+        prev_start_line = start_line
+        prev_end_line = end_line
+        prev_key = key
+        prev_signs = cur_signs
+        prev_transcription = cur_transcription
+        prev_tr = cur_tr
+
+    if prev_should_add == True and len(prev_signs) != 0:
+        signs_vocab, transcription_vocab, translation_lengths, long_trs, very_long_trs, translation_vocab = \
+            add_translation_to_file(prev_signs, signs_vocab, prev_transcription, transcription_vocab, prev_tr,
+                                    translation_lengths, long_trs, very_long_trs, translation_vocab, prev_text,
+                                    prev_start_line, prev_end_line, signs_file, transcription_file,
+                                    translation_file)
+
+    print_statistics(translation_lengths, long_trs, very_long_trs, signs_vocab, transcription_vocab,
+                         translation_vocab)
 
     signs_file.close()
     transcription_file.close()

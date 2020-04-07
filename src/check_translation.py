@@ -193,11 +193,11 @@ def operate_on_file(directory, corpus, file, lambda1, lambda2, logreg, vec, idx_
                     sign_to_id, id_to_tran, predictor_from_file, model_from_file):
     print(file)
     f = directory / corpus / file
-    parsed, _, _ = parse_json(f)
+    parsed, _, _, _, _ = parse_json(f)
 
     dict = {}
     dict[file] = parsed
-    sentences = break_into_sentences(dict)
+    sentences = break_into_sentences(dict, None)
     #print(sentences)
     HMM_accuracy, MEMM_accuracy, biLSTM_accuracy, combined_accuracy = make_predictions(sentences, lambda1, lambda2,
         logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id, id_to_tran,

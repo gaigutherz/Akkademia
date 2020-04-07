@@ -9,10 +9,10 @@ def get_delim(c):
         return None
 
 
-def parse_tran(c, chars):
+def parse_tran(c, chars, sentences, key):
     if "group" in c:
         for elem in c["group"]:
-            parse_tran(elem, chars)
+            parse_tran(elem, chars, sentences, key)
 
     elif "det" in c:
         if c["pos"] == "pre":
@@ -99,7 +99,7 @@ def parse_translation(l_node, translation):
     translation.append([l_node["ref"], t])
 
 
-def parse_l_node(l_node, chars, translation):
+def parse_l_node(l_node, chars, translation, sentences, key):
     if l_node["f"]["lang"] == "arc" or l_node["f"]["lang"] == "qcu-949" or l_node["f"]["lang"] == "akk-949" \
             or l_node["f"]["lang"] == "arc-949":
         return
@@ -108,9 +108,10 @@ def parse_l_node(l_node, chars, translation):
     if "gdl" not in l_node["f"]:
         print(l_node)
         exit()
+
     gdl = l_node["f"]["gdl"]
     for g in gdl:
-        parse_tran(g, chars)
+        parse_tran(g, chars, sentences, key)
 
 
 def parse_d_node(node, mapping):
@@ -134,10 +135,34 @@ def parse_d_node(node, mapping):
     mapping[node["label"]] = ref
 
 
-def parse_c_node(c_node, chars, translation, mapping):
+def parse_c_node(c_node, chars, translation, mapping, sentences, key, lines_cut_by_translation):
     # This text doesn't have data in it.
     if "cdl" not in c_node:
         return
+
+    if c_node["type"] == "sentence":
+        if c_node["cdl"][0]["node"] != "d":
+            if c_node["cdl"][0]["node"] == "c":
+                lines_cut_by_translation.append(c_node["cdl"][0]["cdl"][0]["ref"])
+            else:
+                lines_cut_by_translation.append(c_node["cdl"][0]["ref"])
+
+        text = c_node["id"].split(".")[0]
+        if "label" not in c_node:
+            start = "all"
+            end = "all"
+
+        elif " - " in c_node["label"]:
+            labels = c_node["label"].split(" - ")
+            start = labels[0]
+            end = labels[1]
+
+        else:
+            start = c_node["label"]
+            end = start
+
+        key = (text, start, end)
+        sentences[key] = ["", ""]
 
     for node in c_node["cdl"]:
         # This means it is metadata, and not a fragment.
@@ -145,44 +170,59 @@ def parse_c_node(c_node, chars, translation, mapping):
             parse_d_node(node, mapping)
 
         elif node["node"] == "c":
-            parse_c_node(node, chars, translation, mapping)
+            parse_c_node(node, chars, translation, mapping, sentences, key, lines_cut_by_translation)
 
         elif node["node"] == "l":
-            parse_l_node(node, chars, translation)
+            parse_l_node(node, chars, translation, sentences, key)
 
         # Very rare! Appears only in saao (choice between two options).
         elif node["node"] == "ll":
-            parse_l_node(node["choices"][0], chars, translation)
+            parse_l_node(node["choices"][0], chars, translation, sentences, key)
 
         else:
             print(node)
             raise Exception("We reached a node other than d / c / l / ll. We don't know how to parse it!")
 
 
+def process_cut_lines(lines_cut_by_translation):
+    special_lines = []
+
+    for line in lines_cut_by_translation:
+        values = line.split(".")
+        cut_line = values[0] + "." + values[1]
+        threshold = int(values[2])
+        special_lines.append([cut_line, threshold])
+
+    return special_lines
+
+
 def parse_json(file):
     chars = []
     translation = []
     mapping = {}
+    sentences = {}
+    lines_cut_by_translation = []
 
     f = open(file, "r", encoding="utf8")
     data = f.read()
 
     if not data:
-        return None, None, None
+        return None, None, None, None, None
 
     json_object = json.loads(data)
     j = json_object["cdl"][0]
-    parse_c_node(j, chars, translation, mapping)
+    parse_c_node(j, chars, translation, mapping, sentences, None, lines_cut_by_translation)
 
     if chars == [] and translation == [] and mapping == {}:
-        return None, None, None
+        return None, None, None, None, None
 
-    return chars, translation, mapping
+    lines_cut_by_translation = process_cut_lines(lines_cut_by_translation)
+    return chars, translation, mapping, sentences, lines_cut_by_translation
 
 
 def main():
-    directory = Path(r"../raw_data/rinap/rinap5/")
-    chars, translation, mapping = parse_json(directory / "Q003705.json")
+    directory = Path(r"../raw_data/rinap/rinap1/")
+    chars, translation, mapping, sentences, line_cut_by_translation = parse_json(directory / "Q003431.json")
 
     print(len(chars))
     for c in chars:
@@ -193,6 +233,7 @@ def main():
         print(t[1])
 
     print(mapping)
+    print(line_cut_by_translation)
 
 
 if __name__ == '__main__':
