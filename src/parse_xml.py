@@ -231,6 +231,35 @@ def divide_translation(raw_translations, line_mapping, corpus):
     return translations
 
 
+def clean_translations(translations):
+    final_translations = {}
+
+    for key in translations:
+        tr = translations[key]
+
+        start_index = 0
+        while start_index < len(tr):
+            index = tr.find(".", start_index, len(tr))
+            if index != -1:
+                end_index = index
+                while end_index < len(tr) and (tr[end_index] == "." or tr[end_index] == " "):
+                    end_index += 1
+                sub_tr = tr[index:end_index]
+                if sub_tr == ".":
+                    start_index = index + 1
+                elif sub_tr == ". ":
+                    start_index = index + 2
+                else:
+                    tr = tr[:index] + "... " + tr[end_index:]
+                    start_index = index + 4
+            else:
+                start_index = len(tr)
+
+        final_translations[key] = tr
+
+    return final_translations
+
+
 # This function returns translations of a full corpus
 def parse_xml(file, line_mapping, corpus):
     raw_translations = {}
@@ -271,4 +300,6 @@ def parse_xml(file, line_mapping, corpus):
 
     translations = divide_translation(raw_translations, line_mapping, corpus)
 
-    return translations
+    final_translations = clean_translations(translations)
+
+    return final_translations

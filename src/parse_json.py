@@ -9,10 +9,10 @@ def get_delim(c):
         return None
 
 
-def parse_tran(c, chars, sentences, key):
+def parse_tran(c, chars, sentences, key, add_three_dots):
     if "group" in c:
         for elem in c["group"]:
-            parse_tran(elem, chars, sentences, key)
+            parse_tran(elem, chars, sentences, key, add_three_dots)
 
     elif "det" in c:
         if c["pos"] == "pre":
@@ -78,7 +78,8 @@ def parse_tran(c, chars, sentences, key):
 
     # Broken sign, doesn't interest us
     elif "x" in c:
-        pass
+        if add_three_dots and c["x"] == "ellipsis":
+            chars.append([c["id"], "...", None, "..."])
 
     else:
         print(c)
@@ -99,7 +100,7 @@ def parse_translation(l_node, translation):
     translation.append([l_node["ref"], t])
 
 
-def parse_l_node(l_node, chars, translation, sentences, key):
+def parse_l_node(l_node, chars, translation, sentences, key, add_three_dots):
     if l_node["f"]["lang"] == "arc" or l_node["f"]["lang"] == "qcu-949" or l_node["f"]["lang"] == "akk-949" \
             or l_node["f"]["lang"] == "arc-949":
         return
@@ -111,7 +112,7 @@ def parse_l_node(l_node, chars, translation, sentences, key):
 
     gdl = l_node["f"]["gdl"]
     for g in gdl:
-        parse_tran(g, chars, sentences, key)
+        parse_tran(g, chars, sentences, key, add_three_dots)
 
 
 def parse_d_node(node, mapping):
@@ -135,7 +136,7 @@ def parse_d_node(node, mapping):
     mapping[node["label"]] = ref
 
 
-def parse_c_node(c_node, chars, translation, mapping, sentences, key, lines_cut_by_translation):
+def parse_c_node(c_node, chars, translation, mapping, sentences, key, lines_cut_by_translation, add_three_dots):
     # This text doesn't have data in it.
     if "cdl" not in c_node:
         return
@@ -170,14 +171,14 @@ def parse_c_node(c_node, chars, translation, mapping, sentences, key, lines_cut_
             parse_d_node(node, mapping)
 
         elif node["node"] == "c":
-            parse_c_node(node, chars, translation, mapping, sentences, key, lines_cut_by_translation)
+            parse_c_node(node, chars, translation, mapping, sentences, key, lines_cut_by_translation, add_three_dots)
 
         elif node["node"] == "l":
-            parse_l_node(node, chars, translation, sentences, key)
+            parse_l_node(node, chars, translation, sentences, key, add_three_dots)
 
         # Very rare! Appears only in saao (choice between two options).
         elif node["node"] == "ll":
-            parse_l_node(node["choices"][0], chars, translation, sentences, key)
+            parse_l_node(node["choices"][0], chars, translation, sentences, key, add_three_dots)
 
         else:
             print(node)
@@ -196,7 +197,7 @@ def process_cut_lines(lines_cut_by_translation):
     return special_lines
 
 
-def parse_json(file):
+def parse_json(file, add_three_dots=False):
     chars = []
     translation = []
     mapping = {}
@@ -211,7 +212,7 @@ def parse_json(file):
 
     json_object = json.loads(data)
     j = json_object["cdl"][0]
-    parse_c_node(j, chars, translation, mapping, sentences, None, lines_cut_by_translation)
+    parse_c_node(j, chars, translation, mapping, sentences, None, lines_cut_by_translation, add_three_dots)
 
     if chars == [] and translation == [] and mapping == {}:
         return None, None, None, None, None
@@ -222,7 +223,7 @@ def parse_json(file):
 
 def main():
     directory = Path(r"../raw_data/rinap/rinap1/")
-    chars, translation, mapping, sentences, line_cut_by_translation = parse_json(directory / "Q003431.json")
+    chars, translation, mapping, sentences, line_cut_by_translation = parse_json(directory / "Q003431.json", True)
 
     print(len(chars))
     for c in chars:

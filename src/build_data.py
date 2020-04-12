@@ -6,7 +6,7 @@ import platform
 from pathlib import Path
 
 
-def build_signs_and_transcriptions(corpora):
+def build_signs_and_transcriptions(corpora, add_three_dots=False):
     base_directory = Path(r"../raw_data/")
     chars = {}
     translation = {}
@@ -20,7 +20,7 @@ def build_signs_and_transcriptions(corpora):
             for file in f:
                 key = str(file[:-len(".json")])
                 if key not in chars.keys():
-                    c, t, m, s, l = parse_json(os.path.join(r, file))
+                    c, t, m, s, l = parse_json(os.path.join(r, file), add_three_dots)
                     if c is not None and t is not None and m is not None and s is not None and l is not None:
                         chars[key] = c
                         translation[key] = t
