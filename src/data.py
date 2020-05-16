@@ -14,6 +14,19 @@ def invert_dict(d):
         res[v] = k
     return res
 
+def add_to_dictionary(dictionary, key, value):
+    """
+    Add values to a dictionary when values are lists
+    :param dictionary: the dictionary to be used
+    :param key: the key to be appended
+    :param value: the value to be added
+    :return: nothing
+    """
+    if key not in dictionary:
+        dictionary[key] = [value]
+    else:
+        dictionary[key].append(value)
+
 
 def increment_count(count_dict, key):
     """
