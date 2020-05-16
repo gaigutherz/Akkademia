@@ -61,11 +61,22 @@ def reorganize_data(texts):
 
 
 def give_idx(key, dict):
+    """
+    Gives unique value for every new key
+    :param key: the key to be added to the dict
+    :param dict: the dictionary that will be changed
+    :return: nothing
+    """
     if key not in dict:
         dict[key] = len(dict)
 
 
 def rep_to_ix(data):
+    """
+    Builds 2 dictionaries with unique values for each sign/transliteration
+    :param data: the data in a format of signs and transliterations
+    :return: the dictionaries - one for signs, one for transliterations
+    """
     sign_to_ix = {}
     tran_to_ix = {}
 
@@ -79,11 +90,22 @@ def rep_to_ix(data):
 
 
 def dump_object_to_file(object, object_name):
+    """
+    Dumps object to a file called object_name (usually learned stuff)
+    :param object: learned data which will be saved
+    :param object_name: file name to save the object
+    :return: nothing
+    """
     with open(object_name, "wb") as output:
         pickle.dump(object, output, pickle.HIGHEST_PROTOCOL)
 
 
 def load_object_from_file(object_name):
+    """
+    Loads object from a file called object_name (usually learned stuff)
+    :param object_name: file name to load the object from
+    :return: the object which was learned and saved
+    """
     with open(object_name, "rb") as input:
         object = pickle.load(input)
 
@@ -91,6 +113,13 @@ def load_object_from_file(object_name):
 
 
 def logits_to_trans(tag_logits, model, id_to_tran):
+    """
+    Builds lists of the predicted tags and their scores according to BiLSTM (3 most reasonable tags)
+    :param tag_logits: the tags' probabilities as predicted by BiLSTM
+    :param model: the model which was learned by BiLSTM
+    :param id_to_tran: dictionary that maps unique id to the corresponding transliteration
+    :return: 3 lists of the top 3 predicted tags and lists of their scores
+    """
     tag_ids = np.argmax(tag_logits, axis=-1)
     scores = []
 
@@ -128,12 +157,24 @@ def logits_to_trans(tag_logits, model, id_to_tran):
 
 
 def is_word_end(s):
+    """
+    Checks if a sign finishes a word
+    :param s: the sign to check
+    :return: true if the sign finishes the word
+    """
     if s[-1] in "-.":
         return False
     return True
 
 
 def compute_accuracy(texts, prediction_function, *args):
+    """
+    Computes the accuracy of the predicted tags by the model
+    :param texts: the texts for the accuracy checks
+    :param prediction_function: the function which predicts the corresponding tag and we want to check
+    :*args: more arguements needed for prediction_function
+    :return: returns the computed accuracy with segmentation, without segmentation and the F1 score
+    """
     correct = 0
     correct_without_segmentation = 0
     total = 0
