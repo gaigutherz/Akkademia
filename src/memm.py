@@ -342,7 +342,7 @@ def memm_hmm_eval(test_data, logreg, vec, index_to_tag_dict, extra_decoding_argu
     total_words_count = 0
 
 
-    hmm_compute_q_e_S(test_data, total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts)
+    hmm_compute_q_e_S(total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts)
     lambda1, lambda2 = hmm_choose_best_lamdas(test_data[:25])
 
     for i, sen in enumerate(test_data):
