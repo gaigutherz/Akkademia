@@ -195,38 +195,30 @@ def divide_translation(raw_translations, line_mapping, corpus):
     translations = {}
 
     for key in raw_translations:
-        t = raw_translations[key]
-
-        # Canonize the apostrophe, erase square brackets and replace new lines with spaces.
-        t = t.replace("´", "'").replace("′", "'").replace("[", "").replace("]", "").replace("\n", " ")
-
-        # The translation doesn't contain any content, so we can't use it.
-        if "No translation possible" in t or "No translation warranted" in t or "broken for translation" in t or \
-                "fragmentary for translation" in t or t.replace(" ", "").replace(".", "") == "":
-            continue
+        tr = raw_translations[key]
 
         text, start_line, end_line = from_key_to_text_and_line_numbers(key)
 
         if (corpus, text) not in line_mapping.keys():
             continue
 
-        while "(" in t:
-            split_par = t.split("(", 1)
+        while "(" in tr:
+            split_par = tr.split("(", 1)
             split_again = split_par[1].split(")", 1)
             index = split_again[0]
 
             is_in, index = index_in_mapping(index, line_mapping[(corpus, text)], start_line, end_line)
 
             if not is_in:
-                t = split_par[0] + index + split_again[1]
+                tr = split_par[0] + index + split_again[1]
 
             else:
                 n = from_key_to_line_number(line_mapping[(corpus, text)][index])
                 translations[(build_key(text, start_line), build_key(text, n-1))] = split_par[0]
                 start_line = n
-                t = split_again[1]
+                tr = split_again[1]
 
-        translations[(build_key(text, start_line), build_key(text, end_line))] = t
+        translations[(build_key(text, start_line), build_key(text, end_line))] = tr
 
     return translations
 
@@ -236,6 +228,14 @@ def clean_translations(translations):
 
     for key in translations:
         tr = translations[key]
+
+        # Canonize the apostrophe, erase square brackets and replace new lines with spaces.
+        tr = tr.replace("´", "'").replace("′", "'").replace("[", "").replace("]", "").replace("\n", " ")
+
+        # The translation doesn't contain any content, so we can't use it.
+        if "No translation possible" in tr or "No translation warranted" in tr or "broken for translation" in tr or \
+                "fragmentary for translation" in tr or tr.replace(" ", "").replace(".", "") == "":
+            continue
 
         start_index = 0
         while start_index < len(tr):
@@ -298,8 +298,8 @@ def parse_xml(file, line_mapping, corpus):
             print(div)
             raise Exception("unknown div")
 
-    translations = divide_translation(raw_translations, line_mapping, corpus)
+    # translations = divide_translation(raw_translations, line_mapping, corpus)
 
-    final_translations = clean_translations(translations)
+    final_translations = clean_translations(raw_translations)
 
     return final_translations
