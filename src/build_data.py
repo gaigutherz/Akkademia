@@ -26,7 +26,7 @@ def build_signs_and_transcriptions(corpora, add_three_dots=False):
                 key = str(file[:-len(".json")])
                 if key not in chars.keys():
                     c, t, m, l = parse_json(os.path.join(r, file), add_three_dots)
-                    if c is not None and t is not None and m is not None and s is not None and l is not None:
+                    if c is not None and t is not None and m is not None and l is not None:
                         chars[key] = c
                         translation[key] = t
                         mapping[(corpus, key)] = m
@@ -201,7 +201,7 @@ def preprocess():
     Does all the preparations needed for HMM, MEMM, BiLSTM - reads and organizes the train, validation and test data
     :return: nothing
     """
-    chars, _, _, _= build_signs_and_transcriptions(["rinap"])
+    chars, _, _, _ = build_signs_and_transcriptions(["rinap"])
     sentences = break_into_sentences(chars, None)
     #write_data_to_file(chars)
     d = build_dictionary(chars)

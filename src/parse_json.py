@@ -262,14 +262,14 @@ def parse_json(file, add_three_dots=False):
     data = f.read()
 
     if not data:
-        return None, None, None, None, None
+        return None, None, None, None
 
     json_object = json.loads(data)
     j = json_object["cdl"][0]
     parse_c_node(j, chars, translation, mapping, None, lines_cut_by_translation, add_three_dots)
 
     if chars == [] and translation == [] and mapping == {}:
-        return None, None, None, None, None
+        return None, None, None, None
 
     lines_cut_by_translation = process_cut_lines(lines_cut_by_translation)
     return chars, translation, mapping, lines_cut_by_translation

@@ -98,7 +98,7 @@ def overall_compute_accuracy(test_data, gamma1, gamma2, lambda1, lambda2, logreg
 def overall_classifier(sentence, gamma1, gamma2, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, predictor_from_file, model_from_file, id_to_tran, sign_to_id, is_verbose):
     if is_verbose:
         print(sentence)
-    HMM_predicted_tags = hmm_viterbi(sentence_to_HMM_format(sentence), 0, {}, {}, {}, {}, {}, lambda1, lambda2)
+    HMM_predicted_tags = hmm_viterbi(sentence_to_HMM_format(sentence), 0, {}, {}, lambda1, lambda2)
     if is_verbose:
         print("HMM prediction: ")
         print(HMM_predicted_tags)

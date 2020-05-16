@@ -174,7 +174,7 @@ def make_combined_prediction(sentences, HMM_predicted_tags, MEMM_predicted_tags,
 def make_predictions(sentences, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, sign_to_id,
                         id_to_tran, predictor_from_file, model_from_file):
     HMM_accuracy_and_predictions = make_algorithm_prediction("HMM", sentences, parsed_json_to_HMM_format,
-        sign_to_id, hmm_viterbi, 0, {}, {}, {}, {}, {}, lambda1, lambda2)
+        sign_to_id, hmm_viterbi, 0, {}, {}, lambda1, lambda2)
 
     MEMM_accuracy_and_predictions = make_algorithm_prediction("MEMM", sentences, parsed_json_to_HMM_format,
         sign_to_id, memm_greedy, logreg, vec, idx_to_tag_dict, extra_decoding_arguments)

@@ -260,7 +260,7 @@ def hmm_choose_best_lamdas(dev_data):
         for j in range(0, 10 - i, 1):
             lambda1 = i / 10.0
             lambda2 = j / 10.0
-            accuracy, _, _ = compute_accuracy(dev_data, hmm_viterbi, 0, {}, {}, {}, {}, {}, lambda1, lambda2)
+            accuracy, _, _ = compute_accuracy(dev_data, hmm_viterbi, 0, {}, {}, lambda1, lambda2)
             print("For lambda1 = " + str(lambda1), ", lambda2 = " + str(lambda2), \
                 ", lambda3 = " + str(1 - lambda1 - lambda2) + " got accuracy = " + str(accuracy))
             if accuracy > best_accuracy:
@@ -300,9 +300,9 @@ def main():
     train_texts, dev_texts, test_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran = preprocess()
     lambda1, lambda2 = run_hmm(train_texts, dev_texts, True)
     print("Done learning, now computing accuracy!")
-    print(compute_accuracy(train_texts, hmm_viterbi, 0, {}, {}, {}, {}, {}, lambda1, lambda2))
-    print(compute_accuracy(dev_texts, hmm_viterbi, 0, {}, {}, {}, {}, {}, lambda1, lambda2))
-    print(compute_accuracy(test_texts, hmm_viterbi, 0, {}, {}, {}, {}, {}, lambda1, lambda2))
+    print(compute_accuracy(train_texts, hmm_viterbi, 0, {}, {}, lambda1, lambda2))
+    print(compute_accuracy(dev_texts, hmm_viterbi, 0, {}, {}, lambda1, lambda2))
+    print(compute_accuracy(test_texts, hmm_viterbi, 0, {}, {}, lambda1, lambda2))
 
 
 if __name__ == "__main__":

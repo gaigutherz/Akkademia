@@ -1,12 +1,6 @@
 import torch
-import numpy as np
-import time
 from allennlp.predictors import SentenceTaggerPredictor
 from pathlib import Path
-
-import pickle
-
-#from build_data import local_path
 from BiLSTM import prepare1, prepare2, LstmTagger, PosDatasetReader, BiLSTM_predict
 from build_data import preprocess
 from hmm import run_hmm, hmm_viterbi
@@ -14,7 +8,6 @@ from data import load_object_from_file, logits_to_trans, compute_accuracy
 from memm import memm_greedy, build_extra_decoding_arguments, run_memm
 from combine_algorithms import overall_classifier, overall_choose_best_gammas, list_to_tran
 import platform
-
 SIGNS_IN_LINE = 10
 
 
@@ -33,6 +26,7 @@ def restore_model():
 
     return model, predictor
 
+
 def build_info_sentence(sign_to_id):
     sent = "Which signs would you like to translate into transcriptions today? :)\n"
 
@@ -46,6 +40,7 @@ def build_info_sentence(sign_to_id):
     sent += "\nEnter numbers seperated with ','. For example: '1,43,37'.\n"
 
     return sent
+
 
 def load_learned_data():
     train_texts, dev_texts, test_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran = preprocess()
@@ -83,8 +78,8 @@ def load_learned_data():
     model_from_file = load_object_from_file(model_path)
 
     # print(dev_texts)
-    # print(compute_accuracy(train_texts, hmm_viterbi, 0, {}, {}, {}, {}, {}, lambda1, lambda2))
-    # print(compute_accuracy(dev_texts, hmm_viterbi, 0, {}, {}, {}, {}, {}, lambda1, lambda2))
+    # print(compute_accuracy(train_texts, hmm_viterbi, 0, {}, {}, lambda1, lambda2))
+    # print(compute_accuracy(dev_texts, hmm_viterbi, 0, {}, {}, lambda1, lambda2))
 
     # print(compute_accuracy(train_texts, BiLSTM_predict, model_from_file, predictor_from_file, sign_to_id, id_to_tran))
     # print(compute_accuracy(dev_texts, BiLSTM_predict, model_from_file, predictor_from_file, sign_to_id, id_to_tran))
@@ -102,6 +97,7 @@ def load_learned_data():
     (logreg, vec, idx_to_tag_dict) = memm_from_file
     extra_decoding_arguments = build_extra_decoding_arguments(train_texts)
     return lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, predictor_from_file, model_from_file, id_to_tran, sign_to_id, dev_texts
+
 
 def main():
     lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, predictor_from_file, model_from_file, id_to_tran, sign_to_id, dev_texts = load_learned_data()
