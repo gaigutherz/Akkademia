@@ -103,8 +103,7 @@ def overall_classifier(sentence, gamma1, gamma2, lambda1, lambda2, logreg, vec, 
         print("HMM prediction: ")
         print(HMM_predicted_tags)
 
-    MEMM_predicted_tags = memm_greedy(sentence_to_HMM_format(sentence), logreg, vec, idx_to_tag_dict,
-                                      extra_decoding_arguments)
+    MEMM_predicted_tags = memm_greedy(sentence_to_HMM_format(sentence), logreg, vec, idx_to_tag_dict)
     if is_verbose:
         print("MEMM prediction: ")
         print(MEMM_predicted_tags)

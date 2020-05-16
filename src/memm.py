@@ -1,21 +1,21 @@
-from data import *
+from data import increment_count, invert_dict, compute_vocab_count, build_tag_to_idx_dict
 from sklearn.feature_extraction import DictVectorizer
 from sklearn import linear_model
 import time
-import pickle
 import numpy as np
 from build_data import preprocess
-from hmm import *
+from hmm import hmm_choose_best_lamdas, hmm_compute_q_e_S, hmm_viterbi, hmm_train
 
 
 def build_extra_decoding_arguments(train_sents):
     """
-    Receives: all sentences from training set
-    Returns: all extra arguments which your decoding procedures requires
+    Builds arguements for HMM, MEMM and BiLSTM (unigram, bigram, trigram, etc)
+    :param train_sents: all sentences from training set
+    :return: all extra arguments which your decoding procedures requires
     """
 
     extra_decoding_arguments = {}
-    ### YOUR CODE HERE
+
     START_WORD, STOP_WORD = '<st>', '</s>'
     START_TAG, STOP_TAG = '*', 'STOP'
     e_word_tag_counts, e_tag_counts = {}, {}
@@ -72,19 +72,24 @@ def build_extra_decoding_arguments(train_sents):
     extra_decoding_arguments['S'] = S
     cache_probability = {}
     extra_decoding_arguments['cache'] = cache_probability
-    ### END YOUR CODE
 
     return extra_decoding_arguments
 
 
 def extract_features_base(curr_sign, next_sign, nextnext_sign, prev_sign, prevprev_sign, prev_trans, prevprev_trans):
     """
-        Receives: a word's local information
-        Returns: The word's features.
+    Builds the features according to the sign context
+    :param curr_sign: current sign
+    :param next_sign: next sign
+    :param nextnext_sign: the sign after the next sign
+    :param prev_sign: previous sign
+    :param prevprev_sign: the sign before the previous sign
+    :param prev_trans: previous classified transliteration
+    :param prevprev_trans: the classified transliteration before the previous
+    :return: The word's features
     """
     features = {}
     features['sign'] = curr_sign
-    ### YOUR CODE HERE
 
     features['prev_sign'] = prev_sign
     features['prevprev_sign'] = prevprev_sign
@@ -98,11 +103,16 @@ def extract_features_base(curr_sign, next_sign, nextnext_sign, prev_sign, prevpr
     features["bigram"] = prev_trans
     features["trigram"] = prevprev_trans + ',' + prev_trans
 
-    ### END YOUR CODE
     return features
 
 
 def extract_features(sentence, i):
+    """
+    Builds the features according to the sign context
+    :param sentence: the sentence to be extracted
+    :param i: the sign index to be extracted
+    :return: : The word's features
+    """
     curr_word = sentence[i][0]
     prev_token = sentence[i - 1] if i > 0 else ('<st>', '*')
     prevprev_token = sentence[i - 2] if i > 1 else ('<st>', '*')
@@ -114,18 +124,22 @@ def extract_features(sentence, i):
 
 def vectorize_features(vec, features):
     """
-        Receives: feature dictionary
-        Returns: feature vector
-
-        Note: use this function only if you chose to use the sklearn solver!
-        This function prepares the feature vector for the sklearn solver,
-        use it for tags prediction.
+    This function prepares the feature vector for the sklearn solver, use it for tags prediction.
+    :param vec: function of vectorization
+    :param features: feature vector
+    :return: vectorization of the features
     """
     example = [features]
     return vec.transform(example)
 
 
 def create_examples(sents, tag_to_idx_dict):
+    """
+    Organizes the sentences by their features for later use by MEMM
+    :param sents: sentences to organize
+    :param tag_to_idx_dict: dictionary from tags to indices
+    :return: examples of features and their tags(labels)
+    """
     examples = []
     labels = []
     num_of_sents = 0
@@ -142,13 +156,16 @@ def create_examples(sents, tag_to_idx_dict):
     return examples, labels
 
 
-def memm_greedy(sent, logreg, vec, index_to_tag_dict, extra_decoding_arguments):
+def memm_greedy(sent, logreg, vec, index_to_tag_dict):
     """
-        Receives: a sentence to tag and the parameters learned by memm
-        Returns: predicted tags for the sentence
+    Tags a sentence according to parameters learned by MEMM by greedy algorithm
+    :param sent: the sentence to tag
+    :param logreg: the predictor that was learned
+    :param vec: the vectorization function
+    :param index_to_tag_dict: dictionary from index to tag
+    :return: predicted tags for the sentence
     """
     predicted_tags = [""] * (len(sent))
-    ### YOUR CODE HERE
     sent_tagged = [[token[0]] for token in sent]
 
     for i, word in enumerate(sent):
@@ -156,17 +173,21 @@ def memm_greedy(sent, logreg, vec, index_to_tag_dict, extra_decoding_arguments):
         predicted_tags[i] = predicted_tag
         sent_tagged[i].append(predicted_tag)
 
-    ### END YOUR CODE
     return predicted_tags
 
 
 def memm_viterbi(sent, logreg, vec, index_to_tag_dict, extra_decoding_arguments):
     """
-        Receives: a sentence to tag and the parameters learned by memm
-        Returns: predicted tags for the sentence
+    Tags a sentence according to parameters learned by MEMM by viterbi algorithm
+    :param sent: the sentence to tag
+    :param logreg: the predictor that was learned
+    :param vec: the vectorization function
+    :param index_to_tag_dict: dictionary from index to tag
+    :param extra_decoding_arguments: extra arguements learned
+    :return: predicted tags for the sentence
     """
+
     predicted_tags = [""] * (len(sent))
-    ### YOUR CODE HERE
     cache_probability = extra_decoding_arguments['cache']
 
     START_WORD, STOP_WORD = '<st>', '</s>'
@@ -267,71 +288,38 @@ def memm_viterbi(sent, logreg, vec, index_to_tag_dict, extra_decoding_arguments)
             predicted_tags[k - 1] = 'NNP'  # doesn't really matter, very rare.
 
     extra_decoding_arguments['cache'] = cache_probability
-    ### END YOUR CODE
+
     return predicted_tags
 
 
 def should_log(sentence_index):
+    """
+    Checks if should log
+    :param sentence_index: index of the current sentence
+    :return: true if should log
+    """
     if sentence_index > 0 and sentence_index % 10 == 0:
         if sentence_index < 150 or sentence_index % 200 == 0:
             return True
 
     return False
 
-
-def memm_eval(test_data, logreg, vec, index_to_tag_dict, extra_decoding_arguments):
-    """
-    Receives: test data set and the parameters learned by memm
-    Returns an evaluation of the accuracy of Viterbi & greedy memm
-    """
-    acc_viterbi, acc_greedy = 0.0, 0.0
-    eval_start_timer = time.time()
-
-    correct_greedy_preds = 0
-    correct_viterbi_preds = 0
-    total_words_count = 0
-
-    for i, sen in enumerate(test_data):
-        ### YOUR CODE HERE
-
-        predicted_greedy = memm_greedy(sen, logreg, vec, index_to_tag_dict, extra_decoding_arguments)
-        predicted_viterbi = memm_viterbi(sen, logreg, vec, index_to_tag_dict, extra_decoding_arguments)
-        for j in range(len(sen)):
-            if sen[j][1] == predicted_greedy[j]:
-                correct_greedy_preds += 1
-            else:
-                print("greedy mistake: " + str(sen[j][0]) + " tagged as: " + str(
-                    predicted_greedy[j]) + " instead of: " + str(sen[j][1]))
-            if sen[j][1] == predicted_viterbi[j]:
-                correct_viterbi_preds += 1
-            else:
-                print("viterbi mistake: " + str(sen[j][0]) + " tagged as: " + str(
-                    predicted_viterbi[j]) + " instead of: " + str(sen[j][1]))
-
-        total_words_count += len(sen)
-        acc_greedy = float(correct_greedy_preds) / float(total_words_count)
-        acc_viterbi = float(correct_viterbi_preds) / float(total_words_count)
-        ### END YOUR CODE
-
-        if should_log(i):
-            if acc_greedy == 0 and acc_viterbi == 0:
-                raise NotImplementedError
-            eval_end_timer = time.time()
-            print(str.format("Sentence index: {} greedy_acc: {}    Viterbi_acc:{} , elapsed: {} ", str(i),
-                             str(acc_greedy), str(acc_viterbi), str(eval_end_timer - eval_start_timer)))
-            eval_start_timer = time.time()
-
-    acc_greedy = float(correct_greedy_preds) / float(total_words_count)
-    acc_viterbi = float(correct_viterbi_preds) / float(total_words_count)
-
-    return str(acc_viterbi), str(acc_greedy)
-
-
 def memm_hmm_eval(test_data, logreg, vec, index_to_tag_dict, extra_decoding_arguments, total_tokens, q_tri_counts,
                   q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts):
     """
-    Receives: test data set and the parameters learned by memm and hmm
     Returns an evaluation of the accuracy of Viterbi & greedy memm and hmm
+    :param test_data: the sentences to evaluate
+    :param logreg: the predictor that was learned
+    :param vec: the vectorization function
+    :param index_to_tag_dict: dictionary from index to tag
+    :param extra_decoding_arguments: extra arguements learned
+    :param total_tokens: number of total tokens
+    :param q_tri_counts: trigram counts
+    :param q_bi_counts: bigram counts
+    :param q_uni_counts: unigram counts
+    :param e_word_tag_counts: word counts
+    :param e_tag_counts: tag counts
+    :return: the accuracies of hmm, memm greedy and memm viterbi
     """
     acc_viterbi, acc_greedy, acc_hmm = 0.0, 0.0, 0.0
     eval_start_timer = time.time()
@@ -346,9 +334,8 @@ def memm_hmm_eval(test_data, logreg, vec, index_to_tag_dict, extra_decoding_argu
     lambda1, lambda2 = hmm_choose_best_lamdas(test_data[:25])
 
     for i, sen in enumerate(test_data):
-        ### YOUR CODE HERE
         predicted_hmm = hmm_viterbi(sen, 0, {}, {}, {}, {}, {}, lambda1, lambda2)
-        predicted_greedy = memm_greedy(sen, logreg, vec, index_to_tag_dict, extra_decoding_arguments)
+        predicted_greedy = memm_greedy(sen, logreg, vec, index_to_tag_dict)
         predicted_viterbi = memm_viterbi(sen, logreg, vec, index_to_tag_dict, extra_decoding_arguments)
         for j in range(len(sen)):
             if sen[j][1] == predicted_hmm[j]:
@@ -371,7 +358,6 @@ def memm_hmm_eval(test_data, logreg, vec, index_to_tag_dict, extra_decoding_argu
         acc_hmm = float(correct_hmm_preds) / float(total_words_count)
         acc_greedy = float(correct_greedy_preds) / float(total_words_count)
         acc_viterbi = float(correct_viterbi_preds) / float(total_words_count)
-        ### END YOUR CODE
 
         if should_log(i):
             if acc_greedy == 0 and acc_viterbi == 0:
@@ -386,22 +372,14 @@ def memm_hmm_eval(test_data, logreg, vec, index_to_tag_dict, extra_decoding_argu
 
     return str(acc_viterbi), str(acc_greedy), str(acc_hmm)
 
-
-def build_tag_to_idx_dict(train_sentences):
-    curr_tag_index = 0
-    tag_to_idx_dict = {}
-    for train_sent in train_sentences:
-        for token in train_sent:
-            tag = token[1]
-            if tag not in tag_to_idx_dict:
-                tag_to_idx_dict[tag] = curr_tag_index
-                curr_tag_index += 1
-
-    tag_to_idx_dict['*'] = curr_tag_index
-    return tag_to_idx_dict
-
 def run_memm(train_sents, dev_sents):
-    vocab = compute_vocab_count(train_texts)
+    """
+    Run the MEMM model and compute the logistic regression for the predictor
+    :param train_sents: train sentences for the model
+    :param dev_sents: dev sentences for the model
+    :return: the parameters learned by MEMM
+    """
+    vocab = compute_vocab_count(train_sents)
 
     extra_decoding_arguments = build_extra_decoding_arguments(train_sents)
 
@@ -441,6 +419,10 @@ def run_memm(train_sents, dev_sents):
     return logreg, vec, index_to_tag_dict
 
 if __name__ == "__main__":
+    """
+    Test the run of MEMM and HMM
+    :return: nothing
+    """
     full_flow_start = time.time()
 
     train_sents, dev_sents, _, _, _, _ = preprocess()
@@ -488,7 +470,7 @@ if __name__ == "__main__":
     print("End training, elapsed " + str(end - start) + " seconds")
     # End of log linear model training
 
-    # Evaluation code - do not make any changes
+
     start = time.time()
     print("Start evaluation on dev set")
 

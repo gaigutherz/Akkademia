@@ -144,6 +144,24 @@ def rep_to_ix(data):
     return sign_to_ix, tran_to_ix
 
 
+def build_tag_to_idx_dict(train_sentences):
+    """
+    Builds dictionary with unique values for each transliteration
+    :param train_sentences: the data in a format of signs and transliterations
+    :return: the dictionary
+    """
+    curr_tag_index = 0
+    tag_to_idx_dict = {}
+    for train_sent in train_sentences:
+        for token in train_sent:
+            tag = token[1]
+            if tag not in tag_to_idx_dict:
+                tag_to_idx_dict[tag] = curr_tag_index
+                curr_tag_index += 1
+
+    tag_to_idx_dict['*'] = curr_tag_index
+    return tag_to_idx_dict
+
 def dump_object_to_file(object, object_name):
     """
     Dumps object to a file called object_name (usually learned stuff)
