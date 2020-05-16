@@ -1,10 +1,14 @@
 import pickle
-from pathlib import Path
 import numpy as np
 MIN_FREQ = 3
 
 
 def invert_dict(d):
+    """
+    Exchanges keys and values in a dictionary
+    :param d: dictionary for invertion
+    :return: inverted dictionary
+    """
     res = {}
     for k, v in d.items():
         res[v] = k
@@ -13,10 +17,10 @@ def invert_dict(d):
 
 def increment_count(count_dict, key):
     """
-        Puts the key in the dictionary if does not exist or adds one if it does.
-        Args:
-            count_dict: a dictionary mapping a string to an integer
-            key: a string
+    Puts the key in the dictionary if does not exist or adds one if it does.
+    :param count_dict: dictionary for the count performed
+    :param key: key to add to dictionary
+    :return: dictionary after addition of the key
     """
     if key in count_dict:
         count_dict[key] += 1
@@ -26,7 +30,9 @@ def increment_count(count_dict, key):
 
 def compute_vocab_count(sents):
     """
-        Takes a corpus and computes all words and the number of times they appear
+    Takes a corpus and computes the frequency of each word's appearance
+    :param sents: sentences for counting frequency
+    :return: dictionary with count of words
     """
     vocab = {}
     for sent in sents:
@@ -36,6 +42,11 @@ def compute_vocab_count(sents):
 
 
 def reorganize_data(texts):
+    """
+    Reorganize data to contain tuples of a all signs combined and all trans combined
+    :param texts: sentences in format of tuples of (sign, tran)
+    :return: data reorganized
+    """
     data = []
 
     for sentence in texts:
@@ -80,7 +91,6 @@ def load_object_from_file(object_name):
 
 
 def logits_to_trans(tag_logits, model, id_to_tran):
-    #print(len(tag_logits[0]))
     tag_ids = np.argmax(tag_logits, axis=-1)
     scores = []
 
