@@ -1,39 +1,14 @@
 import xml.etree.ElementTree as ET
-
-
-def from_key_to_line_number(k):
-    n = k.split(".", 2)[1]
-
-    # Sometimes line number contains a redundant "l" at the end ("Q005624.1l" for example), so we ignore it.
-    if n[-1] == "l":
-        n = n[:-1]
-
-    if not n.isdigit():
-        return -1
-
-    line_number = int(n)
-
-    return line_number
-
-
-def from_key_to_text_and_line_numbers(key):
-    # Calculation of start_line and end_line for signs and transcriptions
-    text = key[0].split(".", 2)[0]
-    start_line = from_key_to_line_number(key[0])
-
-    if start_line == -1:
-        return text, -1, -1
-
-    # Sometimes the end line is not specified when it's one line ("n057" for example), so we use the start line.
-    if "." in key[1]:
-        end_line = from_key_to_line_number(key[1])
-    else:
-        end_line = start_line
-
-    return text, start_line, end_line
+from data import from_key_to_line_number, from_key_to_text_and_line_numbers
 
 
 def parse_word(sentence, word):
+    """
+    Add all parts of word to sentence (include punctuation marks as well for example)
+    :param sentence: entence of words being built as we proceed
+    :param word: the word we are handling now
+    :return: the sentence we build with one more word with all of its parts
+    """
     if word.text:
         sentence += word.text
 
@@ -51,6 +26,12 @@ def parse_word(sentence, word):
 
 
 def handle_word_by_type(sentence, word):
+    """
+    Handle words in the xml file by their type
+    :param sentence: sentence of words being built as we proceed
+    :param word: the word we are handling now
+    :return: the sentence we build with one more word
+    """
     if word.attrib["type"] == "w" or word.attrib["type"] == "r" or word.attrib["type"] == "foreign" \
             or word.attrib["type"] == "i" or word.attrib["type"] == "smaller":
         sentence = parse_word(sentence, word)
@@ -68,6 +49,12 @@ def handle_word_by_type(sentence, word):
 
 
 def collect_translations(div, translations):
+    """
+    Get the translations from the xml file
+    :param div: the xml object we are currently processing
+    :param translations: list of translations we collect the data to
+    :return: the list of translation
+    """
     for tr in div:
         if "type" not in tr.attrib.keys():
             # [0] goes <span type="w">.
@@ -123,17 +110,41 @@ def collect_translations(div, translations):
 
 
 def build_key(text, n):
+    """
+    Builds a key out of the text and line number
+    :param text: the text of translation
+    :param n: line number
+    :return: the key built
+    """
     return text + "." + str(n)
 
 
 def is_in_range(index, mapping, start, end):
+    """
+    Checks whether the index is within the limits we are handling
+    :param index: content inside the brackets
+    :param mapping: mapping of two types of line numbering
+    :param start: start line of translation
+    :param end: end line of translation
+    :return: whether the index is within the start line and the end line
+    """
     n = from_key_to_line_number(mapping[index])
+
     if start <= n and n <= end:
         return True
+
     return False
 
 
 def index_in_mapping(index, mapping, start, end):
+    """
+    Try to find the line index in the mapping we have in order to divide the translation
+    :param index: content inside the brackets
+    :param mapping: mapping of two types of line numbering
+    :param start: start line of translation
+    :param end: end line of translation
+    :return: whether the index was found and if so the index to be used in the mapping
+    """
     if index in mapping:
         return True, index
 
@@ -192,6 +203,13 @@ def index_in_mapping(index, mapping, start, end):
 
 
 def divide_translation(raw_translations, line_mapping, corpus):
+    """
+    Divide translations using line numbers of the texts
+    :param raw_translations: translations before division
+    :param line_mapping: mapping of two types of line numbering
+    :param corpus: corpus the line mapping referring to
+    :return: translations divided by line numbers of text
+    """
     translations = {}
 
     for key in raw_translations:
@@ -224,6 +242,11 @@ def divide_translation(raw_translations, line_mapping, corpus):
 
 
 def clean_translations(translations):
+    """
+    Canonise translations and clean them from unnecessary chars
+    :param translations: all translations we got out of the xml file
+    :return: final translation to be used for the NLP algorithms
+    """
     final_translations = {}
 
     for key in translations:
@@ -262,6 +285,13 @@ def clean_translations(translations):
 
 # This function returns translations of a full corpus
 def parse_xml(file, line_mapping, corpus):
+    """
+    Parse and xml file
+    :param file: the file to be parsed
+    :param line_mapping: mapping of two types of line numbering
+    :param corpus: corpus the line mapping referring to
+    :return: translations of all texts in the xml file processed
+    """
     raw_translations = {}
     tree = ET.parse(file)
     root = tree.getroot()

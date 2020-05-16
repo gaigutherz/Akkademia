@@ -60,6 +60,48 @@ def reorganize_data(texts):
     return data
 
 
+def from_key_to_line_number(key):
+    """
+    Takes a key and returns the line number in it
+    :param key: The key to parse
+    :return: line number
+    """
+    n = key.split(".", 2)[1]
+
+    # Sometimes line number contains a redundant "l" at the end ("Q005624.1l" for example), so we ignore it.
+    if n[-1] == "l":
+        n = n[:-1]
+
+    if not n.isdigit():
+        return -1
+
+    line_number = int(n)
+
+    return line_number
+
+
+def from_key_to_text_and_line_numbers(key):
+    """
+    Takes a key and divides it into the text, start line and end line
+    :param key: The key to parse
+    :return: text, start line and end line
+    """
+    # Calculation of start_line and end_line for signs and transcriptions
+    text = key[0].split(".", 2)[0]
+    start_line = from_key_to_line_number(key[0])
+
+    if start_line == -1:
+        return text, -1, -1
+
+    # Sometimes the end line is not specified when it's one line ("n057" for example), so we use the start line.
+    if "." in key[1]:
+        end_line = from_key_to_line_number(key[1])
+    else:
+        end_line = start_line
+
+    return text, start_line, end_line
+
+
 def give_idx(key, dict):
     """
     Gives unique value for every new key

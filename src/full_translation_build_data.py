@@ -1,7 +1,8 @@
 from build_data import build_signs_and_transcriptions, break_into_sentences
 from pathlib import Path
 import os
-from parse_xml import parse_xml, from_key_to_text_and_line_numbers
+from data import from_key_to_text_and_line_numbers
+from parse_xml import parse_xml
 from statistics import mean
 import matplotlib.pyplot as plt
 from data import increment_count
