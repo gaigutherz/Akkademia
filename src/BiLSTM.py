@@ -1,7 +1,6 @@
 from typing import Iterator, List, Dict
 import torch
 import torch.optim as optim
-import numpy as np
 from allennlp.data import Instance
 from allennlp.data.fields import TextField, SequenceLabelField
 from allennlp.data.dataset_readers import DatasetReader
@@ -21,10 +20,13 @@ from allennlp.predictors import SentenceTaggerPredictor
 from build_data import preprocess
 from data import dump_object_to_file, load_object_from_file, logits_to_trans, compute_accuracy
 import platform
+from pathlib import Path
+
 
 torch.manual_seed(1)
 class PosDatasetReader(DatasetReader):
     """
+    class based on AllenNLP tutorial (https://allennlp.org/tutorials)
     DatasetReader for PoS tagging data, one sentence per line, like
 
         The###DET dog###NN ate###V the###DET apple###NN
@@ -52,6 +54,9 @@ class PosDatasetReader(DatasetReader):
 
 
 class LstmTagger(Model):
+    """
+    class based on AllenNLP tutorial (https://allennlp.org/tutorials)
+    """
     def __init__(self,
                  word_embeddings: TextFieldEmbedder,
                  encoder: Seq2SeqEncoder,
@@ -82,6 +87,15 @@ class LstmTagger(Model):
 
 
 def BiLSTM_predict(text, model, predictor, sign_to_id, id_to_tran):
+    """
+    Predict the transliteration of a sentence of signs using biLSTM
+    :param text: sentence to predict
+    :param model: biLSTM model object
+    :param predictor: biLSTM predictor object
+    :param sign_to_id: dictionary mapping signs to ids
+    :param id_to_tran: dictionary mapping ids to transliterations
+    :return: transliteration prediction for text
+    """
     allen_format = ""
     for sign, tran in text:
         allen_format += str(sign_to_id[sign]) + " "
@@ -93,6 +107,11 @@ def BiLSTM_predict(text, model, predictor, sign_to_id, id_to_tran):
 
 
 def prepare1():
+    """
+    First part of preparing data for training
+    :return: biLSTM model object, biLSTM vocabulary, data for training, data for validation, cuda biLSTM object,
+             biLSTM reader object
+    """
     reader = PosDatasetReader()
     if platform.system() == "Windows":
         train_dataset = reader.read(r"..\BiLSTM_input\allen_train_texts.txt")
@@ -121,6 +140,16 @@ def prepare1():
 
 
 def prepare2(model, vocab, train_dataset, validation_dataset, cuda_device, reader):
+    """
+    Second part of preparing data for training
+    :param model: biLSTM model object
+    :param vocab: biLSTM vocabulary
+    :param train_dataset: data for training
+    :param validation_dataset: data for validation
+    :param cuda_device: cuda biLSTM object
+    :param reader: biLSTM reader object
+    :return: trainer biLSRM obejct, biLSTM model obkect, biLSTM reader object and biLSTM vocabulary
+    """
     optimizer = optim.SGD(model.parameters(), lr=0.3)
     iterator = BucketIterator(batch_size=1, sorting_keys=[("sentence", "num_tokens")])
     iterator.index_with(vocab)
@@ -138,25 +167,33 @@ def prepare2(model, vocab, train_dataset, validation_dataset, cuda_device, reade
     return trainer, model, reader, vocab
 
 
-def train(trainer, model, reader, vocab):
+def train(trainer, model, reader):
+    """
+    Use trainer object to train the biLSTM model
+    :param trainer: trainer object of the biLSTM model
+    :param model: biLSTM model object
+    :param reader: reader for the biLSTM
+    :return: nothing
+    """
     trainer.train()
     predictor = SentenceTaggerPredictor(model, dataset_reader=reader)
 
-    if platform.system() == "Windows":
-        dump_object_to_file(predictor, r"..\output\predictor")
-        dump_object_to_file(model, r"..\output\model")
-    else:
-        dump_object_to_file(predictor, r"../output/predictor")
-        dump_object_to_file(model, r"../output/model")
+    dump_object_to_file(predictor, Path(r"../output/predictor"))
+    dump_object_to_file(model, Path(r"../output/model"))
 
 
 def check_results(train_texts, dev_texts, test_texts, sign_to_id, id_to_tran):
-    if platform.system() == "Windows":
-        predictor_from_file = load_object_from_file(r"..\output\predictor")
-        model_from_file = load_object_from_file(r"..\output\model")
-    else:
-        predictor_from_file = load_object_from_file(r"../output/predictor")
-        model_from_file = load_object_from_file(r"../output/model")
+    """
+    Prints the accuracy of the trained biLSTM models
+    :param train_texts: texts used for train
+    :param dev_texts: texts used for dev
+    :param test_texts: texts used for test
+    :param sign_to_id: dictionary mapping signs to ids
+    :param id_to_tran: dictionary mapping ids to transliterations
+    :return: nothing
+    """
+    predictor_from_file = load_object_from_file(Path(r"../output/predictor"))
+    model_from_file = load_object_from_file(Path(r"../output/model"))
 
     print(compute_accuracy(train_texts, BiLSTM_predict, model_from_file, predictor_from_file, sign_to_id, id_to_tran))
     print(compute_accuracy(dev_texts, BiLSTM_predict, model_from_file, predictor_from_file, sign_to_id, id_to_tran))
@@ -164,10 +201,14 @@ def check_results(train_texts, dev_texts, test_texts, sign_to_id, id_to_tran):
 
 
 def main():
+    """
+    Check the biLSTM model
+    :return: nothing
+    """
     train_texts, dev_texts, test_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran = preprocess()
     model, vocab, train_dataset, validation_dataset, cuda_device, reader = prepare1()
     trainer, model, reader, vocab = prepare2(model, vocab, train_dataset, validation_dataset, cuda_device, reader)
-    train(trainer, model, reader, vocab)
+    train(trainer, model, reader)
     check_results(train_texts, dev_texts, test_texts, sign_to_id, id_to_tran)
 
 

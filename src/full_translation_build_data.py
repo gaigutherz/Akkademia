@@ -9,6 +9,12 @@ from data import increment_count
 
 
 def write_sentences_to_file(chars_sentences, translation_sentences):
+    """
+    Write the data of word by word translations to files (different files for signs, transliterations and translations)
+    :param chars_sentences: sentences with the signs and transliterations
+    :param translation_sentences: translations done word by word for the corresponding chars_sentences
+    :return: nothing, signs, transliterations and translations written to corresponding files
+    """
     signs_file = open(Path(r"../NMT_input/signs_per_line.txt"), "w", encoding="utf8")
     transcription_file = open(Path(r"../NMT_input/transcriptions_per_line.txt"), "w", encoding="utf8")
     translation_file = open(Path(r"../NMT_input/translation_per_line.txt"), "w", encoding="utf8")
@@ -42,6 +48,12 @@ def write_sentences_to_file(chars_sentences, translation_sentences):
 
 
 def build_translations(corpora, mapping):
+    """
+    Build translations for preprocess
+    :param corpora: corpora to use for building the data for full translation
+    :param mapping: mapping between different numbering of lines
+    :return: translations
+    """
     base_directory = Path(r"../raw_data/tei/")
     all_translations = {}
 
@@ -56,6 +68,11 @@ def build_translations(corpora, mapping):
 
 
 def build_full_line_translation_process(corpora):
+    """
+    Do first part of preprocess, build signs and transliterations
+    :param corpora: corpora to use for building the data for full translation
+    :return: signs, transliterations and mapping between different numbering of lines
+    """
     chars, translation, mapping, lines_cut_by_translation = build_signs_and_transcriptions(corpora, True)
     chars_sentences = break_into_sentences(chars, lines_cut_by_translation)
     translation_sentences = break_into_sentences(translation, lines_cut_by_translation)
@@ -64,6 +81,12 @@ def build_full_line_translation_process(corpora):
 
 
 def build_graph(translation_lengths, name):
+    """
+    Build a graph to show different translation lengths and their frequencies
+    :param translation_lengths: list of all translation lengths
+    :param name: name for the graph
+    :return: nothing, a graph is saved to a file
+    """
     # matplotlib histogram
     plt.hist(translation_lengths, color='blue', edgecolor='black', bins=100)
 
@@ -76,10 +99,21 @@ def build_graph(translation_lengths, name):
 
 
 def get_dict_sorted(d):
+    """
+    Sort a dictionary
+    :param d: dictionary to be sorted
+    :return: the dictionary after sorting
+    """
     return str({k: v for k, v in sorted(d.items(), key=lambda item: item[1], reverse=True)})
 
 
 def get_rare_elements_number(d, n):
+    """
+    Count the number of rare elements
+    :param d: dictionary to use
+    :param n: the threshold for rarity
+    :return: the number of rare elements as a string
+    """
     i = 0
     for k, v in d.items():
         if v < n:
@@ -90,6 +124,18 @@ def get_rare_elements_number(d, n):
 
 def print_statistics(translation_lengths, long_trs, very_long_trs, signs_vocab, transcription_vocab, translation_vocab,
                      could_divide_by_three_dots, could_not_divide):
+    """
+    Print all the statistics computed
+    :param translation_lengths: list of all translation lengths
+    :param long_trs: counter for long translations
+    :param very_long_trs: counter for very long translations
+    :param signs_vocab: vocabulary of all the signs
+    :param transcription_vocab: vocabulary of all the transliterations
+    :param translation_vocab: vocabulary of all the words in different translations
+    :param could_divide_by_three_dots: counter for translations possible to divide based on three dots
+    :param could_not_divide: counter for translations not possible to divide based on three dots
+    :return: nothing, all data is printed to stdout
+    """
     print("Number of real translations is: " + str(len(translation_lengths)))
     print("Mean real translations length is: " + str(mean(translation_lengths)))
     print("Number of real translations longer than 50 is: " + str(long_trs))
@@ -116,7 +162,15 @@ def print_statistics(translation_lengths, long_trs, very_long_trs, signs_vocab, 
 
 
 def compute_translation_statistics(tr, translation_lengths, long_trs, very_long_trs, translation_vocab):
-    # Statistics of translation lengths
+    """
+    Compute statistics related to translation
+    :param tr: current translation
+    :param translation_lengths: list of all translation lengths
+    :param long_trs: counter for long translations
+    :param very_long_trs: counter for very long translations
+    :param translation_vocab: vocabulary of all the words in different translations
+    :return: the four last parameters to the function after updated for current translation
+    """
     translation_lengths.append(len(tr.split()))
 
     if len(tr.split()) > 50:
@@ -137,6 +191,12 @@ def compute_translation_statistics(tr, translation_lengths, long_trs, very_long_
 
 
 def clean_signs_transcriptions(signs, is_signs):
+    """
+    Clean the signs and transcriptions and canonize them
+    :param signs: signs / transliterations
+    :param is_signs: True if we are dealing with signs
+    :return: signs / transliterations after clean is done
+    """
     start_index = 0
 
     while start_index < len(signs):
@@ -193,6 +253,27 @@ def add_translation_to_file(prev_signs, signs_vocab, prev_transcription, transcr
                             translation_lengths, long_trs, very_long_trs, translation_vocab, prev_text,
                             prev_start_line, prev_end_line, signs_file, transcription_file, translation_file,
                             could_divide_by_three_dots, could_not_divide):
+    """
+    Add a translation with corresponding signs and transliterations to files
+    :param prev_signs: previous signs written to file
+    :param signs_vocab: vocabulary of all the signs
+    :param prev_transcription: previous transliterations written to file
+    :param transcription_vocab: vocabulary of all the transliterations
+    :param prev_tr: previous translation written to file
+    :param translation_lengths: list of all translation lengths
+    :param long_trs: counter for long translations
+    :param very_long_trs: counter for very long translations
+    :param translation_vocab: vocabulary of all the words in different translations
+    :param prev_text: previous text written to file
+    :param prev_start_line: previous start line written to file
+    :param prev_end_line: previous end line written to file
+    :param signs_file: file of all signs, being built as input for translation algorithms
+    :param transcription_file: file of all transliterations, being built as input for translation algorithms
+    :param translation_file: file of all translations, being built as input for translation algorithms
+    :param could_divide_by_three_dots: counter for translations possible to divide based on three dots
+    :param could_not_divide: counter for translations not possible to divide based on three dots
+    :return: some of the parameters to the function, after update
+    """
     signs = ""
     transcription = ""
 
@@ -240,6 +321,12 @@ def add_translation_to_file(prev_signs, signs_vocab, prev_transcription, transcr
 
 
 def write_translations_to_file(chars_sentences, translations):
+    """
+    Write all the data we collected (signs, transliterations and translations) to proper files
+    :param chars_sentences: sentences of the signs ans transliterations
+    :param translations: translations corresponding to the signs and transliterations
+    :return: nothing, the signs, transliterations and translations are written to different files
+    """
     signs_file = open(Path(r"../NMT_input/signs.txt"), "w", encoding="utf8")
     transcription_file = open(Path(r"../NMT_input/transcriptions.txt"), "w", encoding="utf8")
     translation_file = open(Path(r"../NMT_input/translation.txt"), "w", encoding="utf8")
@@ -354,12 +441,21 @@ def write_translations_to_file(chars_sentences, translations):
 
 
 def preprocess(corpora):
+    """
+    Process corpora for the input of the translation algorithms
+    :param corpora: corpora to process
+    :return: nothing
+    """
     chars_sentences, mapping = build_full_line_translation_process(corpora)
     translations = build_translations(corpora, mapping)
     write_translations_to_file(chars_sentences, translations)
 
 
 def main():
+    """
+    Builds data for translation algorithms
+    :return: nothing
+    """
     corpora = ["rinap", "riao", "ribo", "saao", "suhu"]
     preprocess(corpora)
 
