@@ -5,8 +5,13 @@ import xml.etree.ElementTree as ET
 
 
 def get_dialect(corpus, file):
-    #d = requests.get('http://oracc.museum.upenn.edu/' + corpus + '/' + file[:-5] + '/')
-    d = requests.get('http://oracc.museum.upenn.edu/ribo/' + file[:-5] + '/')
+    """
+    Get the dialect of the text
+    :param corpus: the corpus of the text
+    :param file: the file the text is from
+    :return: the dialect of the text
+    """
+    d = requests.get('http://oracc.museum.upenn.edu/' + corpus + '/' + file[:-5] + '/')
     try:
         root = ET.fromstring(d.content)
     except:
@@ -25,6 +30,10 @@ def get_dialect(corpus, file):
 
 
 def main():
+    """
+    Test the get_dialect() function
+    :return: nothing
+    """
     directory = Path(r"../raw_data/test_texts")
     corpus = "riao"
 
