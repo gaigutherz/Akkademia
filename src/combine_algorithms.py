@@ -5,7 +5,13 @@ from hmm import run_hmm, hmm_viterbi
 from data import load_object_from_file, logits_to_trans
 from memm import memm_greedy, build_extra_decoding_arguments, run_memm
 
+
 def sentence_to_HMM_format(sentence):
+    """
+    Transform the sentence to HMM format
+    :param sentence: the sentence to transform
+    :return: the HMM format
+    """
     list = []
     for sign in sentence:
         if sign == " ":
@@ -14,7 +20,13 @@ def sentence_to_HMM_format(sentence):
 
     return list
 
+
 def list_to_tran(list):
+    """
+    Transform the list of predicted tags to a printable way
+    :param list: list of tags
+    :return: string of transliteration
+    """
     transcription = ""
     for tran in list:
         if tran[-3:] == "(0)":
@@ -31,7 +43,15 @@ def list_to_tran(list):
 
     return transcription
 
+
 def sentence_to_allen_format(sentence, sign_to_id, usingRealSigns):
+    """
+    Transform the sentence to AllenNLP format
+    :param sentence: the sentence to transform
+    :param sign_to_id: dictionary of sign to id
+    :param usingRealSigns: whether using the signs as is
+    :return: the AllenNLP format for BiLSTM
+    """
     signs = ""
 
     if usingRealSigns:
@@ -49,7 +69,24 @@ def sentence_to_allen_format(sentence, sign_to_id, usingRealSigns):
 
     return signs
 
+
 def overall_choose_best_gammas(lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, predictor_from_file, model_from_file, id_to_tran, sign_to_id, dev_texts):
+    """
+    Choose the best gammas for combination of BiLSTM, MEMM and HMM (the strength of each algorithm)
+    :param lambda1: lambda for HMM use
+    :param lambda2: lambda for HMM use
+    :param logreg: learned for MEMM use
+    :param vec: vectorization function for MEMM use
+    :param idx_to_tag_dict: dictionary of indices to tags
+    :param extra_decoding_arguments: extra decoding arguments
+    :param predictor_from_file: for BiLSTM use
+    :param model_from_file: for BiLSTM use
+    :param id_to_tran: dictionary of indices to tags
+    :param sign_to_id: dictionary of signs to indices
+    :param dev_texts: validation texts for hyperparams
+    :return: the gammas
+    """
+
     best_gamma1 = -1
     best_gamma2 = -1
     best_accuracy = -1
@@ -69,7 +106,26 @@ def overall_choose_best_gammas(lambda1, lambda2, logreg, vec, idx_to_tag_dict, e
 
     return best_gamma1, best_gamma2
 
+
 def overall_compute_accuracy(test_data, gamma1, gamma2, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, predictor_from_file, model_from_file, id_to_tran, sign_to_id):
+    """
+    Evaluate the best gammas for combination of BiLSTM, MEMM and HMM (the strength of each algorithm)
+    :param test_data: data for evaluation
+    :param gamma1: the strength that was learned
+    :param gamma2: the strength that was learned
+    :param lambda1: lambda for HMM use
+    :param lambda2: lambda for HMM use
+    :param logreg: learned for MEMM use
+    :param vec: vectorization function for MEMM use
+    :param idx_to_tag_dict: dictionary of indices to tags
+    :param extra_decoding_arguments: extra decoding arguments
+    :param predictor_from_file: for BiLSTM use
+    :param model_from_file: for BiLSTM use
+    :param id_to_tran: dictionary of indices to tags
+    :param sign_to_id: dictionary of signs to indices
+    :return: the accuracy for the learned gammas
+    """
+
     correct = 0
     seps = 0
     total = 0
@@ -92,10 +148,30 @@ def overall_compute_accuracy(test_data, gamma1, gamma2, lambda1, lambda2, logreg
                     seps += 1
 
 
-    #print("precentage of seps errors: " + str(float(seps) / correct))
+
     return float(correct) / total
 
+
 def overall_classifier(sentence, gamma1, gamma2, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, predictor_from_file, model_from_file, id_to_tran, sign_to_id, is_verbose):
+    """
+    Classify the tags with the best gammas for combination of BiLSTM, MEMM and HMM (the strength of each algorithm)
+    :param sentence: sentence to tag
+    :param gamma1: the strength that was learned
+    :param gamma2: the strength that was learned
+    :param lambda1: lambda for HMM use
+    :param lambda2: lambda for HMM use
+    :param logreg: learned for MEMM use
+    :param vec: vectorization function for MEMM use
+    :param idx_to_tag_dict: dictionary of indices to tags
+    :param extra_decoding_arguments: extra decoding arguments
+    :param predictor_from_file: for BiLSTM use
+    :param model_from_file: for BiLSTM use
+    :param id_to_tran: dictionary of indices to tags
+    :param sign_to_id: dictionary of signs to indices
+    :param is_verbose: whether to print
+    :return: the classified tags by the combination of the algorithms
+    """
+
     if is_verbose:
         print(sentence)
     HMM_predicted_tags = hmm_viterbi(sentence_to_HMM_format(sentence), 0, {}, {}, lambda1, lambda2)
@@ -146,7 +222,16 @@ def overall_classifier(sentence, gamma1, gamma2, lambda1, lambda2, logreg, vec, 
     HMM_predicted_tags, MEMM_predicted_tags)
     return combine_tags(algorithms_tags, gamma1, gamma2)
 
+
 def combine_tags(algorithms_tags, gamma1, gamma2):
+    """
+    Classify the tags with the best gammas for combination of BiLSTM, MEMM and HMM (the strength of each algorithm)
+    :param algorithms_tags: the tags predicted by BiLSTM, MEMM and HMM
+    :param gamma1: the strength that was learned
+    :param gamma2: the strength that was learned
+    :return: the classified tags by the combination of the algorithms
+    """
+
     (biLSTM_predicted_tags, biLSTM_predicted2_tags, biLSTM_predicted3_tags,
     biLSTM_scores, biLSTM_scores2, biLSTM_scores3,
     HMM_predicted_tags, MEMM_predicted_tags) = algorithms_tags
