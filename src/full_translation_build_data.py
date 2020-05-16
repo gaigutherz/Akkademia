@@ -55,7 +55,7 @@ def build_translations(corpora, mapping):
 
 
 def build_full_line_translation_process(corpora):
-    chars, translation, mapping, sentences, lines_cut_by_translation = build_signs_and_transcriptions(corpora, True)
+    chars, translation, mapping, lines_cut_by_translation = build_signs_and_transcriptions(corpora, True)
     chars_sentences = break_into_sentences(chars, lines_cut_by_translation)
     translation_sentences = break_into_sentences(translation, lines_cut_by_translation)
     write_sentences_to_file(chars_sentences, translation_sentences)

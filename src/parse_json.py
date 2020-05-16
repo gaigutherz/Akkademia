@@ -3,16 +3,29 @@ from pathlib import Path
 
 
 def get_delim(c):
+    """
+    Gets the right delimiter from the c node
+    :param c: the c node json object
+    :return: delimiter of the transcription
+    """
     if "delim" in c:
         return c["delim"]
     else:
         return None
 
 
-def parse_tran(c, chars, sentences, key, add_three_dots):
+def parse_tran(c, chars, key, add_three_dots):
+    """
+    Prase c node to fill chars up
+    :param c: the c node json object
+    :param chars: list collecting all characters (id, transliteration, delimiter, sign) from the .json file
+    :param key: current key (text, start, end)
+    :param add_three_dots: whether we should add three dots out of the .json file or not
+    :return: nothing
+    """
     if "group" in c:
         for elem in c["group"]:
-            parse_tran(elem, chars, sentences, key, add_three_dots)
+            parse_tran(elem, chars, key, add_three_dots)
 
     elif "det" in c:
         if c["pos"] == "pre":
@@ -87,6 +100,12 @@ def parse_tran(c, chars, sentences, key, add_three_dots):
 
 
 def parse_translation(l_node, translation):
+    """
+    Parse an l node inside the .json file for getting a sign direct translation
+    :param l_node: the l node json object
+    :param translation: list collecting all translations of signs from the .json file
+    :return: nothing
+    """
     if "sense" not in l_node["f"]:
         return
 
@@ -100,7 +119,16 @@ def parse_translation(l_node, translation):
     translation.append([l_node["ref"], t])
 
 
-def parse_l_node(l_node, chars, translation, sentences, key, add_three_dots):
+def parse_l_node(l_node, chars, translation, key, add_three_dots):
+    """
+    Parse an l node inside the .json file
+    :param l_node: the l node json object
+    :param chars: list collecting all characters (id, transliteration, delimiter, sign) from the .json file
+    :param translation: list collecting all translations of signs from the .json file
+    :param key: current key (text, start, end)
+    :param add_three_dots: whether we should add three dots out of the .json file or not
+    :return: nothing
+    """
     if l_node["f"]["lang"] == "arc" or l_node["f"]["lang"] == "qcu-949" or l_node["f"]["lang"] == "akk-949" \
             or l_node["f"]["lang"] == "arc-949":
         return
@@ -112,10 +140,16 @@ def parse_l_node(l_node, chars, translation, sentences, key, add_three_dots):
 
     gdl = l_node["f"]["gdl"]
     for g in gdl:
-        parse_tran(g, chars, sentences, key, add_three_dots)
+        parse_tran(g, chars, key, add_three_dots)
 
 
 def parse_d_node(node, mapping):
+    """
+    Parse a d node inside the .json file
+    :param node: the d node json object
+    :param mapping: dictionary collecting mapping from two types of line numbering
+    :return: nothing
+    """
     # If we're not at a line start, we don't have the mapping we are interested in.
     if node["type"] != "line-start":
         return
@@ -136,7 +170,18 @@ def parse_d_node(node, mapping):
     mapping[node["label"]] = ref
 
 
-def parse_c_node(c_node, chars, translation, mapping, sentences, key, lines_cut_by_translation, add_three_dots):
+def parse_c_node(c_node, chars, translation, mapping, key, lines_cut_by_translation, add_three_dots):
+    """
+    Parse a c node inside the .json file
+    :param c_node: the c node json object
+    :param chars: list collecting all characters (id, transliteration, delimiter, sign) from the .json file
+    :param translation: list collecting all translations of signs from the .json file
+    :param mapping: dictionary collecting mapping from two types of line numbering
+    :param key: current key (text, start, end)
+    :param lines_cut_by_translation: list of lines cut by translation
+    :param add_three_dots: whether we should add three dots out of the .json file or not
+    :return: nothing
+    """
     # This text doesn't have data in it.
     if "cdl" not in c_node:
         return
@@ -163,7 +208,6 @@ def parse_c_node(c_node, chars, translation, mapping, sentences, key, lines_cut_
             end = start
 
         key = (text, start, end)
-        sentences[key] = ["", ""]
 
     for node in c_node["cdl"]:
         # This means it is metadata, and not a fragment.
@@ -171,14 +215,14 @@ def parse_c_node(c_node, chars, translation, mapping, sentences, key, lines_cut_
             parse_d_node(node, mapping)
 
         elif node["node"] == "c":
-            parse_c_node(node, chars, translation, mapping, sentences, key, lines_cut_by_translation, add_three_dots)
+            parse_c_node(node, chars, translation, mapping, key, lines_cut_by_translation, add_three_dots)
 
         elif node["node"] == "l":
-            parse_l_node(node, chars, translation, sentences, key, add_three_dots)
+            parse_l_node(node, chars, translation, key, add_three_dots)
 
         # Very rare! Appears only in saao (choice between two options).
         elif node["node"] == "ll":
-            parse_l_node(node["choices"][0], chars, translation, sentences, key, add_three_dots)
+            parse_l_node(node["choices"][0], chars, translation, key, add_three_dots)
 
         else:
             print(node)
@@ -186,6 +230,11 @@ def parse_c_node(c_node, chars, translation, mapping, sentences, key, lines_cut_
 
 
 def process_cut_lines(lines_cut_by_translation):
+    """
+    Collect all of the special lines we have (lines that were cut in the middle during translation)
+    :param lines_cut_by_translation: list of lines cut by translation
+    :return: list of special lines
+    """
     special_lines = []
 
     for line in lines_cut_by_translation:
@@ -198,10 +247,15 @@ def process_cut_lines(lines_cut_by_translation):
 
 
 def parse_json(file, add_three_dots=False):
+    """
+    Parses a .json file to get the data we need out of it
+    :param file: .json file for parsing
+    :param add_three_dots: whether we should add three dots out of the .json file or not
+    :return: all values we are interested in from the .json file
+    """
     chars = []
     translation = []
     mapping = {}
-    sentences = {}
     lines_cut_by_translation = []
 
     f = open(file, "r", encoding="utf8")
@@ -212,18 +266,22 @@ def parse_json(file, add_three_dots=False):
 
     json_object = json.loads(data)
     j = json_object["cdl"][0]
-    parse_c_node(j, chars, translation, mapping, sentences, None, lines_cut_by_translation, add_three_dots)
+    parse_c_node(j, chars, translation, mapping, None, lines_cut_by_translation, add_three_dots)
 
     if chars == [] and translation == [] and mapping == {}:
         return None, None, None, None, None
 
     lines_cut_by_translation = process_cut_lines(lines_cut_by_translation)
-    return chars, translation, mapping, sentences, lines_cut_by_translation
+    return chars, translation, mapping, lines_cut_by_translation
 
 
 def main():
+    """
+    Intended to try the logic of the file for tests.
+    :return: nothing
+    """
     directory = Path(r"../raw_data/rinap/rinap1/")
-    chars, translation, mapping, sentences, line_cut_by_translation = parse_json(directory / "Q003431.json", True)
+    chars, translation, mapping, line_cut_by_translation = parse_json(directory / "Q003431.json", True)
 
     print(len(chars))
     for c in chars:

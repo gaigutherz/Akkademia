@@ -11,7 +11,6 @@ def build_signs_and_transcriptions(corpora, add_three_dots=False):
     chars = {}
     translation = {}
     mapping = {}
-    sentences = {}
     lines_cut_by_translation = []
 
     for corpus in corpora:
@@ -20,16 +19,15 @@ def build_signs_and_transcriptions(corpora, add_three_dots=False):
             for file in f:
                 key = str(file[:-len(".json")])
                 if key not in chars.keys():
-                    c, t, m, s, l = parse_json(os.path.join(r, file), add_three_dots)
+                    c, t, m, l = parse_json(os.path.join(r, file), add_three_dots)
                     if c is not None and t is not None and m is not None and s is not None and l is not None:
                         chars[key] = c
                         translation[key] = t
                         mapping[(corpus, key)] = m
-                        sentences[key] = s
                         for line in l:
                             lines_cut_by_translation.append(line)
 
-    return chars, translation, mapping, sentences, lines_cut_by_translation
+    return chars, translation, mapping, lines_cut_by_translation
 
 
 def add_to_dictionary(dictionary, key, value):
@@ -179,7 +177,7 @@ def write_data_for_allen_to_file(texts, file, sign_to_id, tran_to_id):
 
 
 def preprocess():
-    chars, _, _, _, _= build_signs_and_transcriptions(["rinap"])
+    chars, _, _, _= build_signs_and_transcriptions(["rinap"])
     sentences = break_into_sentences(chars, None)
     #write_data_to_file(chars)
     d = build_dictionary(chars)
