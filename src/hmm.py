@@ -1,29 +1,27 @@
-import time
 from data import increment_count, compute_vocab_count, compute_accuracy
 from build_data import preprocess
-
 TEST_DATA_SIZE_FOR_LAMBDAS = 3
 
 
-def hmm_train(sents):
+def hmm_train(train_sents):
     """
-        sents: list of tagged sentences
-        Returns: the q-counts and e-counts of the sentences' tags, total number of tokens in the sentences
+    train the HMM model
+    :param train_sents: train sentences for the model
+    :return: counts of unigrams, bigrams and trigrams
     """
 
     print("Start training")
     total_tokens = 0
     q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts = {}, {}, {}, {}, {}
-    ### YOUR CODE HERE
 
     # e_tag_counts
-    for sentence in sents:
+    for sentence in train_sents:
         for token in sentence:
             key = token[1]
             increment_count(e_tag_counts, key)
 
     # e_word_tag_counts
-    for sentence in sents:
+    for sentence in train_sents:
         for token in sentence:
             key = token
             increment_count(e_word_tag_counts, key)
@@ -40,7 +38,7 @@ def hmm_train(sents):
 
     # Add *, * to beginning of every sentence and STOP to every end.
     adjusted_sents = []
-    for sentence in sents:
+    for sentence in train_sents:
         adjusted_sentence = []
         adjusted_sentence.append(('<s>', '<s>'))
         adjusted_sentence.append(('<s>', '<s>'))
@@ -74,19 +72,27 @@ def hmm_train(sents):
     # possible tags
     global possible_tags
     possible_tags = {}
-    for sentence in sents:
+    for sentence in train_sents:
         for token in sentence:
             if token[0] in possible_tags:
                 possible_tags[token[0]].add(token[1])
             else:
                 possible_tags[token[0]] = {token[1]}
-            #possible_tags[token[0]].add("DEFAULT") #TODO: delete?
 
-    ### END YOUR CODE
     return total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts
 
 
-def hmm_compute_q_e_S(test_data, total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts):
+def hmm_compute_q_e_S(total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts):
+    """
+    Computes the frequencies needed for the HMM model
+    :param total_tokens: total number of tokens
+    :param q_tri_counts: dictionary of the frequency of each trigram in the text
+    :param q_bi_counts: dictionary of the frequency of each bigram in the text
+    :param q_uni_counts: dictionary of the frequency of each unigram in the text
+    :param e_word_tag_counts: dictionary of the frequency of each (word, tag) couple in the text
+    :param e_tag_counts: dictionary of the frequency of each tag in the text
+    :return: nothing, q, e and S are saved as global parameters
+    """
     # q
     global q
     q = {}
@@ -101,29 +107,26 @@ def hmm_compute_q_e_S(test_data, total_tokens, q_tri_counts, q_bi_counts, q_uni_
     for key in e_word_tag_counts:
         e[key] = float(e_word_tag_counts[key]) / e_tag_counts[key[1]]
 
-    # n: longest sentence
-    n = -1
-    for sentence in test_data:
-        n_tmp = len(sentence)
-        if n_tmp > n:
-            n = n_tmp
-
     # S
     global S
     S = q_uni_counts.keys()
 
 
-def hmm_viterbi(sent, total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts,e_tag_counts, lambda1, lambda2):
+def hmm_viterbi(sent, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2):
     """
-        Receives: a sentence to tag and the parameters learned by hmm
-        Returns: predicted tags for the sentence
+    Predict the transliteration of a sentence of signs
+    :param sent: the sentence of signs to predict
+    :param total_tokens: total tokens in the text
+    :param q_bi_counts: frequency of bigrams in the text
+    :param q_uni_counts: frequency of unigrams in the text
+    :param lambda1: the weight for the unigrams
+    :param lambda2: the weight for the bigrams
+    :return: predicted transliteration for the sentence
     """
     predicted_tags = [""] * (len(sent))
-    ### YOUR CODE HERE
 
     # n: sent length
     n = len(sent)
-    #print(n)
 
     # pi + bp
     pi = {}
@@ -240,24 +243,31 @@ def hmm_viterbi(sent, total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_w
             except:
                 predicted_tags[k - 1] = "NNP"
 
-    ### END YOUR CODE
     return predicted_tags
 
-def hmm_choose_best_lamdas(test_data):
+
+def hmm_choose_best_lamdas(dev_data):
+    """
+    Do grid search to find lambda1 and lambda2
+    :param dev_data: dev sentences for the model
+    :return: best lambda1 and best lambda2
+    """
     best_lambda1 = -1
     best_lambda2 = -1
     best_accuracy = -1
+
     for i in range(0, 11, 1):
         for j in range(0, 10 - i, 1):
             lambda1 = i / 10.0
             lambda2 = j / 10.0
-            accuracy, _, _ = compute_accuracy(test_data, hmm_viterbi, 0, {}, {}, {}, {}, {}, lambda1, lambda2)
+            accuracy, _, _ = compute_accuracy(dev_data, hmm_viterbi, 0, {}, {}, {}, {}, {}, lambda1, lambda2)
             print("For lambda1 = " + str(lambda1), ", lambda2 = " + str(lambda2), \
                 ", lambda3 = " + str(1 - lambda1 - lambda2) + " got accuracy = " + str(accuracy))
             if accuracy > best_accuracy:
                 best_lambda1 = lambda1
                 best_lambda2 = lambda2
                 best_accuracy = accuracy
+
     print("The setting that maximizes the accuracy on the test data is lambda1 = " + \
           str(best_lambda1), ", lambda2 = " + str(best_lambda2), \
         ", lambda3 = " + str(1 - best_lambda1 - best_lambda2) + " (accuracy = " + str(best_accuracy) + ")")
@@ -265,39 +275,28 @@ def hmm_choose_best_lamdas(test_data):
     return best_lambda1, best_lambda2
 
 
-def hmm_eval(test_data, total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts,e_tag_counts):
-    """
-    Receives: test data set and the parameters learned by hmm
-    Returns an evaluation of the accuracy of hmm
-    """
-    print("Start evaluation")
-    acc_viterbi = 0.0
-    ### YOUR CODE HERE
-
-    hmm_compute_q_e_S(test_data, total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts)
-    lambda1, lambda2 = hmm_choose_best_lamdas(test_data[:TEST_DATA_SIZE_FOR_LAMBDAS])
-    #acc_viterbi = hmm_compute_accuracy(test_data, lambda1, lambda2)
-
-    ### END YOUR CODE
-
-    return acc_viterbi, lambda1, lambda2
-
-
 def run_hmm(train_sents, dev_sents, learn_mode):
     """
-    Receives: train and dex texts
-    Returns the lambdas learned by hmm if learn_mode is True, otherwise only compute parameters for hmm
+    Run the HMM model and compute the lambdas learned by hmm if learn_mode is True
+    :param train_sents: train sentences for the model
+    :param dev_sents: dev sentences for the model
+    :param learn_mode: true if learing of lambda1 and lambda2 is needed, false otherwise
+    :return: lambda1 and lambda2 if learn_mode, else - nothing
     """
     vocab = compute_vocab_count(train_sents)
 
     total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts = hmm_train(train_sents)
-    hmm_compute_q_e_S(dev_sents, total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts)
+    hmm_compute_q_e_S(total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts)
     if learn_mode:
         lambda1, lambda2 = hmm_choose_best_lamdas(dev_sents)
         return lambda1, lambda2
 
 
 def main():
+    """
+    Test the run of HMM
+    :return: nothing
+    """
     train_texts, dev_texts, test_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran = preprocess()
     lambda1, lambda2 = run_hmm(train_texts, dev_texts, True)
     print("Done learning, now computing accuracy!")
