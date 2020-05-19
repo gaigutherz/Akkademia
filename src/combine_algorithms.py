@@ -1,9 +1,8 @@
-
 import numpy as np
 
-from hmm import run_hmm, hmm_viterbi
+from hmm import hmm_train, hmm_viterbi
 from data import load_object_from_file, logits_to_trans
-from memm import memm_greedy, build_extra_decoding_arguments, run_memm
+from memm import memm_greedy, build_extra_decoding_arguments
 
 
 def sentence_to_HMM_format(sentence):

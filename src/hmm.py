@@ -3,7 +3,7 @@ from build_data import preprocess
 TEST_DATA_SIZE_FOR_LAMBDAS = 3
 
 
-def hmm_train(train_sents):
+def hmm_preprocess(train_sents):
     """
     train the HMM model
     :param train_sents: train sentences for the model
@@ -275,21 +275,20 @@ def hmm_choose_best_lamdas(dev_data):
     return best_lambda1, best_lambda2
 
 
-def run_hmm(train_sents, dev_sents, learn_mode):
+def hmm_train(train_sents, dev_sents):
     """
-    Run the HMM model and compute the lambdas learned by hmm if learn_mode is True
+    Run the HMM model and compute the parameters learned by hmm
     :param train_sents: train sentences for the model
     :param dev_sents: dev sentences for the model
-    :param learn_mode: true if learing of lambda1 and lambda2 is needed, false otherwise
-    :return: lambda1 and lambda2 if learn_mode, else - nothing
+    :return: trained parameters
     """
     vocab = compute_vocab_count(train_sents)
 
-    total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts = hmm_train(train_sents)
+    total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts = hmm_preprocess(train_sents)
     hmm_compute_q_e_S(total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts)
-    if learn_mode:
-        lambda1, lambda2 = hmm_choose_best_lamdas(dev_sents)
-        return lambda1, lambda2
+
+    lambda1, lambda2 = hmm_choose_best_lamdas(dev_sents)
+    return most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2
 
 
 def main():
@@ -298,11 +297,11 @@ def main():
     :return: nothing
     """
     train_texts, dev_texts, test_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran = preprocess()
-    lambda1, lambda2 = run_hmm(train_texts, dev_texts, True)
-    print("Done learning, now computing accuracy!")
-    print(compute_accuracy(train_texts, hmm_viterbi, 0, {}, {}, lambda1, lambda2))
-    print(compute_accuracy(dev_texts, hmm_viterbi, 0, {}, {}, lambda1, lambda2))
-    print(compute_accuracy(test_texts, hmm_viterbi, 0, {}, {}, lambda1, lambda2))
+    _, _, _, _, _, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2 = hmm_train(train_texts, dev_texts)
+    print("Done training, now computing accuracy!")
+    print(compute_accuracy(train_texts, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2))
+    print(compute_accuracy(dev_texts, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2))
+    print(compute_accuracy(test_texts, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2))
 
 
 if __name__ == "__main__":

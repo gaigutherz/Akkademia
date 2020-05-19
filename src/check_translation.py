@@ -1,9 +1,9 @@
 import os
 from BiLSTM import prepare1, prepare2, LstmTagger, PosDatasetReader
 from build_data import preprocess, break_into_sentences
-from hmm import run_hmm, hmm_viterbi, hmm_compute_accuracy
+from hmm import hmm_train, hmm_viterbi, hmm_compute_accuracy
 from data import load_object_from_file, logits_to_trans
-from memm import memm_greedy, build_extra_decoding_arguments, run_memm
+from memm import memm_greedy, build_extra_decoding_arguments
 from parse_json import parse_json
 from pathlib import Path
 from get_texts_details import get_dialect
@@ -98,8 +98,8 @@ def copied_code_from_translate_Akkadian():
     train_texts, dev_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran = preprocess()
 
     # Run the HMM.
-    run_hmm(train_texts, dev_texts, False)
-    # lambda1, lambda2 = run_hmm(train_texts, dev_texts, True)
+    hmm_train(train_texts, dev_texts)
+    # lambda1, lambda2 = hmm_train(train_texts, dev_texts)
     (lambda1, lambda2, _, _, _, _) = load_object_from_file(Path("../output/hmm_model.pkl"))
 
     memm_path = Path("../output/memm_model.pkl")

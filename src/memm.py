@@ -4,7 +4,7 @@ from sklearn import linear_model
 import time
 import numpy as np
 from build_data import preprocess
-from hmm import hmm_choose_best_lamdas, hmm_compute_q_e_S, hmm_viterbi, hmm_train
+from hmm import hmm_choose_best_lamdas, hmm_compute_q_e_S, hmm_viterbi, hmm_preprocess
 
 
 def build_extra_decoding_arguments(train_sents):
@@ -304,6 +304,7 @@ def should_log(sentence_index):
 
     return False
 
+
 def memm_hmm_eval(test_data, logreg, vec, index_to_tag_dict, extra_decoding_arguments, total_tokens, q_tri_counts,
                   q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts):
     """
@@ -372,7 +373,8 @@ def memm_hmm_eval(test_data, logreg, vec, index_to_tag_dict, extra_decoding_argu
 
     return str(acc_viterbi), str(acc_greedy), str(acc_hmm)
 
-def run_memm(train_sents, dev_sents):
+
+def memm_train(train_sents, dev_sents):
     """
     Run the MEMM model and compute the logistic regression for the predictor
     :param train_sents: train sentences for the model
@@ -418,7 +420,8 @@ def run_memm(train_sents, dev_sents):
     print("End training, elapsed " + str(end - start) + " seconds")
     return logreg, vec, index_to_tag_dict
 
-if __name__ == "__main__":
+
+def main():
     """
     Test the run of MEMM and HMM
     :return: nothing
@@ -432,7 +435,7 @@ if __name__ == "__main__":
     vocab = compute_vocab_count(train_sents)
 
     extra_decoding_arguments = build_extra_decoding_arguments(train_sents)
-    total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts = hmm_train(train_sents)
+    total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts = hmm_preprocess(train_sents)
     print("HMM trained")
 
     tag_to_idx_dict = build_tag_to_idx_dict(train_sents)
@@ -483,3 +486,7 @@ if __name__ == "__main__":
     print("Dev: Accuracy Viterbi memm : " + acc_viterbi)
 
     print("Evaluation on dev set elapsed: " + str(end - start) + " seconds")
+
+
+if __name__ == "__main__":
+    main()
