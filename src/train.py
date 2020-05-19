@@ -13,17 +13,15 @@ def hmm_train_and_store():
         hmm_train(train_texts, dev_texts)
 
     dump_object_to_file((most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1,
-                         lambda2), Path(r"../output/hmm_model"))
-
-    return test_texts
+                         lambda2, test_texts), Path(r"../output/hmm_model"))
 
 
 def hmm_train_and_test():
-    hmm_test_texts = hmm_train_and_store()
+    hmm_train_and_store()
 
-    most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2 = \
+    most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2, test_texts = \
         load_object_from_file(Path(r"../output/hmm_model.pkl"))
-    print(compute_accuracy(hmm_test_texts, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2))
+    print(compute_accuracy(test_texts, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2))
 
 
 def memm_train_and_store():
@@ -32,16 +30,16 @@ def memm_train_and_store():
     logreg, vec, idx_to_tag_dict = memm_train(train_texts, dev_texts)
     extra_decoding_arguments = build_extra_decoding_arguments(train_texts)
 
-    dump_object_to_file((logreg, vec, idx_to_tag_dict, extra_decoding_arguments), Path(r"../output/memm_model"))
-
-    return test_texts
+    dump_object_to_file((logreg, vec, idx_to_tag_dict, extra_decoding_arguments, test_texts),
+                        Path(r"../output/memm_model"))
 
 
 def memm_train_and_test():
-    memm_test_texts = memm_train_and_store()
+    memm_train_and_store()
 
-    logreg, vec, idx_to_tag_dict, extra_decoding_arguments = load_object_from_file(Path("../output/memm_model.pkl"))
-    print(compute_accuracy(memm_test_texts, memm_greedy, logreg, vec, idx_to_tag_dict))
+    logreg, vec, idx_to_tag_dict, extra_decoding_arguments, test_texts = \
+        load_object_from_file(Path("../output/memm_model.pkl"))
+    print(compute_accuracy(test_texts, memm_greedy, logreg, vec, idx_to_tag_dict))
 
 
 def biLSTM_train_and_store():
@@ -52,22 +50,20 @@ def biLSTM_train_and_store():
     trainer.train()
     predictor = SentenceTaggerPredictor(model, dataset_reader=reader)
 
-    dump_object_to_file((model, predictor, sign_to_id, id_to_tran), Path(r"../output/biLSTM_model"))
-
-    return test_texts
+    dump_object_to_file((model, predictor, sign_to_id, id_to_tran, test_texts), Path(r"../output/biLSTM_model"))
 
 
 def biLSTM_train_and_test():
-    biLSTM_test_texts = biLSTM_train_and_store()
+    biLSTM_train_and_store()
 
-    model, predictor, sign_to_id, id_to_tran = load_object_from_file(Path("../output/biLSTM_model.pkl"))
-    print(compute_accuracy(biLSTM_test_texts, BiLSTM_predict, model, predictor, sign_to_id, id_to_tran))
+    model, predictor, sign_to_id, id_to_tran, test_texts = load_object_from_file(Path("../output/biLSTM_model.pkl"))
+    print(compute_accuracy(test_texts, BiLSTM_predict, model, predictor, sign_to_id, id_to_tran))
 
 
 def main():
     hmm_train_and_test()
-    memm_train_and_test()
-    biLSTM_train_and_test()
+    # memm_train_and_test()
+    # biLSTM_train_and_test()
 
 
 if __name__ == '__main__':
