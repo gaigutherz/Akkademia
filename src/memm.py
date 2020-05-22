@@ -335,7 +335,7 @@ def memm_hmm_eval(test_data, logreg, vec, index_to_tag_dict, extra_decoding_argu
     lambda1, lambda2 = hmm_choose_best_lamdas(test_data[:25])
 
     for i, sen in enumerate(test_data):
-        predicted_hmm = hmm_viterbi(sent, total_tokens, q_bi_counts, q_uni_counts, q, e, S, most_common_tag,
+        predicted_hmm = hmm_viterbi(sen, total_tokens, q_bi_counts, q_uni_counts, q, e, S, most_common_tag,
                                     possible_tags, lambda1, lambda2)
         predicted_greedy = memm_greedy(sen, logreg, vec, index_to_tag_dict)
         predicted_viterbi = memm_viterbi(sen, logreg, vec, index_to_tag_dict, extra_decoding_arguments)
@@ -413,7 +413,7 @@ def memm_train(train_sents, dev_sents):
     print("Done")
 
     logreg = linear_model.LogisticRegression(
-        multi_class='multinomial', max_iter=1000, solver='lbfgs', C=100000, verbose=1, n_jobs=2)
+        multi_class='multinomial', max_iter=128, solver='lbfgs', C=100000, verbose=1, n_jobs=2)
     print("Fitting...")
     start = time.time()
     logreg.fit(train_examples_vectorized, train_labels)
