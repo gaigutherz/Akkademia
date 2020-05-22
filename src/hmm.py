@@ -109,7 +109,7 @@ def hmm_compute_q_e_S(total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_w
 
     # S
     global S
-    S = q_uni_counts.keys()
+    S = list(q_uni_counts.keys())
 
 
 def hmm_viterbi(sent, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2):

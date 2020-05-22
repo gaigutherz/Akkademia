@@ -100,7 +100,7 @@ def copied_code_from_translate_Akkadian():
     # Run the HMM.
     hmm_train(train_texts, dev_texts)
     # lambda1, lambda2 = hmm_train(train_texts, dev_texts)
-    (lambda1, lambda2, _, _, _, _) = load_object_from_file(Path("../output/hmm_model.pkl.pkl"))
+    (lambda1, lambda2, _, _, _, _) = load_object_from_file(Path("../output/hmm_model.pkl"))
 
     memm_path = Path("../output/memm_model.pkl")
     memm_from_file = load_object_from_file(memm_path)

@@ -13,14 +13,14 @@ def hmm_train_and_store():
         hmm_train(train_texts, dev_texts)
 
     dump_object_to_file((most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1,
-                         lambda2, test_texts), Path(r"../output/hmm_model.pkl.pkl"))
+                         lambda2, test_texts), Path(r"../output/hmm_model.pkl"))
 
 
 def hmm_train_and_test():
     hmm_train_and_store()
 
     most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2, test_texts = \
-        load_object_from_file(Path(r"../output/hmm_model.pkl.pkl"))
+        load_object_from_file(Path(r"../output/hmm_model.pkl"))
     print(compute_accuracy(test_texts, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2))
 
 
@@ -38,7 +38,7 @@ def memm_train_and_test():
     memm_train_and_store()
 
     logreg, vec, idx_to_tag_dict, extra_decoding_arguments, test_texts = \
-        load_object_from_file(Path("../output/memm_model.pkl"))
+        load_object_from_file(Path(r"../output/memm_model.pkl"))
     print(compute_accuracy(test_texts, memm_greedy, logreg, vec, idx_to_tag_dict))
 
 
@@ -56,14 +56,14 @@ def biLSTM_train_and_store():
 def biLSTM_train_and_test():
     biLSTM_train_and_store()
 
-    model, predictor, sign_to_id, id_to_tran, test_texts = load_object_from_file(Path("../output/biLSTM_model.pkl"))
+    model, predictor, sign_to_id, id_to_tran, test_texts = load_object_from_file(Path(r"../output/biLSTM_model.pkl"))
     print(compute_accuracy(test_texts, BiLSTM_predict, model, predictor, sign_to_id, id_to_tran))
 
 
 def main():
-    # hmm_train_and_test()
+    hmm_train_and_test()
     # memm_train_and_test()
-    biLSTM_train_and_test()
+    # biLSTM_train_and_test()
 
 
 if __name__ == '__main__':
