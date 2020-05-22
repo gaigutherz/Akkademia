@@ -69,7 +69,9 @@ def sentence_to_allen_format(sentence, sign_to_id, usingRealSigns):
     return signs
 
 
-def overall_choose_best_gammas(lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, predictor_from_file, model_from_file, id_to_tran, sign_to_id, dev_texts):
+def overall_choose_best_gammas(total_tokens, q_bi_counts, q_uni_counts, q, e, S, lambda1, lambda2, logreg, vec,
+                               idx_to_tag_dict, extra_decoding_arguments, predictor_from_file, model_from_file,
+                               id_to_tran, sign_to_id, dev_texts):
     """
     Choose the best gammas for combination of BiLSTM, MEMM and HMM (the strength of each algorithm)
     :param lambda1: lambda for HMM use
@@ -94,7 +96,9 @@ def overall_choose_best_gammas(lambda1, lambda2, logreg, vec, idx_to_tag_dict, e
         for j in range(0, 5):
             gamma1 = i / 10.0
             gamma2 = j / 10.0
-            accuracy = overall_compute_accuracy(dev_texts, gamma1, gamma2, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, predictor_from_file, model_from_file, id_to_tran, sign_to_id)
+            accuracy = overall_compute_accuracy(dev_texts, gamma1, gamma2, total_tokens, q_bi_counts, q_uni_counts, q,
+                    e, S, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, predictor_from_file,
+                    model_from_file, id_to_tran, sign_to_id)
             print("For gamma1 = " + str(gamma1), ", gamma2 = " + str(gamma2), " got accuracy = " + str(accuracy))
             if accuracy > best_accuracy:
                 best_gamma1 = gamma1
@@ -106,7 +110,9 @@ def overall_choose_best_gammas(lambda1, lambda2, logreg, vec, idx_to_tag_dict, e
     return best_gamma1, best_gamma2
 
 
-def overall_compute_accuracy(test_data, gamma1, gamma2, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, predictor_from_file, model_from_file, id_to_tran, sign_to_id):
+def overall_compute_accuracy(test_data, gamma1, gamma2, total_tokens, q_bi_counts, q_uni_counts, q, e, S, lambda1,
+            lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, predictor_from_file, model_from_file,
+            id_to_tran, sign_to_id):
     """
     Evaluate the best gammas for combination of BiLSTM, MEMM and HMM (the strength of each algorithm)
     :param test_data: data for evaluation
