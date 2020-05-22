@@ -15,7 +15,7 @@ def main():
     most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2, test_texts = \
         load_object_from_file(Path(r"../output/hmm_model.pkl"))
 
-    logreg, vec, idx_to_tag_dict, extra_decoding_arguments, test_texts = \
+    logreg, vec, idx_to_tag_dict, test_texts = \
         load_object_from_file(Path(r"../output/memm_model.pkl"))
 
     model, predictor, sign_to_id, id_to_tran, test_texts = load_object_from_file(Path(r"../output/biLSTM_model.pkl"))
@@ -34,7 +34,7 @@ def main():
             continue
 
         overall_predicted_tags = overall_classifier(sentence, gamma1, gamma2, lambda1, lambda2, logreg, vec,
-                        idx_to_tag_dict, extra_decoding_arguments, predictor, model, id_to_tran, sign_to_id, True)
+                        idx_to_tag_dict, predictor, model, id_to_tran, sign_to_id, True)
 
         overall_tran = list_to_tran(overall_predicted_tags)
 

@@ -244,7 +244,7 @@ def memm_viterbi(sent, logreg, vec, index_to_tag_dict, extra_decoding_arguments)
                     S_w = [START_TAG]
                 for w in S_w:
                     try:
-                        curr_prob = viterbi_probability(sent, k - 1, u, w)[tag_to_idx_dict[v]]
+                        curr_prob = viterbi_probability(sent, k - 1, u, w)[index_to_tag_dict[v]]
                         pi_val = pi[(k - 1, w, u)] + curr_prob
                     except:
                         continue
@@ -412,7 +412,7 @@ def memm_train(train_sents, dev_sents):
     print("Done")
 
     logreg = linear_model.LogisticRegression(
-        multi_class='multinomial', max_iter=1, solver='lbfgs', C=100000, verbose=1, n_jobs=2)
+        multi_class='multinomial', max_iter=1000, solver='lbfgs', C=100000, verbose=1, n_jobs=2)
     print("Fitting...")
     start = time.time()
     logreg.fit(train_examples_vectorized, train_labels)

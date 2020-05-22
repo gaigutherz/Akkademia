@@ -151,7 +151,7 @@ def overall_compute_accuracy(test_data, gamma1, gamma2, lambda1, lambda2, logreg
     return float(correct) / total
 
 
-def overall_classifier(sentence, gamma1, gamma2, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, predictor_from_file, model_from_file, id_to_tran, sign_to_id, is_verbose):
+def overall_classifier(sentence, gamma1, gamma2, lambda1, lambda2, logreg, vec, idx_to_tag_dict, predictor_from_file, model_from_file, id_to_tran, sign_to_id, is_verbose):
     """
     Classify the tags with the best gammas for combination of BiLSTM, MEMM and HMM (the strength of each algorithm)
     :param sentence: sentence to tag
