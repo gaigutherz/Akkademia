@@ -94,7 +94,6 @@ def hmm_compute_q_e_S(total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_w
     :return: nothing, q, e and S are saved as global parameters
     """
     # q
-    global q
     q = {}
     for key in q_tri_counts:
         q[key] = (float(q_tri_counts[key])/q_bi_counts[(key[0], key[1])],
@@ -102,17 +101,17 @@ def hmm_compute_q_e_S(total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_w
                  float(q_uni_counts[key[2]])/total_tokens)
 
     # e
-    global e
     e = {}
     for key in e_word_tag_counts:
         e[key] = float(e_word_tag_counts[key]) / e_tag_counts[key[1]]
 
     # S
-    global S
     S = list(q_uni_counts.keys())
 
+    return q, e, S
 
-def hmm_viterbi(sent, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2):
+
+def hmm_viterbi(sent, total_tokens, q_bi_counts, q_uni_counts, q, e, S, lambda1, lambda2):
     """
     Predict the transliteration of a sentence of signs
     :param sent: the sentence of signs to predict
@@ -246,7 +245,7 @@ def hmm_viterbi(sent, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2)
     return predicted_tags
 
 
-def hmm_choose_best_lamdas(dev_data):
+def hmm_choose_best_lamdas(dev_data, total_tokens, q_bi_counts, q_uni_counts, q, e, S):
     """
     Do grid search to find lambda1 and lambda2
     :param dev_data: dev sentences for the model
@@ -260,7 +259,8 @@ def hmm_choose_best_lamdas(dev_data):
         for j in range(0, 10 - i, 1):
             lambda1 = i / 10.0
             lambda2 = j / 10.0
-            accuracy, _, _ = compute_accuracy(dev_data, hmm_viterbi, 0, {}, {}, lambda1, lambda2)
+            accuracy, _, _ = compute_accuracy(dev_data, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, q, e, S,
+                                              lambda1, lambda2)
             print("For lambda1 = " + str(lambda1), ", lambda2 = " + str(lambda2), \
                 ", lambda3 = " + str(1 - lambda1 - lambda2) + " got accuracy = " + str(accuracy))
             if accuracy > best_accuracy:
@@ -285,9 +285,9 @@ def hmm_train(train_sents, dev_sents):
     vocab = compute_vocab_count(train_sents)
 
     total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts = hmm_preprocess(train_sents)
-    hmm_compute_q_e_S(total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts)
+    q, e, S = hmm_compute_q_e_S(total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts)
 
-    lambda1, lambda2 = hmm_choose_best_lamdas(dev_sents)
+    lambda1, lambda2 = hmm_choose_best_lamdas(dev_sents[:1], total_tokens, q_bi_counts, q_uni_counts, q, e, S)
     return most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2
 
 
@@ -297,11 +297,11 @@ def main():
     :return: nothing
     """
     train_texts, dev_texts, test_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran = preprocess()
-    _, _, _, _, _, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2 = hmm_train(train_texts, dev_texts)
+    _, _, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2 = hmm_train(train_texts, dev_texts)
     print("Done training, now computing accuracy!")
-    print(compute_accuracy(train_texts, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2))
-    print(compute_accuracy(dev_texts, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2))
-    print(compute_accuracy(test_texts, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2))
+    print(compute_accuracy(train_texts, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, q, e, S, lambda1, lambda2))
+    print(compute_accuracy(dev_texts, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, q, e, S, lambda1, lambda2))
+    print(compute_accuracy(test_texts, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, q, e, S, lambda1, lambda2))
 
 
 if __name__ == "__main__":
