@@ -162,7 +162,6 @@ def overall_classifier(sentence, gamma1, gamma2, lambda1, lambda2, logreg, vec, 
     :param logreg: learned for MEMM use
     :param vec: vectorization function for MEMM use
     :param idx_to_tag_dict: dictionary of indices to tags
-    :param extra_decoding_arguments: extra decoding arguments
     :param predictor_from_file: for BiLSTM use
     :param model_from_file: for BiLSTM use
     :param id_to_tran: dictionary of indices to tags

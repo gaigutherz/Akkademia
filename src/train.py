@@ -28,16 +28,15 @@ def memm_train_and_store():
     train_texts, dev_texts, test_texts, _, _, _, _ = preprocess()
 
     logreg, vec, idx_to_tag_dict = memm_train(train_texts, dev_texts)
-    extra_decoding_arguments = build_extra_decoding_arguments(train_texts)
 
-    dump_object_to_file((logreg, vec, idx_to_tag_dict, extra_decoding_arguments, test_texts),
+    dump_object_to_file((logreg, vec, idx_to_tag_dict, test_texts),
                         Path(r"../output/memm_model.pkl"))
 
 
 def memm_train_and_test():
     memm_train_and_store()
 
-    logreg, vec, idx_to_tag_dict, extra_decoding_arguments, test_texts = \
+    logreg, vec, idx_to_tag_dict, test_texts = \
         load_object_from_file(Path("../output/memm_model.pkl"))
     print(compute_accuracy(test_texts, memm_greedy, logreg, vec, idx_to_tag_dict))
 
