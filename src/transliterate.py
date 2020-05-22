@@ -1,6 +1,8 @@
 from pathlib import Path
 from data import logits_to_trans, load_object_from_file
-from combine_algorithms import overall_classifier, overall_choose_best_gammas, list_to_tran, sentence_to_allen_format
+from combine_algorithms import overall_classifier, overall_choose_best_gammas, list_to_tran, sentence_to_allen_format, \
+    sentence_to_HMM_format
+from hmm import hmm_viterbi
 
 
 def signs_to_transliteration(sentence):
@@ -16,6 +18,15 @@ def signs_to_transliteration(sentence):
     return list_to_tran(biLSTM_predicted_tags)
 
 
+def signs_to_transliteration_hmm(sentence):
+    most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2, test_texts = \
+        load_object_from_file(Path(r"../output/hmm_model.pkl"))
+
+    HMM_predicted_tags = hmm_viterbi(sentence_to_HMM_format(sentence), total_tokens, q_bi_counts, q_uni_counts, q, e,
+                           S, most_common_tag, possible_tags, lambda1, lambda2)
+    return HMM_predicted_tags
+
+
 def main():
     """
     Loads all models' learned data and open an interpreter for transliterating sentences from input
@@ -25,7 +36,7 @@ def main():
         load_object_from_file(Path(r"../output/hmm_model.pkl"))
 
     logreg, vec, idx_to_tag_dict, test_texts = \
-        load_object_from_file(Path(r"../output/memm_model.pkl"))
+       load_object_from_file(Path(r"../output/memm_model.pkl"))
 
     model, predictor, sign_to_id, id_to_tran, test_texts = load_object_from_file(Path(r"../output/biLSTM_model.pkl"))
 
@@ -42,14 +53,9 @@ def main():
         if sentence == "":
             continue
 
-        overall_predicted_tags = overall_classifier(sentence, gamma1, gamma2, lambda1, lambda2, logreg, vec,
-                        idx_to_tag_dict, predictor, model, id_to_tran, sign_to_id, True)
-
-        overall_tran = list_to_tran(overall_predicted_tags)
-
-        # overall_tran = signs_to_transliteration(sentence)
-
-        print("Overall transcription: \n" + overall_tran)
+        overall_classifier(sentence, gamma1, gamma2, total_tokens, q_bi_counts, q_uni_counts,
+            q, e, S, most_common_tag, possible_tags, lambda1, lambda2, logreg, vec, idx_to_tag_dict, predictor, model,
+                                                    id_to_tran, sign_to_id, True)
 
 
 if __name__ == '__main__':

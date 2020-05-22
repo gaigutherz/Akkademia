@@ -29,7 +29,8 @@ def hmm_train_and_test():
 
     most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2, test_texts = \
         load_object_from_file(Path(r"../output/hmm_model.pkl"))
-    print(compute_accuracy(test_texts, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2))
+    print(compute_accuracy(test_texts, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, q, e, S, most_common_tag,
+                           possible_tags, lambda1, lambda2))
 
 
 def memm_train_and_store():
@@ -79,7 +80,7 @@ def biLSTM_train_and_test():
     """
     biLSTM_train_and_store()
 
-    model, predictor, sign_to_id, id_to_tran, test_texts = load_object_from_file(Path("../output/biLSTM_model.pkl"))
+    model, predictor, sign_to_id, id_to_tran, test_texts = load_object_from_file(Path(r"../output/biLSTM_model.pkl"))
     print(compute_accuracy(test_texts, BiLSTM_predict, model, predictor, sign_to_id, id_to_tran))
 
 

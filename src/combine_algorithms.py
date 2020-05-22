@@ -134,7 +134,9 @@ def overall_compute_accuracy(test_data, gamma1, gamma2, lambda1, lambda2, logreg
         for i in sentence:
             new_sentence += i[0]
 
-        predicted_tags = overall_classifier(new_sentence, gamma1, gamma2, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments, predictor_from_file, model_from_file, id_to_tran, sign_to_id, False)
+        predicted_tags = overall_classifier(new_sentence, gamma1, gamma2, total_tokens, q_bi_counts, q_uni_counts, q,
+                    e, S, lambda1, lambda2, logreg, vec, idx_to_tag_dict, extra_decoding_arguments,
+                                            predictor_from_file, model_from_file, id_to_tran, sign_to_id, False)
 
         for i in range(len(sentence)):
             total += 1
@@ -151,7 +153,9 @@ def overall_compute_accuracy(test_data, gamma1, gamma2, lambda1, lambda2, logreg
     return float(correct) / total
 
 
-def overall_classifier(sentence, gamma1, gamma2, lambda1, lambda2, logreg, vec, idx_to_tag_dict, predictor_from_file, model_from_file, id_to_tran, sign_to_id, is_verbose):
+def overall_classifier(sentence, gamma1, gamma2, total_tokens, q_bi_counts, q_uni_counts, q, e, S, most_common_tag,
+                       possible_tags, lambda1, lambda2, logreg, vec, idx_to_tag_dict, predictor_from_file,
+                       model_from_file, id_to_tran, sign_to_id, is_verbose):
     """
     Classify the tags with the best gammas for combination of BiLSTM, MEMM and HMM (the strength of each algorithm)
     :param sentence: sentence to tag
@@ -172,7 +176,9 @@ def overall_classifier(sentence, gamma1, gamma2, lambda1, lambda2, logreg, vec, 
 
     if is_verbose:
         print(sentence)
-    HMM_predicted_tags = hmm_viterbi(sentence_to_HMM_format(sentence), 0, {}, {}, lambda1, lambda2)
+    HMM_predicted_tags = hmm_viterbi(sentence_to_HMM_format(sentence), total_tokens, q_bi_counts, q_uni_counts, q, e,
+                           S, most_common_tag, possible_tags, lambda1, lambda2)
+
     if is_verbose:
         print("HMM prediction: ")
         print(HMM_predicted_tags)
@@ -218,7 +224,11 @@ def overall_classifier(sentence, gamma1, gamma2, lambda1, lambda2, logreg, vec, 
     algorithms_tags = (biLSTM_predicted_tags, biLSTM_predicted2_tags, biLSTM_predicted3_tags,
     biLSTM_scores, biLSTM_scores2, biLSTM_scores3,
     HMM_predicted_tags, MEMM_predicted_tags)
-    return combine_tags(algorithms_tags, gamma1, gamma2)
+    overall_tran = list_to_tran(combine_tags(algorithms_tags, gamma1, gamma2))
+
+    if is_verbose:
+        print("Overall transcription: ")
+        print(overall_tran)
 
 
 def combine_tags(algorithms_tags, gamma1, gamma2):

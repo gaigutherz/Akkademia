@@ -27,7 +27,6 @@ def hmm_preprocess(train_sents):
             increment_count(e_word_tag_counts, key)
 
     # New update to enhance performance.
-    global most_common_tag
     most_common_tag = {}
     for word, tag in e_word_tag_counts:
         if word not in most_common_tag:
@@ -70,7 +69,6 @@ def hmm_preprocess(train_sents):
             increment_count(q_tri_counts, key)
 
     # possible tags
-    global possible_tags
     possible_tags = {}
     for sentence in train_sents:
         for token in sentence:
@@ -79,7 +77,8 @@ def hmm_preprocess(train_sents):
             else:
                 possible_tags[token[0]] = {token[1]}
 
-    return total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts
+    return total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts, most_common_tag, \
+           possible_tags
 
 
 def hmm_compute_q_e_S(total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts):
@@ -111,7 +110,7 @@ def hmm_compute_q_e_S(total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_w
     return q, e, S
 
 
-def hmm_viterbi(sent, total_tokens, q_bi_counts, q_uni_counts, q, e, S, lambda1, lambda2):
+def hmm_viterbi(sent, total_tokens, q_bi_counts, q_uni_counts, q, e, S, most_common_tag, possible_tags, lambda1, lambda2):
     """
     Predict the transliteration of a sentence of signs
     :param sent: the sentence of signs to predict
@@ -245,7 +244,7 @@ def hmm_viterbi(sent, total_tokens, q_bi_counts, q_uni_counts, q, e, S, lambda1,
     return predicted_tags
 
 
-def hmm_choose_best_lamdas(dev_data, total_tokens, q_bi_counts, q_uni_counts, q, e, S):
+def hmm_choose_best_lamdas(dev_data, total_tokens, q_bi_counts, q_uni_counts, q, e, S, most_common_tag, possible_tags):
     """
     Do grid search to find lambda1 and lambda2
     :param dev_data: dev sentences for the model
@@ -260,7 +259,7 @@ def hmm_choose_best_lamdas(dev_data, total_tokens, q_bi_counts, q_uni_counts, q,
             lambda1 = i / 10.0
             lambda2 = j / 10.0
             accuracy, _, _ = compute_accuracy(dev_data, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, q, e, S,
-                                              lambda1, lambda2)
+                                              most_common_tag, possible_tags, lambda1, lambda2)
             print("For lambda1 = " + str(lambda1), ", lambda2 = " + str(lambda2), \
                 ", lambda3 = " + str(1 - lambda1 - lambda2) + " got accuracy = " + str(accuracy))
             if accuracy > best_accuracy:
@@ -284,24 +283,31 @@ def hmm_train(train_sents, dev_sents):
     """
     vocab = compute_vocab_count(train_sents)
 
-    total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts = hmm_preprocess(train_sents)
+    total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts, most_common_tag, \
+            possible_tags = hmm_preprocess(train_sents)
     q, e, S = hmm_compute_q_e_S(total_tokens, q_tri_counts, q_bi_counts, q_uni_counts, e_word_tag_counts, e_tag_counts)
 
-    lambda1, lambda2 = hmm_choose_best_lamdas(dev_sents[:1], total_tokens, q_bi_counts, q_uni_counts, q, e, S)
+    lambda1, lambda2 = hmm_choose_best_lamdas(dev_sents[:1], total_tokens, q_bi_counts, q_uni_counts, q, e, S,
+                                              most_common_tag, possible_tags)
     return most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2
 
 
 def main():
     """
-    Test the run of HMM
+    Tests the run of HMM
     :return: nothing
     """
     train_texts, dev_texts, test_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran = preprocess()
-    _, _, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2 = hmm_train(train_texts, dev_texts)
+    most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2 = \
+        hmm_train(train_texts, dev_texts)
+
     print("Done training, now computing accuracy!")
-    print(compute_accuracy(train_texts, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, q, e, S, lambda1, lambda2))
-    print(compute_accuracy(dev_texts, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, q, e, S, lambda1, lambda2))
-    print(compute_accuracy(test_texts, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, q, e, S, lambda1, lambda2))
+    print(compute_accuracy(train_texts, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, q, e, S, most_common_tag,
+                           possible_tags, lambda1, lambda2))
+    print(compute_accuracy(dev_texts, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, q, e, S, most_common_tag,
+                           possible_tags, lambda1, lambda2))
+    print(compute_accuracy(test_texts, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, q, e, S, most_common_tag,
+                           possible_tags, lambda1, lambda2))
 
 
 if __name__ == "__main__":

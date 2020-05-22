@@ -335,7 +335,8 @@ def memm_hmm_eval(test_data, logreg, vec, index_to_tag_dict, extra_decoding_argu
     lambda1, lambda2 = hmm_choose_best_lamdas(test_data[:25])
 
     for i, sen in enumerate(test_data):
-        predicted_hmm = hmm_viterbi(sen, 0, {}, {}, lambda1, lambda2)
+        predicted_hmm = hmm_viterbi(sent, total_tokens, q_bi_counts, q_uni_counts, q, e, S, most_common_tag,
+                                    possible_tags, lambda1, lambda2)
         predicted_greedy = memm_greedy(sen, logreg, vec, index_to_tag_dict)
         predicted_viterbi = memm_viterbi(sen, logreg, vec, index_to_tag_dict, extra_decoding_arguments)
         for j in range(len(sen)):
