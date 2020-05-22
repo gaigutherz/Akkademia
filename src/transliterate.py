@@ -1,15 +1,15 @@
 from pathlib import Path
 from data import logits_to_trans, load_object_from_file
-from combine_algorithms import overall_classifier, overall_choose_best_gammas, list_to_tran, sentence_to_allen_format, \
+from combine_algorithms import overall_classifier, list_to_tran, sentence_to_allen_format, \
     sentence_to_HMM_format
 from hmm import hmm_viterbi
 
 
 def signs_to_transliteration(sentence):
     """
-    Transliterate sentence using biLSTM prediction
-    :param sentence: the sentence to be transliterated
-    :return: the transliteration of sentence
+    Transliterate signs using biLSTM
+    :param sentence: signs to be transliterated
+    :return: transliteration of the sentence
     """
     model, predictor, sign_to_id, id_to_tran, test_texts = load_object_from_file(Path(r"../output/biLSTM_model.pkl"))
 
@@ -19,6 +19,11 @@ def signs_to_transliteration(sentence):
 
 
 def signs_to_transliteration_hmm(sentence):
+    """
+    Transliterate signs using HMM
+    :param sentence: signs to be transliterated
+    :return: transliteration of the sentence
+    """
     most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2, test_texts = \
         load_object_from_file(Path(r"../output/hmm_model.pkl"))
 
