@@ -89,9 +89,9 @@ def main():
     Trains biLSTM, MEMM and HMM models, stores all data and print the accuracies
     :return: nothing, stores everything in pickles
     """
-    # hmm_train_and_test()
-    memm_train_and_test()
-    #biLSTM_train_and_test()
+    hmm_train_and_test()
+    # memm_train_and_test()
+    # biLSTM_train_and_test()
 
 
 if __name__ == '__main__':
