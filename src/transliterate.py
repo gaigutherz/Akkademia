@@ -4,6 +4,11 @@ from combine_algorithms import overall_classifier, overall_choose_best_gammas, l
 
 
 def signs_to_transliteration(sentence):
+    """
+    Transliterate sentence using biLSTM prediction
+    :param sentence: the sentence to be transliterated
+    :return: the transliteration of sentence
+    """
     model, predictor, sign_to_id, id_to_tran, test_texts = load_object_from_file(Path(r"../output/biLSTM_model.pkl"))
 
     tag_logits = predictor.predict(sentence_to_allen_format(sentence, sign_to_id, True))['tag_logits']
@@ -12,6 +17,10 @@ def signs_to_transliteration(sentence):
 
 
 def main():
+    """
+    Loads all models' learned data and open an interpreter for transliterating sentences from input
+    :return: nothing, never stops
+    """
     most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2, test_texts = \
         load_object_from_file(Path(r"../output/hmm_model.pkl"))
 
