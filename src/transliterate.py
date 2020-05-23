@@ -34,7 +34,7 @@ def signs_to_transliteration_hmm(sentence):
 
 def main():
     """
-    Loads all models' learned data and open an interpreter for transliterating sentences from input
+    Loads all models' learned data and open an interpreter for transliterating sentences of signs from input
     :return: nothing, never stops
     """
     most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2, test_texts = \
