@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="akkadian",
-    version="0.1.10",
+    version="0.1.11",
     author="Ariel Elazary, Gai Gutherz",
     author_email="am.elazary@gmail.com, gaigutherz@gmail.com",
     description="Translating Akkadian signs to transliteration using NLP algorithms",
@@ -18,6 +18,6 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    package_data={'akkadian': ["output/bilstm_model.pkl", "output/hmm_model.pkl"]},
+    package_data={'akkadian': ["output/bilstm_model.pkl", "output/memm_model.pkl", "output/hmm_model.pkl"]},
     include_package_data=True,
 )
