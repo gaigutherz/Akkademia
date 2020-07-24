@@ -99,9 +99,9 @@ def main():
 
 if __name__ == '__main__':
     # main()
-    signs = "𒁹𒀭𒂗𒍪𒋀𒈨𒌍𒌷𒁀 𒈗 𒃲 𒈗 𒆗𒉡 𒈗 𒆳 𒀸𒋩𒆠 𒈗 𒆷 𒃻𒈾𒀭 𒊑𒂍𒌝"
-    print(transliterate(signs))
-    print(transliterate_bilstm(signs))
-    print(transliterate_bilstm_top3(signs))
-    print(transliterate_hmm(signs))
-    print(transliterate_memm(signs))
+    example = "𒁹𒀭𒌍𒋀𒈨𒌍𒌷𒁀"
+    print(transliterate(example))
+    print(transliterate_bilstm(example))
+    print(transliterate_bilstm_top3(example))
+    print(transliterate_hmm(example))
+    print(transliterate_memm(example))
