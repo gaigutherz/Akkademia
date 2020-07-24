@@ -99,8 +99,9 @@ def main():
 
 if __name__ == '__main__':
     # main()
-    print(transliterate("𒁕𒄿𒁍 𒂵𒊑𒂊𒋗 𒄨 𒃼𒁺 𒊓𒉿𒉡 𒈾𒆠𒊑 𒃻 𒄯𒊓𒀀𒉌"))
-    print(transliterate_bilstm("𒁕𒄿𒁍 𒂵𒊑𒂊𒋗 𒄨 𒃼𒁺 𒊓𒉿𒉡 𒈾𒆠𒊑 𒃻 𒄯𒊓𒀀𒉌"))
-    print(transliterate_bilstm_top3("𒁕𒄿𒁍 𒂵𒊑𒂊𒋗 𒄨 𒃼𒁺 𒊓𒉿𒉡 𒈾𒆠𒊑 𒃻 𒄯𒊓𒀀𒉌"))
-    print(transliterate_hmm("𒁕𒄿𒁍 𒂵𒊑𒂊𒋗 𒄨 𒃼𒁺 𒊓𒉿𒉡 𒈾𒆠𒊑 𒃻 𒄯𒊓𒀀𒉌"))
-    print(transliterate_memm("𒁕𒄿𒁍 𒂵𒊑𒂊𒋗 𒄨 𒃼𒁺 𒊓𒉿𒉡 𒈾𒆠𒊑 𒃻 𒄯𒊓𒀀𒉌"))
+    signs = "𒁹𒀭𒂗𒍪𒋀𒈨𒌍𒌷𒁀 𒈗 𒃲 𒈗 𒆗𒉡 𒈗 𒆳 𒀸𒋩𒆠 𒈗 𒆷 𒃻𒈾𒀭 𒊑𒂍𒌝"
+    print(transliterate(signs))
+    print(transliterate_bilstm(signs))
+    print(transliterate_bilstm_top3(signs))
+    print(transliterate_hmm(signs))
+    print(transliterate_memm(signs))
