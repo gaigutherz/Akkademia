@@ -1,3 +1,36 @@
+r"""akkadian <https://github.com/gaigutherz/Translating-Akkadian-using-NLP> is a tool for transliterating akkadian.
+
+Tranliterating akkadian signs::
+
+    >>> import akkadian.transliterate as akk
+    >>> print(akk.transliterate("𒁹𒀭𒌍𒋀𒈨𒌍𒌷𒁀"))
+    "{m}-{d}-30-ŠEŠ.MEŠ {URU}-ba-"
+
+Tranliterating akkadian signs using BiLSTM::
+
+    >>> import akkadian.transliterate as akk
+    >>> print(akk.transliterate_bilstm("𒁹𒀭𒌍𒋀𒈨𒌍𒌷𒁀"))
+    "{m}-{d}-30-ŠEŠ.MEŠ {URU}-ba-"
+
+Top three options of tranliterating akkadian signs using BiLSTM::
+
+    >>> import akkadian.transliterate as akk
+    >>> print(akk.transliterate_bilstm_top3("𒁹𒀭𒌍𒋀𒈨𒌍𒌷𒁀"))
+    ('{m}-{d}-30-ŠEŠ.MEŠ {URU}-ba-', 'ana 30 PAP.MEŠ-30 URU BA-', '1-AN.GIŠ.BARA₂.ME-eš URU-ba ')
+
+Tranliterating akkadian signs using MEMM::
+
+    >>> import akkadian.transliterate as akk
+    >>> print(akk.transliterate_memm("𒁹𒀭𒌍𒋀𒈨𒌍𒌷𒁀"))
+    "{m}-{d}-MAŠ-GU₂.MEŠ {URU}-ba-"
+
+Tranliterating akkadian signs using HMM::
+
+    >>> import akkadian.transliterate as akk
+    >>> print(akk.transliterate_hmm("𒁹𒀭𒌍𒋀𒈨𒌍𒌷𒁀"))
+    "{m}-{d}-30-ŠEŠ.MEŠ-eri-ba"
+"""
+
 import os
 
 this_dir, this_filename = os.path.split(__file__)

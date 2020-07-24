@@ -89,7 +89,7 @@ def main():
     """
     # hmm_train_and_test()
     # memm_train_and_test()
-    biLSTM_train_and_test()
+    # biLSTM_train_and_test()
 
 
 if __name__ == '__main__':
