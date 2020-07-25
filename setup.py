@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="akkadian",
-    version="1.0.1",
+    version="1.0.2",
     author="Ariel Elazary, Gai Gutherz",
     author_email="am.elazary@gmail.com, gaigutherz@gmail.com",
     description="Translating Akkadian signs to transliteration using NLP algorithms",
@@ -20,4 +20,7 @@ setuptools.setup(
     ],
     include_package_data=True,
     package_data={'akkadian': ["output/bilstm_model.pkl", "output/memm_model.pkl", "output/hmm_model.pkl"]},
+    install_requires=[
+        'allennlp==0.8.5',
+    ],
 )

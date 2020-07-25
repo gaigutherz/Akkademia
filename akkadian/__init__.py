@@ -41,3 +41,9 @@ memm_path = os.path.join(output_path, "memm_model.pkl")
 bilstm_path = os.path.join(output_path, "bilstm_model.pkl")
 
 dictionary_path = os.path.join(output_path, "dictionary.txt")
+
+train_path = os.path.join("..", "BiLSTM_input", "allen_train_texts.txt")
+validation_path = os.path.join("..", "BiLSTM_input", "allen_dev_texts.txt")
+
+predictor_path = os.path.join("output", "predictor")
+model_path = os.path.join("output", "model")
