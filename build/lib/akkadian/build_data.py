@@ -1,10 +1,9 @@
 import os
 import random
-import platform
 from pathlib import Path
 from akkadian.parse_json import parse_json
 from akkadian.data import reorganize_data, rep_to_ix, invert_dict, add_to_dictionary
-from akkadian.__init__ import dictionary_path
+from akkadian.__init__ import dictionary_path, train_path, validation_path
 
 
 def build_signs_and_transcriptions(corpora, add_three_dots=False):
@@ -125,10 +124,7 @@ def write_dictionary_to_file(d):
     :param d: the dictionary to save
     :return: nothing
     """
-    if platform.system() == "Windows":
-        output_file = open(dictionary_path, "w", encoding="utf8")
-    else:
-        output_file = open(dictionary_path, "w", encoding="utf8")
+    output_file = open(dictionary_path, "w", encoding="utf8")
 
     for sign in d:
         output_file.write(sign + "\n")
@@ -216,8 +212,8 @@ def preprocess():
     dev_texts = texts[TEN_PERCENT : 2*TEN_PERCENT]
     train_texts = texts[2*TEN_PERCENT:]
 
-    write_data_for_allen_to_file(dev_texts, Path(r"../BiLSTM_input/allen_dev_texts.txt"), sign_to_id, tran_to_id)
-    write_data_for_allen_to_file(train_texts, Path(r"../BiLSTM_input/allen_train_texts.txt"), sign_to_id, tran_to_id)
+    write_data_for_allen_to_file(train_texts, train_path, sign_to_id, tran_to_id)
+    write_data_for_allen_to_file(dev_texts, validation_path, sign_to_id, tran_to_id)
 
     return train_texts, dev_texts, test_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran
 

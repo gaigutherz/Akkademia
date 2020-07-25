@@ -21,6 +21,7 @@ import platform
 from pathlib import Path
 from akkadian.build_data import preprocess
 from akkadian.data import dump_object_to_file, load_object_from_file, logits_to_trans, compute_accuracy
+from akkadian.__init__ import train_path, validation_path, predictor_path, model_path
 
 
 torch.manual_seed(1)
@@ -113,12 +114,8 @@ def prepare1():
              biLSTM reader object
     """
     reader = PosDatasetReader()
-    if platform.system() == "Windows":
-        train_dataset = reader.read(r"..\BiLSTM_input\allen_train_texts.txt")
-        validation_dataset = reader.read(r"..\BiLSTM_input\allen_dev_texts.txt")
-    else:
-        train_dataset = reader.read(r"../BiLSTM_input/allen_train_texts.txt")
-        validation_dataset = reader.read(r"../BiLSTM_input/allen_dev_texts.txt")
+    train_dataset = reader.read(train_path)
+    validation_dataset = reader.read(validation_path)
 
     vocab = Vocabulary.from_instances(train_dataset + validation_dataset)
 
@@ -178,8 +175,8 @@ def train(trainer, model, reader):
     trainer.train()
     predictor = SentenceTaggerPredictor(model, dataset_reader=reader)
 
-    dump_object_to_file(predictor, Path(r".output/predictor"))
-    dump_object_to_file(model, Path(r".output/model"))
+    dump_object_to_file(predictor, predictor_path)
+    dump_object_to_file(model, model_path)
 
 
 def check_results(train_texts, dev_texts, test_texts, sign_to_id, id_to_tran):
@@ -192,8 +189,8 @@ def check_results(train_texts, dev_texts, test_texts, sign_to_id, id_to_tran):
     :param id_to_tran: dictionary mapping ids to transliterations
     :return: nothing
     """
-    predictor_from_file = load_object_from_file(Path(r".output/predictor"))
-    model_from_file = load_object_from_file(Path(r".output/model"))
+    predictor_from_file = load_object_from_file(predictor_path)
+    model_from_file = load_object_from_file(model_path)
 
     print(compute_accuracy(train_texts, BiLSTM_predict, model_from_file, predictor_from_file, sign_to_id, id_to_tran))
     print(compute_accuracy(dev_texts, BiLSTM_predict, model_from_file, predictor_from_file, sign_to_id, id_to_tran))
