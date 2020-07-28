@@ -52,7 +52,7 @@ Now you can run the project and insert the Akkadian signs!
 
 	Contains dictionaries used for natural machine translation.
 	
-akkadian.egg-info:
+**akkadian.egg-info**:
 
 	Inforamtion  and settings for akkadian python package.
 	
@@ -60,9 +60,7 @@ akkadian.egg-info:
 
 	Sources and train's output.
 	
-	**output**:
-	
-		Train's output for HMM, MEMM and BiLSTM - mostly pickles.
+	output:	Train's output for HMM, MEMM and BiLSTM - mostly pickles.
 		
 	__init__.py: Init script for akkadian python package. Initializes global variables.
 	
@@ -92,13 +90,13 @@ akkadian.egg-info:
 	
 	translation_tokenize.py: Code for tokenization for translation task.
 	
-	**transliterate.py**: API for transliterating using all 3 algorithms.
+	transliterate.py: API for transliterating using all 3 algorithms.
 	
-build/lib/akkadian:
+**build/lib/akkadian**:
 
 	Inforamtion  and settings for akkadian python package.
 	
-dist:
+**dist**:
 
 	Akkadian python package - wheel and tar.
 	
@@ -106,31 +104,31 @@ dist:
 
 	Databases used for  training the models.
 	
-	**random**:
+	random:
 	
 		4 Texts used for cross era testing.
 		
-	**riao**:
+	riao:
 	
 		This project intends to present annotated editions of the entire corpus of Assyrian royal inscriptions, texts that were published in RIMA 1-3.
 		
-	**ribo**:
+	ribo:
 	
 		This project intends to present annotated editions of the entire corpus of Babylonian royal inscriptions from the Second Dynasty of Isin to the Neo-Babylonian Dynasty (1157-539 BC).
 		
-	**rinap**:
+	rinap:
 	
 		Presents fully searchable, annotated editions of the royal inscriptions of Neo-Assyrian kings Tiglath-pileser III (744-727 BC), Shalmaneser V (726-722 BC), Sennacherib (704-681 BC), Esarhaddon (680-669 BC), Ashurbanipal (668-631 BC), Aššur-etel-ilāni (630-627 BC), and Sîn-šarra-iškun (626-612 BC).
 		
-	**saao**:
+	saao:
 	
 		The online counterpart to the State Archives of Assyria series.
 		
-	**suhu**:
+	suhu:
 	
 		This project presents annotated editions of the officially commissioned texts of the extant, first-millennium-BC inscriptions of the rulers of Suhu, texts published in Frame, RIMB 2 pp. 275-331.
 		
-	**tei**:
+	tei:
 	
 		Databases used for full translation.
 		
