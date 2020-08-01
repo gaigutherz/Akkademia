@@ -13,10 +13,10 @@ There are 3 main ways to deploy the project:
 ## Website
 Use this link to access the website: https://babylonian.herokuapp.com/#/
 
-This project is under "Translit" tab.
+Go to "Translit" tab and enter signs to see them transliterated.
 
 ## Python Package
-These instructions will get you a copy of the project up and running on your local machine testing purposes using akkadian python package.
+These instructions will get you a copy of the project up and running on your local machine for testing purposes using akkadian python package.
 
 ### Prerequisites
 Install Python 3.6 or 3.7 - Link for example (version 3.7.1): https://www.python.org/downloads/release/python-371/
