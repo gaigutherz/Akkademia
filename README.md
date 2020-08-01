@@ -122,9 +122,9 @@ More datasets used:
 
 ### Datasets deployment
 
-The datasets are taken from ORACC project: http://oracc.museum.upenn.edu/projectlist.html.
+The datasets are taken from ORACC project and can be downloaded from the following link: http://oracc.museum.upenn.edu/rinap/rinapdownloads/index.html.
 
-The datasets are located in the "raw_data" directory. They can be downloaded from the Github repository using git clone or zip download.
+In our repository the datasets are located in the "raw_data" directory. They can be also downloaded from the Github repository using git clone or zip download.
 
 ## Project structure
 
