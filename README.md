@@ -91,7 +91,10 @@ pip install allennlp==0.8.5
 
 ### Cloning the project
 
-Clone the project - git clone https://github.com/gaigutherz/Translating-Akkadian-using-NLP.git
+Clone the project:
+```
+git clone https://github.com/gaigutherz/Translating-Akkadian-using-NLP.git
+```
 
 Now you can devedlop for the Translating-Akkadian-using-NLP repository and and your improvements!
 
