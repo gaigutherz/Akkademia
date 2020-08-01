@@ -16,19 +16,20 @@ Use this link to access the website: https://babylonian.herokuapp.com/#/
 Go to "Translit" tab and enter signs to see them transliterated.
 
 ## Python Package
-These instructions will get you a copy of the project up and running on your local machine for testing purposes using akkadian python package.
+These instructions will enable you to use the project on your local machine for transliterating using "akkadian" python package that is based on our project.
 
 ### Prerequisites
-Install Python 3.6 or 3.7 - Link for example (version 3.7.1): https://www.python.org/downloads/release/python-371/
+Install Python 3.6 or 3.7 - Link for example (version 3.7.1): https://www.python.org/downloads/release/python-371/.
 
 ### Installing
-Install akkadian package:
+Install akkadian package.
+One way to do so is using pip:
 ```
 pip install akkadian
 ```
 
 ### Running
-Few examples for running sessions.
+Following are a few examples for running sessions.
 
 Tranliterating akkadian signs:
 ```
@@ -61,43 +62,38 @@ print(akk.transliterate_hmm("𒁹𒀭𒌍𒋀𒈨𒌍𒌷𒁀"))
 ```
 
 ## Github
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
-Install Python 3.6 or 3.7 - Link for example (version 3.7.1): https://www.python.org/downloads/release/python-371/
+Install Python 3.6 or 3.7 - Link for example (version 3.7.1): https://www.python.org/downloads/release/python-371/.
 
-Install git - https://git-scm.com/downloads (Choose your Operating system)
+If you don't have git installed, install git - https://git-scm.com/downloads (Choose the appropriate operating system).
 
-Create a GitHub user - https://github.com/join?source=header-home
+If you don't have a Github user, create one - https://github.com/join?source=header-home.
 
-### Installing
-A step by step series of examples that tell you how to get a development env running.
+### Installing the python dependencies
 
 Install torch:
 Windows - 
 ```
-pip3 install torch===1.3.1 torchvision===0.4.2 -f https://download.pytorch.org/whl/torch_stable.html
+pip install torch===1.3.1 torchvision===0.4.2 -f https://download.pytorch.org/whl/torch_stable.html
 ```
 
 Linux and MAC - 
 ```
-pip3 install torch torchvision
+pip install torch torchvision
 ```
 
 Install allennlp:
 ```
-pip install allennlp
+pip install allennlp==0.8.5
 ```
 
-Open pycharm and choose "Check out from version control"
+### Cloning the project
 
-Insert the GitHub project path  - https://github.com/gaigutherz/Translating-Akkadian-using-NLP.git
+Clone the project - git clone https://github.com/gaigutherz/Translating-Akkadian-using-NLP.git
 
-Insert your GitHub credentials
-
-Clone
-
-Now you can run the project and insert the Akkadian signs!
+Now you can devedlop for the Translating-Akkadian-using-NLP repository and and your improvements!
 
 ### Project structure
 
