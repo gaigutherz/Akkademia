@@ -110,15 +110,15 @@ The main datasets used for training and tests are:
 
 More datasets used:
 		
-riao - This project intends to present annotated editions of the entire corpus of Assyrian royal inscriptions, texts that were published in RIMA 1-3.
+**riao** - This project intends to present annotated editions of the entire corpus of Assyrian royal inscriptions, texts that were published in RIMA 1-3.
 		
-ribo - This project intends to present annotated editions of the entire corpus of Babylonian royal inscriptions from the Second Dynasty of Isin to the Neo-Babylonian Dynasty (1157-539 BC).
+**ribo** - This project intends to present annotated editions of the entire corpus of Babylonian royal inscriptions from the Second Dynasty of Isin to the Neo-Babylonian Dynasty (1157-539 BC).
 		
-saao - The online counterpart to the State Archives of Assyria series.
+**saao** - The online counterpart to the State Archives of Assyria series.
 		
-suhu - This project presents annotated editions of the officially commissioned texts of the extant, first-millennium-BC inscriptions of the rulers of Suhu, texts published in Frame, RIMB 2 pp. 275-331.
+**suhu** - This project presents annotated editions of the officially commissioned texts of the extant, first-millennium-BC inscriptions of the rulers of Suhu, texts published in Frame, RIMB 2 pp. 275-331.
 		
-tei - Databases used for full translation.
+**tei** - Databases used for full translation.
 
 ## Project structure
 
