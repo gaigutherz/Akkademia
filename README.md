@@ -100,6 +100,14 @@ Now you can devedlop for the Translating-Akkadian-using-NLP repository and and y
 
 ## Datasets
 The datasets used for training and tests are:
+
+| Dataset                                                        | King   | Time    | Line Number     | Percentage of Corpora  |
+|-----------------------------------------------------------------|--------------------|----------------|
+| RINAP 1                 | Tiglath-pileser III and Shalmaneser V      | 744-722 BC         | 1125  | 4.78% |
+| RINAP 3               | Sennacherib       | 704-681 BC         | 7131  | 30.31% |
+
+
+
 random: 4 Texts used for cross era testing.
 		
 riao: This project intends to present annotated editions of the entire corpus of Assyrian royal inscriptions, texts that were published in RIMA 1-3.
