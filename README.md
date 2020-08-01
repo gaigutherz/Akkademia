@@ -120,6 +120,12 @@ More datasets used:
 		
 **tei** - Databases used for full translation.
 
+### Datasets deployment
+
+The datasets are taken from ORACC project: http://oracc.museum.upenn.edu/projectlist.html.
+
+The datasets are located in the "raw_data" directory. They can be downloaded from the Github repository using git clone or zip download.
+
 ## Project structure
 
 **BiLSTM_input**: 
