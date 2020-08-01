@@ -2,19 +2,72 @@
 Translating Akkadian signs to transliteration using NLP algorithms such as HMM, MEMM and BiLSTM neural networks.
 
 ## Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+There are 3 main ways to deploy the project:
+	- Website
+	- Python package
+	- Github clone
+
+## Website
+Use this link to access the website: https://babylonian.herokuapp.com/#/
+This project is under "Translit" tab.
+
+## Python Package
+These instructions will get you a copy of the project up and running on your local machine testing purposes using akkadian python package.
 
 ### Prerequisites
-Install Python 3.7.1 - https://www.python.org/downloads/release/python-371/
+Install Python 3.6 or 3.7 - Link for example (version 3.7.1): https://www.python.org/downloads/release/python-371/
 
-Install Pycharm - https://www.jetbrains.com/pycharm/download/#section=windows
+### Installing
+Install akkadian package:
+```
+pip install akkadian
+```
+
+### Running
+Few examples for running sessions.
+
+Tranliterating akkadian signs:
+```
+import akkadian.transliterate as akk
+print(akk.transliterate("𒁹𒀭𒌍𒋀𒈨𒌍𒌷𒁀"))
+```
+
+Tranliterating akkadian signs using BiLSTM:
+```
+import akkadian.transliterate as akk
+print(akk.transliterate_bilstm("𒁹𒀭𒌍𒋀𒈨𒌍𒌷𒁀"))
+```
+
+Top three options of tranliterating akkadian signs using BiLSTM:
+```
+import akkadian.transliterate as akk
+print(akk.transliterate_bilstm_top3("𒁹𒀭𒌍𒋀𒈨𒌍𒌷𒁀"))
+```
+
+Tranliterating akkadian signs using MEMM:
+```
+import akkadian.transliterate as akk
+print(akk.transliterate_memm("𒁹𒀭𒌍𒋀𒈨𒌍𒌷𒁀"))
+```
+
+Tranliterating akkadian signs using HMM:
+```
+import akkadian.transliterate as akk
+print(akk.transliterate_hmm("𒁹𒀭𒌍𒋀𒈨𒌍𒌷𒁀"))
+```
+
+## Github
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+
+### Prerequisites
+Install Python 3.6 or 3.7 - Link for example (version 3.7.1): https://www.python.org/downloads/release/python-371/
 
 Install git - https://git-scm.com/downloads (Choose your Operating system)
 
 Create a GitHub user - https://github.com/join?source=header-home
 
 ### Installing
-A step by step series of examples that tell you how to get a development env running
+A step by step series of examples that tell you how to get a development env running.
 
 Install torch:
 Windows - 
