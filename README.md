@@ -3,8 +3,11 @@ Translating Akkadian signs to transliteration using NLP algorithms such as HMM, 
 
 ## Getting Started
 There are 3 main ways to deploy the project:
+
 	- Website
+	
 	- Python package
+	
 	- Github clone
 
 ## Website
