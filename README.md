@@ -98,7 +98,23 @@ git clone https://github.com/gaigutherz/Translating-Akkadian-using-NLP.git
 
 Now you can devedlop for the Translating-Akkadian-using-NLP repository and and your improvements!
 
-### Project structure
+## Datasets
+The datasets used for training and tests are:
+random: 4 Texts used for cross era testing.
+		
+riao: This project intends to present annotated editions of the entire corpus of Assyrian royal inscriptions, texts that were published in RIMA 1-3.
+		
+ribo: This project intends to present annotated editions of the entire corpus of Babylonian royal inscriptions from the Second Dynasty of Isin to the Neo-Babylonian Dynasty (1157-539 BC).
+		
+rinap: Presents fully searchable, annotated editions of the royal inscriptions of Neo-Assyrian kings Tiglath-pileser III (744-727 BC), Shalmaneser V (726-722 BC), Sennacherib (704-681 BC), Esarhaddon (680-669 BC), Ashurbanipal (668-631 BC), Aššur-etel-ilāni (630-627 BC), and Sîn-šarra-iškun (626-612 BC).
+		
+saao: The online counterpart to the State Archives of Assyria series.
+		
+suhu: This project presents annotated editions of the officially commissioned texts of the extant, first-millennium-BC inscriptions of the rulers of Suhu, texts published in Frame, RIMB 2 pp. 275-331.
+		
+tei: Databases used for full translation.
+
+## Project structure
 
 **BiLSTM_input**: 
 
