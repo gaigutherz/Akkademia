@@ -97,13 +97,13 @@ git clone https://github.com/gaigutherz/Translating-Akkadian-using-NLP.git
 Now you can develop for the Translating-Akkadian-using-NLP repository and and your improvements!
 
 #### Training
-Use the file train.py in order to train the models using the datasets. There is a function for each model that trains, stores the pickle and tests its performance.
+Use the file train.py in order to train the models using the datasets. There is a function for each model that trains, stores the pickle and tests its performance on a specific corpora.
 
 The functions are as follows:
 ```
-hmm_train_and_test()
-memm_train_and_test()
-biLSTM_train_and_test()
+hmm_train_and_test(corpora)
+memm_train_and_test(corpora)
+biLSTM_train_and_test(corpora)
 ```
 
 #### Transliterating
