@@ -38,7 +38,10 @@ output_path = os.path.join(this_dir, "output")
 
 hmm_path = os.path.join(output_path, "hmm_model.pkl")
 memm_path = os.path.join(output_path, "memm_model.pkl")
-bilstm_path = os.path.join(output_path, "bilstm_model.pkl")
+if os.name == "nt":
+    bilstm_path = os.path.join(output_path, "bilstm_model_windows.pkl")
+else:
+    bilstm_path = os.path.join(output_path, "bilstm_model_linux.pkl")
 
 dictionary_path = os.path.join(output_path, "dictionary.txt")
 
