@@ -297,7 +297,7 @@ def main():
     Tests the run of HMM
     :return: nothing
     """
-    train_texts, dev_texts, test_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran = preprocess()
+    train_texts, dev_texts, test_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran = preprocess(['rinap/rinap1', 'rinap/rinap3', 'rinap/rinap4', 'rinap/rinap5'])
     most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2 = \
         hmm_train(train_texts, dev_texts)
 

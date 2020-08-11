@@ -7,12 +7,12 @@ from akkadian.bilstm import prepare1, prepare2, BiLSTM_predict
 from akkadian.__init__ import hmm_path, memm_path, bilstm_path
 
 
-def hmm_train_and_store():
+def hmm_train_and_store(corpora):
     """
     Trains HMM model and stores all the data needed for using HMM
     :return: nothing, stores everything in hmm_model.pkl
     """
-    train_texts, dev_texts, test_texts, _, _, _, _ = preprocess()
+    train_texts, dev_texts, test_texts, _, _, _, _ = preprocess(corpora)
     most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2 = \
         hmm_train(train_texts, dev_texts)
 
@@ -20,12 +20,12 @@ def hmm_train_and_store():
                          lambda2, test_texts), hmm_path)
 
 
-def hmm_train_and_test():
+def hmm_train_and_test(corpora):
     """
     Trains HMM model, stores all data and print the accuracy
     :return: nothing, stores everything in hmm_model.pkl
     """
-    hmm_train_and_store()
+    hmm_train_and_store(corpora)
 
     most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2, test_texts = \
         load_object_from_file(hmm_path)
@@ -33,35 +33,35 @@ def hmm_train_and_test():
                            possible_tags, lambda1, lambda2))
 
 
-def memm_train_and_store():
+def memm_train_and_store(corpora):
     """
     Trains MEMM model and stores all the data needed for using MEMM
     :return: nothing, stores everything in memm_model.pkl
     """
-    train_texts, dev_texts, test_texts, _, _, _, _ = preprocess()
+    train_texts, dev_texts, test_texts, _, _, _, _ = preprocess(corpora)
 
     logreg, vec, idx_to_tag_dict = memm_train(train_texts, dev_texts)
 
     dump_object_to_file((logreg, vec, idx_to_tag_dict, test_texts), memm_path)
 
 
-def memm_train_and_test():
+def memm_train_and_test(corpora):
     """
     Trains MEMM model, stores all data and print the accuracy
     :return: nothing, stores everything in memm_model.pkl
     """
-    memm_train_and_store()
+    memm_train_and_store(corpora)
 
     logreg, vec, idx_to_tag_dict, test_texts = load_object_from_file(memm_path)
     print(compute_accuracy(test_texts, memm_greedy, logreg, vec, idx_to_tag_dict))
 
 
-def biLSTM_train_and_store():
+def biLSTM_train_and_store(corpora):
     """
     Trains biLSTM model and stores all the data needed for using biLSTM
     :return: nothing, stores everything in bilstm_model.pkl
     """
-    train_texts, dev_texts, test_texts, sign_to_id, _, _, id_to_tran = preprocess()
+    train_texts, dev_texts, test_texts, sign_to_id, _, _, id_to_tran = preprocess(corpora)
 
     model, vocab, train_dataset, validation_dataset, cuda_device, reader = prepare1()
     trainer, model, reader, vocab = prepare2(model, vocab, train_dataset, validation_dataset, cuda_device, reader)
@@ -71,12 +71,12 @@ def biLSTM_train_and_store():
     dump_object_to_file((model, predictor, sign_to_id, id_to_tran, test_texts), bilstm_path)
 
 
-def biLSTM_train_and_test():
+def biLSTM_train_and_test(corpora):
     """
     Trains biLSTM model, stores all data and print the accuracy
     :return: nothing, stores everything in bilstm_model.pkl
     """
-    biLSTM_train_and_store()
+    biLSTM_train_and_store(corpora)
 
     model, predictor, sign_to_id, id_to_tran, test_texts = load_object_from_file(bilstm_path)
     print(compute_accuracy(test_texts, BiLSTM_predict, model, predictor, sign_to_id, id_to_tran))
@@ -87,10 +87,23 @@ def main():
     Trains biLSTM, MEMM and HMM models, stores all data and print the accuracies
     :return: nothing, stores everything in pickles
     """
-    # hmm_train_and_test()
-    # memm_train_and_test()
-    # biLSTM_train_and_test()
+    print('##### MEMM #####')
+    corpora = ['rinap/rinap1', 'rinap/rinap3']
+    memm_train_and_test(corpora)
 
+    '''
+    for i in [1,3]:
+        print("\n\n Corpus number: "+str(i)+"\n")
+
+        corpora = ['rinap/rinap'+str(i)]
+
+        print('##### HMM #####')
+        #hmm_train_and_test(corpora)
+        print('##### MEMM #####')
+        memm_train_and_test(corpora)
+        print('##### BiLSTM #####')
+        #biLSTM_train_and_test(corpora)
+    '''
 
 if __name__ == '__main__':
     main()

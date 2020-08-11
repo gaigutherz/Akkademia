@@ -12,7 +12,7 @@ def hmm_train_and_store():
     Trains HMM model and stores all the data needed for using HMM
     :return: nothing, stores everything in hmm_model.pkl
     """
-    train_texts, dev_texts, test_texts, _, _, _, _ = preprocess()
+    train_texts, dev_texts, test_texts, _, _, _, _ = preprocess(['rinap/rinap1', 'rinap/rinap3', 'rinap/rinap4', 'rinap/rinap5'])
     most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2 = \
         hmm_train(train_texts, dev_texts)
 
@@ -38,7 +38,7 @@ def memm_train_and_store():
     Trains MEMM model and stores all the data needed for using MEMM
     :return: nothing, stores everything in memm_model.pkl
     """
-    train_texts, dev_texts, test_texts, _, _, _, _ = preprocess()
+    train_texts, dev_texts, test_texts, _, _, _, _ = preprocess(['rinap/rinap1', 'rinap/rinap3', 'rinap/rinap4', 'rinap/rinap5'])
 
     logreg, vec, idx_to_tag_dict = memm_train(train_texts, dev_texts)
 
@@ -61,7 +61,7 @@ def biLSTM_train_and_store():
     Trains biLSTM model and stores all the data needed for using biLSTM
     :return: nothing, stores everything in bilstm_model.pkl
     """
-    train_texts, dev_texts, test_texts, sign_to_id, _, _, id_to_tran = preprocess()
+    train_texts, dev_texts, test_texts, sign_to_id, _, _, id_to_tran = preprocess(['rinap/rinap1', 'rinap/rinap3', 'rinap/rinap4', 'rinap/rinap5'])
 
     model, vocab, train_dataset, validation_dataset, cuda_device, reader = prepare1()
     trainer, model, reader, vocab = prepare2(model, vocab, train_dataset, validation_dataset, cuda_device, reader)

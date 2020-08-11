@@ -101,7 +101,7 @@ def extract_features_base(curr_sign, next_sign, nextnext_sign, prev_sign, prevpr
     features["part"] = 1 if prev_trans[-1] == ')' else 0
 
     features["bigram"] = prev_trans
-    features["trigram"] = prevprev_trans + ',' + prev_trans
+    #features["trigram"] = prevprev_trans + ',' + prev_trans
 
     return features
 
@@ -413,12 +413,13 @@ def memm_train(train_sents, dev_sents):
     print("Done")
 
     logreg = linear_model.LogisticRegression(
-        multi_class='multinomial', max_iter=128, solver='lbfgs', C=100000, verbose=1, n_jobs=2)
+        multi_class='multinomial', max_iter=200, solver='lbfgs', C=100000, verbose=1, n_jobs=2)
     print("Fitting...")
     start = time.time()
     logreg.fit(train_examples_vectorized, train_labels)
     end = time.time()
     print("End training, elapsed " + str(end - start) + " seconds")
+
     return logreg, vec, index_to_tag_dict
 
 
@@ -429,7 +430,7 @@ def main():
     """
     full_flow_start = time.time()
 
-    train_sents, dev_sents, _, _, _, _ = preprocess()
+    train_sents, dev_sents, _, _, _, _ = preprocess(['rinap/rinap1', 'rinap/rinap3', 'rinap/rinap4', 'rinap/rinap5'])
     print(len(train_sents))
     print(len(dev_sents))
 

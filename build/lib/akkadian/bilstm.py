@@ -202,7 +202,7 @@ def main():
     Check the biLSTM model
     :return: nothing
     """
-    train_texts, dev_texts, test_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran = preprocess()
+    train_texts, dev_texts, test_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran = preprocess(['rinap/rinap1', 'rinap/rinap3', 'rinap/rinap4', 'rinap/rinap5'])
     model, vocab, train_dataset, validation_dataset, cuda_device, reader = prepare1()
     trainer, model, reader, vocab = prepare2(model, vocab, train_dataset, validation_dataset, cuda_device, reader)
     train(trainer, model, reader)

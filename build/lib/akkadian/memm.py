@@ -429,7 +429,7 @@ def main():
     """
     full_flow_start = time.time()
 
-    train_sents, dev_sents, _, _, _, _ = preprocess()
+    train_sents, dev_sents, _, _, _, _ = preprocess(['rinap/rinap1', 'rinap/rinap3', 'rinap/rinap4', 'rinap/rinap5'])
     print(len(train_sents))
     print(len(dev_sents))
 

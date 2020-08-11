@@ -5,7 +5,7 @@ from akkadian.data import from_key_to_line_number, from_key_to_text_and_line_num
 def parse_word(sentence, word):
     """
     Add all parts of word to sentence (include punctuation marks as well for example)
-    :param sentence: entence of words being built as we proceed
+    :param sentence: sentence of words being built as we proceed
     :param word: the word we are handling now
     :return: the sentence we build with one more word with all of its parts
     """

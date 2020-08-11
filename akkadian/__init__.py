@@ -1,5 +1,8 @@
 r"""akkadian <https://github.com/gaigutherz/Translating-Akkadian-using-NLP> is a tool for transliterating akkadian.
 
+In order to view akkadian signs a font that supports cuneiform unicode should be used.
+Akkadian.ttf is an example of such a font and can be downloaded from .
+
 Tranliterating akkadian signs::
 
     >>> import akkadian.transliterate as akk

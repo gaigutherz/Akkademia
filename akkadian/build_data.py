@@ -193,12 +193,12 @@ def write_data_for_allen_to_file(texts, file, sign_to_id, tran_to_id):
     output_file.close()
 
 
-def preprocess():
+def preprocess(corpora):
     """
     Does all the preparations needed for HMM, MEMM, BiLSTM - reads and organizes the train, validation and test data
     :return: nothing
     """
-    chars, _, _, _ = build_signs_and_transcriptions(["rinap/rinap5"])
+    chars, _, _, _ = build_signs_and_transcriptions(corpora)
     sentences = break_into_sentences(chars, None)
     #write_data_to_file(chars)
     d = build_dictionary(chars)
@@ -223,7 +223,7 @@ def main():
     Test the preprocess for all the algorithms
     :return: nothing
     """
-    preprocess()
+    preprocess(['rinap/rinap1', 'rinap/rinap3', 'rinap/rinap4', 'rinap/rinap5'])
 
 
 if __name__ == '__main__':
