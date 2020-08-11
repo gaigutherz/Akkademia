@@ -13,14 +13,14 @@ def build_signs_and_transcriptions(corpora, add_three_dots=False):
     :param add_three_dots: whether we should add three dots out of the .json file or not
     :return: all values we are interested in from the .json file
     """
-    base_directory = Path(r"../raw_data/")
+    base_directory = os.path.join("..", "raw_data")
     chars = {}
     translation = {}
     mapping = {}
     lines_cut_by_translation = []
 
     for corpus in corpora:
-        directory = base_directory / corpus
+        directory = os.path.join(base_directory, corpus)
         for r, d, f in os.walk(directory):
             for file in f:
                 key = str(file[:-len(".json")])
