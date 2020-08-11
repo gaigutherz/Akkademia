@@ -1,5 +1,6 @@
 import pickle
 import numpy as np
+import gzip
 MIN_FREQ = 3
 
 
@@ -282,3 +283,31 @@ def compute_accuracy(texts, prediction_function, *args):
     accuracy_without_segmentation = float(correct + correct_without_segmentation) / total
 
     return accuracy, accuracy_without_segmentation, F1
+
+
+def compress_file(file_name):
+    with open(file_name, "rb") as fp:
+        file_data = fp.read()
+    bin_data = bytearray(file_data)
+    with gzip.open(file_name + ".gz", "wb") as f:
+        f.write(bin_data)
+
+
+def decompress_file(gzip_name):
+    fp = open(gzip_name[:-len(".gz")], "wb")
+    with gzip.open(gzip_name, "rb") as f:
+        bin_data = f.read()
+    fp.write(bin_data)
+    fp.close()
+
+
+def main():
+    # for file_name in ["bilstm_model_linux.pkl", "bilstm_model_windows.pkl", "hmm_model.pkl", "memm_model.pkl"]:
+    #    compress_file("output\\" + file_name)
+    # for file_name in ["bilstm_model_linux.pkl", "bilstm_model_windows.pkl", "hmm_model.pkl", "memm_model.pkl"]:
+    #    decompress_file("output\\" + file_name + ".gz")
+    pass
+
+
+if __name__ == '__main__':
+    main()
