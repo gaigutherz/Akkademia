@@ -99,7 +99,7 @@ def main():
 
 if __name__ == '__main__':
     # main()
-    example = "𒁹𒀭𒌍𒋀𒈨𒌍𒌷𒁀"
+    example = "𒌴"
     print(transliterate(example))
     print(transliterate_bilstm(example))
     print(transliterate_bilstm_top3(example))

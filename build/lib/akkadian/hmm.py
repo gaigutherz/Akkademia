@@ -260,8 +260,8 @@ def hmm_choose_best_lamdas(dev_data, total_tokens, q_bi_counts, q_uni_counts, q,
             lambda2 = j / 10.0
             accuracy, _, _ = compute_accuracy(dev_data, hmm_viterbi, total_tokens, q_bi_counts, q_uni_counts, q, e, S,
                                               most_common_tag, possible_tags, lambda1, lambda2)
-            print("For lambda1 = " + str(lambda1), ", lambda2 = " + str(lambda2), \
-                ", lambda3 = " + str(1 - lambda1 - lambda2) + " got accuracy = " + str(accuracy))
+            #print("For lambda1 = " + str(lambda1), ", lambda2 = " + str(lambda2), \
+            #    ", lambda3 = " + str(1 - lambda1 - lambda2) + " got accuracy = " + str(accuracy))
             if accuracy > best_accuracy:
                 best_lambda1 = lambda1
                 best_lambda2 = lambda2
