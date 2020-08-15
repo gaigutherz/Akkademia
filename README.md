@@ -137,12 +137,12 @@ Use the file transliterate.py in order to transliterate using the models. There 
 
 Example of usage:
 ```
-akkadian_signs = "𒃻𒅘𒁀𒄿𒈬𒊒𒅖𒁲𒈠𒀀𒋾"
-print(transliterate(akkadian_signs))
-print(transliterate_bilstm(akkadian_signs))
-print(transliterate_bilstm_top3(akkadian_signs))
-print(transliterate_hmm(akkadian_signs))
-print(transliterate_memm(akkadian_signs))
+cuneiform_signs = "𒃻𒅘𒁀𒄿𒈬𒊒𒅖𒁲𒈠𒀀𒋾"
+print(transliterate(cuneiform_signs))
+print(transliterate_bilstm(cuneiform_signs))
+print(transliterate_bilstm_top3(cuneiform_signs))
+print(transliterate_hmm(cuneiform_signs))
+print(transliterate_memm(cuneiform_signs))
 ```
 
 ## Datasets
