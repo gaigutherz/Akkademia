@@ -241,22 +241,12 @@ In our repository the datasets are located in the "raw_data" directory. They can
 	SAAO
 		
 	SUHU
-	
-	Additional databases for future training:
-		
-	RIAO
-		
-	RIBO
-		
-	SAAO
-		
-	SUHU
 		
 	Miscellanea:
 	
-	tei: the same databases (RINAP, RIAO, RIBO, SAAO, SUHU) in XML/TEI format.
+	tei - the same databases (RINAP, RIAO, RIBO, SAAO, SUHU) in XML/TEI format.
 	
-	random: 4 texts used for testing texts outside of the training corpora. They were randomly selected from RIAO and RIBO.
+	random - 4 texts used for testing texts outside of the training corpora. They were randomly selected from RIAO and RIBO.
 		
 # Licensing
 
