@@ -27,17 +27,17 @@ Mac comes preinstalled with python 2.7, which may remain the default python vers
 ### Package Installation
 You can install the package using the pip install function. If you do not have pip installed on your computer, or you are not sure whether it is installed or not, you can follow the instructions [here](<https://www.makeuseof.com/tag/install-pip-for-python/>)
 
-Before installing the package akkadian, you will need to install the torch package. For windows, copy the following into Command Prompt (CMD):
+Before installing the package akkadian, you will need to install the torch package. For Windows, copy the following into Command Prompt (CMD):
 
 ```
 pip install torch==1.0.0 torchvision==0.2.1 -f https://download.pytorch.org/whl/torch_stable.html
 ```
-For mac copy the following into Terminal:
+For Mac and Linux copy the following into Terminal:
 
 ```
 pip install torch torchvision
 ```
-Then, type the following in Command Prompt (windows), or Terminal (mac):
+Then, type the following in Command Prompt (Windows), or Terminal (Mac and Linux):
 
 ```
 pip install akkadian
