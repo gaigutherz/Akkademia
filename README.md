@@ -97,21 +97,17 @@ If you don't have a Github user, create one [here](<https://github.com/join?sour
 
 In order to run the code, you will need the torch and allennlp libraries. If you have already installed the package akkadian, these were installed on your computer and you can skip to the next step.
 
-Install torch:
-Windows - 
-Copy the following to Command Prompt
+Install torch: For Windows, copy the following to Command Prompt
 ```
 pip install torch===1.3.1 torchvision===0.4.2 -f https://download.pytorch.org/whl/torch_stable.html
 ```
 
-Linux and MAC - 
-Copy the following to Terminal
+for Mac and Linux, copy the following to Terminal
 ```
 pip install torch torchvision
 ```
 
-Install allennlp:
-Copy the following to Command Prompt (with windows) or Terminal (with mac): 
+Install allennlp: copy the following to Command Prompt (with windows) or Terminal (with mac): 
 ```
 pip install allennlp==0.8.5
 ```
