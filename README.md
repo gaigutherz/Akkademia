@@ -20,7 +20,7 @@ Go to the "Akkademia" tab and follow the instructions there for transliterating 
 Our python package "akkadian" will enable you to use Akkademia on your local machine.
 
 ### Prerequisites
-You will need a Python 3.7.x installed. You can follow the installation instructions [here](<https://realpython.com/installing-python/>) or go straight ahead to [python's downloads page](<https://www.python.org/downloads/>) and pick an appropriate version.
+You will need a Python 3.7.x installed. Our package currently does not work with other versions of python. You can follow the installation instructions [here](<https://realpython.com/installing-python/>) or go straight ahead to [python's downloads page](<https://www.python.org/downloads/>) and pick an appropriate version.
 
 Mac comes preinstalled with python 2.7, which may remain the default python version even after installing 3.7.x. To check, type ``python --version`` into terminal. If the running version is python 2.7, the simplest short-term solution is to type ``python3`` or ``pip3`` in Terminal throughout instead of ``python`` and ``pip`` as in the instructions below.
 
@@ -87,7 +87,7 @@ This line was taken from the first line of the Epic of Gilgamesh: *ša₂ naq-ba
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
-You will need a Python 3.7.x installed. Go to [python's downloads page](<https://www.python.org/downloads/>) and pick an appropriate version.
+You will need a Python 3.7.x installed. Our package currently does not work with other versions of python. Go to [python's downloads page](<https://www.python.org/downloads/>) and pick an appropriate version.
 
 If you don't have git installed, install git [here](<https://git-scm.com/downloads>) (Choose the appropriate operating system).
 
