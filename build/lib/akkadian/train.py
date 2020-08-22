@@ -90,11 +90,11 @@ def main():
 
     corpora = ['rinap/rinap1', 'rinap/rinap3', 'rinap/rinap4', 'rinap/rinap5']
 
-    #print('##### MEMM #####')
-    #memm_train_and_test(corpora)
-
     #print('##### HMM #####')
     #hmm_train_and_test(corpora)
+
+    #print('##### MEMM #####')
+    #memm_train_and_test(corpora)
 
     print('##### BiLSTM #####')
     biLSTM_train_and_test(corpora)

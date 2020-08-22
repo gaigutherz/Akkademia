@@ -5,6 +5,15 @@ from akkadian.memm import memm_greedy
 from akkadian.__init__ import hmm_path, memm_path, bilstm_path
 
 
+def sanitize(sentence):
+    out_sentence = ""
+    for sign in sentence:
+        if 0x12000 <= ord(sign) or ord(sign) == 'x':
+            out_sentence += sign
+
+    return out_sentence
+
+
 def transliterate(sentence):
     """
     Transliterate signs using best transliteration algorithm so far
@@ -20,6 +29,8 @@ def transliterate_bilstm(sentence):
     :param sentence: signs to be transliterated
     :return: transliteration of the sentence
     """
+    sentence = sanitize(sentence)
+
     model, predictor, sign_to_id, id_to_tran, test_texts = load_object_from_file(bilstm_path)
 
     tag_logits = predictor.predict(sentence_to_allen_format(sentence, sign_to_id, True))['tag_logits']
@@ -33,6 +44,8 @@ def transliterate_bilstm_top3(sentence):
     :param sentence: signs to be transliterated
     :return: 3 top transliterations of the sentence with their scores
     """
+    sentence = sanitize(sentence)
+
     model, predictor, sign_to_id, id_to_tran, test_texts = load_object_from_file(bilstm_path)
 
     tag_logits = predictor.predict(sentence_to_allen_format(sentence, sign_to_id, True))['tag_logits']
@@ -46,6 +59,8 @@ def transliterate_hmm(sentence):
     :param sentence: signs to be transliterated
     :return: transliteration of the sentence
     """
+    sentence = sanitize(sentence)
+
     most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2, test_texts = \
         load_object_from_file(hmm_path)
 
@@ -60,6 +75,8 @@ def transliterate_memm(sentence):
     :param sentence: signs to be transliterated
     :return: transliteration of the sentence
     """
+    sentence = sanitize(sentence)
+
     logreg, vec, idx_to_tag_dict, test_texts = load_object_from_file(memm_path)
 
     MEMM_predicted_tags = memm_greedy(sentence_to_HMM_format(sentence), logreg, vec, idx_to_tag_dict)
@@ -127,7 +144,7 @@ if __name__ == '__main__':
  	
 𒂍𒊕𒅍 𒅇 𒂍𒍣𒁕
 
-10	
+10
 𒀸 𒆳𒄩𒀜𒁴 𒀸 𒋗𒈫𒐊 𒂖𒇷𒋾
 
  	
@@ -277,8 +294,9 @@ if __name__ == '__main__':
  	
 𒇷𒅖𒃻𒆥 𒄿𒈾 𒉿𒄿𒅗
 """
-    #print(transliterate(example))
-    #print(transliterate_bilstm(example))
-    #print(transliterate_bilstm_top3(example))
+    print(transliterate(example))
+    print(transliterate_bilstm(example))
+    print(transliterate_bilstm_top3(example))
     print(transliterate_hmm(example))
-    #print(transliterate_memm(example))
+    print(transliterate_memm(example))
+    #main()
