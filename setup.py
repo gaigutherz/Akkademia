@@ -5,7 +5,7 @@ with open(file="README.md", mode="r", encoding="utf8") as fh:
 
 setuptools.setup(
     name="akkadian",
-    version="1.0.7",
+    version="1.0.8",
     author="Ariel Elazary, Gai Gutherz",
     author_email="am.elazary@gmail.com, gaigutherz@gmail.com",
     description="Translating Akkadian signs to transliteration using NLP algorithms",

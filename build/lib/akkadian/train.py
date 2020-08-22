@@ -87,23 +87,17 @@ def main():
     Trains biLSTM, MEMM and HMM models, stores all data and print the accuracies
     :return: nothing, stores everything in pickles
     """
-    print('##### MEMM #####')
-    corpora = ['rinap/rinap1', 'rinap/rinap3']
-    memm_train_and_test(corpora)
 
-    '''
-    for i in [1,3]:
-        print("\n\n Corpus number: "+str(i)+"\n")
+    corpora = ['rinap/rinap1', 'rinap/rinap3', 'rinap/rinap4', 'rinap/rinap5']
 
-        corpora = ['rinap/rinap'+str(i)]
+    #print('##### MEMM #####')
+    #memm_train_and_test(corpora)
 
-        print('##### HMM #####')
-        #hmm_train_and_test(corpora)
-        print('##### MEMM #####')
-        memm_train_and_test(corpora)
-        print('##### BiLSTM #####')
-        #biLSTM_train_and_test(corpora)
-    '''
+    #print('##### HMM #####')
+    #hmm_train_and_test(corpora)
+
+    print('##### BiLSTM #####')
+    biLSTM_train_and_test(corpora)
 
 if __name__ == '__main__':
     main()
