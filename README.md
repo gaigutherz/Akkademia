@@ -116,7 +116,7 @@ pip install allennlp==0.8.5
 
 Copy the following into Command Prompt (with windows) or Terminal (with mac) to clone the project:
 ```
-git clone https://github.com/gaigutherz/Translating-Akkadian-using-NLP.git
+git clone https://github.com/gaigutherz/Akkademia.git
 ```
 
 ### Running
