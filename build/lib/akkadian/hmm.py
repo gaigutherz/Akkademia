@@ -130,20 +130,24 @@ def hmm_viterbi(sent, total_tokens, q_bi_counts, q_uni_counts, q, e, S, most_com
     pi = {}
     bp = {}
     pi[(0, '<s>', '<s>')] = 1
+    S0 = []
+    for s in S:
+        if s != '<s>' and s != '<\s>':
+            S0.append(s)
 
     # Viterbi algorithm
     for k in range(1, n+1):
         try:
             S_u = possible_tags[sent[k-2][0]]
         except:
-            S_u = S
+            S_u = S0
         if k == 1:
             S_u = ['<s>']
         for u in S_u:
             try:
                 S_v = possible_tags[sent[k-1][0]]
             except:
-                S_v = S
+                S_v = S0
             for v in S_v:
                 try:
                     e_calc = e[(sent[k-1][0], v)]
@@ -154,7 +158,7 @@ def hmm_viterbi(sent, total_tokens, q_bi_counts, q_uni_counts, q, e, S, most_com
                 try:
                     S_w = possible_tags[sent[k-3][0]]
                 except:
-                    S_w = S
+                    S_w = S0
                 if k == 1 or k == 2:
                     S_w = ['<s>']
                 for w in S_w:
@@ -191,14 +195,14 @@ def hmm_viterbi(sent, total_tokens, q_bi_counts, q_uni_counts, q, e, S, most_com
     try:
         S_u = possible_tags[sent[n-2][0]]
     except:
-        S_u = S
+        S_u = S0
     if n == 1:
         S_u = ['<s>']
     for u in S_u:
         try:
             S_v = possible_tags[sent[n-1][0]]
         except:
-            S_v = S
+            S_v = S0
         for v in S_v:
             try:
                 pi_calc = pi[(n, u, v)]
@@ -297,7 +301,8 @@ def main():
     Tests the run of HMM
     :return: nothing
     """
-    train_texts, dev_texts, test_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran = preprocess(['rinap/rinap1', 'rinap/rinap3', 'rinap/rinap4', 'rinap/rinap5'])
+    train_texts, dev_texts, test_texts, sign_to_id, tran_to_id, id_to_sign, id_to_tran = \
+        preprocess(['rinap/rinap1', 'rinap/rinap3', 'rinap/rinap4', 'rinap/rinap5'])
     most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2 = \
         hmm_train(train_texts, dev_texts)
 

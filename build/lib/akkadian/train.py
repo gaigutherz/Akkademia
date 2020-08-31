@@ -96,8 +96,8 @@ def main():
     #print('##### MEMM #####')
     #memm_train_and_test(corpora)
 
-    print('##### BiLSTM #####')
-    biLSTM_train_and_test(corpora)
+    #print('##### BiLSTM #####')
+    #biLSTM_train_and_test(corpora)
 
 if __name__ == '__main__':
     main()
