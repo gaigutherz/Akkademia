@@ -59,14 +59,16 @@ def transliterate_hmm(sentence):
     :param sentence: signs to be transliterated
     :return: transliteration of the sentence
     """
-    sentence = sanitize(sentence)
+    sentences = [sanitize(line) for line in sentence.splitlines() if len(sanitize(line)) > 0]
 
     most_common_tag, possible_tags, q, e, S, total_tokens, q_bi_counts, q_uni_counts, lambda1, lambda2, test_texts = \
         load_object_from_file(hmm_path)
 
-    HMM_predicted_tags = hmm_viterbi(sentence_to_HMM_format(sentence), total_tokens, q_bi_counts, q_uni_counts, q, e,
-                           S, most_common_tag, possible_tags, lambda1, lambda2)
-    return list_to_tran(HMM_predicted_tags)
+    HMM_predicted_tags_list = [hmm_viterbi(sentence_to_HMM_format(s), total_tokens, q_bi_counts, q_uni_counts, q, e,
+                           S, most_common_tag, possible_tags, lambda1, lambda2) for s in sentences]
+    tran_list = [list_to_tran(HMM_predicted_tags) for HMM_predicted_tags in HMM_predicted_tags_list]
+
+    return ''.join(tran_list)
 
 
 def transliterate_memm(sentence):
@@ -75,13 +77,14 @@ def transliterate_memm(sentence):
     :param sentence: signs to be transliterated
     :return: transliteration of the sentence
     """
-    sentence = sanitize(sentence)
+    sentences = [sanitize(line) for line in sentence.splitlines() if len(sanitize(line)) > 0]
 
     logreg, vec, idx_to_tag_dict, test_texts = load_object_from_file(memm_path)
 
-    MEMM_predicted_tags = memm_greedy(sentence_to_HMM_format(sentence), logreg, vec, idx_to_tag_dict)
+    MEMM_predicted_tags_list = [memm_greedy(sentence_to_HMM_format(s), logreg, vec, idx_to_tag_dict) for s in sentences]
+    tran_list = [list_to_tran(MEMM_predicted_tags) for MEMM_predicted_tags in MEMM_predicted_tags_list]
 
-    return list_to_tran(MEMM_predicted_tags)
+    return ''.join(tran_list)
 
 
 def main():
@@ -295,8 +298,8 @@ if __name__ == '__main__':
 𒇷𒅖𒃻𒆥 𒄿𒈾 𒉿𒄿𒅗
 """
     print(transliterate(example))
-    print(transliterate_bilstm(example))
-    print(transliterate_bilstm_top3(example))
+    #print(transliterate_bilstm(example))
+    #print(transliterate_bilstm_top3(example))
     print(transliterate_hmm(example))
     print(transliterate_memm(example))
     #main()
