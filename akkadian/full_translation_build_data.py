@@ -40,7 +40,7 @@ def write_sentences_to_file(chars_sentences, translation_sentences):
 
     print("Number of word translations in a line is: " + str(len(translation_lengths)))
     print("Mean word translations in a line length is: " + str(mean(translation_lengths)))
-    build_graph(translation_lengths, "word translations in a line")
+    # build_graph(translation_lengths, "word translations in a line")
 
     signs_file.close()
     transcription_file.close()
@@ -158,7 +158,7 @@ def print_statistics(translation_lengths, long_trs, very_long_trs, signs_vocab, 
     print("Number of sentences that were divided by three dots is: " + str(could_divide_by_three_dots))
     print("Number of sentences that were not able to be divided is: " + str(could_not_divide))
 
-    build_graph(translation_lengths, "real translations")
+    # build_graph(translation_lengths, "real translations")
 
 
 def compute_translation_statistics(tr, translation_lengths, long_trs, very_long_trs, translation_vocab):
@@ -252,7 +252,7 @@ def clean_signs_transcriptions(signs, is_signs):
 def add_translation_to_file(prev_signs, signs_vocab, prev_transcription, transcription_vocab, prev_tr,
                             translation_lengths, long_trs, very_long_trs, translation_vocab, prev_text,
                             prev_start_line, prev_end_line, signs_file, transcription_file, translation_file,
-                            could_divide_by_three_dots, could_not_divide):
+                            could_divide_by_three_dots, could_not_divide, metadata=False):
     """
     Add a translation with corresponding signs and transliterations to files
     :param prev_signs: previous signs written to file
@@ -272,6 +272,7 @@ def add_translation_to_file(prev_signs, signs_vocab, prev_transcription, transcr
     :param translation_file: file of all translations, being built as input for translation algorithms
     :param could_divide_by_three_dots: counter for translations possible to divide based on three dots
     :param could_not_divide: counter for translations not possible to divide based on three dots
+    :param metadata: should add the id of each sample to the files
     :return: some of the parameters to the function, after update
     """
     signs = ""
@@ -299,9 +300,14 @@ def add_translation_to_file(prev_signs, signs_vocab, prev_transcription, transcr
         could_divide_by_three_dots += 1
 
         for i in range(len(splitted_signs)):
-            signs_file.write(str(real_key) + "[" + str(i + 1) + "]: " + splitted_signs[i] + "\n")
-            transcription_file.write(str(real_key) + "[" + str(i + 1) + "]: " + splitted_transcription[i] + "\n")
-            translation_file.write(str(real_key) + "[" + str(i + 1) + "]: " + splitted_translation[i] + "\n")
+            if metadata:
+                signs_file.write(str(real_key) + "[" + str(i + 1) + "]: " + splitted_signs[i] + "\n")
+                transcription_file.write(str(real_key) + "[" + str(i + 1) + "]: " + splitted_transcription[i] + "\n")
+                translation_file.write(str(real_key) + "[" + str(i + 1) + "]: " + splitted_translation[i] + "\n")
+            else:
+                signs_file.write(splitted_signs[i] + "\n")
+                transcription_file.write(splitted_transcription[i] + "\n")
+                translation_file.write(splitted_translation[i] + "\n")
 
             translation_lengths, long_trs, very_long_trs, translation_vocab = \
                 compute_translation_statistics(splitted_translation[i], translation_lengths, long_trs, very_long_trs,
@@ -309,9 +315,14 @@ def add_translation_to_file(prev_signs, signs_vocab, prev_transcription, transcr
 
     else:
         could_not_divide += 1
-        signs_file.write(str(real_key) + ": " + signs + "\n")
-        transcription_file.write(str(real_key) + ": " + transcription + "\n")
-        translation_file.write(str(real_key) + ": " + prev_tr + "\n")
+        if metadata:
+            signs_file.write(str(real_key) + ": " + signs + "\n")
+            transcription_file.write(str(real_key) + ": " + transcription + "\n")
+            translation_file.write(str(real_key) + ": " + prev_tr + "\n")
+        else:
+            signs_file.write(signs + "\n")
+            transcription_file.write(transcription + "\n")
+            translation_file.write(prev_tr + "\n")
 
         translation_lengths, long_trs, very_long_trs, translation_vocab = \
             compute_translation_statistics(prev_tr, translation_lengths, long_trs, very_long_trs, translation_vocab)
@@ -358,7 +369,7 @@ def write_translations_to_file(chars_sentences, translations):
                     add_translation_to_file(prev_signs, signs_vocab, prev_transcription, transcription_vocab, prev_tr,
                                     translation_lengths, long_trs, very_long_trs, translation_vocab, prev_text,
                                     prev_start_line, prev_end_line, signs_file, transcription_file,
-                                    translation_file, could_divide_by_three_dots, could_not_divide)
+                                    translation_file, could_divide_by_three_dots, could_not_divide, False)
             prev_should_add = False
             continue
 
@@ -412,7 +423,7 @@ def write_translations_to_file(chars_sentences, translations):
                     add_translation_to_file(prev_signs, signs_vocab, prev_transcription, transcription_vocab, prev_tr,
                                         translation_lengths, long_trs, very_long_trs, translation_vocab, prev_text,
                                         prev_start_line, prev_end_line, signs_file, transcription_file,
-                                        translation_file, could_divide_by_three_dots, could_not_divide)
+                                        translation_file, could_divide_by_three_dots, could_not_divide, False)
 
             prev_should_add = True
 
@@ -430,7 +441,7 @@ def write_translations_to_file(chars_sentences, translations):
             add_translation_to_file(prev_signs, signs_vocab, prev_transcription, transcription_vocab, prev_tr,
                                     translation_lengths, long_trs, very_long_trs, translation_vocab, prev_text,
                                     prev_start_line, prev_end_line, signs_file, transcription_file,
-                                    translation_file, could_divide_by_three_dots, could_not_divide)
+                                    translation_file, could_divide_by_three_dots, could_not_divide, False)
 
     print_statistics(translation_lengths, long_trs, very_long_trs, signs_vocab, transcription_vocab,
                          translation_vocab, could_divide_by_three_dots, could_not_divide)
