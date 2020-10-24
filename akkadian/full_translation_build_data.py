@@ -465,9 +465,9 @@ def preprocess(corpora):
 
 def write_train_valid_test_files(file_type, lang, valid_lines, test_lines):
     f = open(Path(r"../NMT_input/" + file_type + ".txt"), "r", encoding="utf8")
-    train = open(Path(r"../NMT_input/train/train." + lang), "w", encoding="utf8")
-    valid = open(Path(r"../NMT_input/valid/valid." + lang), "w", encoding="utf8")
-    test = open(Path(r"../NMT_input/test/test." + lang), "w", encoding="utf8")
+    train = open(Path(r"../NMT_input/train." + lang), "w", encoding="utf8")
+    valid = open(Path(r"../NMT_input/valid." + lang), "w", encoding="utf8")
+    test = open(Path(r"../NMT_input/test." + lang), "w", encoding="utf8")
 
     for i, line in enumerate(f):
         if i in valid_lines:
