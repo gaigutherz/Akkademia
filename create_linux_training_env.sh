@@ -20,7 +20,7 @@ fairseq-preprocess \
 
 # train
 mkdir -p checkpoints/fconv_ak_en
-fairseq-train \
+sudo fairseq-train \
     data-bin \
     --arch fconv \
     --dropout 0.1 \
