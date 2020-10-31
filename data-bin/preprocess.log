@@ -1,0 +1,15 @@
+Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe=None, cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=False, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, scoring='bleu', seed=1, source_lang='ak', srcdict=None, target_lang='en', task='translation', tensorboard_logdir=None, testpref='NMT_input/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='NMT_input/train', user_dir=None, validpref='NMT_input/valid', workers=60)
+Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe=None, cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=False, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, scoring='bleu', seed=1, source_lang='ak', srcdict=None, target_lang='en', task='translation', tensorboard_logdir=None, testpref='NMT_input/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='NMT_input/train', user_dir=None, validpref='NMT_input/valid', workers=60)
+[ak] Dictionary: 44040 types
+[ak] NMT_input/train.ak: 49966 sents, 99932 tokens, 0.0% replaced by <unk>
+[ak] Dictionary: 44040 types
+[ak] NMT_input/valid.ak: 2684 sents, 5368 tokens, 41.7% replaced by <unk>
+[ak] Dictionary: 44040 types
+[ak] NMT_input/test.ak: 2709 sents, 5418 tokens, 41.3% replaced by <unk>
+[en] Dictionary: 41216 types
+[en] NMT_input/train.en: 49966 sents, 814627 tokens, 0.0% replaced by <unk>
+[en] Dictionary: 41216 types
+[en] NMT_input/valid.en: 2684 sents, 42325 tokens, 2.57% replaced by <unk>
+[en] Dictionary: 41216 types
+[en] NMT_input/test.en: 2709 sents, 44315 tokens, 2.81% replaced by <unk>
+Wrote preprocessed data to data-bin
