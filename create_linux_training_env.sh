@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 sudo apt-get install python3.7
 sudo apt-get install python3-pip
 pip3 install torch==1.6.0+cpu torchvision==0.7.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
@@ -6,7 +8,6 @@ git clone https://github.com/pytorch/fairseq
 cd fairseq
 sudo pip3 install --editable ./
 cd ..
-git clone https://github.com/pytorch/fairseq
 
 git clone https://github.com/gaigutherz/Akkademia.git
 cd Akkademia
@@ -29,3 +30,9 @@ sudo fairseq-train \
     --lr 0.5 --lr-scheduler fixed --force-anneal 50 \
     --max-tokens 3000 \
     --save-dir checkpoints/fconv_ak_en
+
+# translate
+sudo fairseq-generate \
+    data-bin \
+    --path checkpoints/fconv_ak_en/checkpoint_best.pt \
+    --beam 5 --remove bpe
