@@ -13,7 +13,7 @@ git clone https://github.com/gaigutherz/Akkademia.git
 cd Akkademia
 
 # preprocess
-TEXT=NMT_input
+TEXT=NMT_input/tokenization
 fairseq-preprocess \
     --source-lang ak --target-lang en \
     --trainpref $TEXT/train --validpref $TEXT/valid --testpref $TEXT/test \
@@ -28,7 +28,7 @@ sudo fairseq-train \
     --criterion label_smoothed_cross_entropy --label-smoothing 0.1 \
     --optimizer nag --clip-norm 0.1 \
     --lr 0.5 --lr-scheduler fixed --force-anneal 50 \
-    --max-tokens 3000 \
+    --max-tokens 8000 \
     --save-dir checkpoints/fconv_ak_en
 
 # translate
