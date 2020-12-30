@@ -13,10 +13,9 @@ git clone https://github.com/gaigutherz/Akkademia.git
 cd Akkademia
 
 # preprocess
-TEXT=NMT_input/tokenization
 fairseq-preprocess \
-    --source-lang ak --target-lang en \
-    --trainpref $TEXT/train --validpref $TEXT/valid --testpref $TEXT/test \
+    --source-lang ak --target-lang en --trainpref NMT_input/tokenization/train \
+    --validpref NMT_input/tokenization/valid --testpref NMT_input/tokenization/test \
     --destdir data-bin --thresholdtgt 0 --thresholdsrc 0 --workers 60
 
 # train

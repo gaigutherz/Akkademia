@@ -45,7 +45,8 @@ def tokenize(model_prefix, file):
     #print('\n'.join(tokenized_data))
 
     with open(TOKEN_DIR / file, "w", encoding="utf8") as fout:
-        fout.writelines(tokenized_data)
+        for line in tokenized_data:
+            fout.write(line + "\n")
 
 
 def run_tokenizer():
