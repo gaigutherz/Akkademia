@@ -13,7 +13,7 @@ git clone https://github.com/gaigutherz/Akkademia.git
 cd Akkademia
 
 # preprocess
-fairseq-preprocess \
+../fairseq/fairseq_cli/preprocess.py \
     --source-lang ak --target-lang en --trainpref NMT_input/tokenization/train \
     --validpref NMT_input/tokenization/valid --testpref NMT_input/tokenization/test \
     --destdir data-bin --thresholdtgt 0 --thresholdsrc 0 --workers 10
