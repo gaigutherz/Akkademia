@@ -16,22 +16,23 @@ cd Akkademia
 fairseq-preprocess \
     --source-lang ak --target-lang en --trainpref NMT_input/tokenization/train \
     --validpref NMT_input/tokenization/valid --testpref NMT_input/tokenization/test \
-    --destdir data-bin --thresholdtgt 0 --thresholdsrc 0 --workers 60
+    --destdir data-bin --thresholdtgt 0 --thresholdsrc 0 --workers 10
 
 # train
+# Trying learning rate of 0.1 instead of 0.5, trying to solve problem of gradients getting to inf/nan
 mkdir -p checkpoints/fconv_ak_en
-sudo fairseq-train \
+fairseq-train \
     data-bin \
     --arch fconv \
     --dropout 0.1 \
     --criterion label_smoothed_cross_entropy --label-smoothing 0.1 \
     --optimizer nag --clip-norm 0.1 \
-    --lr 0.5 --lr-scheduler fixed --force-anneal 50 \
-    --max-tokens 8000 \
+    --lr 0.1 --lr-scheduler fixed --force-anneal 50 \
+    --max-tokens 4000 \
     --save-dir checkpoints/fconv_ak_en
 
 # translate
-sudo fairseq-generate \
+fairseq-generate \
     data-bin \
     --path checkpoints/fconv_ak_en/checkpoint_best.pt \
     --beam 5 --remove bpe
