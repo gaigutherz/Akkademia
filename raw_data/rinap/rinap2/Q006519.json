@@ -1,0 +1,248 @@
+{
+  "type": "cdl",
+  "project": "rinap/rinap2",
+  "source": "http://oracc.org/rinap/rinap2",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2021-02-03T15:12:33",
+  "textid": "Q006519",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q006519.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q006519.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "Q006519.U2",
+              "label": "1",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q006519.1",
+                  "n": "1",
+                  "label": "1"
+                },
+                {
+                  "node": "l",
+                  "frag": "uš-ma-nu",
+                  "id": "Q006519.l03efc",
+                  "ref": "Q006519.1.1",
+                  "inst": "ušmannu[camp]N",
+                  "sig": "@rinap/rinap2%akk:uš-ma-nu=ušmannu[camp//camp]N'N$ušmannu",
+                  "f": {
+                    "lang": "akk",
+                    "form": "uš-ma-nu",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "uš",
+                        "utf8": "𒍑",
+                        "id": "Q006519.1.1.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ma",
+                        "utf8": "𒈠",
+                        "id": "Q006519.1.1.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "nu",
+                        "utf8": "𒉡",
+                        "id": "Q006519.1.1.2"
+                      }
+                    ],
+                    "cf": "ušmannu",
+                    "gw": "camp",
+                    "sense": "camp",
+                    "norm": "ušmannu",
+                    "pos": "N",
+                    "epos": "N"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006519.1.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006519.1.1"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "ša₂",
+                  "id": "Q006519.l03efd",
+                  "ref": "Q006519.1.2",
+                  "inst": "ša[of]DET",
+                  "sig": "@rinap/rinap2%akk:ša₂=ša[of//of]DET'DET$ša",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ša₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ša₂",
+                        "utf8": "𒃻",
+                        "id": "Q006519.1.2.0"
+                      }
+                    ],
+                    "cf": "ša",
+                    "gw": "of",
+                    "sense": "of",
+                    "norm": "ša",
+                    "pos": "DET",
+                    "epos": "DET"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006519.1.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006519.1.2"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "{⸢m}tak₃⸣-[lak-a-na-EN]",
+                  "id": "Q006519.l03efe",
+                  "ref": "Q006519.1.3",
+                  "inst": "Taklak-ana-Bel[governor of Naṣibina]PN$",
+                  "sig": "@rinap/rinap2%akk:{m}tak₃-lak-a-na-EN=Taklak-ana-Bel[governor of Naṣibina//governor of Naṣibina]PN'PN$Taklak-ana-Bel",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{m}tak₃-lak-a-na-EN",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "v": "m",
+                            "utf8": "𒁹",
+                            "id": "Q006519.1.3.0",
+                            "break": "damaged",
+                            "ho": "1"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "tak₃",
+                        "utf8": "𒉌𒌓",
+                        "id": "Q006519.1.3.1",
+                        "break": "damaged",
+                        "delim": "-",
+                        "hc": "1"
+                      },
+                      {
+                        "v": "lak",
+                        "utf8": "𒋃",
+                        "id": "Q006519.1.3.2",
+                        "breakStart": "1",
+                        "o": "[",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "a",
+                        "utf8": "𒀀",
+                        "id": "Q006519.1.3.3",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "na",
+                        "utf8": "𒈾",
+                        "id": "Q006519.1.3.4",
+                        "break": "missing",
+                        "delim": "-"
+                      },
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "EN",
+                            "utf8": "𒂗",
+                            "id": "Q006519.1.3.5",
+                            "queried": "1",
+                            "break": "missing",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "o": "]",
+                            "breakEnd": "Q006519.1.3.2"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Taklak-ana-Bel",
+                    "gw": "governor of Naṣibina",
+                    "sense": "governor of Naṣibina",
+                    "norm": "Taklak-ana-Bel",
+                    "pos": "PN",
+                    "epos": "PN"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006519.1.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006519.1.3"
+                    }
+                  ]
+                },
+                {
+                  "node": "d",
+                  "type": "nonw",
+                  "ref": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

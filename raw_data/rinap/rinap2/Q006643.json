@@ -1,0 +1,556 @@
+{
+  "type": "cdl",
+  "project": "rinap/rinap2",
+  "source": "http://oracc.org/rinap/rinap2",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2021-02-03T15:13:14",
+  "textid": "Q006643",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q006643.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q006643.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "Q006643.U2",
+              "label": "1",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q006643.1",
+                  "n": "1",
+                  "label": "1"
+                },
+                {
+                  "node": "l",
+                  "frag": "ša₂",
+                  "id": "Q006643.l09721",
+                  "ref": "Q006643.1.1",
+                  "inst": "ša[of]DET",
+                  "sig": "@rinap/rinap2%akk:ša₂=ša[of//of]DET'DET$ša",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ša₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ša₂",
+                        "utf8": "𒃻",
+                        "id": "Q006643.1.1.0"
+                      }
+                    ],
+                    "cf": "ša",
+                    "gw": "of",
+                    "sense": "of",
+                    "norm": "ša",
+                    "pos": "DET",
+                    "epos": "DET"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006643.1.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006643.1.1"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "{f}a-ta-li-a",
+                  "id": "Q006643.l09722",
+                  "ref": "Q006643.1.2",
+                  "inst": "Atalia[queen of Sargon II]RN$",
+                  "sig": "@rinap/rinap2%akk:{f}a-ta-li-a=Atalia[queen of Sargon II//queen of Sargon II]RN'RN$Atalia",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{f}a-ta-li-a",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "v": "f",
+                            "utf8": "𒊩",
+                            "id": "Q006643.1.2.0"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "a",
+                        "utf8": "𒀀",
+                        "id": "Q006643.1.2.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ta",
+                        "utf8": "𒋫",
+                        "id": "Q006643.1.2.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "li",
+                        "utf8": "𒇷",
+                        "id": "Q006643.1.2.3",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "a",
+                        "utf8": "𒀀",
+                        "id": "Q006643.1.2.4"
+                      }
+                    ],
+                    "cf": "Atalia",
+                    "gw": "queen of Sargon II",
+                    "sense": "queen of Sargon II",
+                    "norm": "Atalia",
+                    "pos": "RN",
+                    "epos": "RN"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006643.1.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006643.1.2"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "MUNUS.E₂.GAL",
+                  "id": "Q006643.l09723",
+                  "ref": "Q006643.1.3",
+                  "cof-tails": "Q006643.l09724",
+                  "inst": "ša[of]DET&ēkalli[palace]N",
+                  "sig": "@rinap/rinap2%akk:MUNUS.E₂.GAL=ša[of//of]DET'DET$ša&&@rinap/rinap2%akk:=ēkallu[palace//palace]N'N$ēkalli",
+                  "f": {
+                    "lang": "akk",
+                    "form": "MUNUS.E₂.GAL",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "MUNUS",
+                            "utf8": "𒊩",
+                            "id": "Q006643.1.3.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "E₂",
+                            "utf8": "𒂍",
+                            "id": "Q006643.1.3.1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "GAL",
+                            "utf8": "𒃲",
+                            "id": "Q006643.1.3.2",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "ša",
+                    "gw": "of",
+                    "sense": "of",
+                    "norm": "ša",
+                    "pos": "DET",
+                    "epos": "DET"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006643.1.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006643.1.3"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "MUNUS.E₂.GAL",
+                  "id": "Q006643.l09724",
+                  "ref": "Q006643.1.3",
+                  "cof-head": "Q006643.l09723",
+                  "inst": "ša[of]DET&ēkalli[palace]N",
+                  "tail-sig": "@rinap/rinap2%akk:=ēkallu[palace//palace]N'N$ēkalli",
+                  "f": {
+                    "lang": "akk",
+                    "form": "MUNUS.E₂.GAL",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "MUNUS",
+                            "utf8": "𒊩",
+                            "id": "Q006643.1.3.0",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "E₂",
+                            "utf8": "𒂍",
+                            "id": "Q006643.1.3.1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "."
+                          },
+                          {
+                            "s": "GAL",
+                            "utf8": "𒃲",
+                            "id": "Q006643.1.3.2",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "ēkallu",
+                    "gw": "palace",
+                    "sense": "palace",
+                    "norm": "ēkalli",
+                    "pos": "N",
+                    "epos": "N"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006643.1.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006643.1.3"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "ša₂",
+                  "id": "Q006643.l09725",
+                  "ref": "Q006643.1.4",
+                  "inst": "ša[of]DET",
+                  "sig": "@rinap/rinap2%akk:ša₂=ša[of//of]DET'DET$ša",
+                  "f": {
+                    "lang": "akk",
+                    "form": "ša₂",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ša₂",
+                        "utf8": "𒃻",
+                        "id": "Q006643.1.4.0"
+                      }
+                    ],
+                    "cf": "ša",
+                    "gw": "of",
+                    "sense": "of",
+                    "norm": "ša",
+                    "pos": "DET",
+                    "epos": "DET"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006643.1.4"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006643.1.4"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "{m}MAN-GIN",
+                  "id": "Q006643.l09726",
+                  "ref": "Q006643.1.5",
+                  "inst": "Šarru-ukin[Sargon II, king of Assyria]RN",
+                  "sig": "@rinap/rinap2%akk:{m}MAN-GIN=Šarru-ukin[Sargon II, king of Assyria//Sargon II, king of Assyria]RN'RN$Šarru-ukin",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{m}MAN-GIN",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "det": "semantic",
+                            "pos": "pre",
+                            "seq": [
+                              {
+                                "v": "m",
+                                "utf8": "𒁹",
+                                "id": "Q006643.1.5.0"
+                              }
+                            ]
+                          },
+                          {
+                            "s": "MAN",
+                            "utf8": "𒌋𒌋",
+                            "id": "Q006643.1.5.1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          },
+                          {
+                            "s": "GIN",
+                            "utf8": "𒁺",
+                            "id": "Q006643.1.5.2",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Šarru-ukin",
+                    "gw": "Sargon II, king of Assyria",
+                    "sense": "Sargon II, king of Assyria",
+                    "norm": "Šarru-ukin",
+                    "pos": "RN",
+                    "epos": "RN"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006643.1.5"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006643.1.5"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "MAN",
+                  "id": "Q006643.l09727",
+                  "ref": "Q006643.1.6",
+                  "inst": "šar[king]N",
+                  "sig": "@rinap/rinap2%akk:MAN=šarru[king//king]N'N$šar",
+                  "f": {
+                    "lang": "akk",
+                    "form": "MAN",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "MAN",
+                            "utf8": "𒌋𒌋",
+                            "id": "Q006643.1.6.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "šarru",
+                    "gw": "king",
+                    "sense": "king",
+                    "norm": "šar",
+                    "pos": "N",
+                    "epos": "N"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006643.1.6"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006643.1.6"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "KUR",
+                  "id": "Q006643.l09728",
+                  "ref": "Q006643.1.7",
+                  "inst": "māt[land]N",
+                  "sig": "@rinap/rinap2%akk:KUR=mātu[land//land]N'N$māt",
+                  "f": {
+                    "lang": "akk",
+                    "form": "KUR",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "KUR",
+                            "utf8": "𒆳",
+                            "id": "Q006643.1.7.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "mātu",
+                    "gw": "land",
+                    "sense": "land",
+                    "norm": "māt",
+                    "pos": "N",
+                    "epos": "N"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006643.1.7"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006643.1.7"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "AŠ",
+                  "id": "Q006643.l09729",
+                  "ref": "Q006643.1.8",
+                  "inst": "Aššur[Assyria]GN",
+                  "sig": "@rinap/rinap2%akk:AŠ=Aššur[Assyria//Assyria]GN'GN$Aššur",
+                  "f": {
+                    "lang": "akk",
+                    "form": "AŠ",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "s": "AŠ",
+                            "utf8": "𒀸",
+                            "id": "Q006643.1.8.0",
+                            "role": "logo",
+                            "logolang": "sux"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Aššur",
+                    "gw": "Assyria",
+                    "sense": "Assyria",
+                    "norm": "Aššur",
+                    "pos": "GN",
+                    "epos": "GN"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006643.1.8"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006643.1.8"
+                    }
+                  ]
+                },
+                {
+                  "node": "d",
+                  "type": "nonw",
+                  "ref": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "type": "cdl",
+  "project": "rinap/rinap2",
+  "source": "http://oracc.org/rinap/rinap2",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2021-02-03T15:12:31",
+  "textid": "Q006507",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q006507.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q006507.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "Q006507.U2",
+              "label": "1",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q006507.1",
+                  "n": "1",
+                  "label": "1"
+                },
+                {
+                  "node": "l",
+                  "frag": "{uru}⸢ki⸣-še-si-im",
+                  "id": "Q006507.l03ebb",
+                  "ref": "Q006507.1.1",
+                  "inst": "Kišesim[]SN$",
+                  "sig": "@rinap/rinap2%akk:{URU}ki-še-si-im=Kišesim[1//1]SN'SN$Kišesim",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{URU}ki-še-si-im",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "gg": "logo",
+                            "gdl_type": "logo",
+                            "group": [
+                              {
+                                "s": "URU",
+                                "utf8": "𒌷",
+                                "id": "Q006507.1.1.0",
+                                "role": "logo",
+                                "logolang": "sux"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "v": "ki",
+                        "utf8": "𒆠",
+                        "id": "Q006507.1.1.1",
+                        "break": "damaged",
+                        "ho": "1",
+                        "delim": "-",
+                        "hc": "1"
+                      },
+                      {
+                        "v": "še",
+                        "utf8": "𒊺",
+                        "id": "Q006507.1.1.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "si",
+                        "utf8": "𒋛",
+                        "id": "Q006507.1.1.3",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "im",
+                        "utf8": "𒅎",
+                        "id": "Q006507.1.1.4"
+                      }
+                    ],
+                    "cf": "Kišesim",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm": "Kišesim",
+                    "pos": "SN",
+                    "epos": "SN"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006507.1.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006507.1.1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

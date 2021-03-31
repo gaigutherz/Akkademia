@@ -62,7 +62,7 @@ def collect_translations(div, translations):
             # Seems like § was forgotten before 54, so added a special case for this (language[0].isdigit()).
             if language == "Akkadian" or language == "Date" or language == "Fragment" or language == "Colophon" \
                     or language == "Catch-line" or language[0] == "§" or language[0].isdigit() or \
-                    language == "Envelope" or language == "Epigraph":
+                    language == "Envelope" or language == "Epigraph" or language == "Side" or language == "Left":
                 tr = div[1]
             elif language == "Aramaic" or language == "Inscription":
                 continue

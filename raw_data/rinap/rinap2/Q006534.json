@@ -1,0 +1,793 @@
+{
+  "type": "cdl",
+  "project": "rinap/rinap2",
+  "source": "http://oracc.org/rinap/rinap2",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2021-02-03T15:12:39",
+  "textid": "Q006534",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q006534.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q006534.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "Q006534.U2",
+              "label": "1 - 5",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q006534.1",
+                  "n": "1",
+                  "label": "1"
+                },
+                {
+                  "node": "l",
+                  "frag": "{m}MAN-(GI.NA)",
+                  "id": "Q006534.l047dc",
+                  "ref": "Q006534.1.1",
+                  "inst": "Šarru-ukin[Sargon II, king of Assyria]RN$",
+                  "sig": "@rinap/rinap2%sux:{m}MAN-GI.NA=Šarru-ukin[Sargon II, king of Assyria//Sargon II, king of Assyria]RN'RN$Šarru-ukin/{m}MAN-GI-NA#~",
+                  "f": {
+                    "lang": "sux",
+                    "form": "{m}MAN-GI.NA",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "v": "m",
+                            "utf8": "𒁹",
+                            "id": "Q006534.1.1.0"
+                          }
+                        ]
+                      },
+                      {
+                        "s": "MAN",
+                        "utf8": "𒌋𒌋",
+                        "id": "Q006534.1.1.1",
+                        "delim": "-"
+                      },
+                      {
+                        "gg": "group",
+                        "gdl_type": "group",
+                        "group": [
+                          {
+                            "s": "GI",
+                            "utf8": "𒄀",
+                            "id": "Q006534.1.1.2",
+                            "delim": "."
+                          },
+                          {
+                            "s": "NA",
+                            "utf8": "𒈾",
+                            "id": "Q006534.1.1.3"
+                          }
+                        ]
+                      }
+                    ],
+                    "cf": "Šarru-ukin",
+                    "gw": "Sargon II, king of Assyria",
+                    "sense": "Sargon II, king of Assyria",
+                    "norm0": "Šarru-ukin",
+                    "pos": "RN",
+                    "epos": "RN",
+                    "base": "{m}MAN-GI-NA",
+                    "morph": "~"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006534.1.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006534.1.1"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "lugal",
+                  "id": "Q006534.l047dd",
+                  "ref": "Q006534.1.2",
+                  "inst": "lugal[king]N",
+                  "sig": "@rinap/rinap2%sux:lugal=lugal[king//king]N'N$lugal/lugal#~",
+                  "f": {
+                    "lang": "sux",
+                    "form": "lugal",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "lugal",
+                        "utf8": "𒈗",
+                        "id": "Q006534.1.2.0"
+                      }
+                    ],
+                    "cf": "lugal",
+                    "gw": "king",
+                    "sense": "king",
+                    "norm0": "lugal",
+                    "pos": "N",
+                    "epos": "N",
+                    "base": "lugal",
+                    "morph": "~"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006534.1.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006534.1.2"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "ki-šar₂-ra",
+                  "id": "Q006534.l047de",
+                  "ref": "Q006534.1.3",
+                  "inst": "kišar[the whole earth]N",
+                  "sig": "@rinap/rinap2%sux:ki-šar₂-ra=kišar[earth//the whole earth]N'N$kišar,ak/ki-šar₂#~,ak",
+                  "f": {
+                    "lang": "sux",
+                    "form": "ki-šar₂-ra",
+                    "gdl": [
+                      {
+                        "v": "ki",
+                        "utf8": "𒆠",
+                        "id": "Q006534.1.3.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "šar₂",
+                        "utf8": "𒊹",
+                        "id": "Q006534.1.3.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ra",
+                        "utf8": "𒊏",
+                        "id": "Q006534.1.3.2"
+                      }
+                    ],
+                    "cf": "kišar",
+                    "gw": "earth",
+                    "sense": "the whole earth",
+                    "norm0": "kišar,ak",
+                    "pos": "N",
+                    "epos": "N",
+                    "base": "ki-šar₂",
+                    "morph": "~,ak"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006534.1.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006534.1.3"
+                    }
+                  ]
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q006534.2",
+                  "n": "2",
+                  "label": "2"
+                },
+                {
+                  "node": "l",
+                  "frag": "uru",
+                  "id": "Q006534.l047df",
+                  "ref": "Q006534.2.1",
+                  "inst": "iri[city]N",
+                  "sig": "@rinap/rinap2%sux:uru=iri[city//city]N'N$iri/iri#~",
+                  "f": {
+                    "lang": "sux",
+                    "form": "uru",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "uru",
+                        "utf8": "𒌷",
+                        "id": "Q006534.2.1.0"
+                      }
+                    ],
+                    "cf": "iri",
+                    "gw": "city",
+                    "sense": "city",
+                    "norm0": "iri",
+                    "pos": "N",
+                    "epos": "N",
+                    "base": "iri",
+                    "morph": "~"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006534.2.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006534.2.1"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "an-du₃",
+                  "id": "Q006534.l047e0",
+                  "ref": "Q006534.2.2",
+                  "inst": "du[to hold, keep in custody, detain]V/t",
+                  "sig": "@rinap/rinap2%sux:an-du₃=du[hold//to hold, keep in custody, detain]V/t'V/t$V.n:du/du₃#V.n:~",
+                  "f": {
+                    "lang": "sux",
+                    "form": "an-du₃",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "an",
+                        "utf8": "𒀭",
+                        "id": "Q006534.2.2.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "du₃",
+                        "utf8": "𒆕",
+                        "id": "Q006534.2.2.1"
+                      }
+                    ],
+                    "cf": "du",
+                    "gw": "hold",
+                    "sense": "to hold, keep in custody, detain",
+                    "norm0": "V.n:du",
+                    "pos": "V/t",
+                    "epos": "V/t",
+                    "base": "du₃",
+                    "morph": "V.n:~"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006534.2.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006534.2.2"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "{uru}BAD₃-MAN-GIN",
+                  "id": "Q006534.l047e1",
+                  "ref": "Q006534.2.3",
+                  "inst": "Dur-Šarru-ukin[]SN$",
+                  "sig": "@rinap/rinap2%sux:{URU}BAD₃-MAN-GIN=Dur-Šarru-ukin[1//1]SN'SN$Dur-Šarru-ukin/{URU}BAD₃-MAN-GIN#~",
+                  "f": {
+                    "lang": "sux",
+                    "form": "{URU}BAD₃-MAN-GIN",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "s": "URU",
+                            "utf8": "𒌷",
+                            "id": "Q006534.2.3.0"
+                          }
+                        ]
+                      },
+                      {
+                        "s": "BAD₃",
+                        "utf8": "𒂦",
+                        "id": "Q006534.2.3.1",
+                        "delim": "-"
+                      },
+                      {
+                        "s": "MAN",
+                        "utf8": "𒌋𒌋",
+                        "id": "Q006534.2.3.2",
+                        "delim": "-"
+                      },
+                      {
+                        "s": "GIN",
+                        "utf8": "𒁺",
+                        "id": "Q006534.2.3.3"
+                      }
+                    ],
+                    "cf": "Dur-Šarru-ukin",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm0": "Dur-Šarru-ukin",
+                    "pos": "SN",
+                    "epos": "SN",
+                    "base": "{URU}BAD₃-MAN-GIN",
+                    "morph": "~"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006534.2.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006534.2.3"
+                    }
+                  ]
+                },
+                {
+                  "node": "d",
+                  "type": "nonw",
+                  "ref": ""
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q006534.3",
+                  "n": "3",
+                  "label": "3"
+                },
+                {
+                  "node": "l",
+                  "frag": "mu-bi",
+                  "id": "Q006534.l047e2",
+                  "ref": "Q006534.3.1",
+                  "inst": "mu[name]N",
+                  "sig": "@rinap/rinap2%sux:mu-bi=mu[name//name]N'N$mu,bi/mu#~,bi",
+                  "f": {
+                    "lang": "sux",
+                    "form": "mu-bi",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "mu",
+                        "utf8": "𒈬",
+                        "id": "Q006534.3.1.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "bi",
+                        "utf8": "𒁉",
+                        "id": "Q006534.3.1.1"
+                      }
+                    ],
+                    "cf": "mu",
+                    "gw": "name",
+                    "sense": "name",
+                    "norm0": "mu,bi",
+                    "pos": "N",
+                    "epos": "N",
+                    "base": "mu",
+                    "morph": "~,bi"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006534.3.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006534.3.1"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "bi₂-in-sa₄-a",
+                  "id": "Q006534.l047e3",
+                  "ref": "Q006534.3.2",
+                  "inst": "še[name]V/t",
+                  "sig": "@rinap/rinap2%sux:bi₂-in-sa₄-a=še[call//name]V/t'V/t$bi.n:še;a/sa₄#bi.n:~;a",
+                  "f": {
+                    "lang": "sux",
+                    "form": "bi₂-in-sa₄-a",
+                    "gdl": [
+                      {
+                        "v": "bi₂",
+                        "utf8": "𒉈",
+                        "id": "Q006534.3.2.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "in",
+                        "utf8": "𒅔",
+                        "id": "Q006534.3.2.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "sa₄",
+                        "utf8": "𒄷𒈿",
+                        "id": "Q006534.3.2.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "a",
+                        "utf8": "𒀀",
+                        "id": "Q006534.3.2.3"
+                      }
+                    ],
+                    "cf": "še",
+                    "gw": "call",
+                    "sense": "name",
+                    "norm0": "bi.n:še;a",
+                    "pos": "V/t",
+                    "epos": "V/t",
+                    "base": "sa₄",
+                    "morph": "bi.n:~;a"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006534.3.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006534.3.2"
+                    }
+                  ]
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q006534.4",
+                  "n": "4",
+                  "label": "4"
+                },
+                {
+                  "node": "l",
+                  "frag": "e₂-gal-bi",
+                  "id": "Q006534.l047e4",
+                  "ref": "Q006534.4.1",
+                  "inst": "egal[palace]N",
+                  "sig": "@rinap/rinap2%sux:e₂-gal-bi=egal[palace//palace]N'N$egal,bi/e₂-gal#~,bi",
+                  "f": {
+                    "lang": "sux",
+                    "form": "e₂-gal-bi",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "e₂",
+                        "utf8": "𒂍",
+                        "id": "Q006534.4.1.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "gal",
+                        "utf8": "𒃲",
+                        "id": "Q006534.4.1.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "bi",
+                        "utf8": "𒁉",
+                        "id": "Q006534.4.1.2"
+                      }
+                    ],
+                    "cf": "egal",
+                    "gw": "palace",
+                    "sense": "palace",
+                    "norm0": "egal,bi",
+                    "pos": "N",
+                    "epos": "N",
+                    "base": "e₂-gal",
+                    "morph": "~,bi"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006534.4.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006534.4.1"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "gaba-ri",
+                  "id": "Q006534.l047e5",
+                  "ref": "Q006534.4.2",
+                  "inst": "gabari[copy]N",
+                  "sig": "@rinap/rinap2%sux:gaba-ri=gabari[copy//copy]N'N$gabari/gaba-ri#~",
+                  "f": {
+                    "lang": "sux",
+                    "form": "gaba-ri",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "gaba",
+                        "utf8": "𒃮",
+                        "id": "Q006534.4.2.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ri",
+                        "utf8": "𒊑",
+                        "id": "Q006534.4.2.1"
+                      }
+                    ],
+                    "cf": "gabari",
+                    "gw": "copy",
+                    "sense": "copy",
+                    "norm0": "gabari",
+                    "pos": "N",
+                    "epos": "N",
+                    "base": "gaba-ri",
+                    "morph": "~"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006534.4.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006534.4.2"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "nu-tuku",
+                  "id": "Q006534.l047e6",
+                  "ref": "Q006534.4.3",
+                  "inst": "tuku[to acquire, get]V/t",
+                  "sig": "@rinap/rinap2%sux:nu-tuku=tuku[acquire//to acquire, get]V/t'V/t$nu:tuku/tuku#nu:~",
+                  "f": {
+                    "lang": "sux",
+                    "form": "nu-tuku",
+                    "gdl": [
+                      {
+                        "v": "nu",
+                        "utf8": "𒉡",
+                        "id": "Q006534.4.3.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "tuku",
+                        "utf8": "𒌇",
+                        "id": "Q006534.4.3.1"
+                      }
+                    ],
+                    "cf": "tuku",
+                    "gw": "acquire",
+                    "sense": "to acquire, get",
+                    "norm0": "nu:tuku",
+                    "pos": "V/t",
+                    "epos": "V/t",
+                    "base": "tuku",
+                    "morph": "nu:~"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006534.4.3"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006534.4.3"
+                    }
+                  ]
+                },
+                {
+                  "node": "d",
+                  "type": "nonw",
+                  "ref": ""
+                },
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q006534.5",
+                  "n": "5",
+                  "label": "5"
+                },
+                {
+                  "node": "l",
+                  "frag": "ša₃-bi-ta",
+                  "id": "Q006534.l047e7",
+                  "ref": "Q006534.5.1",
+                  "inst": "šag[heart]N",
+                  "sig": "@rinap/rinap2%sux:ša₃-bi-ta=šag[heart//heart]N'N$šag,bi.ta/šag₄#~,bi.ta",
+                  "f": {
+                    "lang": "sux",
+                    "form": "ša₃-bi-ta",
+                    "delim": "",
+                    "gdl": [
+                      {
+                        "v": "ša₃",
+                        "utf8": "𒊮",
+                        "id": "Q006534.5.1.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "bi",
+                        "utf8": "𒁉",
+                        "id": "Q006534.5.1.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ta",
+                        "utf8": "𒋫",
+                        "id": "Q006534.5.1.2"
+                      }
+                    ],
+                    "cf": "šag",
+                    "gw": "heart",
+                    "sense": "heart",
+                    "norm0": "šag,bi.ta",
+                    "pos": "N",
+                    "epos": "N",
+                    "base": "šag₄",
+                    "morph": "~,bi.ta"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006534.5.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006534.5.1"
+                    }
+                  ]
+                },
+                {
+                  "node": "l",
+                  "frag": "mu-un-na-dim₂",
+                  "id": "Q006534.l047e8",
+                  "ref": "Q006534.5.2",
+                  "inst": "dim[to create, make, manufacture]V/t",
+                  "sig": "@rinap/rinap2%sux:mu-un-na-dim₂=dim[create//to create, make, manufacture]V/t'V/t$mu.na:dim/dim₂#mu.na:~",
+                  "f": {
+                    "lang": "sux",
+                    "form": "mu-un-na-dim₂",
+                    "gdl": [
+                      {
+                        "v": "mu",
+                        "utf8": "𒈬",
+                        "id": "Q006534.5.2.0",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "un",
+                        "utf8": "𒌦",
+                        "id": "Q006534.5.2.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "na",
+                        "utf8": "𒈾",
+                        "id": "Q006534.5.2.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "dim₂",
+                        "utf8": "𒁶",
+                        "id": "Q006534.5.2.3"
+                      }
+                    ],
+                    "cf": "dim",
+                    "gw": "create",
+                    "sense": "to create, make, manufacture",
+                    "norm0": "mu.na:dim",
+                    "pos": "V/t",
+                    "epos": "V/t",
+                    "base": "dim₂",
+                    "morph": "mu.na:~"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006534.5.2"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006534.5.2"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

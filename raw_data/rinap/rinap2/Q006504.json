@@ -1,0 +1,124 @@
+{
+  "type": "cdl",
+  "project": "rinap/rinap2",
+  "source": "http://oracc.org/rinap/rinap2",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2021-02-03T15:12:30",
+  "textid": "Q006504",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q006504.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q006504.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "Q006504.U2",
+              "label": "1",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q006504.1",
+                  "n": "1",
+                  "label": "1"
+                },
+                {
+                  "node": "l",
+                  "frag": "{uru}har-ha-ar",
+                  "id": "Q006504.l03eb8",
+                  "ref": "Q006504.1.1",
+                  "inst": "Harhar[]SN$",
+                  "sig": "@rinap/rinap2%akk:{URU}har-ha-ar=Harhar[1//1]SN'SN$Harhar",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{URU}har-ha-ar",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "gg": "logo",
+                            "gdl_type": "logo",
+                            "group": [
+                              {
+                                "s": "URU",
+                                "utf8": "𒌷",
+                                "id": "Q006504.1.1.0",
+                                "role": "logo",
+                                "logolang": "sux"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "v": "har",
+                        "utf8": "𒄯",
+                        "id": "Q006504.1.1.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ha",
+                        "utf8": "𒄩",
+                        "id": "Q006504.1.1.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ar",
+                        "utf8": "𒅈",
+                        "id": "Q006504.1.1.3"
+                      }
+                    ],
+                    "cf": "Harhar",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm": "Harhar",
+                    "pos": "SN",
+                    "epos": "SN"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006504.1.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006504.1.1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

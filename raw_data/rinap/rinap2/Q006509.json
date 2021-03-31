@@ -1,0 +1,138 @@
+{
+  "type": "cdl",
+  "project": "rinap/rinap2",
+  "source": "http://oracc.org/rinap/rinap2",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2021-02-03T15:12:31",
+  "textid": "Q006509",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "Q006509.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "type": "surface",
+          "ref": ""
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "Q006509.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "Q006509.U2",
+              "label": "1",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "Q006509.1",
+                  "n": "1",
+                  "label": "1"
+                },
+                {
+                  "node": "l",
+                  "frag": "{uru}E₂-ba-ga-ia",
+                  "id": "Q006509.l03ebd",
+                  "ref": "Q006509.1.1",
+                  "inst": "Bit-Bagaya[]SN$",
+                  "sig": "@rinap/rinap2%akk:{URU}E₂-ba-ga-ia=Bit-Bagaya[1//1]SN'SN$Bit-Bagaya",
+                  "f": {
+                    "lang": "akk",
+                    "form": "{URU}E₂-ba-ga-ia",
+                    "gdl": [
+                      {
+                        "gg": "logo",
+                        "gdl_type": "logo",
+                        "group": [
+                          {
+                            "det": "semantic",
+                            "pos": "pre",
+                            "seq": [
+                              {
+                                "gg": "logo",
+                                "gdl_type": "logo",
+                                "group": [
+                                  {
+                                    "s": "URU",
+                                    "utf8": "𒌷",
+                                    "id": "Q006509.1.1.0",
+                                    "role": "logo",
+                                    "logolang": "sux"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "s": "E₂",
+                            "utf8": "𒂍",
+                            "id": "Q006509.1.1.1",
+                            "role": "logo",
+                            "logolang": "sux",
+                            "delim": "-"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "ba",
+                        "utf8": "𒁀",
+                        "id": "Q006509.1.1.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ga",
+                        "utf8": "𒂵",
+                        "id": "Q006509.1.1.3",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ia",
+                        "utf8": "𒅀",
+                        "id": "Q006509.1.1.4"
+                      }
+                    ],
+                    "cf": "Bit-Bagaya",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm": "Bit-Bagaya",
+                    "pos": "SN",
+                    "epos": "SN"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "Q006509.1.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "Q006509.1.1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
