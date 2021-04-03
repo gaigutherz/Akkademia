@@ -1,0 +1,12 @@
+#!/bin/sh
+
+#SBATCH --job-name=akkadian_LR_PLACEHOLDER_MAX_TOKENS_PLACEHOLDER
+#SBATCH --output=out
+#SBATCH --error=err
+#SBATCH --partition=studentkillable
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --gpus=4
+
+../akkadian_fairseq.sh result.LR_LR_PLACEHOLDER.MAX_TOKENS_MAX_TOKENS_PLACEHOLDER LR_PLACEHOLDER MAX_TOKENS_PLACEHOLDER
+
