@@ -15,6 +15,7 @@ VALID_EN = Path("valid.en")
 TEST_AK = Path("test.ak")
 TEST_TR = Path("test.tr")
 TEST_EN = Path("test.en")
+FOR_TRANSLATION_TR = Path("for_translation.tr")
 
 
 def train_and_move(input_file, model_type, model_prefix, vocab_size):
@@ -33,7 +34,7 @@ def train_tokenizer():
     train_and_move(BASE_DIR / TRAIN_EN, "bpe", "translation_bpe", 10000)
 
 
-def tokenize(model_prefix, file):
+def tokenize(model_prefix, file, should_remove_prefix=False):
     sp = sentencepiece.SentencePieceProcessor()
     f = model_prefix + ".model"
     sp.load(str(TOKEN_DIR / f))
@@ -41,7 +42,10 @@ def tokenize(model_prefix, file):
     with open(BASE_DIR / file, "r", encoding="utf8") as fin:
         data = fin.readlines()
 
-    tokenized_data = [" ".join(sp.encode_as_pieces(line)) for line in data]
+    if should_remove_prefix:
+        tokenized_data = [" ".join(sp.encode_as_pieces(line.split(": ", 1)[1])) for line in data]
+    else:
+        tokenized_data = [" ".join(sp.encode_as_pieces(line)) for line in data]
     #print('\n'.join(tokenized_data))
 
     with open(TOKEN_DIR / file, "w", encoding="utf8") as fout:
@@ -64,9 +68,14 @@ def run_tokenizer():
     tokenize("translation_bpe", TEST_EN)
 
 
+def tokenize_transliteration_for_translation():
+    tokenize("transliteration_bpe", FOR_TRANSLATION_TR, True)
+
+
 def main():
     train_tokenizer()
     run_tokenizer()
+    tokenize_transliteration_for_translation()
 
 
 if __name__ == '__main__':

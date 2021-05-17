@@ -36,63 +36,106 @@ def parse_tran(c, chars, key, add_three_dots):
         if "group" in c:
             c = c["group"][0]
             if "s" in c:
-                chars.append([c["id"], "{" + c["s"] + "}", delim, c["utf8"]])
+                try:
+                    chars.append([c["id"], "{" + c["s"] + "}", delim, c["utf8"]])
+                except:
+                    chars.append([c["id"], "{" + c["s"] + "}", delim, ""])
             # Very rare! Reaches this case only in saao.
             else:
-                chars.append([c["id"], "{" + c["form"] + "}", delim, c["utf8"]])
+                try:
+                    chars.append([c["id"], "{" + c["form"] + "}", delim, c["utf8"]])
+                except:
+                    chars.append([c["id"], "{" + c["form"] + "}", delim, ""])
 
         else:
             if "v" in c:
-                chars.append([c["id"], "{" + c["v"] + "}", delim, c["utf8"]])
+                try:
+                    chars.append([c["id"], "{" + c["v"] + "}", delim, c["utf8"]])
+                except:
+                    chars.append([c["id"], "{" + c["v"] + "}", delim, ""])
             elif "s" in c:
-                chars.append([c["id"], "{" + c["s"] + "}", delim, c["utf8"]])
+                try:
+                    chars.append([c["id"], "{" + c["s"] + "}", delim, c["utf8"]])
+                except:
+                    chars.append([c["id"], "{" + c["s"] + "}", delim, ""])
             # Very rare! Reaches this case only in saao.
             elif "sexified" or "form" in c:
-                chars.append([c["id"], "{" + c["form"] + "}", delim, c["utf8"]])
+                try:
+                    chars.append([c["id"], "{" + c["form"] + "}", delim, c["utf8"]])
+                except:
+                    chars.append([c["id"], "{" + c["form"] + "}", delim, ""])
             else:
                 print(c)
                 raise Exception("c doesn't contain v / s / sexified / form! We don't know how to parse it!")
 
     elif "sexified" in c:
-        chars.append([c["id"], c["form"], get_delim(c), c["utf8"]])
+        try:
+            chars.append([c["id"], c["form"], get_delim(c), c["utf8"]])
+        except:
+            chars.append([c["id"], c["form"], get_delim(c), ""])
 
     elif "v" in c:
         # There is a mistake in X900016.json in saao02 where there is no id, so ignoring it.
         if "id" in c:
-            chars.append([c["id"], c["v"], get_delim(c), c["utf8"]])
+            try:
+                chars.append([c["id"], c["v"], get_delim(c), c["utf8"]])
+            except:
+                chars.append([c["id"], c["v"], get_delim(c), ""])
 
     elif "s" in c:
         # There is a mistake in P336656.json in saao08 where there is no id, so ignoring it.
         if "id" in c:
-            chars.append([c["id"], c["s"], get_delim(c), c["utf8"]])
+            try:
+                chars.append([c["id"], c["s"], get_delim(c), c["utf8"]])
+            except:
+                chars.append([c["id"], c["s"], get_delim(c), ""])
 
     # Very rare!
     elif "q" in c:
         try:
             chars.append([c["id"], c["q"], get_delim(c), c["utf8"]])
         except:
-            chars.append([c["id"], c["q"], get_delim(c), c["qualified"][1]["utf8"]])
+            try:
+                chars.append([c["id"], c["q"], get_delim(c), c["qualified"][1]["utf8"]])
+            except:
+                chars.append([c["id"], c["q"], get_delim(c), ""])
 
     # Very rare!
     elif "c" in c:
-        chars.append([c["id"], c["c"], get_delim(c), c["utf8"]])
+        try:
+            chars.append([c["id"], c["c"], get_delim(c), c["utf8"]])
+        except:
+            chars.append([c["id"], c["c"], get_delim(c), ""])
 
     # Very rare! Doesn't appear in rinap, only riao (the letter "n").
     elif "n" in c:
-        chars.append([c["id"], c["n"], get_delim(c), c["utf8"]])
+        try:
+            chars.append([c["id"], c["n"], get_delim(c), c["utf8"]])
+        except:
+            chars.append([c["id"], c["n"], get_delim(c), ""])
 
     # Very rare! Appears only in saao (the letter "form" when there is no other letter).
     elif "form" in c:
-        chars.append([c["id"], c["form"], get_delim(c), c["utf8"]])
+        try:
+            chars.append([c["id"], c["form"], get_delim(c), c["utf8"]])
+        except:
+            chars.append([c["id"], c["form"], get_delim(c), ""])
 
     # Very rare! Appears only in saao (the letter "form" when there is no other letter).
     elif "p" in c:
-        chars.append([c["id"], c["p"], get_delim(c), c["utf8"]])
+        try:
+            chars.append([c["id"], c["p"], get_delim(c), c["utf8"]])
+        except:
+            chars.append([c["id"], c["p"], get_delim(c), ""])
 
     # Broken sign, doesn't interest us
     elif "x" in c:
         if add_three_dots and c["x"] == "ellipsis":
             chars.append([c["id"], "...", None, "..."])
+
+    # Happened in P429046.json
+    elif "gloss" in c:
+        pass
 
     else:
         print(c)
@@ -130,7 +173,7 @@ def parse_l_node(l_node, chars, translation, key, add_three_dots):
     :return: nothing
     """
     if l_node["f"]["lang"] == "arc" or l_node["f"]["lang"] == "qcu-949" or l_node["f"]["lang"] == "akk-949" \
-            or l_node["f"]["lang"] == "arc-949":
+            or l_node["f"]["lang"] == "arc-949" or l_node["f"]["lang"] == "akk-x-neoass-949":
         return
 
     parse_translation(l_node, translation)

@@ -10,16 +10,16 @@ from akkadian.parse_xml import parse_xml
 from akkadian.data import increment_count
 
 
-def write_sentences_to_file(chars_sentences, translation_sentences):
+def write_sentences_to_file(chars_sentences, translation_sentences, signs_path, transcription_path, translation_path):
     """
     Write the data of word by word translations to files (different files for signs, transliterations and translations)
     :param chars_sentences: sentences with the signs and transliterations
     :param translation_sentences: translations done word by word for the corresponding chars_sentences
     :return: nothing, signs, transliterations and translations written to corresponding files
     """
-    signs_file = open(Path(r"../NMT_input/signs_per_line.txt"), "w", encoding="utf8")
-    transcription_file = open(Path(r"../NMT_input/transcriptions_per_line.txt"), "w", encoding="utf8")
-    translation_file = open(Path(r"../NMT_input/translation_per_line.txt"), "w", encoding="utf8")
+    signs_file = open(signs_path, "w", encoding="utf8")
+    transcription_file = open(transcription_path, "w", encoding="utf8")
+    translation_file = open(translation_path, "w", encoding="utf8")
 
     translation_lengths = []
     for key in translation_sentences:
@@ -49,6 +49,26 @@ def write_sentences_to_file(chars_sentences, translation_sentences):
     translation_file.close()
 
 
+def write_sentences_to_file_no_translation(chars_sentences, transcription_path):
+    """
+    Write the data of word by word translations to files (different files for signs, transliterations and translations)
+    :param chars_sentences: sentences with the signs and transliterations
+    :return: nothing, signs, transliterations and translations written to corresponding files
+    """
+    transcription_file = open(transcription_path, "w", encoding="utf8")
+
+    for key in chars_sentences:
+        transcription_file.write(key + ": ")
+
+        for c in chars_sentences[key]:
+            delim = c[2] if not c[2] is None else " "
+            transcription_file.write(c[1] + delim)
+
+        transcription_file.write("\n")
+
+    transcription_file.close()
+
+
 def build_translations(corpora, mapping):
     """
     Build translations for preprocess
@@ -69,7 +89,7 @@ def build_translations(corpora, mapping):
     return all_translations
 
 
-def build_full_line_translation_process(corpora):
+def build_full_line_translation_process(corpora, has_translation, signs_path, transcription_path, translation_path):
     """
     Do first part of preprocess, build signs and transliterations
     :param corpora: corpora to use for building the data for full translation
@@ -77,8 +97,12 @@ def build_full_line_translation_process(corpora):
     """
     chars, translation, mapping, lines_cut_by_translation = build_signs_and_transcriptions(corpora, True)
     chars_sentences = break_into_sentences(chars, lines_cut_by_translation)
-    translation_sentences = break_into_sentences(translation, lines_cut_by_translation)
-    write_sentences_to_file(chars_sentences, translation_sentences)
+    if has_translation:
+        translation_sentences = break_into_sentences(translation, lines_cut_by_translation)
+        write_sentences_to_file(chars_sentences, translation_sentences, signs_path, transcription_path,
+                                translation_path)
+    else:
+        write_sentences_to_file_no_translation(chars_sentences, transcription_path)
     return chars_sentences, mapping
 
 
@@ -459,9 +483,21 @@ def preprocess(corpora):
     :param corpora: corpora to process
     :return: nothing
     """
-    chars_sentences, mapping = build_full_line_translation_process(corpora)
+    chars_sentences, mapping = build_full_line_translation_process(corpora,
+                                                                   True,
+                                                                   Path(r"../NMT_input/signs_per_line.txt"),
+                                                                   Path(r"../NMT_input/transcriptions_per_line.txt"),
+                                                                   Path(r"../NMT_input/translation_per_line.txt"))
     translations = build_translations(corpora, mapping)
     write_translations_to_file(chars_sentences, translations)
+
+
+def preprocess_not_translated_corpora(corpora):
+    chars_sentences, mapping = build_full_line_translation_process(corpora,
+                                                                   False,
+                                                                   None,
+                                                                   Path(r"../NMT_input/for_translation.tr"),
+                                                                   None)
 
 
 def write_train_valid_test_files(file_type, lang, valid_lines, test_lines):
@@ -531,8 +567,11 @@ def main():
     :return: nothing
     """
     corpora = ["rinap", "riao", "ribo", "saao", "suhu"]
+    not_translated_corpora = ["atae"]
     preprocess(corpora)
     build_train_valid_test()
+    preprocess_not_translated_corpora(not_translated_corpora)
+
 
 
 if __name__ == '__main__':
