@@ -79,6 +79,35 @@ def detokenize_atae_translated():
             fout.write(line)
 
 
+def detokenize_best_run_test_data_translated():
+    sp1 = sentencepiece.SentencePieceProcessor()
+    sp1.load(str(TOKEN_DIR / "transliteration_bpe.model"))
+
+    sp2 = sentencepiece.SentencePieceProcessor()
+    sp2.load(str(TOKEN_DIR / "translation_bpe.model"))
+
+    with open(Path("../best_run_test_data_translated.txt"), "r", encoding="utf8") as fin:
+        data = fin.readlines()
+
+    detokenized_data = []
+    for line in data:
+        if line[0] == 'S':
+            parts = line.split("\t", 1)
+            detokenized_data.append(parts[0] + "\t" + sp1.decode_pieces(parts[1].split(" ")).replace("_", " "))
+        elif line[0] == 'T':
+            parts = line.split("\t", 1)
+            detokenized_data.append(parts[0] + "\t" + sp2.decode_pieces(parts[1].split(" ")).replace("_", " "))
+        elif line[0] == 'H' or line[0] == 'D':
+            parts = line.split("\t", 2)
+            detokenized_data.append(parts[0] + "\t" + parts[1] + "\t" + sp2.decode_pieces(parts[2].split(" ")).replace("_", " "))
+        else:
+            detokenized_data.append(line)
+
+    with open(Path("../best_run_test_data_translated_detokenized.txt"), "w", encoding="utf8") as fout:
+        for line in detokenized_data:
+            fout.write(line)
+
+
 def run_tokenizer():
     # TODO: Compare signs_chars to signs_bpe
     tokenize("signs_char", TRAIN_AK)
@@ -103,6 +132,7 @@ def main():
     run_tokenizer()
     tokenize_transliteration_for_translation()
     detokenize_atae_translated()
+    detokenize_best_run_test_data_translated()
 
 
 if __name__ == '__main__':
