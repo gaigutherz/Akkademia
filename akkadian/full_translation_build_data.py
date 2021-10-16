@@ -278,7 +278,7 @@ def clean_signs_transcriptions(signs, is_signs):
 def add_translation_to_file(prev_signs, signs_vocab, prev_transcription, transcription_vocab, prev_tr,
                             translation_lengths, long_trs, very_long_trs, translation_vocab, prev_text,
                             prev_start_line, prev_end_line, signs_file, transcription_file, translation_file,
-                            could_divide_by_three_dots, could_not_divide, metadata=False):
+                            could_divide_by_three_dots, could_not_divide, metadata=False, divide_by_three_dots=True):
     """
     Add a translation with corresponding signs and transliterations to files
     :param prev_signs: previous signs written to file
@@ -322,7 +322,8 @@ def add_translation_to_file(prev_signs, signs_vocab, prev_transcription, transcr
     splitted_translation = [tr for tr in prev_tr.split("... ") if tr != "" and tr != " "]
 
     # Write to files
-    if len(splitted_signs) == len(splitted_transcription) and len(splitted_transcription) == len(splitted_translation):
+    if len(splitted_signs) == len(splitted_transcription) and len(splitted_transcription) == len(splitted_translation) \
+            and divide_by_three_dots:
         could_divide_by_three_dots += 1
 
         for i in range(len(splitted_signs)):
@@ -357,16 +358,16 @@ def add_translation_to_file(prev_signs, signs_vocab, prev_transcription, transcr
            could_divide_by_three_dots, could_not_divide
 
 
-def write_translations_to_file(chars_sentences, translations):
+def write_translations_to_file(chars_sentences, translations, signs_path, transcription_path, translation_path, divide_by_three_dots):
     """
     Write all the data we collected (signs, transliterations and translations) to proper files
     :param chars_sentences: sentences of the signs ans transliterations
     :param translations: translations corresponding to the signs and transliterations
     :return: nothing, the signs, transliterations and translations are written to different files
     """
-    signs_file = open(Path(r"../NMT_input/signs.txt"), "w", encoding="utf8")
-    transcription_file = open(Path(r"../NMT_input/transcriptions.txt"), "w", encoding="utf8")
-    translation_file = open(Path(r"../NMT_input/translation.txt"), "w", encoding="utf8")
+    signs_file = open(signs_path, "w", encoding="utf8")
+    transcription_file = open(transcription_path, "w", encoding="utf8")
+    translation_file = open(translation_path, "w", encoding="utf8")
 
     translation_lengths = []
     long_trs = 0
@@ -395,7 +396,7 @@ def write_translations_to_file(chars_sentences, translations):
                     add_translation_to_file(prev_signs, signs_vocab, prev_transcription, transcription_vocab, prev_tr,
                                     translation_lengths, long_trs, very_long_trs, translation_vocab, prev_text,
                                     prev_start_line, prev_end_line, signs_file, transcription_file,
-                                    translation_file, could_divide_by_three_dots, could_not_divide, False)
+                                    translation_file, could_divide_by_three_dots, could_not_divide, False, divide_by_three_dots)
             prev_should_add = False
             continue
 
@@ -449,7 +450,7 @@ def write_translations_to_file(chars_sentences, translations):
                     add_translation_to_file(prev_signs, signs_vocab, prev_transcription, transcription_vocab, prev_tr,
                                         translation_lengths, long_trs, very_long_trs, translation_vocab, prev_text,
                                         prev_start_line, prev_end_line, signs_file, transcription_file,
-                                        translation_file, could_divide_by_three_dots, could_not_divide, False)
+                                        translation_file, could_divide_by_three_dots, could_not_divide, False, divide_by_three_dots)
 
             prev_should_add = True
 
@@ -467,7 +468,7 @@ def write_translations_to_file(chars_sentences, translations):
             add_translation_to_file(prev_signs, signs_vocab, prev_transcription, transcription_vocab, prev_tr,
                                     translation_lengths, long_trs, very_long_trs, translation_vocab, prev_text,
                                     prev_start_line, prev_end_line, signs_file, transcription_file,
-                                    translation_file, could_divide_by_three_dots, could_not_divide, False)
+                                    translation_file, could_divide_by_three_dots, could_not_divide, False, divide_by_three_dots)
 
     print_statistics(translation_lengths, long_trs, very_long_trs, signs_vocab, transcription_vocab,
                          translation_vocab, could_divide_by_three_dots, could_not_divide)
@@ -477,7 +478,7 @@ def write_translations_to_file(chars_sentences, translations):
     translation_file.close()
 
 
-def preprocess(corpora):
+def preprocess(corpora, divide_by_three_dots):
     """
     Process corpora for the input of the translation algorithms
     :param corpora: corpora to process
@@ -489,7 +490,20 @@ def preprocess(corpora):
                                                                    Path(r"../NMT_input/transcriptions_per_line.txt"),
                                                                    Path(r"../NMT_input/translation_per_line.txt"))
     translations = build_translations(corpora, mapping)
-    write_translations_to_file(chars_sentences, translations)
+    if divide_by_three_dots:
+        write_translations_to_file(chars_sentences,
+                                   translations,
+                                   Path(r"../NMT_input/signs.txt"),
+                                   Path(r"../NMT_input/transcriptions.txt"),
+                                   Path(r"../NMT_input/translation.txt"),
+                                   True)
+    else:
+        write_translations_to_file(chars_sentences,
+                                   translations,
+                                   Path(r"../NMT_input/not_divided_by_three_dots/signs.txt"),
+                                   Path(r"../NMT_input/not_divided_by_three_dots/transcriptions.txt"),
+                                   Path(r"../NMT_input/not_divided_by_three_dots/translation.txt"),
+                                   False)
 
 
 def preprocess_not_translated_corpora(corpora):
@@ -500,11 +514,17 @@ def preprocess_not_translated_corpora(corpora):
                                                                    None)
 
 
-def write_train_valid_test_files(file_type, lang, valid_lines, test_lines):
-    f = open(Path(r"../NMT_input/" + file_type + ".txt"), "r", encoding="utf8")
-    train = open(Path(r"../NMT_input/train." + lang), "w", encoding="utf8")
-    valid = open(Path(r"../NMT_input/valid." + lang), "w", encoding="utf8")
-    test = open(Path(r"../NMT_input/test." + lang), "w", encoding="utf8")
+def write_train_valid_test_files(file_type, lang, valid_lines, test_lines, divide_by_three_dots):
+    if divide_by_three_dots:
+        f = open(Path(r"../NMT_input/" + file_type + ".txt"), "r", encoding="utf8")
+        train = open(Path(r"../NMT_input/train." + lang), "w", encoding="utf8")
+        valid = open(Path(r"../NMT_input/valid." + lang), "w", encoding="utf8")
+        test = open(Path(r"../NMT_input/test." + lang), "w", encoding="utf8")
+    else:
+        f = open(Path(r"../NMT_input/not_divided_by_three_dots/" + file_type + ".txt"), "r", encoding="utf8")
+        train = open(Path(r"../NMT_input/not_divided_by_three_dots/train." + lang), "w", encoding="utf8")
+        valid = open(Path(r"../NMT_input/not_divided_by_three_dots/valid." + lang), "w", encoding="utf8")
+        test = open(Path(r"../NMT_input/not_divided_by_three_dots/test." + lang), "w", encoding="utf8")
 
     for i, line in enumerate(f):
         if i in valid_lines:
@@ -520,8 +540,13 @@ def write_train_valid_test_files(file_type, lang, valid_lines, test_lines):
     test.close()
 
 
-def divide_to_train_valid_test():
-    with open(Path(r"../NMT_input/signs.txt"), "r", encoding="utf8") as f:
+def divide_to_train_valid_test(divide_by_three_dots):
+    if divide_by_three_dots:
+        file = Path(r"../NMT_input/signs.txt")
+    else:
+        file = Path(r"../NMT_input/not_divided_by_three_dots/signs.txt")
+
+    with open(file, "r", encoding="utf8") as f:
         for i, line in enumerate(f):
             pass
     line_number = i + 1
@@ -542,23 +567,30 @@ def divide_to_train_valid_test():
     return valid_lines, test_lines
 
 
-def build_train_valid_test():
-    valid_lines, test_lines = divide_to_train_valid_test()
-    # with open(Path(r"../NMT_input/valid_lines.pkl"), "wb") as f:
-    #     pickle.dump(valid_lines, f)
-    with open(Path(r"../NMT_input/valid_lines.pkl"), "rb") as f:
+def build_train_valid_test(divide_by_three_dots):
+    if divide_by_three_dots:
+        valid_lines_pkl = Path(r"../NMT_input/valid_lines.pkl")
+        test_lines_pkl = Path(r"../NMT_input/test_lines.pkl")
+    else:
+        valid_lines_pkl = Path(r"../NMT_input/not_divided_by_three_dots/valid_lines.pkl")
+        test_lines_pkl = Path(r"../NMT_input/not_divided_by_three_dots/test_lines.pkl")
+
+    valid_lines, test_lines = divide_to_train_valid_test(divide_by_three_dots)
+    with open(valid_lines_pkl, "wb") as f:
+        pickle.dump(valid_lines, f)
+    with open(valid_lines_pkl, "rb") as f:
         valid_lines_file = pickle.load(f)
-    # assert valid_lines == valid_lines_file
+    assert valid_lines == valid_lines_file
 
-    # with open(Path(r"../NMT_input/test_lines.pkl"), "wb") as f:
-    #     pickle.dump(test_lines, f)
-    with open(Path(r"../NMT_input/test_lines.pkl"), "rb") as f:
+    with open(test_lines_pkl, "wb") as f:
+        pickle.dump(test_lines, f)
+    with open(test_lines_pkl, "rb") as f:
         test_lines_file = pickle.load(f)
-    # assert test_lines == test_lines_file
+    assert test_lines == test_lines_file
 
-    write_train_valid_test_files("signs", "ak", valid_lines_file, test_lines_file)
-    write_train_valid_test_files("transcriptions", "tr", valid_lines_file, test_lines_file)
-    write_train_valid_test_files("translation", "en", valid_lines_file, test_lines_file)
+    write_train_valid_test_files("signs", "ak", valid_lines_file, test_lines_file, divide_by_three_dots)
+    write_train_valid_test_files("transcriptions", "tr", valid_lines_file, test_lines_file, divide_by_three_dots)
+    write_train_valid_test_files("translation", "en", valid_lines_file, test_lines_file, divide_by_three_dots)
 
 
 def main():
@@ -568,8 +600,9 @@ def main():
     """
     corpora = ["rinap", "riao", "ribo", "saao", "suhu"]
     not_translated_corpora = ["atae"]
-    preprocess(corpora)
-    build_train_valid_test()
+    divide_by_three_dots = False
+    preprocess(corpora, divide_by_three_dots)
+    build_train_valid_test(divide_by_three_dots)
     preprocess_not_translated_corpora(not_translated_corpora)
 
 

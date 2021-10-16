@@ -2,8 +2,13 @@ import sentencepiece
 from pathlib import Path
 import shutil
 
+DIVIDED_BY_THREE_DOTS = False
 
-BASE_DIR = Path("../NMT_input")
+if DIVIDED_BY_THREE_DOTS == True:
+    BASE_DIR = Path("../NMT_input")
+else:
+    BASE_DIR = Path("../NMT_input") / Path("not_divided_by_three_dots")
+
 TOKEN_DIR = BASE_DIR / Path("tokenization")
 
 TRAIN_AK = Path("train.ak")
@@ -139,9 +144,9 @@ def tokenize_transliteration_for_translation():
 def main():
     train_tokenizer()
     run_tokenizer()
-    tokenize_transliteration_for_translation()
-    detokenize_atae_translated()
-    detokenize_best_run_test_data_translated(True)
+    # tokenize_transliteration_for_translation()
+    # detokenize_atae_translated()
+    # detokenize_best_run_test_data_translated(True)
 
 
 if __name__ == '__main__':
