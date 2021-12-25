@@ -40,7 +40,7 @@ def train_tokenizer():
     train_and_move(BASE_DIR / TRAIN_EN, "bpe", "translation_bpe", 10000)
 
 
-def tokenize(model_prefix, file, should_remove_prefix=False, token_dir=TOKEN_DIR, base_dir=BASE_DIR, output_dir=TOKEN_DIR, delete=False):
+def tokenize(model_prefix, file, should_remove_prefix=False, token_dir=TOKEN_DIR, base_dir=BASE_DIR, output_dir=TOKEN_DIR):
     sp = sentencepiece.SentencePieceProcessor()
     f = model_prefix + ".model"
     sp.load(str(token_dir / f))
@@ -58,9 +58,6 @@ def tokenize(model_prefix, file, should_remove_prefix=False, token_dir=TOKEN_DIR
     with open(output_file, "w", encoding="utf8") as fout:
         for line in tokenized_data:
             fout.write(line + "\n")
-
-    if delete:
-        os.remove(output_file)
 
 
 def detokenize_atae_translated():
