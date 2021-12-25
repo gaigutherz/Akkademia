@@ -14,7 +14,7 @@ def translate_from_transliteration(file):
 
 
 def translate_from_akkadian(file):
-    tokenize("signs_char", file, False, "", "/tmp")
+    tokenize("signs_char", file, False, "NMT_input/tokenization", "", "/tmp")
     cmd = "../../fairseq/fairseq_cli/interactive.py " \
           "../data-bin-not-divided-by-three-dots/ " \
           "--path ../not_divided_by_three_dots_result.LR_0.1.MAX_TOKENS_4000/checkpoint_best.pt " \
@@ -25,5 +25,5 @@ def translate_from_akkadian(file):
 
 
 if __name__ == '__main__':
-    file = input("Please enter the name of the transliteration file for translation")
+    file = input("Please enter the name of the transliteration file for translation\n")
     translate_from_transliteration(file)
