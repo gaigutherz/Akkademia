@@ -26,5 +26,7 @@ def translate_from_akkadian(file):
 
 
 if __name__ == '__main__':
-    file = input("Please enter the name of the transliteration file for translation\n")
-    translate_from_transliteration(file)
+    trans_file = input("Please enter the name of the transliteration file for translation\n")
+    translate_from_transliteration(trans_file)
+    akkadian_file = input("Please enter the name of the Akkadian file for translation\n")
+    translate_from_akkadian(akkadian_file)
