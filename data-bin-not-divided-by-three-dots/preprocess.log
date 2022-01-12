@@ -1,0 +1,14 @@
+Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, azureml_logging=False, bf16=False, bpe=None, cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin-not-divided-by-three-dots', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=False, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, reset_logging=True, scoring='bleu', seed=1, source_lang='ak', srcdict=None, target_lang='en', task='translation', tensorboard_logdir=None, testpref='NMT_input/not_divided_by_three_dots/tokenization/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='NMT_input/not_divided_by_three_dots/tokenization/train', user_dir=None, validpref='NMT_input/not_divided_by_three_dots/tokenization/valid', wandb_project=None, workers=10)
+[ak] Dictionary: 440 types
+[ak] NMT_input/not_divided_by_three_dots/tokenization/train.ak: 45258 sents, 1408090 tokens, 0.0% replaced by <unk>
+[ak] Dictionary: 440 types
+[ak] NMT_input/not_divided_by_three_dots/tokenization/valid.ak: 2473 sents, 76051 tokens, 0.00131% replaced by <unk>
+[ak] Dictionary: 440 types
+[ak] NMT_input/not_divided_by_three_dots/tokenization/test.ak: 2568 sents, 78853 tokens, 0.0% replaced by <unk>
+[en] Dictionary: 9472 types
+[en] NMT_input/not_divided_by_three_dots/tokenization/train.en: 45258 sents, 1158924 tokens, 0.0% replaced by <unk>
+[en] Dictionary: 9472 types
+[en] NMT_input/not_divided_by_three_dots/tokenization/valid.en: 2473 sents, 62082 tokens, 0.0435% replaced by <unk>
+[en] Dictionary: 9472 types
+[en] NMT_input/not_divided_by_three_dots/tokenization/test.en: 2568 sents, 64812 tokens, 0.0278% replaced by <unk>
+Wrote preprocessed data to data-bin-not-divided-by-three-dots

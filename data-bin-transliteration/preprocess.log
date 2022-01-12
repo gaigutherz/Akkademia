@@ -1,0 +1,14 @@
+Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, azureml_logging=False, bf16=False, bpe=None, cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='/tmp/data-bin-transliteration', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=False, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, reset_logging=True, scoring='bleu', seed=1, source_lang='tr', srcdict=None, target_lang='en', task='translation', tensorboard_logdir=None, testpref='NMT_input/tokenization/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='NMT_input/tokenization/train', user_dir=None, validpref='NMT_input/tokenization/valid', wandb_project=None, workers=10)
+[tr] Dictionary: 1016 types
+[tr] NMT_input/tokenization/train.tr: 50478 sents, 2022250 tokens, 0.0% replaced by <unk>
+[tr] Dictionary: 1016 types
+[tr] NMT_input/tokenization/valid.tr: 2812 sents, 114783 tokens, 0.000871% replaced by <unk>
+[tr] Dictionary: 1016 types
+[tr] NMT_input/tokenization/test.tr: 2870 sents, 114482 tokens, 0.0% replaced by <unk>
+[en] Dictionary: 9480 types
+[en] NMT_input/tokenization/train.en: 50478 sents, 1138610 tokens, 0.0% replaced by <unk>
+[en] Dictionary: 9480 types
+[en] NMT_input/tokenization/valid.en: 2812 sents, 64396 tokens, 0.0248% replaced by <unk>
+[en] Dictionary: 9480 types
+[en] NMT_input/tokenization/test.en: 2870 sents, 65479 tokens, 0.0244% replaced by <unk>
+Wrote preprocessed data to /tmp/data-bin-transliteration
