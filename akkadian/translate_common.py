@@ -33,5 +33,5 @@ def detokenize_translation(line):
         del splitted[1]
 
     tokenized = ' '.join(splitted[1:])
-    translation = tokenized.replace(' ▁', ' ').replace(' ,', ',').replace(' .', '.').replace(' -', '-').replace(' !', '!').replace(' ?', '?')
+    translation = tokenized.replace('▁', '').replace(' ,', ',').replace(' .', '.').replace(' -', '-').replace(' !', '!').replace(' ?', '?')
     return splitted[0] + ' ' + translation
