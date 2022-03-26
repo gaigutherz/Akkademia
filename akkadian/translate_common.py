@@ -21,8 +21,9 @@ def translation(line):
 def detokenize_source(line):
     splitted = line.split('\t')
 
-    tokenized = ' '.join(splitted)
-    return tokenized.replace('▁', '').replace(' ', '')
+    tokenized = ' '.join(splitted[1:])
+    source = tokenized.replace('▁', '').replace(' ', '')
+    return splitted[0] + ' ' + source
 
 
 def detokenize_translation(line):
@@ -31,5 +32,6 @@ def detokenize_translation(line):
     if len(splitted) > 1 :
         del splitted[1]
 
-    tokenized = ' '.join(splitted)
-    return tokenized.replace(' ▁', ' ').replace(' ,', ',').replace(' .', '.').replace(' -', '-').replace(' !', '!').replace(' ?', '?')
+    tokenized = ' '.join(splitted[1:])
+    translation = tokenized.replace(' ▁', ' ').replace(' ,', ',').replace(' .', '.').replace(' -', '-').replace(' !', '!').replace(' ?', '?')
+    return splitted[0] + ' ' + translation
