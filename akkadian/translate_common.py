@@ -18,11 +18,18 @@ def translation(line):
     return False
 
 
-def detokenize_english(line):
-    splitted = line.split(' ', '\t')
+def detokenize_source(line):
+    splitted = line.split('\t')
+
+    tokenized = ' '.join(splitted)
+    return tokenized.replace('▁', '').replace(' ', '')
+
+
+def detokenize_translation(line):
+    splitted = line.split('\t')
 
     if len(splitted) > 1 :
         del splitted[1]
 
     tokenized = ' '.join(splitted)
-    return tokenized.replace(' ▁', ' ').replace(' ,', ',').replace(' .', '.').replace(' -', '-')
+    return tokenized.replace(' ▁', ' ').replace(' ,', ',').replace(' .', '.').replace(' -', '-').replace(' !', '!').replace(' ?', '?')
