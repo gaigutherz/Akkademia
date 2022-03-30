@@ -4,11 +4,12 @@ from translate_from_transliteration import translate_transliteration_base
 
 
 def translate_transliteration(sentence):
-    with open("transliteration.tmp", "w") as f:
+    tmp_file = "transliteration.tmp"
+    with open(tmp_file, "w") as f:
         f.write(sentence)
-        raw_result = translate_transliteration_base(f, True).stdout
 
-    os.remove("transliteration.tmp")
+    raw_result = translate_transliteration_base(tmp_file, True).stdout
+    os.remove(tmp_file)
 
     output = ""
     for line in raw_result.decode().split('\n'):
