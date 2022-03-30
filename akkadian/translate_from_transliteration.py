@@ -4,7 +4,7 @@ from translation_tokenize import tokenize
 from translate_common import source, translation, detokenize_source, detokenize_translation
 
 
-def translate_from_transliteration_base(file, capture_output=False):
+def translate_transliteration_base(file, capture_output=False):
     tokenize("transliteration_bpe", file, False, Path("NMT_input/tokenization"), Path(""), Path("/tmp"))
     cmd = "../fairseq/fairseq_cli/interactive.py " \
           "data-bin-transliteration/ " \
@@ -17,12 +17,12 @@ def translate_from_transliteration_base(file, capture_output=False):
     return subprocess.run(cmd.split())
 
 
-def translate_from_transliteration_raw(file):
-    translate_from_transliteration_base(file)
+def translate_transliteration_raw(file):
+    translate_transliteration_base(file)
 
 
-def translate_from_transliteration(file):
-    raw_result = translate_from_transliteration_base(file, True).stdout
+def translate_transliteration_file(file):
+    raw_result = translate_transliteration_base(file, True).stdout
     for line in raw_result.decode().split('\n'):
         if source(line):
             print(detokenize_source(line))
@@ -30,6 +30,16 @@ def translate_from_transliteration(file):
             print(detokenize_translation(line))
 
 
+def translate_transliteration(sentence):
+    with open("transliteration.tmp", encoding='utf-8') as f:
+        f.write(sentence)
+        raw_result = translate_transliteration_base(f, True).stdout
+
+    for line in raw_result.decode().split('\n'):
+        if translation(line):
+            print(detokenize_translation(line))
+
+
 if __name__ == '__main__':
     transliteration_file = input("Please enter the name of the transliteration file for translation\n")
-    translate_from_transliteration(transliteration_file)
+    translate_transliteration_file(transliteration_file)
