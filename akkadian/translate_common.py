@@ -26,7 +26,7 @@ def detokenize_source(line):
     return splitted[0] + ' ' + source
 
 
-def detokenize_translation(line, include_line_number):
+def detokenize_translation(line, include_line_number=False):
     splitted = line.split('\t')
 
     if len(splitted) > 1 :

@@ -27,17 +27,7 @@ def translate_cuneiform_file(file):
         if source(line):
             print(detokenize_source(line))
         if translation(line):
-            print(detokenize_translation(line))
-
-
-def translate_cuneiform(sentence):
-    with open("cuneiform.tmp", encoding='utf-8') as f:
-        f.write(sentence)
-        raw_result = translate_cuneiform_base(f, True).stdout
-
-    for line in raw_result.decode().split('\n'):
-        if translation(line):
-            print(detokenize_translation(line))
+            print(detokenize_translation(line, True))
 
 
 if __name__ == '__main__':
