@@ -1,11 +1,14 @@
+import os
 from translate_common import translation, detokenize_translation
 from translate_from_transliteration import translate_transliteration_base
 
 
 def translate_transliteration(sentence):
-    with open("transliteration.tmp", encoding='utf-8') as f:
+    with open("transliteration.tmp", "w") as f:
         f.write(sentence)
         raw_result = translate_transliteration_base(f, True).stdout
+
+    os.remove("transliteration.tmp")
 
     output = ""
     for line in raw_result.decode().split('\n'):

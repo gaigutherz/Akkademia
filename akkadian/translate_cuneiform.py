@@ -1,11 +1,14 @@
+import os
 from translate_common import translation, detokenize_translation
 from translate_from_cuneiform import translate_cuneiform_base
 
 
 def translate_cuneiform(sentence):
-    with open("cuneiform.tmp", encoding='utf-8') as f:
+    with open("cuneiform.tmp", "w") as f:
         f.write(sentence)
         raw_result = translate_cuneiform_base(f, True).stdout
+
+    os.remove("cuneiform.tmp")
 
     output = ""
     for line in raw_result.decode().split('\n'):
