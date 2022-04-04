@@ -41,7 +41,7 @@ def detokenize_translation(line, include_line_number=False):
         del splitted[1]
 
     tokenized = ' '.join(splitted[1:])
-    translation = tokenized.replace('▁', '').replace(' ,', ',').replace(' .', '.').replace('- ', '-').replace(' -', '-').replace(' !', '!').replace(' ?', '?').replace(' ;', ';').replace(' \'', '\'').replace('\' ', '\'')
+    translation = tokenized.replace('▁', '').replace(' ,', ',').replace(' .', '.').replace('- ', '-').replace(' -', '-').replace(' !', '!').replace(' ?', '?').replace(' ;', ';').replace(' \'', '\'').replace('\' ', '\'').replace('( ', '(').replace(' )', ')')
     if include_line_number:
         return splitted[0] + ' ' + translation
     return translation
