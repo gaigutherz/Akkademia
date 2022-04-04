@@ -18,11 +18,19 @@ def translation(line):
     return False
 
 
-def detokenize_source(line):
+def detokenize_cuneiform(line):
     splitted = line.split('\t')
 
     tokenized = ' '.join(splitted[1:])
     source = tokenized.replace('▁', '').replace(' ', '')
+    return splitted[0] + ' ' + source
+
+
+def detokenize_transliteration(line):
+    splitted = line.split('\t')
+
+    tokenized = ' '.join(splitted[1:])
+    source = tokenized.replace('▁', '').replace('- ', '-').replace(' -', '-').replace('. ', '.').replace(' .', '.').replace('{ ', '{').replace(' }', '}')
     return splitted[0] + ' ' + source
 
 
@@ -33,7 +41,7 @@ def detokenize_translation(line, include_line_number=False):
         del splitted[1]
 
     tokenized = ' '.join(splitted[1:])
-    translation = tokenized.replace('▁', '').replace(' ,', ',').replace(' .', '.').replace(' -', '-').replace(' !', '!').replace(' ?', '?')
+    translation = tokenized.replace('▁', '').replace(' ,', ',').replace(' .', '.').replace('- ', '-').replace(' -', '-').replace(' !', '!').replace(' ?', '?').replace(' ;', ';').replace(' '', ''').replace('' ', ''')
     if include_line_number:
         return splitted[0] + ' ' + translation
     return translation
