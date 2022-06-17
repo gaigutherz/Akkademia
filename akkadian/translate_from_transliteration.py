@@ -8,13 +8,15 @@ letter_substitutions = {"ḫ": "h",
     "à": "a₃", "è": "e₃", "ì": "i₃", "ò": "o₃", "ù":"u₃",
     "0": "₀", "1": "₁", "2": "₂", "3": "₃", "4": "₄", "5": "₅", "6": "₆", "7": "₇", "8": "₈", "9": "₉"}
 
+logogram_substitutions = {"--": "-", "- ": "-",
+                          "{KI}-": "{KI} ", "{M}": "{m}", "{D}": "{d}",
+                          "₂}": "2}", "₃}": "3}"}
+
 exception_substitutions = {"aš₂": "aš2", "kas₂": "kas2", "kul₂": "kul2", "dab₂": "dab2",
                         "šul₃": "šul3", "ti₃": "ti3", "kat₃": "kat3", "lib₃": "lib3",
                         "tu₄": "tu4", "u₄": "u4",
-                        "₂}": "2}", "₃}": "3}"}
-
-logogram_substitutions = {"--": "-", "- ": "-",
-                          "{KI}-": "{KI} ", "{M}": "{m}", "{D}": "{d}"}
+                        "LIL2": "LIL₂", "DU8": "DU₈", "LU2": "LU₂", "ŠA3": "ŠA₃",
+                           "ŠAR2": "ŠAR₂", "SIG5": "SIG₅", "Ku3": "KU₃", "Du3": "DU₃"}
 
 def find_all_occurences(s, ch):
     return [i for i, ltr in enumerate(s) if ltr == ch]
@@ -65,8 +67,8 @@ def organize_transliteration_line(line):
         else:
             new_line += l
 
-    new_line = substitute_phrase(new_line, exception_substitutions)
     new_line = fix_logogram(new_line)
+    new_line = substitute_phrase(new_line, exception_substitutions)
 
     return new_line
 
