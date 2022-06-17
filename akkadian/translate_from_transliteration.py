@@ -3,10 +3,18 @@ from pathlib import Path
 from translation_tokenize import tokenize
 from translate_common import source, translation, detokenize_transliteration, detokenize_translation
 
-substitutions = {"ḫ": "h",
+letter_substitutions = {"ḫ": "h",
     "á": "a₂", "é": "e₂", "í": "i₂", "ó": "o₂", "ú":"u₂",
     "à": "a₃", "è": "e₃", "ì": "i₃", "ò": "o₃", "ù":"u₃",
     "0": "₀", "1": "₁", "2": "₂", "3": "₃", "4": "₄", "5": "₅", "6": "₆", "7": "₇", "8": "₈", "9": "₉"}
+
+exception_substitutions = {"aš₂": "aš2", "kas₂": "kas2", "kul₂": "kul2", "dab₂": "dab2",
+                        "šul₃": "šul3", "ti₃": "ti3", "kat₃": "kat3", "lib₃": "lib3",
+                        "tu₄": "tu4", "u₄": "u4",
+                        "₂}": "2}", "₃}": "3}"}
+
+logogram_substitutions = {"--": "-", "- ": "-",
+                          "{KI}-": "{KI} ", "{M}": "{m}", "{D}": "{d}"}
 
 def find_all_occurences(s, ch):
     return [i for i, ltr in enumerate(s) if ltr == ch]
@@ -35,25 +43,29 @@ def fix_logogram(line):
         new_line += line[left_brackets[i]:right_brackets[i]+1].upper() + "-"
     new_line += line[right_brackets[len(left_brackets)-1]+1:]
 
-    new_line.replace("{KI}-", "{KI} ").replace("{M}", "{m}").replace("{D}", "{d}")
+    new_line = substitute_phrase(new_line, logogram_substitutions)
 
     return new_line
+
+
+def substitute_phrase(line, substitution_dict):
+    for key, value in substitution_dict.items():
+        if key in line:
+            line = line.replace(key, value)
+
+    return line
 
 
 def organize_transliteration_line(line):
     new_line = ""
 
     for l in line:
-        if l in substitutions:
-            new_line += substitutions[l]
+        if l in letter_substitutions:
+            new_line += letter_substitutions[l]
         else:
             new_line += l
 
-    new_line.replace("aš₂", "aš2").replace("kas₂", "kas2").replace("kul₂", "kul2").replace("dab₂", "dab2")
-    new_line.replace("šul₃", "šul3").replace("ti₃", "ti3").replace("kat₃", "kat3").replace("lib₃", "lib3")
-    new_line.replace("tu₄", "tu4").replace("u₄", "u4")
-    new_line.replace("₂}", "2}").replace("₃}", "3}")
-
+    new_line = substitute_phrase(new_line, exception_substitutions)
     new_line = fix_logogram(new_line)
 
     return new_line
@@ -99,7 +111,5 @@ def translate_transliteration_file(file):
 
 
 if __name__ == '__main__':
-    s = u"rá"
-    print(len(s))
-    # transliteration_file = input("Please enter the name of the transliteration file for translation\n")
-    # translate_transliteration_file(transliteration_file)
+    transliteration_file = input("Please enter the name of the transliteration file for translation\n")
+    translate_transliteration_file(transliteration_file)
