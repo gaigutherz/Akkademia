@@ -12,8 +12,8 @@ def organize_transliteration_input(file):
     tmp_file_name = "tmp_" + file
     tmp_file = open(tmp_file_name, "w", encoding="utf8")
 
-    with open(file, "r", encoding="utf8"):
-        for line in file:
+    with open(file, "r", encoding="utf8") as f:
+        for line in f:
             tmp_file.write(organize_transliteration_line(line))
 
     tmp_file.close()
