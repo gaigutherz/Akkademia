@@ -3,30 +3,10 @@ from pathlib import Path
 from translation_tokenize import tokenize
 from translate_common import source, translation, detokenize_transliteration, detokenize_translation
 
-def subscript(l):
-    if l == "0":
-        return "₀"
-    elif l == "1":
-        return "₁"
-    elif l == "2":
-        return "₂"
-    elif l == "3":
-        return "₃"
-    elif l == "4":
-        return "₄"
-    elif l == "5":
-        return "₅"
-    elif l == "6":
-        return "₆"
-    elif l == "7":
-        return "₇"
-    elif l == "8":
-        return "₈"
-    elif l == "9":
-        return "₉"
-    else:
-        return l
-
+substitutions = {"ḫ": "h",
+    "á": "a₂", "é": "e₂", "í": "i₂", "ó": "o₂", "ú":"u₂",
+    "à": "a₃", "è": "e₃", "ì": "i₃", "ò": "o₃", "ù":"u₃",
+    "0": "₀", "1": "₁", "2": "₂", "3": "₃", "4": "₄", "5": "₅", "6": "₆", "7": "₇", "8": "₈", "9": "₉"}
 
 def find_all_occurences(s, ch):
     return [i for i, ltr in enumerate(s) if ltr == ch]
@@ -35,6 +15,9 @@ def find_all_occurences(s, ch):
 def fix_logogram(line):
     left_brackets = find_all_occurences(line, "{")
     right_brackets = find_all_occurences(line, "}")
+
+    if len(left_brackets) == 0:
+        return line
 
     if len(left_brackets) != len(right_brackets):
         return line
@@ -50,7 +33,7 @@ def fix_logogram(line):
         else:
             new_line += line[right_brackets[i-1]+1:left_brackets[i]]
         new_line += line[left_brackets[i]:right_brackets[i]+1].upper() + "-"
-    new_line += line[right_brackets[len(left_brackets)-1]:]
+    new_line += line[right_brackets[len(left_brackets)-1]+1:]
 
     new_line.replace("{KI}-", "{KI} ").replace("{M}", "{m}").replace("{D}", "{d}")
 
@@ -61,14 +44,8 @@ def organize_transliteration_line(line):
     new_line = ""
 
     for l in line:
-        if l == "ḫ":
-            new_line += "h"
-        elif l == "◌́ ":
-            new_line += "₂"
-        elif l == "◌`":
-            new_line += "₃"
-        elif l.isdigit():
-            new_line += subscript(l)
+        if l in substitutions:
+            new_line += substitutions[l]
         else:
             new_line += l
 
@@ -122,5 +99,7 @@ def translate_transliteration_file(file):
 
 
 if __name__ == '__main__':
-    transliteration_file = input("Please enter the name of the transliteration file for translation\n")
-    translate_transliteration_file(transliteration_file)
+    s = u"rá"
+    print(len(s))
+    # transliteration_file = input("Please enter the name of the transliteration file for translation\n")
+    # translate_transliteration_file(transliteration_file)
