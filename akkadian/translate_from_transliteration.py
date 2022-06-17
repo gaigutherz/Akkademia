@@ -3,9 +3,83 @@ from pathlib import Path
 from translation_tokenize import tokenize
 from translate_common import source, translation, detokenize_transliteration, detokenize_translation
 
+def subscript(l):
+    if l == "0":
+        return "₀"
+    elif l == "1":
+        return "₁"
+    elif l == "2":
+        return "₂"
+    elif l == "3":
+        return "₃"
+    elif l == "4":
+        return "₄"
+    elif l == "5":
+        return "₅"
+    elif l == "6":
+        return "₆"
+    elif l == "7":
+        return "₇"
+    elif l == "8":
+        return "₈"
+    elif l == "9":
+        return "₉"
+    else:
+        return l
+
+
+def find_all_occurences(s, ch):
+    return [i for i, ltr in enumerate(s) if ltr == ch]
+
+
+def fix_logogram(line):
+    left_brackets = find_all_occurences(line, "{")
+    right_brackets = find_all_occurences(line, "}")
+
+    if len(left_brackets) != len(right_brackets):
+        return line
+
+    for i in range(len(left_brackets)):
+        if left_brackets[i] >= right_brackets[i]:
+            return line
+
+    new_line = ""
+    for i in range(len(left_brackets)):
+        if i == 0:
+            new_line += line[0:left_brackets[0]]
+        else:
+            new_line += line[right_brackets[i-1]+1:left_brackets[i]]
+        new_line += line[left_brackets[i]:right_brackets[i]+1].upper() + "-"
+    new_line += line[right_brackets[len(left_brackets)-1]:]
+
+    new_line.replace("{KI}-", "{KI} ").replace("{M}", "{m}").replace("{D}", "{d}")
+
+    return new_line
+
 
 def organize_transliteration_line(line):
-    return line
+    new_line = ""
+
+    for l in line:
+        if l == "ḫ":
+            new_line += "h"
+        elif l == "◌́ ":
+            new_line += "₂"
+        elif l == "◌`":
+            new_line += "₃"
+        elif l.isdigit():
+            new_line += subscript(l)
+        else:
+            new_line += l
+
+    new_line.replace("aš₂", "aš2").replace("kas₂", "kas2").replace("kul₂", "kul2").replace("dab₂", "dab2")
+    new_line.replace("šul₃", "šul3").replace("ti₃", "ti3").replace("kat₃", "kat3").replace("lib₃", "lib3")
+    new_line.replace("tu₄", "tu4").replace("u₄", "u4")
+    new_line.replace("₂}", "2}").replace("₃}", "3}")
+
+    new_line = fix_logogram(new_line)
+
+    return new_line
 
 
 def organize_transliteration_input(file):
