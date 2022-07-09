@@ -1,7 +1,6 @@
 import sentencepiece
 from pathlib import Path
 import shutil
-import os
 
 DIVIDED_BY_THREE_DOTS = False
 

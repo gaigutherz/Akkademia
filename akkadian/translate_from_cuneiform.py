@@ -1,7 +1,8 @@
 import subprocess
 from pathlib import Path
 from translation_tokenize import tokenize
-from translate_common import source, translation, detokenize_cuneiform, detokenize_translation
+from translate_common import source, translation, detokenize_cuneiform, detokenize_translation, \
+    detokenize_translation_using_sp
 
 
 def translate_cuneiform_base(file, capture_output=False):
@@ -28,6 +29,7 @@ def translate_cuneiform_file(file):
             print(detokenize_cuneiform(line))
         if translation(line):
             print(detokenize_translation(line, True) + "\n")
+            print(detokenize_translation_using_sp(line, True) + "\n")
 
 
 if __name__ == '__main__':

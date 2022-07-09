@@ -1,3 +1,6 @@
+import sentencepiece
+from translation_tokenize import TOKEN_DIR
+
 def source(line):
     if len(line) < 1:
         return False
@@ -42,6 +45,20 @@ def detokenize_translation(line, include_line_number=False):
 
     tokenized = ' '.join(splitted[1:])
     translation = tokenized.replace('▁', '').replace(' ,', ',').replace(' .', '.').replace('- ', '-').replace(' -', '-').replace(' !', '!').replace(' ?', '?').replace(' ;', ';').replace(' \'', '\'').replace('\' ', '\'').replace(' ʾ', 'ʾ').replace('ʾ ', 'ʾ').replace('( ', '(').replace(' )', ')')
+    if include_line_number:
+        return splitted[0] + ' ' + translation
+    return translation
+
+def detokenize_translation_using_sp(line, include_line_number=False):
+    sp = sentencepiece.SentencePieceProcessor()
+    sp.load(str(TOKEN_DIR / "translation_bpe.model"))
+
+    splitted = line.split('\t')
+
+    if len(splitted) > 1 :
+        del splitted[1]
+
+    translation = sp.decode_pieces(splitted[1:])
     if include_line_number:
         return splitted[0] + ' ' + translation
     return translation
