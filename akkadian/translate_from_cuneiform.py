@@ -1,8 +1,7 @@
 import subprocess
 from pathlib import Path
 from translation_tokenize import tokenize
-from translate_common import source, translation, detokenize_cuneiform, detokenize_translation, \
-    detokenize_translation_using_sp
+from translate_common import source, translation, detokenize_cuneiform, detokenize_translation
 
 
 def translate_cuneiform_base(file, capture_output=False):
@@ -26,10 +25,11 @@ def translate_cuneiform_file(file):
     raw_result = translate_cuneiform_base(file, True).stdout
     for line in raw_result.decode().split('\n'):
         if source(line):
-            print(detokenize_cuneiform(line))
+            print(detokenize_cuneiform(line, "NMT_input/not_divided_by_three_dots/tokenization/signs_char.model"))
         if translation(line):
-            print(detokenize_translation(line, True) + "\n")
-            print(detokenize_translation_using_sp(line, "NMT_input/not_divided_by_three_dots", True) + "\n")
+            print(detokenize_translation(line,
+                                         "NMT_input/not_divided_by_three_dots/tokenization/translation_bpe.model",
+                                         True) + "\n")
 
 
 if __name__ == '__main__':

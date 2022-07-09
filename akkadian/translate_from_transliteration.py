@@ -2,8 +2,7 @@ import subprocess
 from pathlib import Path
 import string
 from translation_tokenize import tokenize
-from translate_common import source, translation, detokenize_transliteration, detokenize_translation, \
-    detokenize_translation_using_sp
+from translate_common import source, translation, detokenize_transliteration, detokenize_translation
 
 letter_substitutions = {
     "ḫ": "h"
@@ -161,10 +160,9 @@ def translate_transliteration_file(file):
     raw_result = translate_transliteration_base(file, True).stdout
     for line in raw_result.decode().split('\n'):
         if source(line):
-            print(detokenize_transliteration(line))
+            print(detokenize_transliteration(line, "NMT_input/tokenization/transliteration_bpe.model"))
         if translation(line):
-            print(detokenize_translation(line, True) + "\n")
-            print(detokenize_translation_using_sp(line, "NMT_input", True) + "\n")
+            print(detokenize_translation(line, "NMT_input/tokenization/translation_bpe.model", True) + "\n")
 
 
 if __name__ == '__main__':

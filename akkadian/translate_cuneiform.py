@@ -14,7 +14,8 @@ def translate_cuneiform(sentence):
     output = ""
     for line in raw_result.decode().split('\n'):
         if translation(line):
-            output += detokenize_translation(line)
+            output += detokenize_translation(line,
+                                             "NMT_input/not_divided_by_three_dots/tokenization/translation_bpe.model")
 
     return output
 

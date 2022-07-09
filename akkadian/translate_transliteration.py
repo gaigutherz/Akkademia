@@ -14,7 +14,7 @@ def translate_transliteration(sentence):
     output = ""
     for line in raw_result.decode().split('\n'):
         if translation(line):
-            output += detokenize_translation(line)
+            output += detokenize_translation(line, "NMT_input/tokenization/translation_bpe.model")
 
     return output
 
