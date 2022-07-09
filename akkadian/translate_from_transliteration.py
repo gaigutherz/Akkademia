@@ -164,7 +164,7 @@ def translate_transliteration_file(file):
             print(detokenize_transliteration(line))
         if translation(line):
             print(detokenize_translation(line, True) + "\n")
-            print(detokenize_translation_using_sp(line, True) + "\n")
+            print(detokenize_translation_using_sp(line, "NMT_input", True) + "\n")
 
 
 if __name__ == '__main__':

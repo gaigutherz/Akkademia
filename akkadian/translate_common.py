@@ -49,9 +49,9 @@ def detokenize_translation(line, include_line_number=False):
         return splitted[0] + ' ' + translation
     return translation
 
-def detokenize_translation_using_sp(line, include_line_number=False):
+def detokenize_translation_using_sp(line, base_dir, include_line_number=False):
     sp = sentencepiece.SentencePieceProcessor()
-    sp.load(str(TOKEN_DIR / "translation_bpe.model"))
+    sp.load(str(base_dir / "tokenization/translation_bpe.model"))
 
     splitted = line.split('\t')
 

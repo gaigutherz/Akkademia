@@ -29,7 +29,7 @@ def translate_cuneiform_file(file):
             print(detokenize_cuneiform(line))
         if translation(line):
             print(detokenize_translation(line, True) + "\n")
-            print(detokenize_translation_using_sp(line, True) + "\n")
+            print(detokenize_translation_using_sp(line, "NMT_input/not_divided_by_three_dots", True) + "\n")
 
 
 if __name__ == '__main__':
