@@ -5,13 +5,13 @@ with open(file="README.md", mode="r", encoding="utf8") as fh:
 
 setuptools.setup(
     name="akkadian",
-    version="1.0.11",
-    author="Ariel Elazary, Gai Gutherz",
-    author_email="am.elazary@gmail.com, gaigutherz@gmail.com",
+    version="1.0.12",
+    author="Gai Gutherz, Ariel Elazary",
+    author_email="gaigutherz@gmail.com, am.elazary@gmail.com",
     description="Translating Akkadian signs to transliteration using NLP algorithms",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/gaigutherz/Translating-Akkadian-using-NLP",
+    url="https://github.com/gaigutherz/Akkademia",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3.7",
