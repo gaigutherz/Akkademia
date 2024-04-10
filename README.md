@@ -93,6 +93,27 @@ If you don't have git installed, install git [here](<https://git-scm.com/downloa
 
 If you don't have a Github user, create one [here](<https://github.com/join?source=header-home>).
 
+### Simple conda env install
+Copy the following into Command Prompt (with windows) or Terminal (with mac) to clone the project:
+```
+git clone https://github.com/gaigutherz/Akkademia.git
+```
+Then download your prefered version of conda, such as [miniconda](https://docs.anaconda.com/free/miniconda/index.html). We use conda because we want to create specific enviroments where we can manage dependencies without impacting the overall system.
+
+Then create your environment with the right version of python:
+```
+conda create -n akkadian python=3.7
+```
+You can then activate as follows:
+```
+conda activate akkademia
+```
+To then install dependencies, run the following (assuming your store your git pulls from a ):
+```
+pip install -r ~/GitHub/Akkademia/requirements.txt
+```
+You will then have a specific enviornment which meets all requirements of this project without otherwise affecting operations on you linux or mac system. For a more customized install, see below. 
+
 ### Installing the python dependencies
 
 In order to run the code, you will need the torch and allennlp libraries. If you have already installed the package akkadian, these were installed on your computer and you can skip to the next step.
@@ -112,7 +133,6 @@ Install overrides and allennlp: copy the following to Command Prompt (with windo
 pip install overrides==3.1.0
 pip install allennlp==0.8.5
 ```
-
 ### Cloning the project
 
 Copy the following into Command Prompt (with windows) or Terminal (with mac) to clone the project:
