@@ -107,8 +107,9 @@ for Mac and Linux, copy the following to Terminal
 pip install torch torchvision
 ```
 
-Install allennlp: copy the following to Command Prompt (with windows) or Terminal (with mac): 
+Install overrides and allennlp: copy the following to Command Prompt (with windows) or Terminal (with mac): 
 ```
+pip install overrides==3.1.0
 pip install allennlp==0.8.5
 ```
 
