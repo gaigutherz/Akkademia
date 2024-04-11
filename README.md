@@ -108,7 +108,7 @@ You can then activate as follows:
 ```
 conda activate akkadian
 ```
-To then install dependencies, run the following (assuming your store your git pulls from a folder in your home directory named 'GitHub'. You may need to customize this line to your system if it is stored elsewhere):
+To then install dependencies, run the following (assuming you store your git pulls from a folder in your home directory named 'GitHub'. You may need to customize this line to your system if it is stored elsewhere):
 ```
 pip install -r ~/GitHub/Akkademia/requirements.txt
 ```
